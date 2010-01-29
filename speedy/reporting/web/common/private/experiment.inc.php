@@ -1,6 +1,7 @@
 <?php
 	
 	define( 'PRIMARY_KEY', 'data_id' );
+	define( 'VIEW_LIMIT', 100 );
 	
 	define( 'EXP_TYPE_INT', 1 );
 	define( 'EXP_TYPE_DOUBLE', 2 );
@@ -338,7 +339,7 @@
 	}
 	
 	// return: array( schema, data ), NULL if invalid experiment
-	function exp_data( $exp_id, $sql = NULL )
+	function exp_data( $exp_id, $sql = NULL, $page = NULL )
 	{
 		global $db;
 		$exp_id = intval( $exp_id );
@@ -362,9 +363,26 @@
 				{
 					$sql = 'SELECT * FROM {table} ORDER BY {primary} ASC';
 				}
+				
+				if ( !is_null( $page ) )
+				{
+					$limit = strpos( strtolower( $sql ), 'limit' );
+					if ( $limit !== false )
+					{
+						$sql = substr( $sql, 0, $limit-1 );
+					}
+				}
 			}
 			
 			$modified_sql = $sql;
+			
+			// limit
+			if ( !is_null( $page ) )
+			{
+				$modified_sql .= ( ' LIMIT ' . ( $page * VIEW_LIMIT ) . ', ' . VIEW_LIMIT );
+			}
+			
+			// variable replacements
 			{
 				$modified_sql = str_replace( '{table}', _exp_table_name( $exp_id, false ), $modified_sql );
 				$modified_sql = str_replace( '{primary}', PRIMARY_KEY, $modified_sql );
@@ -373,7 +391,7 @@
 				{
 					$modified_sql = str_replace( ( '{field_' . $field_name . '}' ), _exp_field_name( $field_name ), $modified_sql );
 				}
-			}
+			}			
 			
 			$res = mysql_query( $modified_sql, $db );
 			if ( $res === false )

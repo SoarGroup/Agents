@@ -166,7 +166,8 @@
 								}
 								
 								// data
-								$exp_data = exp_data( $exp_id, ( ( isset( $_GET['qry'] ) )?( db_strip_slashes( strval( $_GET['qry'] ) ) ):( NULL ) ) );
+								$page_no = ( ( isset( $_GET['p'] ) )?( intval( $_GET['p'] ) ):( 0 ) );
+								$exp_data = exp_data( $exp_id, ( ( isset( $_GET['qry'] ) )?( db_strip_slashes( strval( $_GET['qry'] ) ) ):( NULL ) ), ( ( $format == 'csv' )?( NULL ):( $page_no ) ) );
 								
 								if ( $format == 'html' )
 								{
@@ -230,8 +231,74 @@
 										echo '<div id="tabs-1">';
 										
 											echo '<div class="section">';
-												echo '<div class="title">';
-													echo ( 'Query Result (<a href="?' . htmlentities( $_SERVER['QUERY_STRING'] ) . '&amp;format=csv' . '">csv</a>)' );
+												echo '<div class="title">';	
+													{																									
+														// previous
+														$prev = '';
+														{
+															if ( $page_no > 0 )
+															{
+																$my_query = '';
+																
+																if ( isset( $_GET['p'] ) )
+																{
+																	$my_query = array();
+																	foreach ( $_GET as $key => $val )
+																	{
+																		if ( $key != 'p' )
+																		{
+																			$my_query[ $key ] = $val;
+																		}
+																		else
+																		{
+																			$my_query[ $key ] = ( $page_no - 1 );
+																		}
+																	}
+																	$my_query = http_build_query( $my_query );
+																}
+																else
+																{
+																	$my_query = ( $_SERVER['QUERY_STRING'] . '&p=' . ( $page_no - 1 ) );
+																}
+																
+																$prev = '<a href="?' . htmlentities( $my_query ) . '">previous</a>, ';
+															}
+														}
+														
+														// next
+														$next = '';
+														{														
+															if ( count( $exp_data['data'] ) == VIEW_LIMIT )
+															{															
+																$my_query = '';
+																
+																if ( isset( $_GET['p'] ) )
+																{
+																	$my_query = array();
+																	foreach ( $_GET as $key => $val )
+																	{
+																		if ( $key != 'p' )
+																		{
+																			$my_query[ $key ] = $val;
+																		}
+																		else
+																		{
+																			$my_query[ $key ] = ( $page_no + 1 );
+																		}
+																	}
+																	$my_query = http_build_query( $my_query );
+																}
+																else
+																{
+																	$my_query = ( $_SERVER['QUERY_STRING'] . '&p=' . ( $page_no + 1 ) );
+																}
+																
+																$next = '<a href="?' . htmlentities( $my_query ) . '">next</a>, ';																
+															}
+														}														
+														
+														echo ( 'Query Result (' . ( ( $page_no * VIEW_LIMIT ) . '-' . ( $page_no * VIEW_LIMIT + count( $exp_data['data'] ) ) . ': ' ) . ( $prev ) . ( $next ) . '<a href="?' . htmlentities( $_SERVER['QUERY_STRING'] ) . '&amp;format=csv' . '">csv</a>)' );
+													}
 												echo '</div>';
 												echo '<div class="body">';									
 													echo tables_make_perty( $exp_data['schema'], $exp_data['data'] );
