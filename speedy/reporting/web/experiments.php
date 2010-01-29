@@ -388,7 +388,7 @@
 							{
 								echo '<div class="section">';
 									echo '<div class="title">';
-										echo ( htmlentities( $exp_id . ': ' . $exp_name ) . ( ', ' . htmlentities( exp_data_size( $exp_id ) ) ) . ' (<a href="?cmd=view&amp;exp=' . htmlentities( $exp_id ) . '">view</a>, <a href="?cmd=clear&amp;exp=' . htmlentities( $exp_id ) . '">clear</a>, <a href="?cmd=drop&amp;exp=' . htmlentities( $exp_id ) . '">drop</a>)' );
+										echo ( htmlentities( $exp_id . ': ' . $exp_name ) . ( ', ' . htmlentities( exp_data_size( $exp_id ) ) ) . ' (<a href="?cmd=view&amp;exp=' . htmlentities( $exp_id ) . '">view</a>, <span id="safety_' . htmlentities( $exp_id ) . '"><a href="#" onclick="document.getElementById(\'modify_' . htmlentities( $exp_id ) . '\').style.display=\'\';document.getElementById(\'safety_' . htmlentities( $exp_id ) . '\').style.display=\'none\'; return false;">modify</a></span><span style="display:none" id="modify_' . htmlentities( $exp_id ) . '"><a href="?cmd=clear&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to clear your data?\');">clear</a>, <a href="?cmd=drop&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to drop your experiment?\');">drop</a></span>)' );
 									echo '</div>';
 									echo '<div class="body">';
 										
