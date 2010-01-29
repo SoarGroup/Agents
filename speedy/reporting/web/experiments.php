@@ -322,7 +322,7 @@
 													
 													echo '<div class="section">';
 														echo '<div class="body">';
-															echo '<img src="' . htmlentities( graphs_bar_chart_url( $chart_data, 600, 400, 0, 'default', true ) ) . '" />';
+															echo '<img src="' . htmlentities( graphs_bar_chart_url( $chart_data, 600, 400, NULL, 'default', true ) ) . '" />';
 														echo '</div>';
 													echo '</div>';
 												}
@@ -337,7 +337,7 @@
 													
 													echo '<div class="section">';
 														echo '<div class="body">';
-															echo '<img src="' . htmlentities( graphs_line_chart_url( $chart_data, 600, 400, 0, 'default', true ) ) . '" />';
+															echo '<img src="' . htmlentities( graphs_line_chart_url( $chart_data, 600, 400, NULL, 'default', true ) ) . '" />';
 														echo '</div>';
 													echo '</div>';
 												}
