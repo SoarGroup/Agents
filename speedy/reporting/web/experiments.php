@@ -297,7 +297,7 @@
 															}
 														}														
 														
-														echo ( 'Query Result (' . ( ( $page_no * VIEW_LIMIT ) . '-' . ( $page_no * VIEW_LIMIT + count( $exp_data['data'] ) ) . ': ' ) . ( $prev ) . ( $next ) . '<a href="?' . htmlentities( $_SERVER['QUERY_STRING'] ) . '&amp;format=csv' . '">csv</a>)' );
+														echo ( 'Query Result (' . ( ( $page_no * VIEW_LIMIT + 1 ) . '-' . ( $page_no * VIEW_LIMIT + count( $exp_data['data'] ) ) . ': ' ) . ( $prev ) . ( $next ) . '<a href="?' . htmlentities( $_SERVER['QUERY_STRING'] ) . '&amp;format=csv' . '">csv</a>)' );
 													}
 												echo '</div>';
 												echo '<div class="body">';									
