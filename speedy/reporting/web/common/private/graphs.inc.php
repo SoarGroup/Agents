@@ -1,7 +1,7 @@
 <?php
 	
 	define( 'GOOGLE_CHART_URL', 'http://chart.apis.google.com/chart' );
-	define( 'SCALING_CONST', 1.1 );
+	define( 'SCALING_CONST', 0.1 );
 	define( 'FONT_SIZE', 10 );
 	define( 'POINT_SIZE', 5 );
 	
@@ -12,6 +12,11 @@
 	function graphs_gen_url( $base, $params )
 	{
 		return ( $base . '?' . http_build_query( $params ) );
+	}
+	
+	function _graphs_scale( $val )
+	{
+		return ( ( SCALING_CONST * abs( $val ) ) + $val );
 	}
 	
 	// input: array( 'x-label'=>y )
@@ -42,11 +47,11 @@
 			// data and scaling
 			{
 				$params['chd'] = ( 't:' . implode( ',', array_keys( $labels ) ) . '|' . implode( ',', $data ) );
-				$params['chds'] = ( '-1,' . ( count( $data ) ) . ',' . $min_data . ',' . ceil( $max_data * SCALING_CONST ) );
+				$params['chds'] = ( '-1,' . ( count( $data ) ) . ',' . $min_data . ',' . ceil( _graphs_scale( $max_data ) ) );
 			}			
 			
 			// y-axis range
-			$params['chxr'] = ( '1,' . $min_data . ',' . ceil( $max_data * SCALING_CONST ) );
+			$params['chxr'] = ( '1,' . $min_data . ',' . ceil( _graphs_scale( $max_data ) ) );
 			
 			// x-axis labels
 			$params['chxl'] = ( '0:||' . implode( '|', array_keys( $data ) ) . '|' );
@@ -117,7 +122,7 @@
 			foreach ( $data as $val )
 			{
 				$data_sets[] = ( implode( ',', array_keys( $labels ) ) . '|' . implode( ',', $val ) );
-				$data_scaling[] = ( '-1,' . ( count( $labels ) ) . ',' . $minmin . ',' . ceil( $maxmax * SCALING_CONST ) );
+				$data_scaling[] = ( '-1,' . ( count( $labels ) ) . ',' . $minmin . ',' . ceil( _graphs_scale( $maxmax ) ) );
 			}
 
 			$params['chd'] = ( 't:' . implode( '|', $data_sets ) );
@@ -128,7 +133,7 @@
 			$params['chxl'] = ( '0:||' . implode( '|', $labels ) . '|' );
 			
 			// y-axis range
-			$params['chxr'] = ( '1,' . $minmin . ',' . ceil( $maxmax * SCALING_CONST ) );
+			$params['chxr'] = ( '1,' . $minmin . ',' . ceil( _graphs_scale( $maxmax ) ) );
 			
 			
 			// label data points
@@ -199,7 +204,7 @@
 				}
 				
 				$temp_data[] = implode( ',', $temp2 );
-				$temp_scaling[] = ( $min_data . ',' . ceil( $max_data * SCALING_CONST ) );
+				$temp_scaling[] = ( $min_data . ',' . ceil( _graphs_scale( $max_data ) ) );
 				$temp_labels[] = ( 'N*f2*,' . $chart_colors[ $color_scheme ][ 'font' ] . ',' . $counter . ',' . $counter . ',' . FONT_SIZE );
 				
 				$counter++;
@@ -208,7 +213,7 @@
 			$params['chd'] = ( 't:' . implode( '|', $temp_data ) );
 			$params['chds'] = implode( ',', $temp_scaling );
 			
-			$params['chxr'] = ( '1,' . $min_data . ',' . ceil( $max_data * SCALING_CONST ) );
+			$params['chxr'] = ( '1,' . $min_data . ',' . ceil( _graphs_scale( $max_data ) ) );
 			
 			if ( $data_labels )
 			{
@@ -264,13 +269,13 @@
 			
 			foreach ( $data as $val )
 			{
-				$data_scaling[] = ( $minmin . ',' . ceil( $maxmax * SCALING_CONST ) );
+				$data_scaling[] = ( $minmin . ',' . ceil( _graphs_scale( $maxmax ) ) );
 			}
 			
 			$params['chd'] = ( 't:' . implode( '|', $data_sets ) );
 			$params['chds'] = implode( ',', $data_scaling );
 			
-			$params['chxr'] = ( '1,' . $minmin . ',' . ceil( $maxmax * SCALING_CONST ) );
+			$params['chxr'] = ( '1,' . $minmin . ',' . ceil( _graphs_scale( $maxmax ) ) );
 		}
 		
 		return graphs_gen_url( GOOGLE_CHART_URL, $params );
