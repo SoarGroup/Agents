@@ -29,118 +29,130 @@
 				{
 					if ( $_GET['cmd'] === 'drop' )
 					{
-						if ( isset( $_GET['exp'] ) )
+						if ( AUTH_MODIFIER )
 						{
-							if ( exp_valid( $_GET['exp'] ) )
+							if ( isset( $_GET['exp'] ) )
 							{
-								exp_remove_experiment( $_GET['exp'] );
-								
-								echo '<div class="section">';
-									echo '<div class="body">';
-										echo ( 'REMOVED EXPERIMENT: ' . htmlentities( $_GET['exp'] ) );
+								if ( exp_valid( $_GET['exp'] ) )
+								{
+									exp_remove_experiment( $_GET['exp'] );
+									
+									echo '<div class="section">';
+										echo '<div class="body">';
+											echo ( 'REMOVED EXPERIMENT: ' . htmlentities( $_GET['exp'] ) );
+										echo '</div>';
 									echo '</div>';
-								echo '</div>';
+								}
 							}
 						}
 					}
 					else if ( $_GET['cmd'] === 'clear' )
 					{
-						if ( isset( $_GET['exp'] ) )
+						if ( AUTH_MODIFIER )
 						{
-							if ( exp_valid( $_GET['exp'] ) )
+							if ( isset( $_GET['exp'] ) )
 							{
-								exp_clear_data( $_GET['exp'] );
-								
-								echo '<div class="section">';
-									echo '<div class="body">';
-										echo ( 'CLEARED EXPERIMENT: ' . htmlentities( $_GET['exp'] ) );
+								if ( exp_valid( $_GET['exp'] ) )
+								{
+									exp_clear_data( $_GET['exp'] );
+									
+									echo '<div class="section">';
+										echo '<div class="body">';
+											echo ( 'CLEARED EXPERIMENT: ' . htmlentities( $_GET['exp'] ) );
+										echo '</div>';
 									echo '</div>';
-								echo '</div>';
+								}
 							}
 						}
 					}
 					else if ( $_GET['cmd'] == 'add' )
 					{
-						if ( isset( $_GET['exp'] ) && isset( $_GET['field_name'] ) && isset( $_GET['field_type'] ) )
+						if ( AUTH_MODIFIER )
 						{
-							if ( is_array( $_GET['field_name'] ) && is_array( $_GET['field_type'] ) && ( count( $_GET['field_name'] ) == count( $_GET['field_type'] ) ) )
+							if ( isset( $_GET['exp'] ) && isset( $_GET['field_name'] ) && isset( $_GET['field_type'] ) )
 							{
-								$exp_fields = array();
+								if ( is_array( $_GET['field_name'] ) && is_array( $_GET['field_type'] ) && ( count( $_GET['field_name'] ) == count( $_GET['field_type'] ) ) )
 								{
-									foreach ( $_GET['field_name'] as $key => $val )
+									$exp_fields = array();
 									{
-										if ( isset( $_GET['field_type'][ $key ] ) )
+										foreach ( $_GET['field_name'] as $key => $val )
 										{
-											$exp_fields[ trim( strval( $_GET['field_name'][ $key ] ) ) ] = intval( $_GET['field_type'][ $key ] );
+											if ( isset( $_GET['field_type'][ $key ] ) )
+											{
+												$exp_fields[ trim( strval( $_GET['field_name'][ $key ] ) ) ] = intval( $_GET['field_type'][ $key ] );
+											}
 										}
 									}
-								}
-								
-								if ( count( $exp_fields ) == count( $_GET['field_name'] ) )
-								{
-									$exp_id = exp_add_experiment( strval( $_GET['exp'] ), $exp_fields );
 									
-									echo '<div class="section">';
-										echo '<div class="body">';
-									
-											if ( is_null( $exp_id ) )
-											{
-												echo ( 'DUPLICATE EXPERIMENT NAME' );
-											}
-											else
-											{
-												echo ( 'ADDED EXPERIMENT: ' . htmlentities( $exp_id ) );
-											}
+									if ( count( $exp_fields ) == count( $_GET['field_name'] ) )
+									{
+										$exp_id = exp_add_experiment( strval( $_GET['exp'] ), $exp_fields );
+										
+										echo '<div class="section">';
+											echo '<div class="body">';
+										
+												if ( is_null( $exp_id ) )
+												{
+													echo ( 'DUPLICATE EXPERIMENT NAME' );
+												}
+												else
+												{
+													echo ( 'ADDED EXPERIMENT: ' . htmlentities( $exp_id ) );
+												}
+											echo '</div>';
 										echo '</div>';
-									echo '</div>';
+									}
 								}
 							}
 						}
 					}
 					else if ( $_GET['cmd'] == 'data' )
 					{
-						if ( isset( $_GET['exp_id'] ) )
+						if ( AUTH_MODIFIER )
 						{
-							$exp_id = intval( $_GET['exp_id'] );
-							
-							if ( exp_valid( $exp_id ) )
+							if ( isset( $_GET['exp_id'] ) )
 							{
-								$schema = exp_schema( $exp_id );
-								$values = array();
+								$exp_id = intval( $_GET['exp_id'] );
 								
-								foreach ( $schema as $field_name => $field_type )
+								if ( exp_valid( $exp_id ) )
 								{
-									if ( isset( $_GET[ $field_name ] ) )
-									{
-										$val = $_GET[ $field_name ];
-										
-										switch ( $field_type )
-										{
-											case EXP_TYPE_INT: $val = intval( $val ); break;
-											case EXP_TYPE_DOUBLE: $val = doubleval( $val ); break;
-											case EXP_TYPE_STRING: $val = strval( $val ); break;
-										}
-										
-										$values[ $field_name ] = $val;
-									}
-								}
-								
-								if ( count( $schema ) == count( $values ) )
-								{
-									$res = exp_add_datum( $exp_id, $values );
+									$schema = exp_schema( $exp_id );
+									$values = array();
 									
-									echo '<div class="section">';
-										echo '<div class="body">';
-											if ( !is_null( $res ) )
+									foreach ( $schema as $field_name => $field_type )
+									{
+										if ( isset( $_GET[ $field_name ] ) )
+										{
+											$val = $_GET[ $field_name ];
+											
+											switch ( $field_type )
 											{
-												echo ( 'ADDED DATUM ' . htmlentities( $res ) . ' TO EXPERIMENT ' . htmlentities( $exp_id ) );
+												case EXP_TYPE_INT: $val = intval( $val ); break;
+												case EXP_TYPE_DOUBLE: $val = doubleval( $val ); break;
+												case EXP_TYPE_STRING: $val = strval( $val ); break;
 											}
-											else
-											{
-												echo 'INVALID DATA';
-											}
+											
+											$values[ $field_name ] = $val;
+										}
+									}
+									
+									if ( count( $schema ) == count( $values ) )
+									{
+										$res = exp_add_datum( $exp_id, $values );
+										
+										echo '<div class="section">';
+											echo '<div class="body">';
+												if ( !is_null( $res ) )
+												{
+													echo ( 'ADDED DATUM ' . htmlentities( $res ) . ' TO EXPERIMENT ' . htmlentities( $exp_id ) );
+												}
+												else
+												{
+													echo 'INVALID DATA';
+												}
+											echo '</div>';
 										echo '</div>';
-									echo '</div>';
+									}
 								}
 							}
 						}
@@ -369,7 +381,11 @@
 				
 					echo '<ul>';
 						echo '<li><a href="#tabs-1">Existing</a></li>';
-						echo '<li><a href="#tabs-2">New</a></li>';
+						
+						if ( AUTH_MODIFIER )
+						{
+							echo '<li><a href="#tabs-2">New</a></li>';
+						}
 					echo '</ul>';
 					
 					echo '<div id="tabs-1">';
@@ -388,7 +404,7 @@
 							{
 								echo '<div class="section">';
 									echo '<div class="title">';
-										echo ( htmlentities( $exp_id . ': ' . $exp_name ) . ( ', ' . htmlentities( exp_data_size( $exp_id ) ) ) . ' (<a href="?cmd=view&amp;exp=' . htmlentities( $exp_id ) . '">view</a>, <span id="safety_' . htmlentities( $exp_id ) . '"><a href="#" onclick="document.getElementById(\'modify_' . htmlentities( $exp_id ) . '\').style.display=\'\';document.getElementById(\'safety_' . htmlentities( $exp_id ) . '\').style.display=\'none\'; return false;">modify</a></span><span style="display:none" id="modify_' . htmlentities( $exp_id ) . '"><a href="?cmd=clear&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to clear your data?\');">clear</a>, <a href="?cmd=drop&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to drop your experiment?\');">drop</a></span>)' );
+										echo ( htmlentities( $exp_id . ': ' . $exp_name ) . ( ', ' . htmlentities( exp_data_size( $exp_id ) ) ) . ' (<a href="?cmd=view&amp;exp=' . htmlentities( $exp_id ) . '">view</a>' . ( ( AUTH_MODIFIER )?(', '):('') ) . '<span  ' . ( ( AUTH_MODIFIER )?(''):('style="display:none"') ) . ' id="safety_' . htmlentities( $exp_id ) . '"><a href="#" onclick="document.getElementById(\'modify_' . htmlentities( $exp_id ) . '\').style.display=\'\';document.getElementById(\'safety_' . htmlentities( $exp_id ) . '\').style.display=\'none\'; return false;">modify</a></span><span style="display:none" id="modify_' . htmlentities( $exp_id ) . '"><a href="?cmd=clear&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to clear your data?\');">clear</a>, <a href="?cmd=drop&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to drop your experiment?\');">drop</a></span>)' );
 									echo '</div>';
 									echo '<div class="body">';
 										
@@ -401,7 +417,10 @@
 													echo '<tr>';
 														echo '<td style="width: 200px">Field</td>';
 														echo '<td style="width: 80px">Type</td>';
-														echo '<td style="width: 80px"></td>';
+														if ( AUTH_MODIFIER )
+														{
+															echo '<td style="width: 80px"></td>';
+														}
 													echo '</tr>';
 												echo '</thead>';
 											
@@ -413,12 +432,22 @@
 														echo '<tr>';
 															echo ( '<td>' . htmlentities( $field_name ) . '</td>' );
 															echo ( '<td>' . htmlentities( exp_type_2_english( $field_type ) ) . '</td>' );
-															echo ( '<td><input type="text" name="' . htmlentities( $field_name ) . '" value="" style="width: 70px" /></td>' );
+															
+															if ( AUTH_MODIFIER )
+															{
+																echo ( '<td><input type="text" name="' . htmlentities( $field_name ) . '" value="" style="width: 70px" /></td>' );
+															}
 														echo '</tr>';
 													}
 													
-													echo '<td colspan="2"></td>';
-													echo '<td><input type="submit" value="add" /></td>';
+													if ( AUTH_MODIFIER )
+													{
+														echo '<tr>';
+															echo '<td>&nbsp;</td>';
+															echo '<td>&nbsp;</td>';
+															echo '<td style="text-align: center"><input type="submit" value="add" /></td>';
+														echo '</tr>';
+													}
 													
 												echo '</tbody>';
 											
@@ -431,52 +460,55 @@
 						}
 					echo '</div>';
 					
-					echo '<div id="tabs-2">';
-						echo '<form method="get" action="">';
-							
-							echo '<div class="section">';
-								echo '<div class="body">';
-									echo ( 'Experiment name: &nbsp;&nbsp; <input type="text" name="exp" value="" style="width: 250px" />' );
+					if ( AUTH_MODIFIER )
+					{
+						echo '<div id="tabs-2">';
+							echo '<form method="get" action="">';
+								
+								echo '<div class="section">';
+									echo '<div class="body">';
+										echo ( 'Experiment name: &nbsp;&nbsp; <input type="text" name="exp" value="" style="width: 250px" />' );
+									echo '</div>';
 								echo '</div>';
-							echo '</div>';
-							
-							echo '<div class="section">';
-								echo '<div class="title">';
-									echo 'Schema';
+								
+								echo '<div class="section">';
+									echo '<div class="title">';
+										echo 'Schema';
+									echo '</div>';
+									echo '<div class="body">';
+										echo '<table class="perty" id="schema">';
+											echo '<thead>';
+												echo '<tr>';
+													echo '<td style="width: 250px">Field</td>';
+													echo '<td style="width: 150px">Type</td>';
+												echo '</tr>';
+											echo '</thead>';
+											echo '<tbody>';
+												echo '<tr>';
+													echo '<td><input type="text" name="field_name[0]" value="" style="width: 200px" /></td>';
+													echo '<td><select name="field_type[0]" style="width: 100px">';
+														echo '<option value="' . htmlentities( EXP_TYPE_INT ) . '">' . htmlentities( exp_type_2_english( EXP_TYPE_INT ) ) . '</option>';
+														echo '<option value="' . htmlentities( EXP_TYPE_DOUBLE ) . '">' . htmlentities( exp_type_2_english( EXP_TYPE_DOUBLE ) ) . '</option>';
+														echo '<option value="' . htmlentities( EXP_TYPE_STRING ) . '">' . htmlentities( exp_type_2_english( EXP_TYPE_STRING ) ) . '</option>';
+													echo '</select></td>';
+												echo '</tr>';
+											echo '</tbody>';
+										echo '</table>';
+									echo '</div>';
 								echo '</div>';
-								echo '<div class="body">';
-									echo '<table class="perty" id="schema">';
-										echo '<thead>';
-											echo '<tr>';
-												echo '<td style="width: 250px">Field</td>';
-												echo '<td style="width: 150px">Type</td>';
-											echo '</tr>';
-										echo '</thead>';
-										echo '<tbody>';
-											echo '<tr>';
-												echo '<td><input type="text" name="field_name[0]" value="" style="width: 200px" /></td>';
-												echo '<td><select name="field_type[0]" style="width: 100px">';
-													echo '<option value="' . htmlentities( EXP_TYPE_INT ) . '">' . htmlentities( exp_type_2_english( EXP_TYPE_INT ) ) . '</option>';
-													echo '<option value="' . htmlentities( EXP_TYPE_DOUBLE ) . '">' . htmlentities( exp_type_2_english( EXP_TYPE_DOUBLE ) ) . '</option>';
-													echo '<option value="' . htmlentities( EXP_TYPE_STRING ) . '">' . htmlentities( exp_type_2_english( EXP_TYPE_STRING ) ) . '</option>';
-												echo '</select></td>';
-											echo '</tr>';
-										echo '</tbody>';
-									echo '</table>';
+								
+								echo '<div class="section">';
+									echo '<div class="body">';
+								
+										echo '<input type="hidden" name="cmd" value="add" />';
+										echo '<input type="button" value="add field" onclick="add_field(); return false;" /> &nbsp;&nbsp; <input type="submit" value="save" />';
+										
+									echo '</div>';
 								echo '</div>';
-							echo '</div>';
-							
-							echo '<div class="section">';
-								echo '<div class="body">';
-							
-									echo '<input type="hidden" name="cmd" value="add" />';
-									echo '<input type="button" value="add field" onclick="add_field(); return false;" /> &nbsp;&nbsp; <input type="submit" value="save" />';
-									
-								echo '</div>';
-							echo '</div>';
-							
-						echo '</form>';
-					echo '</div>';
+								
+							echo '</form>';
+						echo '</div>';
+					}
 					
 				echo '</div>';
 			}
