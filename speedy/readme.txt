@@ -42,7 +42,10 @@ Now copy the entire contents of the "reporting/web" folder to PHP-enabled
 web space. Edit the $db_info variable in "common/private/db.inc.php" to 
 reflect database connection information. Then edit the SYSTEM_URL constant
 in "common/private/start.inc.php" to the web-accessible URL to your Speedy
-install (with a final slash). Done!
+install (with a final slash). Finally, populate the $authorized_modifiers
+array in "common/private/auth.inc.php" with the IP addresses you trust to
+modify your data. This is a simple mechanism, so feel free to replace/
+supplement with HTAccess or another mechanism of your choosing. Done!
 
 
 Experiments
