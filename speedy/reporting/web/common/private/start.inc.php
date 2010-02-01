@@ -3,6 +3,7 @@
 	
 	// required libraries
 	require_once 'db.inc.php';
+	require_once 'auth.inc.php';
 	require_once 'experiment.inc.php';
 	require_once 'tables.inc.php';
 	require_once 'graphs.inc.php';
