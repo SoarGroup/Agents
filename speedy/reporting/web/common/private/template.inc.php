@@ -7,6 +7,7 @@
 		<link rel="shortcut icon" href="common/public/favico.ico" >
 		
 		<link type="text/css" href="common/public/jquery/jquery-ui-1.7.2.custom.css" rel="Stylesheet" />
+		<link type="text/css" href="common/public/shjs/sh_style.css" rel="Stylesheet" />
 		
 		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 		<script type="text/javascript">
@@ -14,11 +15,14 @@
 			google.load( "jqueryui", "1.7.2" );
 		</script>
 		
+		<script type="text/javascript" src="common/public/shjs/sh_main.min.js"></script>
+		<script type="text/javascript" src="common/public/shjs/sh_sql.min.js"></script>
+		
 		
 		{head}
 	</head>
 	
-	<body>
+	<body onload="sh_highlightDocument();">
 		<div id="content">
 			
 			<div id="header">
