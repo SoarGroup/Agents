@@ -7,5 +7,17 @@
 			
 		return $str;
 	}
+	
+	function misc_sql_break( $sql )
+	{
+		$breaks = array( 'FROM', 'WHERE', 'GROUP BY', 'HAVING', 'ORDER BY' );
+		
+		foreach ( $breaks as $break )
+		{
+			$sql = str_replace( ( ' ' . $break . ' ' ), ( "\n" . $break . ' ' ), $sql );
+		}
+		
+		return $sql;
+	}
 
 ?>
