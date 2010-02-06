@@ -185,7 +185,9 @@
 					echo '<div class="section">';
 						echo '<div class="body">';
 							
-							echo htmlentities( $sql );
+							echo '<pre class="sh_sql">';
+								echo htmlentities( misc_sql_break( $sql ) );
+							echo '</pre>';
 							
 						echo '</div>';
 					echo '</div>';
