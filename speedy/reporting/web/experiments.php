@@ -259,7 +259,7 @@
 																	{
 																		if ( $key != 'p' )
 																		{
-																			$my_query[ $key ] = $val;
+																			$my_query[ $key ] = db_strip_slashes( strval( $val ) );
 																		}
 																		else
 																		{
@@ -290,8 +290,8 @@
 																	foreach ( $_GET as $key => $val )
 																	{
 																		if ( $key != 'p' )
-																		{
-																			$my_query[ $key ] = $val;
+																		{																
+																			$my_query[ $key ] = db_strip_slashes( strval( $val ) );
 																		}
 																		else
 																		{
