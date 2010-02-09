@@ -23,7 +23,7 @@
 		{
 			case ( EXP_TYPE_INT ): return 'INT';
 			case ( EXP_TYPE_DOUBLE ): return 'DOUBLE';
-			case ( EXP_TYPE_STRING ): return 'TEXT';
+			case ( EXP_TYPE_STRING ): return 'VARCHAR (500)';
 		}
 	}
 	
