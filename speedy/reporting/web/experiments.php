@@ -312,7 +312,11 @@
 														echo ( 'Query Result (' . ( ( $page_no * VIEW_LIMIT + 1 ) . '-' . ( $page_no * VIEW_LIMIT + count( $exp_data['data'] ) ) . ': ' ) . ( $prev ) . ( $next ) . '<a href="?' . htmlentities( $_SERVER['QUERY_STRING'] ) . '&amp;format=csv' . '">csv</a>)' );
 													}
 												echo '</div>';
-												echo '<div class="body">';									
+												echo '<div class="body">';
+													echo '<pre class="sh_sql">';
+														echo htmlentities( misc_sql_break( $exp_data['modified'] ) );
+													echo '</pre>';
+												
 													echo tables_make_perty( $exp_data['schema'], $exp_data['data'] );
 												echo '</div>';
 											echo '</div>';
