@@ -444,7 +444,7 @@
 				}
 			}
 			
-			$return_val = array( 'schema'=>$schema, 'data'=>$data, 'sql'=>$sql, 'err'=>$err );
+			$return_val = array( 'schema'=>$schema, 'data'=>$data, 'sql'=>$sql, 'modified'=>$modified_sql, 'err'=>$err );
 		}
 			
 		return $return_val;
