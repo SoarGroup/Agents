@@ -27,6 +27,8 @@ public class Poc {
 			pKernel = Kernel.CreateKernelInNewThread();
 			pAgent = pKernel.CreateAgent( "headless" );
 			
+			pAgent.SetOutputLinkChangeTracking(false);
+			
 			pAgent.LoadProductions( args[0] + "/share/soar/Demos/blocks-world/blocks-world.soar" );
 			
 			// no monitors, success

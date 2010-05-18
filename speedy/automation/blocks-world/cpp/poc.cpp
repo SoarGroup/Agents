@@ -61,6 +61,8 @@ int main( int argc, char* argv[] )
 		
 		// source rules, set stuff
 		{
+			pAgent->SetOutputLinkChangeTracking(false);
+
 			{
 				std::string sourcePath;
 				toString( argv[1], sourcePath );
