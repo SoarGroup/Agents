@@ -81,7 +81,7 @@ int main( int argc, char* argv[] )
 		}
 
 		// perform the task
-		for ( int i=0; i<10; i++ )
+		for ( int i=0; i<100; i++ )
 		{
 			// run X decisions
 			{

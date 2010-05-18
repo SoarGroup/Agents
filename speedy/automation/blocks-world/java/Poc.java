@@ -40,7 +40,7 @@ public class Poc {
 			pAgent.ExecuteCommandLine( "timers --off" );
 		}
 		
-		for ( int i=0; i<10; i++ )
+		for ( int i=0; i<100; i++ )
 		{
 			// perform the task
 			{

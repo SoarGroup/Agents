@@ -39,7 +39,7 @@ public class Poc {
 			pAgent.ExecuteCommandLine( "srand 55512" );			
 		}
 		
-		for ( int i=0; i<10; i++ )
+		for ( int i=0; i<100; i++ )
 		{
 			// perform the task
 			{
@@ -57,7 +57,7 @@ public class Poc {
 			
 			// soar stats
 			{
-				System.out.print( " decisions=" + ( ( i + 1 ) * 10000 ) );
+				System.out.print( " decisions=" + pAgent.GetDecisionCycleCounter() );
 			}
 			
 			// extra params
@@ -73,7 +73,9 @@ public class Poc {
 		
 		// clean
 		{
-			Runtime.getRuntime().exec( "kill " + pid );
+			pKernel.Shutdown();
+			
+			System.exit(0);
 		}
 	}
 	
