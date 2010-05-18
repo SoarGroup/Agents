@@ -1,3 +1,3 @@
 #/bin/bash
 
-javac -classpath $DYLD_LIBRARY_PATH/sml.jar:. Poc.java
+javac -classpath $SOAR_HOME/share/java/sml.jar:. Poc.java

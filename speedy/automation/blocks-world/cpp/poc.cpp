@@ -64,7 +64,7 @@ int main( int argc, char* argv[] )
 			{
 				std::string sourcePath;
 				toString( argv[1], sourcePath );
-				sourcePath.append( "/SoarLibrary/Demos/blocks-world/blocks-world.soar" );
+				sourcePath.append( "/share/soar/Demos/blocks-world/blocks-world.soar" );
 
 				pAgent->LoadProductions( sourcePath.c_str() );
 			}

@@ -27,7 +27,7 @@ public class Poc {
 			pKernel = Kernel.CreateKernelInNewThread();
 			pAgent = pKernel.CreateAgent( "headless" );
 			
-			pAgent.LoadProductions( args[0] + "/SoarLibrary/Demos/blocks-world/blocks-world.soar" );
+			pAgent.LoadProductions( args[0] + "/share/soar/Demos/blocks-world/blocks-world.soar" );
 			
 			// no monitors, success
 			pAgent.ExecuteCommandLine( "excise blocks-world*elaborate*state*success" );

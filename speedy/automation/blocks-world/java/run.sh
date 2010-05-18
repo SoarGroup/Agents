@@ -1,5 +1,3 @@
 #!/bin/bash
 
-SOAR_PATH=$DYLD_LIBRARY_PATH/../..
-
-java -classpath $DYLD_LIBRARY_PATH/sml.jar:. Poc $SOAR_PATH $1
+java -classpath $SOAR_HOME/share/java/sml.jar:. Poc $SOAR_HOME $1
