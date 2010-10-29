@@ -183,7 +183,7 @@
 								
 								if ( $format == 'html' )
 								{
-									$exps = exp_list();
+									$exps = exp_list(false);
 									$page_info['title'] = $exps[ $exp_id ];									
 									$go_chart = NULL;
 									
@@ -379,7 +379,7 @@
 		<?php
 			if ( $show_forms )
 			{
-				$exps = exp_list();
+				$exps = exp_list(false);
 				
 				echo '<div id="tabs">';
 				
@@ -411,7 +411,7 @@
 										echo ( htmlentities( $exp_id . ': ' . $exp_name ) . ( ', ' . htmlentities( exp_data_size( $exp_id ) ) ) . ' (<a href="?cmd=view&amp;exp=' . htmlentities( $exp_id ) . '">view</a>' . ( ( AUTH_MODIFIER )?(', '):('') ) . '<span  ' . ( ( AUTH_MODIFIER )?(''):('style="display:none"') ) . ' id="safety_' . htmlentities( $exp_id ) . '"><a href="#" onclick="document.getElementById(\'modify_' . htmlentities( $exp_id ) . '\').style.display=\'\';document.getElementById(\'safety_' . htmlentities( $exp_id ) . '\').style.display=\'none\'; return false;">modify</a></span><span style="display:none" id="modify_' . htmlentities( $exp_id ) . '"><a href="?cmd=clear&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to clear your data?\');">clear</a>, <a href="?cmd=drop&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to drop your experiment?\');">drop</a></span>)' );
 									echo '</div>';
 									echo '<div class="body">';
-										
+								
 										echo '<form method="get" action="">';
 											echo ( '<input type="hidden" name="cmd" value="data" />' );
 											echo ( '<input type="hidden" name="exp_id" value="' . htmlentities( $exp_id ) . '" />' );
@@ -439,7 +439,27 @@
 															
 															if ( AUTH_MODIFIER )
 															{
-																echo ( '<td><input type="text" name="' . htmlentities( $field_name ) . '" value="" style="width: 70px" /></td>' );
+																$field_id = ( 'i-' . $exp_id . '-' . $field_name );															
+																
+																echo ( '<td><input id="' . htmlentities( $field_id ) . '" type="text" name="' . htmlentities( $field_name ) . '" value="" style="width: 70px" /></td>' );
+																
+																/*
+																if ( $field_type != EXP_TYPE_DOUBLE )
+																{
+																	if ( exp_field_distinct_count( $exp_id, $field_name ) < 20 )
+																	{
+																		$dist = exp_field_distinct( $exp_id, $field_name );
+																		foreach ( $dist as $key => $val )
+																		{
+																			$dist[ $key ] = ( '"' . htmlentities( $val ) . '"' );
+																		}
+																		
+																		echo '<script>';
+																			echo '$("input#' . htmlentities( $field_id ) . '").autocomplete({ source: [' . implode( ',', $dist ) . '] });'; 																		
+																		echo '</script>';
+																	}
+																}
+																*/
 															}
 														echo '</tr>';
 													}
