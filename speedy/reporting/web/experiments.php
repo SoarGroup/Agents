@@ -39,7 +39,7 @@
 									
 									echo '<div class="section">';
 										echo '<div class="body">';
-											echo ( 'REMOVED EXPERIMENT: ' . htmlentities( $_GET['exp'] ) );
+											echo ( '<p class="ui-state-highlight">REMOVED EXPERIMENT: ' . htmlentities( $_GET['exp'] ) . '</p>' );
 										echo '</div>';
 									echo '</div>';
 								}
@@ -58,7 +58,7 @@
 									
 									echo '<div class="section">';
 										echo '<div class="body">';
-											echo ( 'CLEARED EXPERIMENT: ' . htmlentities( $_GET['exp'] ) );
+											echo ( '<p class="ui-state-highlight">CLEARED EXPERIMENT: ' . htmlentities( $_GET['exp'] ) . '</p>' );
 										echo '</div>';
 									echo '</div>';
 								}
@@ -93,11 +93,11 @@
 										
 												if ( is_null( $exp_id ) )
 												{
-													echo ( 'DUPLICATE EXPERIMENT NAME' );
+													echo ( '<p class="ui-state-error">DUPLICATE EXPERIMENT NAME</p>' );
 												}
 												else
 												{
-													echo ( 'ADDED EXPERIMENT: ' . htmlentities( $exp_id ) );
+													echo ( '<p class="ui-state-highlight">ADDED EXPERIMENT: ' . htmlentities( $exp_id ) . '</p>' );
 												}
 											echo '</div>';
 										echo '</div>';
@@ -144,11 +144,11 @@
 											echo '<div class="body">';
 												if ( !is_null( $res ) )
 												{
-													echo ( 'ADDED DATUM ' . htmlentities( $res ) . ' TO EXPERIMENT ' . htmlentities( $exp_id ) );
+													echo ( '<p class="ui-state-highlight">ADDED DATUM ' . htmlentities( $res ) . ' TO EXPERIMENT ' . htmlentities( $exp_id ) . '</p>' );
 												}
 												else
 												{
-													echo 'INVALID DATA';
+													echo '<p class="ui-state-error">INVALID DATA</p>';
 												}
 											echo '</div>';
 										echo '</div>';
@@ -228,7 +228,8 @@
 												
 												echo ( '<textarea name="qry" cols="60" rows="4">' . htmlentities( $exp_data['sql'] ) . '</textarea>' );
 												echo '<br />';
-												echo '<input type="submit" value="query" />';
+												echo '<input id="send-query" type="submit" value="query" />';
+												echo jquery_button('send-query');
 											echo '</form>';
 										echo '</div>';
 									echo '</div>';
@@ -469,7 +470,8 @@
 														echo '<tr>';
 															echo '<td>&nbsp;</td>';
 															echo '<td>&nbsp;</td>';
-															echo '<td style="text-align: center"><input type="submit" value="add" /></td>';
+														echo '<td style="text-align: center"><input id="send-add-' . $exp_id . '" type="submit" value="add" /></td>';
+														echo jquery_button('send-add-' . $exp_id);
 														echo '</tr>';
 													}
 													
@@ -525,7 +527,10 @@
 									echo '<div class="body">';
 								
 										echo '<input type="hidden" name="cmd" value="add" />';
-										echo '<input type="button" value="add field" onclick="add_field(); return false;" /> &nbsp;&nbsp; <input type="submit" value="save" />';
+										echo '<input id="send-add" type="button" value="add field" onclick="add_field(); return false;" /> &nbsp;&nbsp; <input id="send-save" type="submit" value="save" />';
+						
+										echo jquery_button('send-add');
+										echo jquery_button('send-save');
 										
 									echo '</div>';
 								echo '</div>';
