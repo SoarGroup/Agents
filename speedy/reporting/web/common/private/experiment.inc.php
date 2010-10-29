@@ -42,6 +42,74 @@
 	///////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////
 	
+	function _exp_valid_field( $exp_id, $field_name, $validate = true )
+	{
+		global $db;
+		$exp_id = intval( $exp_id );
+		$return_val = false;
+		
+		if ( !$validate || _exp_valid( $exp_id ) )
+		{
+			$table_name = _exp_table_name( $exp_id, false );
+			
+			$res = mysql_query( 'SELECT field_name FROM exp_schemas WHERE exp_id=' . db_quote_smart( $exp_id, $db ) . ' AND field_name=' . db_quote_smart( strval( $field_name ), $db ), $db );
+			
+			if ( mysql_num_rows( $res ) == 1 )
+			{
+				$return_val = true;
+			}
+		}
+		
+		return $return_val;		
+	}
+	
+	function exp_field_distinct_count( $exp_id, $field_name )
+	{
+		global $db;
+		$exp_id = intval( $exp_id );
+		$return_val = NULL;
+		
+		// ensure valid experiment
+		if ( _exp_valid( $exp_id ) && _exp_valid_field( $exp_id, $field_name, false ) )
+		{
+			$res = mysql_query( 'SELECT COUNT(DISTINCT(' . _exp_field_name( strval( $field_name ) ) . ')) AS ct FROM ' . _exp_table_name( $exp_id, false ), $db );
+			
+			if ( mysql_num_rows( $res ) == 1 )
+			{
+				$res = mysql_fetch_assoc( $res );
+				
+				$return_val = intval( $res['ct'] );
+			}
+		}
+		
+		return $return_val;
+	}
+	
+	function exp_field_distinct( $exp_id, $field_name )
+	{
+		global $db;
+		$exp_id = intval( $exp_id );
+		$return_val = NULL;
+		
+		// ensure valid experiment
+		if ( _exp_valid( $exp_id ) && _exp_valid_field( $exp_id, $field_name, false ) )
+		{
+			$res = mysql_query( 'SELECT DISTINCT(' . _exp_field_name( strval( $field_name ) ) . ') AS dist FROM ' . _exp_table_name( $exp_id, false ), $db );
+			
+			$return_val = array();
+			while ( $row = mysql_fetch_assoc( $res ) )
+			{
+				$return_val[] = $row['dist'];
+			}
+		}
+		
+		return $return_val;
+	}
+	
+	///////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////
+	
 	// return: experiment number on success, NULL on duplicate
 	function _exp_add_experiment( $name )
 	{
@@ -252,12 +320,12 @@
 	}
 	
 	// return: array ( experiment id => name )
-	function exp_list()
+	function exp_list( $asc = true )
 	{
 		global $db;
 		$return_val = array();
 		
-		$res = mysql_query( 'SELECT exp_id, exp_name FROM experiments ORDER BY exp_id ASC', $db );
+		$res = mysql_query( 'SELECT exp_id, exp_name FROM experiments ORDER BY exp_id ' . (($asc)?('ASC'):('DESC')), $db );
 		while ( $row = mysql_fetch_assoc( $res ) )
 		{
 			$return_val[ intval( $row['exp_id'] ) ] = strval( $row['exp_name'] );
