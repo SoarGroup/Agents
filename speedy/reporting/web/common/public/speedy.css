@@ -10,13 +10,13 @@ img
 	border: 0px solid black;
 }
 
-a
+#content .body a, a
 {
     text-decoration: none;
     color: #cc0000;
 }
 
-a:hover
+#content .body a:hover, a:hover
 {
     text-decoration: underline;
 }
