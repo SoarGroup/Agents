@@ -422,14 +422,14 @@
 			
 			if ( is_null( $sql ) )
 			{
-				$sql = 'SELECT * FROM {table} ORDER BY {primary} ASC';
+				$sql = 'SELECT * FROM {table} ORDER BY {primary} DESC';
 			}
 			else
 			{
 				$sql = trim( $sql );
 				if ( strtolower( substr( $sql, 0, 6 ) ) != 'select' )
 				{
-					$sql = 'SELECT * FROM {table} ORDER BY {primary} ASC';
+					$sql = 'SELECT * FROM {table} ORDER BY {primary} DESC';
 				}
 				
 				if ( !is_null( $page ) )
