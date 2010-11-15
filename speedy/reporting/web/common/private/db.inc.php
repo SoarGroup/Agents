@@ -2,11 +2,12 @@
 	
 	// db connection information
 	$db_info = array(
-		'DB_SERVER' => 'server',
-		'DB_USER' => 'user',
-		'DB_PASS' => 'password',
-		'DB_NAME' => 'database',
+		'DB_SERVER' => '',
+		'DB_USER' => '',
+		'DB_PASS' => '',
+		'DB_NAME' => '',
 	);
+	@include( 'db-config.inc.php' );
 
 	// attempt connection
 	$db = @mysql_connect( $db_info['DB_SERVER'], $db_info['DB_USER'], $db_info['DB_PASS'] );

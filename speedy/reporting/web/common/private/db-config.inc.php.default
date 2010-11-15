@@ -1,0 +1,8 @@
+<?php
+	
+	$db_info['DB_SERVER'] = '';
+	$db_info['DB_USER'] = '';
+	$db_info['DB_PASS'] = '';
+	$db_info['DB_NAME'] = '';
+	
+?>

@@ -8,23 +8,10 @@
 	require_once 'tables.inc.php';
 	require_once 'graphs.inc.php';
 	require_once 'misc.inc.php';
+	require_once 'jquery.inc.php';
 	
-	// jquery
-	function jquery_tabs( $id )
-	{
-		return '<script type="text/javascript">$(function() {$("#' . $id . '").tabs(); });</script>';
-	}
-	
-	function jquery_button( $id )
-	{
-		return '<script type="text/javascript">$("#' . $id . '").button();</script>';
-	}
-	
-	// constants
-	define( 'SYSTEM_URL', 'http://domain/path/to/speedy/' );
-	
+	// "constants"
 	$page_info = array();
-	$page_info['system'] = SYSTEM_URL;
 	
 	$page_info['title'] = '';
 	$page_info['align'] = 'left';
