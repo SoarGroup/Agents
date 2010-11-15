@@ -1,0 +1,5 @@
+<?php
+
+	// $nav_info[] = array( 'title'=>'link title', 'url'=>'http://link/location', /*'new'=>true*/ );
+	
+?>
