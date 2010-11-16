@@ -9,6 +9,7 @@
 	require_once 'graphs.inc.php';
 	require_once 'misc.inc.php';
 	require_once 'jquery.inc.php';
+	require_once 'report.inc.php';
 	
 	// "constants"
 	$page_info = array();

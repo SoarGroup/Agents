@@ -4,7 +4,6 @@
 		require 'common/private/start.inc.php';
 		
 		$page_info['title'] = 'Sample 4';
-		$page_info['head'] = jquery_tabs( 'tabs' );
 	}
 	
 ?>
@@ -96,57 +95,50 @@
 		}
 		else
 		{
-			echo '<div id="tabs">';
-					
-				echo '<ul>';
-					echo '<li><a href="#tabs-1">Compare CPU Time (s)</a></li>';
-					echo '<li><a href="#tabs-2">Compare Memory Usage (MB)</a></li>';
-					echo '<li><a href="#tabs-3">Table</a></li>';
-					echo '<li><a href="#tabs-4">Query</a></li>';
-				echo '</ul>';
-								
-				echo '<div id="tabs-1">';
-					echo '<div class="section">';
-						echo '<div class="body">';
+			function tab_contents( $tab_id )
+			{
+				echo '<div class="section">';
+					echo '<div class="body">';
+				
+						if ( $tab_id == 'compare_cpu' )
+						{
+							global $compare_cpu;
 							
 							echo ( '<img src="' . htmlentities( graphs_line_chart_multi_url( $compare_cpu['labels'], $compare_cpu['data'], 600, 400, 0, 'default' ) ) . '" />' );
-														
-						echo '</div>';
-					echo '</div>';
-				echo '</div>';
-				
-				echo '<div id="tabs-2">';
-					echo '<div class="section">';
-						echo '<div class="body">';
+						}
+						else if ( $tab_id == 'compare_mem' )
+						{
+							global $compare_rss;
 							
 							echo ( '<img src="' . htmlentities( graphs_line_chart_multi_url( $compare_rss['labels'], $compare_rss['data'], 600, 400, 0, 'default' ) ) . '" />' );
-														
-						echo '</div>';
-					echo '</div>';
-				echo '</div>';
-				
-				echo '<div id="tabs-3">';
-					echo '<div class="section">';
-						echo '<div class="body">';
+						}
+						else if ( $tab_id == 'table' )
+						{
+							global $data;
+							
 							echo tables_make_perty( $data['schema'], $data['table'] );
 							echo ( '<a href="?format=csv">download as csv</a>' );
-						echo '</div>';
-					echo '</div>';
-				echo '</div>';
-				
-				echo '<div id="tabs-4">';
-					echo '<div class="section">';
-						echo '<div class="body">';
+						}
+						else if ( $tab_id == 'query' )
+						{
+							global $sql;
 							
 							echo '<pre class="sh_sql">';
 								echo htmlentities( misc_sql_break( $sql ) );
 							echo '</pre>';
-							
-						echo '</div>';
+						}
+				
 					echo '</div>';
 				echo '</div>';
-				
-			echo '</div>';
+			}
+			
+			$tabs = array(
+				'compare_cpu' => 'Compare CPU Time (s)',
+				'compare_mem' => 'Compare Memory Usage (MB)',
+				'table' => 'Table',
+				'query' => 'Query',
+			);
+			report_create_tabs( 'tabs', $tabs, 'tab_contents' );
 		}
 				
 				
