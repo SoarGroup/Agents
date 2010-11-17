@@ -129,7 +129,7 @@
 			foreach ( $table as $row )
 			{
 				$set = ( ( is_null( $set_field ) )?( 'uniform' ):( $row[ $set_field ] ) );
-				$x = $row[ $x_field ];
+				$x = strval( $row[ $x_field ] );
 				$y = $row[ $y_field ];
 				
 				if ( !isset( $temp['sets'][ $set ] ) )
