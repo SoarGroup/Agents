@@ -10,138 +10,107 @@
 
 	<?php
 		
-		// get data
-		$sql = '';
-		$data = array( 'schema'=>array( 'machine'=>EXP_TYPE_STRING, 'dcs'=>EXP_TYPE_INT, 'avg_time'=>EXP_TYPE_DOUBLE, 'avg_rss'=>EXP_TYPE_DOUBLE ), 'table'=>array() );
 		$exp_id = 5;
+		$format = ( ( isset( $_GET['format'] ) )?( $_GET['format'] ):( 'web' ) );
+		$key = ( ( isset( $_GET['key'] ) )?( $_GET['key'] ):( '' ) );
+		
+		// report data
+		$my_data = new report_data();
+		
+		// data sets are really only different in their handling of x-axis (schema) and y-field
+		foreach ( array( 'time', 'rss' ) as $data_key )
 		{
+			$schema = array( 'machine'=>EXP_TYPE_STRING, 'dcs'=>( ( $data_key == 'time')?( EXP_TYPE_INT ):( EXP_TYPE_STRING ) ), $data_key=>EXP_TYPE_DOUBLE );
+			
 			$sql = ( 'SELECT' . 
-						' ' . exp_field_name( 'machine' ) . ' AS machine' . 
-						', ' . exp_field_name( 'decisions' ) . ' AS dcs' . 
-						', AVG(' . exp_field_name( 'time' ) . ') AS avg_time' . 
-						', ( AVG(' . exp_field_name( 'rss' ) . ') / 1024 ) AS avg_rss' . 
-			         ' FROM' . 
-			         	' ' . exp_table_name( $exp_id ) .
-			         ' WHERE' . 
-			         	' ' . exp_field_name( 'connection' ) . '=' . db_quote_smart( 'cpp', $db ) .
-			         	' AND ' . exp_field_name( 'branch' ) . '=' . db_quote_smart( 'nlderbin-epmem-smem', $db ) .
-			         	' AND ' . exp_field_name( 'revision' ) . '=' . db_quote_smart( 11570, $db ) .
-			         ' GROUP BY' .
-			         	' ' . exp_field_name( 'machine' ) .
-			         	', ' . exp_field_name( 'decisions' ) .
-			         ' ORDER BY' .
-			         	' ' . exp_field_name( 'machine' ) . ' ASC' .
-			         	', ' . exp_field_name( 'decisions' ) . ' ASC' );
+					' ' . exp_field_name( 'machine' ) . ' AS machine' . 
+					', (FLOOR(' . exp_field_name( 'decisions' ) . '/1000)) AS dcs' . 
+					', AVG(' . exp_field_name( $data_key ) . ( ( $data_key == 'time' )?(''):('/1024') ) . ') AS ' . $data_key . 
+					' FROM' . 
+					' ' . exp_table_name( $exp_id ) .
+					' WHERE' . 
+					' ' . exp_field_name( 'connection' ) . '=' . db_quote_smart( 'cpp', $db ) .
+					' AND ' . exp_field_name( 'branch' ) . '=' . db_quote_smart( 'nlderbin-epmem-smem', $db ) .
+					' AND ' . exp_field_name( 'revision' ) . '=' . db_quote_smart( 11570, $db ) .
+					' GROUP BY' .
+					' ' . exp_field_name( 'machine' ) .
+					', ' . exp_field_name( 'decisions' ) .
+					' ORDER BY' .
+					' ' . exp_field_name( 'machine' ) . ' ASC' .
+					', ' . exp_field_name( 'decisions' ) . ' ASC' );
 			
-			$res = mysql_query( $sql, $db );
-			while ( $row = mysql_fetch_assoc( $res ) )
-			{
-				$data['table'][] = $row;
-			}			         	
+			$my_data->add_set( $data_key, $sql, $schema );
 		}
 		
-		// specialize
-		$compare_cpu = array( 'labels'=>array(), 'data'=>array() );
-		$compare_rss = array( 'labels'=>array(), 'data'=>array() );
-		{			
-			// multi line
-			{
-				foreach ( $data['table'] as $row )
-				{
-					// label
-					if ( !isset( $compare_cpu['labels'][ $row['dcs'] ] ) )
-					{
-						$compare_cpu['labels'][ $row['dcs'] ] = ( ( intval( $row['dcs'] ) / 1000 ) . 'k' );
-					}
-					
-					// data
-					if ( !isset( $compare_cpu['data'][ $row['machine'] ] ) )
-					{
-						$compare_cpu['data'][ $row['machine'] ] = array();
-					}
-					$compare_cpu['data'][ $row['machine'] ][] = doubleval( $row['avg_time'] );
-				}
-				$compare_cpu['labels'] = array_values( $compare_cpu['labels'] );
-			}
-			
-			// multi bar
-			{
-				foreach ( $data['table'] as $row )
-				{					
-					{
-						// label
-						if ( !isset( $compare_rss['labels'][ $row['dcs'] ] ) )
-						{
-							$compare_rss['labels'][ $row['dcs'] ] = ( ( intval( $row['dcs'] ) / 1000 ) . 'k' );
-						}
-						
-						// data
-						if ( !isset( $compare_rss['data'][ $row['machine'] ] ) )
-						{
-							$compare_rss['data'][ $row['machine'] ] = array();
-						}
-						$compare_rss['data'][ $row['machine'] ][] = doubleval( $row['avg_rss'] );
-					}
-				}
-				$compare_rss['labels'] = array_values( $compare_rss['labels'] );
-			}
-		}
-		
-		if ( isset( $_GET['format'] ) && ( $_GET['format'] == 'csv' ) )
+		if ( ( $format === 'csv' ) && $my_data->set_exists( $key ) )
 		{
 			$page_info['type'] = 'blank';
 			
-			echo tables_csv( $data['schema'], $data['table'] );
+			echo tables_csv( $my_data->get_schema( $key ), $my_data->get_data( $key ) );
+		}
+		else if ( ( $format === 'img' ) && $my_data->set_exists( $key ) )
+		{
+			$page_info['type'] = 'blank';
+			require 'common/private/phplot/phplot.php';
+			
+			$graph_data = $my_data->convert_data( $key, 'dcs', $key, 'machine' );
+			
+			$plot = new PHPlot( 1000, 300 );
+			$plot->SetDataValues( $graph_data['data'] );
+			$plot->SetPlotAreaWorld( NULL, 0 );
+			$plot->SetLegendPixels( 40, 0 );
+			
+			foreach ( $graph_data['sets'] as $set )
+			{
+				$plot->SetLegend( $set );
+			}
+			
+			// subtle differences between charts
+			if ( $key == 'time' )
+			{
+				$plot->SetTitle( 'CPU Time (s) vs. Decisions (x1000)' );
+				$plot->SetDataType('data-data');
+				
+				$plot->SetXTickIncrement( $graph_data['stats']['x-max'] / count( $graph_data['data'] ) );
+			}
+			else
+			{
+				$plot->SetTitle( 'Memory Usage (MB) vs. Decisions (x1000)' );
+				
+				$plot->SetDataType('text-data');
+				$plot->SetPlotType('bars');
+			}
+			
+			$plot->DrawGraph();
 		}
 		else
-		{
+		{			
 			function tab_contents( $tab_id )
 			{
+				global $my_data;
+				
 				echo '<div class="section">';
 					echo '<div class="body">';
 				
-						if ( $tab_id == 'compare_cpu' )
-						{
-							global $compare_cpu;
-							
-							echo ( '<img src="' . htmlentities( graphs_line_chart_multi_url( $compare_cpu['labels'], $compare_cpu['data'], 600, 400, 0, 'default' ) ) . '" />' );
-						}
-						else if ( $tab_id == 'compare_mem' )
-						{
-							global $compare_rss;
-							
-							echo ( '<img src="' . htmlentities( graphs_bar_chart_multi_url( $compare_rss['labels'], $compare_rss['data'], 600, 400, 0, 'default' ) ) . '" />' );
-						}
-						else if ( $tab_id == 'table' )
-						{
-							global $data;
-							
-							echo tables_make_perty( $data['schema'], $data['table'] );
-							echo ( '<a href="?format=csv">download as csv</a>' );
-						}
-						else if ( $tab_id == 'query' )
-						{
-							global $sql;
-							
-							echo '<pre class="sh_sql">';
-								echo htmlentities( misc_sql_break( $sql ) );
-							echo '</pre>';
-						}
+						echo ( '<img src="?format=img&key=' . $tab_id . '" />' );
+				
+						echo tables_make_perty( $my_data->get_schema( $tab_id ), $my_data->get_data( $tab_id ) );
+						echo ( '<a href="?format=csv&key=' . $tab_id . '">download as csv</a>' );
+				
+						echo '<pre class="sh_sql">';
+							echo htmlentities( misc_sql_break( $my_data->get_sql( $tab_id ) ) );
+						echo '</pre>';
 				
 					echo '</div>';
 				echo '</div>';
 			}
 			
 			$tabs = array(
-				'compare_cpu' => 'Compare CPU Time (s)',
-				'compare_mem' => 'Compare Memory Usage (MB)',
-				'table' => 'Table',
-				'query' => 'Query',
+				'time' => 'Compare Time',
+				'rss' => 'Compare Memory',
 			);
 			report_create_tabs( 'tabs', $tabs, 'tab_contents' );
 		}
-				
-				
 	?>
 
 <?php

@@ -6,7 +6,6 @@
 	require_once 'auth.inc.php';
 	require_once 'experiment.inc.php';
 	require_once 'tables.inc.php';
-	require_once 'graphs.inc.php';
 	require_once 'misc.inc.php';
 	require_once 'jquery.inc.php';
 	require_once 'report.inc.php';
