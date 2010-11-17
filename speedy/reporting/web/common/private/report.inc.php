@@ -110,126 +110,134 @@
 			
 			return $return_val;
 		}
-	
+		
 		// returns phplot-friendly data array
-		public function convert_data( $id, $x_field, $y_field, $set_field = NULL )
+		public static function convert_data( &$table, $x_field, $x_category, $y_field, $set_field = NULL )
+		{
+			$temp = array( 'sets'=>array(), 'data'=>array() );
+			$return_val = array( 
+				'data'=>array(),
+				'stats' => array(
+					 'x-min' => NULL,
+					 'x-max' => NULL,
+					 'y-min' => NULL,
+					 'y-max' => NULL,
+				 ),
+			);
+			
+			// populate existing data
+			foreach ( $table as $row )
+			{
+				$set = ( ( is_null( $set_field ) )?( 'uniform' ):( $row[ $set_field ] ) );
+				$x = $row[ $x_field ];
+				$y = $row[ $y_field ];
+				
+				if ( !isset( $temp['sets'][ $set ] ) )
+				{
+					$temp['sets'][ $set ] = $set;
+				}
+				
+				if ( !isset( $temp['data'][ $x ] ) )
+				{
+					$temp['data'][ $x ] = array();
+					
+					// maintain stats
+					if ( !$x_category )
+					{
+						if ( is_null( $return_val['stats']['x-min'] ) || ( $return_val['stats']['x-min'] > $x ) )
+						{
+							$return_val['stats']['x-min'] = $x;
+						}
+						
+						if ( is_null( $return_val['stats']['x-max'] ) || ( $return_val['stats']['x-max'] < $x ) )
+						{
+							$return_val['stats']['x-max'] = $x;
+						}
+					}
+				}
+				
+				$temp['data'][ $x ][ $set ] = $y;
+				
+				// maintain stats
+				{
+					if ( is_null( $return_val['stats']['y-min'] ) || ( $return_val['stats']['y-min'] > $y ) )
+					{
+						$return_val['stats']['y-min'] = $y;
+					}
+					
+					if ( is_null( $return_val['stats']['y-max'] ) || ( $return_val['stats']['y-max'] < $y ) )
+					{
+						$return_val['stats']['y-max'] = $y;
+					}
+				}
+			}
+			
+			// fill in missing data
+			foreach ( $temp['data'] as $x => $row )
+			{
+				foreach ( $temp['sets'] as $set_name )
+				{
+					if ( !isset( $row[ $set_name ] ) )
+					{
+						$temp['data'][ $x ][ $set_name ] = ''; 
+					}
+				}
+			}
+			
+			// sort y-data by sets
+			ksort( $temp['sets'] );
+			foreach ( $temp['data'] as $x => $row )
+			{
+				ksort( $row );
+				
+				$temp['data'][ $x ] = $row;
+			}
+			
+			// sort x-data
+			ksort( $temp['data'] );
+			
+			// make phplot format
+			{
+				$prefix = array();
+				
+				if ( !$x_category )
+				{
+					$prefix[] = '';
+				}
+				
+				foreach ( $temp['data'] as $x => $row )
+				{
+					$phplot_row = $prefix;
+					
+					// add x-label
+					$phplot_row[] = $x;
+					
+					foreach ( $row as $y )
+					{
+						$phplot_row[] = $y;
+					}
+					
+					$return_val['data'][] = $phplot_row;
+				}
+			}
+			
+			// include set info
+			if ( !is_null( $set_field ) )
+			{
+				$return_val['sets'] = array_keys( $temp['sets'] );
+			}
+			
+			return $return_val;
+		}
+	
+		
+		public function convert_set_data( $id, $x_field, $x_category, $y_field, $set_field = NULL )
 		{
 			$return_val = NULL;
 			
-			$table = $this->get_data( $id );
-			if ( !is_null( $table ) )
+			if ( $this->set_exists( $id ) )
 			{
-				$temp = array( 'sets'=>array(), 'data'=>array() );
-				$return_val = array( 
-					'data'=>array(),
-					'stats' => array(
-						'x-min' => NULL,
-						'x-max' => NULL,
-						'y-min' => NULL,
-						'y-max' => NULL,
-					),
-				);
-				
-				// populate existing data
-				foreach ( $table as $row )
-				{
-					$set = ( ( is_null( $set_field ) )?( 'uniform' ):( $row[ $set_field ] ) );
-					$x = $row[ $x_field ];
-					$y = $row[ $y_field ];
-					
-					if ( !isset( $temp['sets'][ $set ] ) )
-					{
-						$temp['sets'][ $set ] = $set;
-					}
-					
-					if ( !isset( $temp['data'][ $x ] ) )
-					{
-						$temp['data'][ $x ] = array();
-						
-						// maintain stats
-						if ( $this->data[ $id ]['schema'][ $x_field ] != EXP_TYPE_STRING )
-						{
-							if ( is_null( $return_val['stats']['x-min'] ) || ( $return_val['stats']['x-min'] > $x ) )
-							{
-								$return_val['stats']['x-min'] = $x;
-							}
-							
-							if ( is_null( $return_val['stats']['x-max'] ) || ( $return_val['stats']['x-max'] < $x ) )
-							{
-								$return_val['stats']['x-max'] = $x;
-							}
-						}
-					}
-					
-					$temp['data'][ $x ][ $set ] = $y;
-					
-					// maintain stats
-					{
-						if ( is_null( $return_val['stats']['y-min'] ) || ( $return_val['stats']['y-min'] > $y ) )
-						{
-							$return_val['stats']['y-min'] = $y;
-						}
-						
-						if ( is_null( $return_val['stats']['y-max'] ) || ( $return_val['stats']['y-max'] < $y ) )
-						{
-							$return_val['stats']['y-max'] = $y;
-						}
-					}
-				}
-				
-				// fill in missing data
-				foreach ( $temp['data'] as $x => $row )
-				{
-					foreach ( $temp['sets'] as $set_name )
-					{
-						if ( !isset( $row[ $set_name ] ) )
-						{
-							$temp['data'][ $x ][ $set_name ] = ''; 
-						}
-					}
-				}
-				
-				// sort y-data by sets
-				ksort( $temp['sets'] );
-				foreach ( $temp['data'] as $x => $row )
-				{
-					ksort( $row );
-					
-					$temp['data'][ $x ] = $row;
-				}
-				
-				// sort x-data
-				ksort( $temp['data'] );
-				
-				// make phplot format
-				{
-					$prefix = array();
-					
-					if ( $this->data[ $id ]['schema'][ $x_field ] != EXP_TYPE_STRING )
-					{
-						$prefix[] = '';
-					}
-					
-					foreach ( $temp['data'] as $x => $row )
-					{
-						$phplot_row = $prefix;
-						
-						// add x-label
-						$phplot_row[] = $x;
-						
-						foreach ( $row as $y )
-						{
-							$phplot_row[] = $y;
-						}
-						
-						$return_val['data'][] = $phplot_row;
-					}
-				}
-				
-				if ( !is_null( $set_field ) )
-				{
-					$return_val['sets'] = array_keys( $temp['sets'] );
-				}
+				$return_val = report_data::convert_data( $this->get_data( $id ), $x_field, $x_category, $y_field, $set_field );
 			}
 			
 			return $return_val;

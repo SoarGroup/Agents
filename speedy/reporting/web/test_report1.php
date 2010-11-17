@@ -53,7 +53,7 @@
 			$page_info['type'] = 'blank';
 			require 'common/private/phplot/phplot.php';
 			
-			$graph_data = $my_data->convert_data( $key, 'dcs', $key, 'conn' );
+			$graph_data = $my_data->convert_set_data( $key, 'dcs', ( $key != 'time' ), $key, 'conn' );
 			
 			$plot = new PHPlot( 1000, 300 );
 			$plot->SetDataValues( $graph_data['data'] );

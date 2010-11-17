@@ -171,15 +171,15 @@
 								$format = 'html';
 								if ( isset( $_GET['format'] ) )
 								{
-									if ( $_GET['format'] == 'csv' )
+									if ( in_array( $_GET['format'], array('csv', 'img') ) )
 									{
-										$format = 'csv';
+										$format = $_GET['format'];
 									}
 								}
 								
 								// data
 								$page_no = ( ( isset( $_GET['p'] ) )?( intval( $_GET['p'] ) ):( 0 ) );
-								$exp_data = exp_data( $exp_id, ( ( isset( $_GET['qry'] ) )?( db_strip_slashes( strval( $_GET['qry'] ) ) ):( NULL ) ), ( ( $format == 'csv' )?( NULL ):( $page_no ) ) );
+								$exp_data = exp_data( $exp_id, ( ( isset( $_GET['qry'] ) )?( db_strip_slashes( strval( $_GET['qry'] ) ) ):( NULL ) ), ( ( $format != 'html' )?( NULL ):( $page_no ) ) );
 								
 								if ( $format == 'html' )
 								{
@@ -199,29 +199,11 @@
 													echo htmlentities( $exp_data['err'] );
 												echo '</p>';
 											}
-											else
-											{
-												/*
-												if ( count( $exp_data['schema'] ) == 2 )
-												{
-													if ( ( isset( $exp_data['schema']['x'] ) ) && ( isset( $exp_data['schema']['y'] ) ) )
-													{
-														$go_chart = 'Line';
-													}
-													else if ( ( isset( $exp_data['schema']['bin'] ) ) && ( isset( $exp_data['schema']['y'] ) ) )
-													{
-														$go_chart = 'Bar';
-													}
-												}
-												*/
-											}
 											
 											echo '<ul>';
 												echo '<li>' . htmlentities( '{table} is replaced with the experiment data table' ) . '</li>';
 												echo '<li>' . htmlentities( '{primary} is replaced with the experiment data primary key' ) . '</li>';
 												echo '<li>' . htmlentities( '{field_*} is replaced with a field name' ) . '</li>';
-												//echo '<li>' . htmlentities( 'two columns with names x,y => line chart' ) . '</li>';
-												//echo '<li>' . htmlentities( 'two columns with names bin,y => bar chart' ) . '</li>';
 											echo '</ul>';
 										
 											echo '<form method="get" action="">';
@@ -240,7 +222,7 @@
 				
 										echo '<ul>';
 											echo '<li><a href="#tabs-1">Table</a></li>';
-											echo ( ( is_null( $go_chart ) )?(''):( '<li><a href="#tabs-2">' . htmlentities( $go_chart ) . ' Chart</a></li>' ) );
+											echo '<li><a href="#tabs-2">Chart</a></li>';
 										echo '</ul>';								
 									
 										echo '<div id="tabs-1">';
@@ -325,48 +307,59 @@
 											echo '</div>';
 											
 										echo '</div>';
-										
-										if ( !is_null( $go_chart ) )
-										{										
-											echo '<div id="tabs-2">';
-											
-											/*
-											
-												if ( $go_chart == 'Bar' )
-												{
-													$chart_data = array();
-													
-													foreach ( $exp_data['data'] as $row )
-													{
-														$chart_data[ $row['bin'] ] = $row['y'];
-													}
-													
-													echo '<div class="section">';
-														echo '<div class="body">';
-															echo '<img src="' . htmlentities( graphs_bar_chart_url( $chart_data, 600, 400, NULL, 'default', true ) ) . '" />';
-														echo '</div>';
-													echo '</div>';
-												}
-												else if ( $go_chart == 'Line' )
-												{
-													$chart_data = array();
-													
-													foreach ( $exp_data['data'] as $row )
-													{
-														$chart_data[ $row['x'] ] = $row['y'];
-													}
-													
-													echo '<div class="section">';
-														echo '<div class="body">';
-															echo '<img src="' . htmlentities( graphs_line_chart_url( $chart_data, 600, 400, NULL, 'default', true ) ) . '" />';
-														echo '</div>';
-													echo '</div>';
-												}
-											 
-											 */
-												
+									
+										echo '<div id="tabs-2">';
+									
+											echo '<div class="section">';
+												echo '<div class="title">Configuration</div>';
+												echo '<div class="body">';
+													echo '<form action="" method="GET" onsubmit="document.getElementById(\'chart-counter\').value++; document.getElementById(\'my-chart\').src=\'?' . ( htmlentities( http_build_query( array( 'cmd'=>'view', 'exp'=>$exp_id, 'format'=>'img', 'qry'=>$exp_data['sql'] ) ) ) ) . '&ct=\' + document.getElementById(\'chart-counter\').value + \'&type=\' + document.getElementById(\'chart-type\').options[document.getElementById(\'chart-type\').selectedIndex].value + \'&x-field=\' + document.getElementById(\'chart-x\').options[document.getElementById(\'chart-x\').selectedIndex].value + \'&y-field=\' + document.getElementById(\'chart-y\').options[document.getElementById(\'chart-y\').selectedIndex].value + \'&set-field=\' + document.getElementById(\'chart-set\').options[document.getElementById(\'chart-set\').selectedIndex].value; document.getElementById(\'chart-div\').style.display=\'\'; return false;">';
+														
+														echo 'type: ';
+														echo '<select id="chart-type">';
+														{
+															echo '<option value="line">line</option>';
+															echo '<option value="bar">bar</option>';
+														}
+														echo '</select> &nbsp;&nbsp;&nbsp; ';
+									
+														echo 'x-axis: ';
+														echo '<select id="chart-x">';
+															foreach ( $exp_data['schema'] as $col => $type )
+															{
+																echo '<option value="' . htmlentities( $col ) . '">' . htmlentities( $col ) . '</option>';
+															}
+														echo '</select> &nbsp;&nbsp;&nbsp; ';
+									
+														echo 'y-axis: ';
+														echo '<select id="chart-y">';
+														foreach ( $exp_data['schema'] as $col => $type )
+														{
+															echo '<option value="' . htmlentities( $col ) . '">' . htmlentities( $col ) . '</option>';
+														}
+														echo '</select> &nbsp;&nbsp;&nbsp; ';
+									
+														echo 'grouping: ';
+														echo '<select id="chart-set"><option value=""></option>';
+														foreach ( $exp_data['schema'] as $col => $type )
+														{
+															echo '<option value="' . htmlentities( $col ) . '">' . htmlentities( $col ) . '</option>';
+														}
+														echo '</select> &nbsp;&nbsp;&nbsp; ';
+														
+														echo '<input id="chart-counter" type="hidden" name="chart-counter" value="0" />';
+														echo '<input type="submit" value="refresh" />';
+													echo '</form>';
+												echo '</div>';
 											echo '</div>';
-										}
+											
+											echo '<div id="chart-div" class="section" style="display:none">';
+												echo '<div class="title">Result</div>';
+												echo '<div class="body">';
+													echo '<img id="my-chart" src="common/public/favico.ico" />';
+												echo '</div>';
+											echo '</div>';
+										echo '</div>';
 										
 									echo '</div>';
 								}
@@ -375,6 +368,47 @@
 									$page_info['type'] = 'blank';
 									
 									echo tables_csv( $exp_data['schema'], $exp_data['data'] );
+								}
+								else if ( $format == 'img' )
+								{
+									$page_info['type'] = 'blank';
+									require 'common/private/phplot/phplot.php';
+									
+									$x = $_GET['x-field'];
+									$y = $_GET['y-field'];
+									$set = ( ( empty( $_GET['set-field'] ) )?(NULL):( $_GET['set-field'] ) );
+									$type = $_GET['type'];
+									
+									//
+									
+									$graph_data = report_data::convert_data( $exp_data['data'], $x, ( $type == 'bar' ), $y, $set );
+									
+									$plot = new PHPlot( 1000, 300 );
+									$plot->SetDataValues( $graph_data['data'] );
+									$plot->SetPlotAreaWorld( NULL, 0 );
+									$plot->SetLegendPixels( 40, 0 );
+									
+									if ( isset( $graph_data['sets'] ) )
+									{
+										foreach ( $graph_data['sets'] as $set )
+										{
+											$plot->SetLegend( $set );
+										}
+									}
+									
+									if ( $type == 'line' )
+									{
+										$plot->SetDataType('data-data');
+										$plot->SetXTickIncrement( $graph_data['stats']['x-max'] / count( $graph_data['data'] ) );
+									}
+									else
+									{
+										$plot->SetDataType('text-data');
+										$plot->SetPlotType('bars');
+									}
+									
+									$plot->DrawGraph();
+									
 								}
 							}
 						}
