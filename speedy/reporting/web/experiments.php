@@ -201,6 +201,7 @@
 											}
 											else
 											{
+												/*
 												if ( count( $exp_data['schema'] ) == 2 )
 												{
 													if ( ( isset( $exp_data['schema']['x'] ) ) && ( isset( $exp_data['schema']['y'] ) ) )
@@ -212,14 +213,15 @@
 														$go_chart = 'Bar';
 													}
 												}
+												*/
 											}
 											
 											echo '<ul>';
 												echo '<li>' . htmlentities( '{table} is replaced with the experiment data table' ) . '</li>';
 												echo '<li>' . htmlentities( '{primary} is replaced with the experiment data primary key' ) . '</li>';
 												echo '<li>' . htmlentities( '{field_*} is replaced with a field name' ) . '</li>';
-												echo '<li>' . htmlentities( 'two columns with names x,y => line chart' ) . '</li>';
-												echo '<li>' . htmlentities( 'two columns with names bin,y => bar chart' ) . '</li>';
+												//echo '<li>' . htmlentities( 'two columns with names x,y => line chart' ) . '</li>';
+												//echo '<li>' . htmlentities( 'two columns with names bin,y => bar chart' ) . '</li>';
 											echo '</ul>';
 										
 											echo '<form method="get" action="">';
@@ -328,6 +330,8 @@
 										{										
 											echo '<div id="tabs-2">';
 											
+											/*
+											
 												if ( $go_chart == 'Bar' )
 												{
 													$chart_data = array();
@@ -358,6 +362,8 @@
 														echo '</div>';
 													echo '</div>';
 												}
+											 
+											 */
 												
 											echo '</div>';
 										}
