@@ -165,7 +165,7 @@
 							
 							if ( exp_valid( $exp_id ) )
 							{
-								$show_forms = false;								
+								$show_forms = false;
 								
 								// format
 								$format = 'html';
@@ -413,6 +413,293 @@
 							}
 						}
 					}
+					else if ( $_GET['cmd'] == 'query' )
+					{
+						if ( isset( $_GET['exp'] ) )
+						{
+							$exp_id = intval( $_GET['exp'] );
+							
+							if ( exp_valid( $exp_id ) )
+							{
+								$show_forms = false;
+								
+								$page_info['title'] = 'Query Builder';
+								
+								$schema = exp_schema( $exp_id );
+								
+								echo '<script type="text/javascript">';
+								echo 'var wheres = new Array;';
+								echo 'var groups = new Array;';
+								echo 'var selects = new Array;';
+								echo 'var orders = new Array;';
+								
+								//
+								
+								echo 'function updateQuery() {';
+								
+								echo 'var tempWheres = new Array;';
+								echo 'for (i=0; i<wheres.length; i++) if ((typeof wheres[i] != "undefined") && (wheres[i]!=null)) tempWheres[tempWheres.length]=wheres[i];';
+								echo 'var myWhere=\'\';';
+								echo 'if (tempWheres.length) myWhere = (\' WHERE \' + tempWheres.join(\' \' + document.getElementById(\'where-join\').options[document.getElementById(\'where-join\').selectedIndex].value + \' \'));';
+								
+								echo 'var tempGroups = new Array;';
+								echo 'for (i=0; i<groups.length; i++) if ((typeof groups[i] != "undefined") && (groups[i]!=null)) tempGroups[tempGroups.length]=(\'{field_\' + groups[i] + \'}\');';
+								echo 'var myGroup=\'\';';
+								echo 'if (tempGroups.length) myGroup = (\' GROUP BY \' + tempGroups.join(\',\'));';
+								
+								echo 'var tempSelects = new Array;';
+								echo 'for (i=0; i<selects.length; i++) if ((typeof selects[i] != "undefined") && (selects[i]!=null)) tempSelects[tempSelects.length]=(selects[i]);';
+								echo 'var mySelect=\'*\';';
+								echo 'if (tempSelects.length) mySelect = tempSelects.join(\',\');';
+								
+								echo 'var tempOrders = new Array;';
+								echo 'for (i=0; i<orders.length; i++) if ((typeof orders[i] != "undefined") && (orders[i]!=null)) tempOrders[tempOrders.length]=(orders[i]);';
+								echo 'var myOrder=\'\';';
+								echo 'if (tempOrders.length) myOrder = ( \' ORDER BY \' + tempOrders.join(\',\') );';
+								
+								echo 'var sql = (\'SELECT \' + mySelect + \' FROM {table}\' + myWhere + myGroup + myOrder);';
+								echo 'document.getElementById(\'qry-preview\').innerHTML=sql;';
+								echo 'sh_highlightDocument();';
+								echo 'document.getElementById(\'qry-val\').value=sql;';
+								echo '}';
+								
+								//
+								
+								echo 'function updateWhere(id) {';
+								echo 'if ((document.getElementById(\'where-op-\' + id).selectedIndex!=0) && (document.getElementById(\'where-value-\' + id).value!=\'\')) {';
+								echo 'wheres[id]=(\'{field_\' + document.getElementById(\'where-field-\' + id).innerText + \'} \' + document.getElementById(\'where-op-\' + id).options[document.getElementById(\'where-op-\' + id).selectedIndex].value + " \'" + document.getElementById(\'where-value-\' + id).value + "\'");';
+								echo '} else {';
+								echo 'wheres[id]=null;';
+								echo '}';
+								echo 'updateQuery();';
+								echo '}';
+								
+								//
+								
+								echo 'function updateGroup(id) {';
+								echo 'if (document.getElementById(\'group-\' + id).checked) {';
+								echo 'groups[id]=document.getElementById(\'group-\' + id).value;';
+								echo '} else {';
+								echo 'groups[id]=null;';
+								echo '}';
+								echo 'updateQuery();';
+								echo '}';
+								
+								//
+								
+								echo 'function updateSelect(id) {';
+								echo 'if (document.getElementById(\'select-\' + id).checked) {';
+								echo 'selects[id]=( document.getElementById(\'select-func-\' + id).options[document.getElementById(\'select-func-\' + id).selectedIndex].value + \'({field_\' + document.getElementById(\'group-\' + id).value + \'})\' );';
+								echo '} else {';
+								echo 'selects[id]=null;';
+								echo '}';
+								echo 'updateQuery();';
+								echo '}';
+								
+								//
+								
+								echo 'function updateOrder(id) {';
+								echo 'if (document.getElementById(\'order-\' + id).selectedIndex!=0) {';
+								echo 'var temp = document.getElementById(\'order-\' + id).options[document.getElementById(\'order-\' + id).selectedIndex].value;';
+								echo 'orders[id]=( \'{field_\' + temp.split(\' \')[0] + \'} \' + temp.split(\' \')[1] );';
+								echo '} else {';
+								echo 'orders[id]=null;';
+								echo '}';
+								echo 'updateQuery();';
+								echo '}';
+								
+								//
+								
+								echo '</script>';
+								
+								echo '<div class="section">';
+								echo '<div class="title">select</div>';
+								echo '<div class="body">';
+								
+								echo '<table>';
+								echo '<thead>';
+								echo '<tr>';
+								echo '<td style="text-decoration: underline; text-align: center; width: 120px">function</td>';
+								echo '<td></td>';
+								echo '<td style="text-decoration: underline; text-align: center; width: 120px">field</td>';
+								echo '<td></td>';
+								echo '<td style="text-decoration: underline; text-align: center; width: 60px">return</td>';
+								echo '<td style="text-decoration: underline; text-align: center; width: 60px">aggregate</td>';
+								echo '</tr>';
+								echo '</thead>';
+								echo '<tbody>';
+								
+								$select_counter = 0;
+								foreach ( $schema as $field => $type )
+								{
+									echo '<tr>';
+									
+									echo '<td style="text-align: center">';
+									echo '<select id="select-func-' . htmlentities( $select_counter ) . '" onchange="updateSelect(' . htmlentities( $select_counter ) . ');">';
+									echo '<option value=""></option>';
+									echo '<option value="AVG">average</option>';
+									echo '<option value="SUM">sum</option>';
+									echo '<option value="MAX">max</option>';
+									echo '<option value="MIN">min</option>';
+									echo '<option value="STDDEV_SAMP">std. deviation</option>';
+									echo '</select>';
+									echo '</td>';
+									
+									echo '<td>(</td>';
+									echo '<td style="text-align: center">' . htmlentities( $field ) . '</td>';
+									echo '<td>)</td>';
+									
+									echo '<td style="text-align: center"><input type="checkbox" id="select-' . htmlentities( $select_counter ) . '" onclick="updateSelect(' . htmlentities( $select_counter ) . ');" /></td>';
+									echo '<td style="text-align: center"><input type="checkbox" id="group-' . htmlentities( $select_counter ) . '" value="' . htmlentities( $field ) . '" onclick="updateGroup(' . htmlentities( $select_counter ) . ');" /></td>';
+									
+									echo '</tr>';
+									
+									$select_counter++;
+								}
+								
+								echo '</tbody>';
+								echo '</table>';
+								
+								echo '</div>';
+								echo '</div>';
+								
+								//
+								
+								echo '<div class="section">';
+								echo '<div class="title">where</div>';
+								echo '<div class="body">';
+								
+								echo '<p><select onchange="updateQuery();" id="where-join"><option value="AND">all</option><option value="OR">any</option></select> of the following conditions are TRUE.</p>';
+								
+								echo '<table>';
+								echo '<thead>';
+								echo '<tr>';
+								echo '<td style="text-decoration: underline; text-align: center; width: 120px">field</td>';
+								echo '<td style="text-decoration: underline; text-align: center; width: 200px">comparator</td>';
+								echo '<td style="text-decoration: underline; text-align: center; width: 200px">value</td>';
+								echo '</tr>';
+								echo '</thead>';
+								echo '<tbody>';
+								
+								$where_counter = 0;
+								foreach ( $schema as $field => $type )
+								{
+									echo '<tr>';
+									
+									echo '<td id="where-field-' . htmlentities( $where_counter ) . '" style="text-align: center">' . htmlentities( $field ) . '</td>';
+									
+									echo '<td style="text-align: center">';
+									echo '<select onchange="updateWhere(' . htmlentities( $where_counter ) . ');" id="where-op-' . htmlentities( $where_counter ) . '">';
+									echo '<option value=""></option>';
+									echo '<option value="=">is</option>';
+									echo '<option value="LIKE">is like</option>';
+									echo '<option value="<>">is not</option>';
+									echo '<option value=">">greater than</option>';
+									echo '<option value="<">less than</option>';
+									echo '<option value=">=">greater than or equal to</option>';
+									echo '<option value="<=">less than or equal to</option>';
+									echo '</select>';
+									echo '</td>';
+									
+									echo '<td style="text-align: center"><input onchange="updateWhere(' . htmlentities( $where_counter ) . ');" id="where-value-' . htmlentities( $where_counter ) . '" type="text" style="width: 180px" /></td>';
+									
+									if ( $type != EXP_TYPE_DOUBLE )
+									{
+										if ( exp_field_distinct_count( $exp_id, $field ) < 20 )
+										{
+											$dist = exp_field_distinct( $exp_id, $field );
+											foreach ( $dist as $key => $val )
+											{
+												$dist[ $key ] = ( '"' . htmlentities( $val ) . '"' );
+											}
+											
+											echo '<script>';
+											echo '$("input#where-value-' . htmlentities( $where_counter ) . '").autocomplete({ source: [' . implode( ',', $dist ) . '], change: function(event, ui) {updateWhere(' . htmlentities( $where_counter ) . ');} });'; 
+											echo '</script>';
+										}
+									}
+									
+									echo '</tr>';
+									
+									$where_counter++;
+								}
+								
+								echo '</tbody>';
+								echo '</table>';
+								
+								echo '</div>';
+								echo '</div>';
+								
+								//
+								
+								echo '<div class="section">';
+								echo '<div class="title">sorting</div>';
+								echo '<div class="body">';
+								
+								echo '<table>';
+								echo '<thead>';
+								echo '<tr>';
+								echo '<td style="text-decoration: underline; text-align: center; width: 120px">field</td>';
+								echo '<td style="width: 120px"></td>';
+								echo '</tr>';
+								echo '</thead>';
+								echo '<tbody>';
+								
+								$sort_counter=0;
+								foreach ( $schema as $field => $type )
+								{
+									echo '<tr>';
+									
+									echo '<td style="text-align: center">';
+									echo '<select id="order-' . htmlentities( $sort_counter ) . '" onchange="document.getElementById(\'sort-' . $sort_counter . '\').innerHTML=this.options[this.selectedIndex].value.split(\' \')[0]; updateOrder(' . htmlentities( $sort_counter ) . ');">';
+									echo '<option value=""></option>';
+									
+									foreach ( $schema as $k => $v )
+									{
+										echo '<optgroup label="' . htmlentities( $k ) . '">';
+										echo '<option value="' . htmlentities( $k ) . ' ASC">ascending</option>';
+										echo '<option value="' . htmlentities( $k ) . ' DESC">descending</option>';
+										echo '</optgroup>';
+									}
+									echo '</select>';
+									echo '</td>';
+									
+									echo '<td id="sort-' . htmlentities( $sort_counter ) . '"></td>';
+									
+									echo '</tr>';
+									
+									$sort_counter++;
+								}
+								
+								echo '</tbody>';
+								echo '</table>';
+								
+								echo '</div>';
+								echo '</div>';
+								
+								//
+								
+								echo '<div class="section">';
+								echo '<div class="title">preview</div>';
+								echo '<div class="body">';
+								echo '<pre id="qry-preview" class="sh_sql">';
+								echo '</pre>';
+								echo '</div>';
+								
+								//
+								
+								echo '<form method="GET" action="" onsubmit="updateQuery(); return true;">';
+								echo '<input type="hidden" name="cmd" value="view" />';
+								echo ( '<input type="hidden" name="exp" value="' . htmlentities( $exp_id ) . '" />' );
+								
+								echo '<input type="hidden" id="qry-val" name="qry" value="" />';
+								
+								echo '<input id="finish" type="submit" value="query" />';
+								echo jquery_button('finish');
+								echo '</form>';
+							}
+						}
+					}
 				}
 			}
 		?>
@@ -449,7 +736,7 @@
 							{
 								echo '<div class="section">';
 									echo '<div class="title">';
-										echo ( htmlentities( $exp_id . ': ' . $exp_name ) . ( ', ' . htmlentities( exp_data_size( $exp_id ) ) ) . ' (<a href="?cmd=view&amp;exp=' . htmlentities( $exp_id ) . '">view</a>' . ( ( AUTH_MODIFIER )?(', '):('') ) . '<span  ' . ( ( AUTH_MODIFIER )?(''):('style="display:none"') ) . ' id="safety_' . htmlentities( $exp_id ) . '"><a href="#" onclick="document.getElementById(\'modify_' . htmlentities( $exp_id ) . '\').style.display=\'\';document.getElementById(\'safety_' . htmlentities( $exp_id ) . '\').style.display=\'none\'; return false;">modify</a></span><span style="display:none" id="modify_' . htmlentities( $exp_id ) . '"><a href="?cmd=clear&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to clear your data?\');">clear</a>, <a href="?cmd=drop&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to drop your experiment?\');">drop</a></span>)' );
+										echo ( htmlentities( $exp_id . ': ' . $exp_name ) . ( ', ' . htmlentities( exp_data_size( $exp_id ) ) ) . ' (<a href="?cmd=view&amp;exp=' . htmlentities( $exp_id ) . '">view</a>, <a href="?cmd=query&amp;exp=' . htmlentities( $exp_id ) . '">query</a>' . ( ( AUTH_MODIFIER )?(', '):('') ) . '<span  ' . ( ( AUTH_MODIFIER )?(''):('style="display:none"') ) . ' id="safety_' . htmlentities( $exp_id ) . '"><a href="#" onclick="document.getElementById(\'modify_' . htmlentities( $exp_id ) . '\').style.display=\'\';document.getElementById(\'safety_' . htmlentities( $exp_id ) . '\').style.display=\'none\'; return false;">modify</a></span><span style="display:none" id="modify_' . htmlentities( $exp_id ) . '"><a href="?cmd=clear&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to clear your data?\');">clear</a>, <a href="?cmd=drop&amp;exp=' . htmlentities( $exp_id ) . '" onclick="return confirm(\'Are you sure you wish to drop your experiment?\');">drop</a></span>)' );
 									echo '</div>';
 									echo '<div class="body">';
 								
