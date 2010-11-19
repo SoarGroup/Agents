@@ -13,6 +13,10 @@
 		),
 					 
 		'Science!' => array(
+			'Resources' => array(
+				'http://scholar.google.com' => 'Google Scholar',
+				'http://soar.googlecode.com' => 'Soar',
+			),
 		),
 
 	);

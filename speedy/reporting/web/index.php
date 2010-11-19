@@ -46,6 +46,27 @@
 							echo '</div>';
 						}
 					}
+					
+					foreach ( $reps as $exp_id => $exp_reps )
+					{
+						if ( !isset( $exps[ $exp_id ] ) )
+						{
+							echo '<div class="section">';
+								echo '<div class="title">';
+									echo htmlentities( $exp_id );
+								echo '</div>';
+							
+								echo '<div class="body">';
+									echo '<ul>';
+										foreach ( $exp_reps as $file_name => $report_name )
+										{
+											echo '<li><a href="' . htmlentities( $file_name ) . '">' . htmlentities( $report_name ) . '</a></li>';
+										}
+									echo '</ul>';
+								echo '</div>';
+							echo '</div>';
+						}
+					}
 				}
 				else
 				{
