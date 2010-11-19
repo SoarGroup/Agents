@@ -204,6 +204,7 @@
 												echo '<li>' . htmlentities( '{table} is replaced with the experiment data table' ) . '</li>';
 												echo '<li>' . htmlentities( '{primary} is replaced with the experiment data primary key' ) . '</li>';
 												echo '<li>' . htmlentities( '{field_*} is replaced with a field name' ) . '</li>';
+												echo '<li>For some help getting started, use the <a href="?' . htmlentities( http_build_query( array( 'cmd'=>'query', 'exp'=>$exp_id ) ) ) . '">query builder</a></li>';
 											echo '</ul>';
 										
 											echo '<form method="get" action="">';
@@ -571,12 +572,13 @@
 								
 								echo '<p><select onchange="updateQuery();" id="where-join"><option value="AND">all</option><option value="OR">any</option></select> of the following conditions are TRUE.</p>';
 								
-								echo '<table>';
+								echo '<table style="width: 100%">';
 								echo '<thead>';
 								echo '<tr>';
 								echo '<td style="text-decoration: underline; text-align: center; width: 120px">field</td>';
 								echo '<td style="text-decoration: underline; text-align: center; width: 200px">comparator</td>';
 								echo '<td style="text-decoration: underline; text-align: center; width: 200px">value</td>';
+								echo '<td></td>';
 								echo '</tr>';
 								echo '</thead>';
 								echo '<tbody>';
@@ -601,8 +603,8 @@
 									echo '</select>';
 									echo '</td>';
 									
-									echo '<td style="text-align: center"><input onchange="updateWhere(' . htmlentities( $where_counter ) . ');" id="where-value-' . htmlentities( $where_counter ) . '" type="text" style="width: 180px" /></td>';
-									
+									$dist = array();
+									$hints = array();
 									if ( $type != EXP_TYPE_DOUBLE )
 									{
 										if ( exp_field_distinct_count( $exp_id, $field ) < 20 )
@@ -611,13 +613,23 @@
 											foreach ( $dist as $key => $val )
 											{
 												$dist[ $key ] = ( '"' . htmlentities( $val ) . '"' );
-											}
-											
-											echo '<script>';
-											echo '$("input#where-value-' . htmlentities( $where_counter ) . '").autocomplete({ source: [' . implode( ',', $dist ) . '], change: function(event, ui) {updateWhere(' . htmlentities( $where_counter ) . ');} });'; 
-											echo '</script>';
+												$hints[] = htmlentities( $val );
+											}										
 										}
 									}
+									
+									echo '<td style="text-align: center"><input onchange="updateWhere(' . htmlentities( $where_counter ) . ');" id="where-value-' . htmlentities( $where_counter ) . '" type="text" style="width: 180px" /></td>';
+									
+									echo '<td style="font-size: 80%">' . ( ( empty($hints) )?(''):(' (' . misc_shorten( implode( ', ', $hints ), 50 ) . ')') ) . '</td>';
+									
+									if ( !empty( $dist ) )
+									{
+										echo '<script>';
+										echo '$("input#where-value-' . htmlentities( $where_counter ) . '").autocomplete({ source: [' . implode( ',', $dist ) . '], change: function(event, ui) {updateWhere(' . htmlentities( $where_counter ) . ');} });'; 
+										echo '</script>';
+									}
+									
+									
 									
 									echo '</tr>';
 									

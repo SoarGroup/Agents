@@ -94,7 +94,7 @@
 		// ensure valid experiment
 		if ( _exp_valid( $exp_id ) && _exp_valid_field( $exp_id, $field_name, false ) )
 		{
-			$res = mysql_query( 'SELECT DISTINCT(' . _exp_field_name( strval( $field_name ) ) . ') AS dist FROM ' . _exp_table_name( $exp_id, false ), $db );
+			$res = mysql_query( 'SELECT (' . _exp_field_name( strval( $field_name ) ) . ') AS dist, COUNT(*) AS ct FROM ' . _exp_table_name( $exp_id, false ) . ' GROUP BY ' . _exp_field_name( strval( $field_name ) ) . ' ORDER BY ct DESC, ' . _exp_field_name( strval( $field_name ) ) . ' ASC', $db );
 			
 			$return_val = array();
 			while ( $row = mysql_fetch_assoc( $res ) )
