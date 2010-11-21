@@ -444,7 +444,7 @@
 				
 				if ( $line !== false )
 				{				
-					$line = str_replace( '\"', '\'', trim( $line ) );
+					$line = str_replace( '\"', '\'', str_replace( "''", "'", trim( $line ) ) );
 					$line = str_getcsv( substr( $line, 1, strlen( $line ) - 2 ), ' ', '"' );
 					
 					$chunk_type = $line[2];
