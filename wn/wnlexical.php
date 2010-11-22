@@ -35,7 +35,8 @@
 			'synset-id' => intval( $chunk[4] ),
 			'w-num' => intval( $chunk[6] ),
 			'word' => ( '|' . $chunk[8] . '|' ),
-			'ss-type' => ( '|' . $chunk[10] . '|' ),
+			'word-lower' => ( '|' . strtolower( $chunk[8] ) . '|' ),
+			'ss-type' => ( '|' . strtolower( $chunk[10] ) . '|' ),
 			'sense-number' => intval( $chunk[12] ),
 			'tag-count' => intval( $chunk[14] ),
 		);
@@ -368,7 +369,7 @@
 			
 			$return_val[] = ( 'BEGIN;' );
 			
-			$return_val[] = ( 'CREATE TABLE wn_chunk_s (chunk_id TEXT, synset_id INTEGER, w_num INTEGER, word TEXT, ss_type TEXT, sense_number INTEGER, tag_count INTEGER);' );
+			$return_val[] = ( 'CREATE TABLE wn_chunk_s (chunk_id TEXT, synset_id INTEGER, w_num INTEGER, word TEXT, word_lower TEXT, ss_type TEXT, sense_number INTEGER, tag_count INTEGER);' );
 			$return_val[] = ( 'CREATE TABLE wn_chunk_sk (chunk_id TEXT, synset_id INTEGER, w_num INTEGER, sense_key TEXT);' );
 			$return_val[] = ( 'CREATE TABLE wn_chunk_g (chunk_id TEXT, synset_id INTEGER, gloss TEXT);' );
 			$return_val[] = ( 'CREATE TABLE wn_chunk_syntax (chunk_id TEXT, synset_id INTEGER, w_num INTEGER, syntax TEXT);' );
