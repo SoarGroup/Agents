@@ -18,6 +18,7 @@
 		<script type="text/javascript" src="common/public/shjs/sh_main.min.js"></script>
 		<script type="text/javascript" src="common/public/shjs/sh_sql.min.js"></script>
 		
+		<meta name="format-detection" content="telephone=no">
 		
 		{head}
 	</head>
