@@ -111,6 +111,48 @@
 			return $return_val;
 		}
 		
+		private static function _convert_datum( $x, $y, $set, $x_category, &$temp, &$return_val )
+		{
+			if ( !isset( $temp['sets'][ $set ] ) )
+			{
+				$temp['sets'][ $set ] = $set;
+			}
+			
+			if ( !isset( $temp['data'][ $x ] ) )
+			{
+				$temp['data'][ $x ] = array();
+				
+				// maintain stats
+				if ( !$x_category )
+				{
+					if ( is_null( $return_val['stats']['x-min'] ) || ( $return_val['stats']['x-min'] > $x ) )
+					{
+						$return_val['stats']['x-min'] = $x;
+					}
+					
+					if ( is_null( $return_val['stats']['x-max'] ) || ( $return_val['stats']['x-max'] < $x ) )
+					{
+						$return_val['stats']['x-max'] = $x;
+					}
+				}
+			}
+			
+			$temp['data'][ $x ][ $set ] = $y;
+			
+			// maintain stats
+			{
+				if ( is_null( $return_val['stats']['y-min'] ) || ( $return_val['stats']['y-min'] > $y ) )
+				{
+					$return_val['stats']['y-min'] = $y;
+				}
+				
+				if ( is_null( $return_val['stats']['y-max'] ) || ( $return_val['stats']['y-max'] < $y ) )
+				{
+					$return_val['stats']['y-max'] = $y;
+				}
+			}
+		}
+		
 		// returns phplot-friendly data array
 		public static function convert_data( &$table, $x_field, $x_category, $y_field, $set_field = NULL )
 		{
@@ -126,49 +168,28 @@
 			);
 			
 			// populate existing data
-			foreach ( $table as $row )
+			if ( is_array( $y_field ) )
 			{
-				$set = ( ( is_null( $set_field ) )?( 'uniform' ):( $row[ $set_field ] ) );
-				$x = strval( $row[ $x_field ] );
-				$y = $row[ $y_field ];
-				
-				if ( !isset( $temp['sets'][ $set ] ) )
+				foreach ( $table as $row )
 				{
-					$temp['sets'][ $set ] = $set;
-				}
-				
-				if ( !isset( $temp['data'][ $x ] ) )
-				{
-					$temp['data'][ $x ] = array();
-					
-					// maintain stats
-					if ( !$x_category )
+					foreach ( array_keys( $y_field ) as $set )
 					{
-						if ( is_null( $return_val['stats']['x-min'] ) || ( $return_val['stats']['x-min'] > $x ) )
-						{
-							$return_val['stats']['x-min'] = $x;
-						}
+						$x = strval( $row[ $x_field ] );
+						$y = $row[ $set ];
 						
-						if ( is_null( $return_val['stats']['x-max'] ) || ( $return_val['stats']['x-max'] < $x ) )
-						{
-							$return_val['stats']['x-max'] = $x;
-						}
+						report_data::_convert_datum( $x, $y, $set, $x_category, $temp, $return_val );
 					}
 				}
-				
-				$temp['data'][ $x ][ $set ] = $y;
-				
-				// maintain stats
+			}
+			else
+			{
+				foreach ( $table as $row )
 				{
-					if ( is_null( $return_val['stats']['y-min'] ) || ( $return_val['stats']['y-min'] > $y ) )
-					{
-						$return_val['stats']['y-min'] = $y;
-					}
+					$set = ( ( is_null( $set_field ) )?( 'uniform' ):( $row[ $set_field ] ) );
+					$x = strval( $row[ $x_field ] );
+					$y = $row[ $y_field ];
 					
-					if ( is_null( $return_val['stats']['y-max'] ) || ( $return_val['stats']['y-max'] < $y ) )
-					{
-						$return_val['stats']['y-max'] = $y;
-					}
+					report_data::_convert_datum( $x, $y, $set, $x_category, $temp, $return_val );
 				}
 			}
 			
@@ -222,9 +243,16 @@
 			}
 			
 			// include set info
-			if ( !is_null( $set_field ) )
+			if ( is_array( $y_field ) )
 			{
-				$return_val['sets'] = array_keys( $temp['sets'] );
+				$return_val['sets'] = array_values( $y_field );
+			}
+			else
+			{
+				if ( !is_null( $set_field ) )
+				{
+					$return_val['sets'] = array_keys( $temp['sets'] );
+				}
 			}
 			
 			return $return_val;
