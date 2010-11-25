@@ -420,11 +420,11 @@
 		global $formats;
 		
 		echo "\n";
-		echo ( 'php ' . $argv[0] . ' <format: ' . implode( ', ', $formats ) . '>' . "\n" );
-		echo ( 'stdin is WN-Lexical data' . "\n\n" );
+		echo ( 'php ' . $argv[0] . ' <format: ' . implode( ', ', $formats ) . '> [path to WN-Lexical data file]' . "\n" );
+		echo ( 'if no argument #2, stdin is WN-Lexical data' . "\n\n" );
 	}
 	
-	if ( ( $argc != 2 ) || ( !in_array( $argv[1], $formats ) ) )
+	if ( ( ( $argc != 2 ) && ( $argc != 3 ) ) || ( !in_array( $argv[1], $formats ) ) )
 	{
 		usage( $argv );
 		exit;
@@ -432,11 +432,17 @@
 	
 	$format = $argv[1];
 	
+	$input_file = 'php://stdin';
+	if ( $argc == 3 )
+	{
+		$input_file = $argv[2];
+	}
+	
 	//
 	
 	format_open( $format );
 	{
-		$std_in = fopen( 'php://stdin', 'r' );	
+		$std_in = fopen( $input_file, 'r' );	
 		if ( $std_in )
 		{			
 			while ( !feof( $std_in ) )
