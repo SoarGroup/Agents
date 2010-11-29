@@ -539,6 +539,7 @@
 									echo '<select id="select-func-' . htmlentities( $select_counter ) . '" onchange="updateSelect(' . htmlentities( $select_counter ) . ');">';
 									echo '<option value=""></option>';
 									echo '<option value="AVG">average</option>';
+									echo '<option value="COUNT">count</option>';
 									echo '<option value="SUM">sum</option>';
 									echo '<option value="MAX">max</option>';
 									echo '<option value="MIN">min</option>';
