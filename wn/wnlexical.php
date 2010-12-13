@@ -199,12 +199,25 @@
 		// (CLS-301019450-2 ISA CLS SYNSET-ID 301019450 SYNSET-ID2 0 CLASS-TYPE 108860123 NIL 0 NIL "r")
 		// NOTE: I'm assuming, per w3c, this is a mistake and it should be CLS(SYNSET-ID, SYNSET-ID2, CLASS-TYPE)
 		$chunk_id = $chunk[0];
-		$chunk = array(
-			'isa' => 'cls',
-			'synset-id' => intval( $chunk[4] ),						
-			'synset-id2' => intval( $chunk[8] ),
-			'class-type' => ( '|' . $chunk[12] . '|' ),
-		);
+		
+		if ( isset( $chunk[12] ) )
+		{
+			$chunk = array(
+				'isa' => 'cls',
+				'synset-id' => intval( $chunk[4] ),						
+				'synset-id2' => intval( $chunk[8] ),
+				'class-type' => ( '|' . $chunk[12] . '|' ),
+			);
+		}
+		else
+		{
+			$chunk = array(
+				'isa' => 'cls',
+				'synset-id' => intval( $chunk[4] ),						
+				'synset-id2' => intval( $chunk[6] ),
+				'class-type' => ( '|' . $chunk[8] . '|' ),
+			);
+		}
 		
 		echo ( chunk_to_string( $chunk_id, $chunk, $format ) . "\n" );		
 	}
