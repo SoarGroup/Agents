@@ -12,7 +12,7 @@
 	
 	function misc_sql_break( $sql )
 	{
-		$breaks = array( 'FROM', 'WHERE', 'GROUP BY', 'HAVING', 'ORDER BY' );
+		$breaks = array( 'FROM', 'WHERE', 'GROUP BY', 'HAVING', 'ORDER BY', 'UNION' );
 		
 		foreach ( $breaks as $break )
 		{
