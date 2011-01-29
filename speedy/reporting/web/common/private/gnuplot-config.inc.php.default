@@ -1,0 +1,9 @@
+<?php
+
+	// absolute path to gnuplot binary
+	define( 'GNUPLOT', '/gnuplot/bin/gnuplot' );
+	
+	// absolute path to server-writable directory
+	define( 'GNUPLOT_TMP', '/gnuplot_temp' );
+
+?>
