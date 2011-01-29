@@ -265,7 +265,9 @@
 			
 			if ( $this->set_exists( $id ) )
 			{
-				$return_val = report_data::convert_data( $this->get_data( $id ), $x_field, $x_category, $y_field, $set_field );
+				$my_data = $this->get_data( $id );
+				
+				$return_val = report_data::convert_data( $my_data, $x_field, $x_category, $y_field, $set_field );
 			}
 			
 			return $return_val;
