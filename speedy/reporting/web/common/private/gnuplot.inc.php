@@ -62,8 +62,8 @@
 				// default format: svg
 				if ( is_null ( $content_type ) )
 				{
-					$this->add_config( 'set terminal svg', false );
-					$content_type = 'image/svg+xml';
+					$this->add_config( 'set terminal png', false );
+					$content_type = 'image/png';
 				}
 				
 				// set output image file
