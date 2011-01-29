@@ -20,6 +20,23 @@
 				return ( '{data_' . $set . '}' );
 			}
 			
+			function get_data( $set )
+			{
+				if ( isset( $this->data[ $set ] ) )
+				{
+					return $this->data[ $set ];
+				}
+				else
+				{
+					return null;
+				}
+			}
+			
+			function get_config()
+			{
+				return $this->config;
+			}
+			
 			function set_data( $set, $table )
 			{
 				$this->data[ $set ] = $table;
