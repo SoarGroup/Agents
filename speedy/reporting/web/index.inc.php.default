@@ -8,8 +8,12 @@
 				'test_report1.php' => 'Sample 1',
 				'test_report2.php' => 'Sample 2',
 				'test_report3.php' => 'Sample 3',
-				'test_report4.php' => 'Sample 4',
-			)
+				'test_report4.php' => 'Sample 4'
+			),
+			
+			'gnuplot' => array(
+				'test_report5.php' => 'gnuplot example',
+			),
 		),
 					 
 		'Science!' => array(
