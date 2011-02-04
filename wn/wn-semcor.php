@@ -300,13 +300,14 @@
 							}
 							$query['options'] = $options;
 							
-							$query['assignments'] = array();
+							$assignments = array();
 							foreach ( $possibilities as $p )
 							{
-								$query['assignments'][] = $p['wn-synset'];
+								$assignments[ $p['wn-synset'] ] = $p['wn-synset'];
 							}
+							$query['assignments'] = array_values( $assignments );
 							
-							if ( !( count( $possibilities ) == count( array_intersect( $query['assignments'], array_keys( $query['options'] ) ) ) ) )
+							if ( !( count( $query['assignments'] ) == count( array_intersect( $query['assignments'], array_keys( $query['options'] ) ) ) ) )
 							{
 								echo ( 'bad assignments/options combination!!!' . "\n" );
 								var_dump( $query );
