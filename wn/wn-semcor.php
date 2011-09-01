@@ -296,7 +296,7 @@
 							$options = array();
 							foreach ( $query['options'] as $k => $o )
 							{
-								$options[ $o['synset_id'] ] = array( 'tag-count'=>$o['tag_count'], 'gloss'=>$o['gloss'] );
+								$options[ $o['synset_id'] ] = array( 'tag-count'=>$o['tag_count'], 'gloss'=>$o['gloss'], 'w-num'=>$o['w_num'] );
 							}
 							$query['options'] = $options;
 							
@@ -331,11 +331,12 @@
 	
 	$sql_formats = array( 'mysql', 'sqlite' );
 	
-	function wn_semcor_sql( &$queries, $c_id, $format, $table_create = false )
+	function wn_semcor_sql( $db, &$queries, $c_id, $format, $table_create = false )
 	{
 		global $sql_formats;
 		
 		$r = array();
+		$synsets = array();
 		
 		if ( in_array( $format, $sql_formats ) )
 		{			
@@ -352,11 +353,21 @@
 				$r[] = 'CREATE INDEX wsd_s_pos ON wsd_sentences (w_pos);';
 				$r[] = 'CREATE INDEX wsd_s_lex_pos ON wsd_sentences (w_lex, w_pos);';
 				
-				$r[] = 'CREATE TABLE wsd_word_options ( c_id INTEGER, s_id INTEGER, w_id INTEGER, w_synset INTEGER, w_tag_count INTEGER, w_gloss TEXT );';
+				$r[] = 'CREATE TABLE wsd_word_options ( c_id INTEGER, s_id INTEGER, w_id INTEGER, w_synset INTEGER, w_num INTEGER, w_tag_count INTEGER, w_gloss TEXT );';
 				$r[] = 'CREATE INDEX wsd_wo_c_s_w_syn ON wsd_word_options (c_id,s_id,w_id,w_synset);';
 				
 				$r[] = 'CREATE TABLE wsd_word_assignments ( c_id INTEGER, s_id INTEGER, w_id INTEGER, w_synset INTEGER );';
 				$r[] = 'CREATE INDEX wsd_wa_c_s_w ON wsd_word_assignments (c_id,s_id,w_id);';
+				
+				$r[] = 'CREATE TABLE wsd_sense_relations ( rel TEXT, synset_a INTEGER, synset_b INTEGER );';
+				$r[] = 'CREATE INDEX wsd_sr_a_rel_b ON wsd_sense_relations (synset_a,rel,synset_b);';
+				$r[] = 'CREATE INDEX wsd_sr_b_rel_a ON wsd_sense_relations (synset_b,rel,synset_a);';
+				
+				$r[] = 'CREATE TABLE wsd_word_relations ( rel TEXT, synset_a INTEGER, w_num_a INTEGER, synset_b INTEGER, w_num_b INTEGER );';
+				$r[] = 'CREATE INDEX wsd_wr_rel ON wsd_word_relations (rel);';
+				$r[] = 'CREATE INDEX wsd_wr_a_rel_b ON wsd_word_relations (synset_a,w_num_a,rel,synset_b,w_num_b);';
+				$r[] = 'CREATE INDEX wsd_wr_b_rel_a ON wsd_word_relations (synset_b,w_num_b,rel,synset_a,w_num_a);';
+				
 				
 				if ( $format == 'mysql' )
 				{
@@ -378,12 +389,99 @@
 					
 					foreach ( $word['options'] as $w_synset => $opt )
 					{
-						$r[] = ( 'INSERT INTO wsd_word_options (c_id,s_id,w_id,w_synset,w_tag_count,w_gloss) VALUES (' . implode( ',', array( $c_id, $s_id, $w_id, $w_synset, $opt['tag-count'], _wn_sql_quote( $opt['gloss'] ) ) ) . ');' );
+						$r[] = ( 'INSERT INTO wsd_word_options (c_id,s_id,w_id,w_synset,w_num,w_tag_count,w_gloss) VALUES (' . implode( ',', array( $c_id, $s_id, $w_id, $w_synset, $opt['w-num'], $opt['tag-count'], _wn_sql_quote( $opt['gloss'] ) ) ) . ');' );
+						
+						if ( !isset( $synsets[ $w_synset ] ) )
+						{
+							$synsets[ $w_synset ] = array();
+						}
+						$synsets[ $w_synset ][ $opt['w-num'] ] = $opt['w-num'];
 					}
 					
 					foreach ( $word['assignments'] as $w_synset )
 					{
 						$r[] = ( 'INSERT INTO wsd_word_assignments (c_id,s_id,w_id,w_synset) VALUES (' . implode( ',', array( $c_id, $s_id, $w_id, $w_synset ) ) . ');' );
+					}
+				}
+			}
+			
+			// relations
+			{
+				// easy
+				{
+					$rels = array( 'hyp', 'ent', 'sim', 'mm', 'ms', 'mp', 'cls', 'cs', 'vgp', 'at' );
+					$synsets_in = ( '(' . implode( ',', array_keys( $synsets ) ) . ')' );
+					
+					foreach ( $rels as $rel )
+					{
+						$qry = $db->prepare( 'SELECT * FROM wn_chunk_' . $rel . ' WHERE synset_id IN ' . $synsets_in . ' AND synset_id2 IN ' . $synsets_in );
+						$res = $qry->execute();
+						
+						do
+						{
+							$row = $res->fetchArray( SQLITE3_ASSOC );
+							if ( is_array( $row ) )
+							{
+								$r[] = ( 'INSERT INTO wsd_sense_relations (rel,synset_a,synset_b) VALUES (' . implode( ',', array( _wn_sql_quote( $rel ), $row['synset_id'], $row['synset_id2'] ) ) . ');' );
+							}
+						} while ( is_array( $row ) );
+						
+						$res->finalize();
+					}
+				}
+				
+				// require reflex
+				{
+					$rels = array( 'mm'=>'mh', 'ms'=>'hs', 'mp'=>'hp', 'cls'=>'mem', 'cs'=>'cb' );
+					$synsets_in = ( '(' . implode( ',', array_keys( $synsets ) ) . ')' );
+					
+					foreach ( $rels as $rel => $reflex )
+					{
+						$qry = $db->prepare( 'SELECT * FROM wn_chunk_' . $rel . ' WHERE synset_id IN ' . $synsets_in . ' AND synset_id2 IN ' . $synsets_in );
+						$res = $qry->execute();
+						
+						do
+						{
+							$row = $res->fetchArray( SQLITE3_ASSOC );
+							if ( is_array( $row ) )
+							{
+								$r[] = ( 'INSERT INTO wsd_sense_relations (rel,synset_a,synset_b) VALUES (' . implode( ',', array( _wn_sql_quote( $reflex ), $row['synset_id2'], $row['synset_id'] ) ) . ');' );
+							}
+						} while ( is_array( $row ) );
+						
+						$res->finalize();
+					}
+				}
+				
+				// word relations
+				{
+					$rels = array( 'der', 'ant' );
+					$synset_pairs = array();
+					foreach ( $synsets as $synset_id => $words )
+					{
+						foreach ( $words as $w )
+						{
+							$synset_pairs[ ( $synset_id . '_' . $w ) ] = _wn_sql_quote( $synset_id . '_' . $w );
+						}
+					}
+					$synset_pairs_in = ( '(' . implode( ',', $synset_pairs ) . ')' );
+					
+					foreach ( $rels as $rel )
+					{
+						// can't check everything in SQL - semcor breaks the 1M byte string limit for SQLite
+						$qry = $db->prepare( 'SELECT a.* FROM (select synset_id, w_num1, synset_id2, w_num2, (synset_id || \'_\' || w_num1) as pair1, (synset_id2 || \'_\' || w_num2) as pair2 from wn_chunk_' . $rel . ') a WHERE a.pair1 IN ' . $synset_pairs_in );
+						$res = $qry->execute();
+						
+						do
+						{
+							$row = $res->fetchArray( SQLITE3_ASSOC );
+							if ( is_array( $row ) && isset( $synset_pairs[ $row['pair2'] ] ) )
+							{
+								$r[] = ( 'INSERT INTO wsd_word_relations (rel,synset_a,w_num_a,synset_b,w_num_b) VALUES (' . implode( ',', array( _wn_sql_quote( $rel ), $row['synset_id'], $row['w_num1'], $row['synset_id2'], $row['w_num2'] ) ) . ');' );
+							}
+						} while ( is_array( $row ) );
+						
+						$res->finalize();
 					}
 				}
 			}
@@ -459,7 +557,7 @@
 			
 			fclose( $file_in );
 			
-			echo wn_semcor_sql( $queries, intval( $argv[3] ), $argv[2], ( strtoupper( $argv[4] ) == 'Y' ) );
+			echo wn_semcor_sql( $db, $queries, intval( $argv[3] ), $argv[2], ( strtoupper( $argv[4] ) == 'Y' ) );
 		}
 	}
 	
