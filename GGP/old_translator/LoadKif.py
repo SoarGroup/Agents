@@ -4,47 +4,20 @@ import os, sys
 import RuleParser
 from ElementGGP import ElementGGP
 
-agentdir = os.path.join('..', 'agents')
-kifdir = os.path.join('..', 'kif', 'escape')
+def help():
+	print 'usage: %s [kif file]' % sys.argv[0]
+	print '''
+Translates a kif domain description read from standard input or specified
+file into soar productions that simulate the domain, printed to standard
+out.'''
+	sys.exit(0)
+	
+infile = sys.stdin
+for a in sys.argv[1:]:
+	if a == '-h':
+		help()
+	else:
+		infile = open(a, 'r')
 
-if len(sys.argv) > 1:
-	kiffile = os.path.split(sys.argv[1])[1]
-	kif = open(sys.argv[1])
-else:
-	#kifdir = os.path.join('..', 'kif', 'R03_mod')
-	#kiffile = "escape.kif"
-	kiffile = "escape_v03.kif"
-	#kiffile = "mm-r03-composition-source1.kif"
-	#kiffile = "mm-r03-abstraction-source.kif"
-	#kiffile = "mummymaze1p-horiz.kif"
-	#kiffile = "mummymaze1p-horiz-gun-new.kif"
-	#kiffile = "mummymaze1p-vert.kif"
-	#kiffile = "mummymaze1p-hv.kif"
-	#kiffile = "mummymaze1p-nosouth.kif"
-	#kiffile = "mummymaze1p-unreachable.kif"
-	#kiffile = "mummymaze1p-separate.kif"
-	#kiffile = "buttons.kif"
-
-	kif = open(os.path.join(kifdir, kiffile))
-
-if len(sys.argv) > 2:
-	soarfile = sys.argv[2]
-else:
-	soarfile = os.path.join(agentdir, '%s.soar' % (kiffile[:-4]))
-	n = 0
-	while os.path.exists(soarfile):
-		soarfile = os.path.join(agentdir, '%s.%d.soar' % (kiffile[:-4], n))
-		n += 1
-	print soarfile
-
-description = ""
-line = kif.readline()
-while line != "":
-	commentPos = line.strip().find(';')
-	if commentPos >= 0:
-		line = line.strip()[0:commentPos]
-	if len(line) > 0:
-		description += " %s " % line.strip()
-	line = kif.readline()
-
-RuleParser.TranslateDescription("game", ElementGGP("(%s)" % description), soarfile)
+description = " ".join(line.partition('#')[0].strip() for line in infile)
+RuleParser.TranslateDescription("game", ElementGGP("(%s)" % description), sys.stdout)

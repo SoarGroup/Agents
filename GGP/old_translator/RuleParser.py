@@ -566,7 +566,7 @@ def TranslateFrameAxioms(game_name, head, bodies):
 
 	return productions
 
-def TranslateDescription(game_name, description, filename):
+def TranslateDescription(game_name, description, outfile):
 	productions = []
 	init_rules = []
 	cond_elabs = set([]) 
@@ -574,7 +574,6 @@ def TranslateDescription(game_name, description, filename):
 	implications = []
 	funcs_with_frame_rules = []
 	role = ""
-
 	best_score = -99999
 
 	# first run through the set of rules, expand all "or" sentences
@@ -691,13 +690,10 @@ def TranslateDescription(game_name, description, filename):
 	# process frame axioms
 	productions.extend(ProcessFrameAxioms(frame_rules, game_name))
 
-	# finally, write to file
-
-	f = open(filename, 'w')
-	f.write("source header.soar\n")
+	outfile.write("source header.soar\n")
 
 	for p in productions:
-		f.write(str(p) + '\n')
+		outfile.write(str(p) + '\n')
 	
 def DeleteOrOperands(axiom, keep):
 	if isinstance(axiom[0], str) and axiom[0].lower() == "or":

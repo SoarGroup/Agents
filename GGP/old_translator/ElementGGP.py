@@ -68,7 +68,7 @@ class ElementGGP:
 					if not x == (len(string) - 1):
 						raise ValueError("Extra characters at end: %s" % string)
 
-				elif string[x] == ' ':
+				elif string[x].isspace():
 					# Space inside top level
 					if current != None:
 						# Currently parsing a string, ends the string

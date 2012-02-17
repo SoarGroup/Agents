@@ -1,3 +1,4 @@
+import sys
 from SoarProd import *
 
 def ClassifyTerm(elementGGP):
@@ -245,7 +246,7 @@ class GGPFunction:
 				var_map[i] = t.name()
 				self.__terms[i] = GGPVariable(vars_to_use[i])
 			else:
-				print "WARNING: encountered embedded function, not supported yet"
+				print >> sys.stderr, "WARNING: encountered embedded function, not supported yet"
 
 		return (val_map, var_map)
 
@@ -506,7 +507,7 @@ class GGPSentence:
 					#else:
 					id_to_remove = fid
 					
-					print "&&& WARNING &&&: Adding action to remove an unbound variable"
+					print >>sys.stderr, "&&& WARNING &&&: Adding action to remove an unbound variable"
 				else:
 					assert len(existing_ids) == 1, "More than one bound variable, don't know which to pick"
 					id_to_remove = existing_ids[0]
