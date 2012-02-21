@@ -1,0 +1,3 @@
+source elaborations.soar
+source inc_vars-check.soar
+source inc_vars-query.soar

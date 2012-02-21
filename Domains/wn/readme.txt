@@ -1,0 +1,1 @@
+See Soar wiki (http://code.google.com/p/soar/wiki/WordNet) for details on these scripts.
