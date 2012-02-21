@@ -1,0 +1,11 @@
+source agent.soar
+
+sp {apply*init-agent*conditions
+    (state <s> ^operator.name init-agent)
+-->
+    (<s> ^params <param>)
+    (<param> ^epmem-recog yes
+             ^epmem-retrieve yes
+             ^smem-recog no
+             ^smem-retrieve no)
+}

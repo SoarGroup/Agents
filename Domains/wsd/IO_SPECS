@@ -1,0 +1,19 @@
+^io
+	^input-link
+		^structure
+			^...            # tree representation of the entire sentence
+		^word               # string representation of the word to be disambiguated
+		^request
+			^path           # recreation of the tree path to the word to be disambiguated
+			^path-direct    # a direct link to the word on the path (NOT to the tree under ^structure)
+		^feedback           # only present if the agent has just disambiguated a word
+			^correct        # yes/no whether the senseid given by the agent is correct
+			^senseid        # the correct senseid of the previous word to be disambiguated
+	^output-link
+		^answer             # the command to use if the agent is disambiguating a word
+			^senseid        # the correct sense of the word ("none" if unknown)
+			^source         # how the agent retrieved the word sense
+			^epmem-recog    # whether the word was recognized by epmem (optional)
+			^smem-recog     # whether the word was recognized by smem (optional)
+		^feedback           # the command to signal that the agent has processed the correct answer
+			^done           # dummy parameter to fit the GSKI output command format

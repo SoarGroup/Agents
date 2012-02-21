@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/edu.umich.soar.editor.SoarEditorFeature_0.0.1.04.jar" id="edu.umich.soar.editor.SoarEditorFeature" version="0.0.1.04"/>
+</site>

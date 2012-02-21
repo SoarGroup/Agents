@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="edu.umich.soar.editor.editors.SoarEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="soar"
+            icon="icons/rule.gif"
+            id="edu.umich.soar.editor.editors.SoarEditor"
+            name="Soar Editor">
+      </editor>
+      <editor
+            class="edu.umich.soar.editor.editors.datamap.DatamapEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="dm"
+            icon="icons/s_flag.gif"
+            id="edu.umich.soar.editor.editors.datamap.DatamapEditor"
+            name="Datamap Editor">
+      </editor>
+	</extension>
+	
+	  <extension
+        point="org.eclipse.ui.contexts">
+     <context
+           description="Editing Soar Source Context"
+           id="edu.umich.soar.editor.contexts.soarEditorScope"
+           name="Editing Soar Source"
+           parentId="org.eclipse.ui.contexts.window"/>
+  </extension>
+	<extension
+        point="org.eclipse.ui.commands">
+     <category
+           description="Commands for editing Soar source code."
+           id="edu.umich.soar.editor.commands.soarsource"
+           name="Soar Source"/>
+     <command
+           categoryId="edu.umich.soar.editor.commands.soarsource"
+           description="Toggles Soar comments"
+           id="edu.umich.soar.editor.commands.togglecomment"
+           name="Toggle Soar Comments"/>
+     <command
+           categoryId="edu.umich.soar.editor.commands.soarsource"
+           description="Formats Soar Code"
+           id="edu.umich.soar.editor.commands.format"
+           name="Format Soar Code"/>
+  </extension>
+  <extension
+        point="org.eclipse.ui.bindings">
+      <!--  win32:  M1=CTRL,    M2=SHIFT, M3=ALT, M4=-
+            carbon: M1=COMMAND, M2=SHIFT, M3=ALT, M4=CTRL -->
+            
+     <key
+           commandId="edu.umich.soar.editor.commands.togglecomment"
+           contextId="edu.umich.soar.editor.contexts.soarEditorScope"
+           schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+           sequence="M1+/"/>
+     <key
+           commandId="edu.umich.soar.editor.commands.format"
+           contextId="edu.umich.soar.editor.contexts.soarEditorScope"
+           schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+           sequence="M1+M3+/"/>
+  </extension>
+	
+	<!--
+	
+		<extension point="org.eclipse.ui.decorators"> 
+		<decorator 
+   				id="edu.umich.soar.editor.decorators.SoarDecorator" 
+    			label="Soar Rule Decorator" 
+    			state="true" 
+    			class="edu.umich.soar.editor.decorators.SoarDecorator" 
+  				objectClass="org.eclipse.core.resources.IFile" 
+    			adaptable="true"> 
+    		<description> 
+      			Decorator for Soar source files. 
+    		</description>
+    		<enablement>
+            <and>
+            	<objectClass name="org.eclipse.core.resources.IFile"/>
+             <objectState
+                   name="extension"
+                   value="soar">
+             </objectState>
+            </and>
+         </enablement>
+  		</decorator>
+  		<decorator 
+   				id="edu.umich.soar.editor.decorators.DatamapDecorator" 
+    			label="Soar Datamap Decorator" 
+    			state="true" 
+    			class="edu.umich.soar.editor.decorators.DatamapDecorator" 
+  				objectClass="org.eclipse.core.resources.IFile" 
+    			adaptable="true"> 
+    		<description> 
+      			Decorator for Soar Datamap files. 
+    		</description>
+    		<enablement>
+            <and>
+            	<objectClass name="org.eclipse.core.resources.IFile"/>
+             <objectState
+                   name="extension"
+                   value="dm">
+             </objectState>
+            </and>
+         </enablement>
+  		</decorator> 
+	</extension>
+	-->
+	
+	<extension
+      point = "org.eclipse.ui.newWizards">
+	<category
+	   id="edu.umich.soar.editor.wizards.SoarCategory"
+	   name="Soar">
+	</category>
+	
+ 	<wizard
+	   id = "edu.umich.soar.editor.wizards.SoarFileWizard"
+      	   name = "Soar File"
+	   class="edu.umich.soar.editor.wizards.SoarFileWizard"
+	   category="edu.umich.soar.editor.wizards.SoarCategory"
+	   icon="icons/rule.gif">
+    	   <description>New Soar File</description>
+	   <selection class="org.eclipse.core.resources.IResource"/>
+	</wizard>
+	
+	 	<wizard
+	   id = "edu.umich.soar.editor.wizards.DatamapFileWizard"
+      	   name = "Soar Datamap"
+	   class="edu.umich.soar.editor.wizards.DatamapFileWizard"
+	   category="edu.umich.soar.editor.wizards.SoarCategory"
+	   icon="icons/s_flag.gif">
+    	   <description>New Soar File</description>
+	   <selection class="org.eclipse.core.resources.IResource"/>
+	</wizard>
+	
+		 	<wizard
+	   id = "edu.umich.soar.editor.wizards.SoarProblemSpaceWizard"
+      	   name = "Soar Problem Space"
+	   class="edu.umich.soar.editor.wizards.SoarProblemSpaceWizard"
+	   category="edu.umich.soar.editor.wizards.SoarCategory"
+	   icon="icons/attribute.gif">
+    	   <description>New Soar Problem Space</description>
+	   <selection class="org.eclipse.core.resources.IResource"/>
+	</wizard>
+	
+	</extension>
+	
+	<extension
+        point="org.eclipse.ui.editors.templates">
+           
+     <contextType
+           class="edu.umich.soar.editor.contexts.SoarContextType"
+           id="edu.umich.soar.editor.contexts.SoarContext"
+           name="Soar Context"/>
+     <template
+           autoinsert="true"
+           contextTypeId="edu.umich.soar.editor.contexts.SoarContext"
+           description="Compare Operator"
+           icon="icons/soar.gif"
+           id="edu.umich.soar.editor.templates.CompareOperator"
+           name="sp">
+        <pattern>
+sp {${problemspace}*compare*${operator}
+   (state &lt;s&gt; ^name ${problemspace}
+              ^operator &lt;op1&gt; +
+                        &lt;op2&gt; +)
+   (&lt;op1&gt; ^name ${op1})
+   (&lt;op2&gt; ^name ${op2})
+--&gt;
+   (&lt;s&gt; ^operator &lt;op1&gt; &gt; &lt;op2&gt;)
+}
+        </pattern>
+     </template>
+     
+     <template
+           autoinsert="true"
+           contextTypeId="edu.umich.soar.editor.contexts.SoarContext"
+           description="Apply Operator"
+           icon="icons/soar.gif"
+           id="edu.umich.soar.editor.templates.ApplyOperator"
+           name="sp">
+        <pattern>
+sp {${problemspace}*apply*${operator}
+   (state &lt;s&gt; ^operator &lt;op&gt;)
+   (&lt;op&gt; ^name ${operator})
+--&gt;
+   (&lt;s&gt; ^${})
+}
+        </pattern>
+     </template>
+     
+     <template
+           autoinsert="true"
+           contextTypeId="edu.umich.soar.editor.contexts.SoarContext"
+           description="Elaborate Substate"
+           icon="icons/soar.gif"
+           id="edu.umich.soar.editor.templates.ElaborateSubstate"
+           name="sp">
+        <pattern>
+sp {${problemspace}*elaborate-state*substate
+   (state &lt;s&gt; ^name ${problemspace}
+              ^superstate.operator &lt;so&gt;)
+   (&lt;so&gt; ^name ${superstateoperator})
+--&gt;
+   (&lt;s&gt; ^${})
+}
+        </pattern>
+     </template>
+     
+     <template
+           autoinsert="true"
+           contextTypeId="edu.umich.soar.editor.contexts.SoarContext"
+           description="Propose Operator"
+           icon="icons/soar.gif"
+           id="edu.umich.soar.editor.templates.ProposeOperator"
+           name="sp">
+        <pattern>
+sp {${problemspace}*propose*${operator}
+   (state &lt;s&gt; ^name ${problemspace})
+--&gt;
+   (&lt;s&gt; ^operator &lt;op&gt; + =)
+   (&lt;op&gt; ^name ${operator})
+}
+        </pattern>
+     </template>
+     
+     <template
+           autoinsert="true"
+           contextTypeId="edu.umich.soar.editor.contexts.SoarContext"
+           description="Elaborate State"
+           icon="icons/soar.gif"
+           id="edu.umich.soar.editor.templates.ElaborateState"
+           name="sp">
+        <pattern>
+sp {${problemspace}*elaborate-operator*${operator}
+   (state &lt;s&gt; ^name ${problemspace})
+--&gt;
+   (&lt;s&gt; ^${})
+}
+        </pattern>
+     </template>
+   </extension>
+      
+      <extension point="org.eclipse.ui.popupMenus"> 
+	
+	   	   	<objectContribution 
+	      id="org.eclipse.ui.articles.action.contribution.popup.object"
+	   objectClass="org.eclipse.core.resources.IContainer"
+	   nameFilter="*">
+	      <action
+	         id="org.eclipse.ui.articles.action.contribution.object.newSoarProblemSpaceOnFile" 
+	         label="New Soar Problem Space"
+	         icon="icons/s_flag.gif"
+	         menubarPath="soar" 
+	      class="edu.umich.soar.editor.actions.NewSoarProblemSpaceAction"> 
+	      </action>
+	   </objectContribution> 
+	   
+	   <!--
+	   	   	   	<objectContribution 
+	      id="org.eclipse.ui.articles.action.contribution.popup.object"
+	   objectClass="org.eclipse.core.resources.IFile"
+	   nameFilter="*.soar">
+	      <action
+	         id="org.eclipse.ui.articles.action.contribution.object.newSoarProblemSpace" 
+	         label="New Soar Problem Space"
+	         icon="icons/s_flag.gif"
+	         menubarPath="soar" 
+	      class="edu.umich.soar.editor.actions.NewSoarProblemSpaceAction"> 
+	      </action>
+	   </objectContribution> 
+	   -->
+	
+	<objectContribution 
+	      id="org.eclipse.ui.articles.action.contribution.popup.object"
+	   objectClass="org.eclipse.core.resources.IContainer"
+	   nameFilter="*">
+	      <action
+	         id="org.eclipse.ui.articles.action.contribution.object.newSoarDatmapAction" 
+	         label="New Soar Datamap"
+	         icon="icons/s_flag.gif"
+	         menubarPath="soar" 
+	      class="edu.umich.soar.editor.actions.NewSoarDatamapAction"> 
+	      </action>
+	   </objectContribution> 
+
+	   	<objectContribution 
+	      id="org.eclipse.ui.articles.action.contribution.popup.object"
+	   objectClass="org.eclipse.core.resources.IContainer"
+	   nameFilter="*">
+	      <action
+	         id="org.eclipse.ui.articles.action.contribution.object.newSoarFileAction" 
+	         label="New Soar File"
+	         icon="icons/s_flag.gif"
+	         menubarPath="soar" 
+	      class="edu.umich.soar.editor.actions.NewSoarFileAction"> 
+	      </action>
+	   </objectContribution> 
+	   
+	</extension>
+ <extension
+       point="org.eclipse.ui.views">
+ </extension>
+ 
+  <extension
+       point="org.eclipse.ui.views">
+    <category
+          id="edu.umich.soar.editor.SoarCategory"
+          name="Soar"/>
+    <view
+          category="edu.umich.soar.editor.SoarCategory"
+          class="edu.umich.soar.editor.search.SoarSearchResultsView"
+          icon="icons/package.gif"
+          id="edu.umich.soar.editor.search.SoarSearchResultsView"
+          name="Soar Search Results"/>
+ </extension>
+ 
+ <extension point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+         markerType="org.eclipse.core.resources.problemmarker"
+         class="edu.umich.soar.editor.editors.fix.SoarFixer"/>
+ </extension>
+ 
+</plugin>
