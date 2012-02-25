@@ -17,7 +17,7 @@ smem --set learning on
 ##
 ## Each primitive operator is relatively simple: without complex proposal 
 ## conditions, control rules, lots of control flags or complex conditional 
-## operator applications. The actual execution trace is sometimes a bit tricky – 
+## operator applications. The actual execution trace is sometimes a bit tricky
 ## especially for subtraction.
 ##
 ## The project supports the automatic generation of random 3 column addition and 

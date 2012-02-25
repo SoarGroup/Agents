@@ -26,7 +26,7 @@ gp {rl*water-jug*empty
 }
 
 # If the task is water-jug and the empty operator is selected for a given jug, 
-# then set that jug’s contents to be 0 and its empty to be its volume.
+# then set that jug's contents to be 0 and its empty to be its volume.
 sp {water-jug*apply*empty
    (state <s> ^name water-jug
               ^operator <o>
