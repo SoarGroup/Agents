@@ -14,7 +14,6 @@
 "              Nov  11, 2006 (added code folding)
 "              Sept 23, 2006 (first version)
 
-
 if exists("b:did_ftplugin")
   finish
 endif
@@ -294,10 +293,8 @@ imap <M-e> <Esc>:call SoarChainVar()<CR>a<C-f>
 
 map <M-j> :call SoarNextProd("")<CR>
 map <M-k> :call SoarPrevProd("")<CR>
-map <M-e> :call SoarFindProdCloseBrace("")<CR>
-
-map <M-a> :call SoarCreateApplyRuleHeader()<CR>
 map <M-c> :call SoarToggleComment()<CR>
+map <M-a> :call SoarCreateApplyRuleHeader()<CR>
 
 
 " This is to work with Taglist

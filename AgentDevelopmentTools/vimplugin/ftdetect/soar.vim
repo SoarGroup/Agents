@@ -1,3 +1,3 @@
 augroup filetypedetect
-au BufNewFile,BufRead *.soar setf soar
+au BufNewFile,BufRead *.soar set filetype=soar
 augroup END

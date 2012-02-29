@@ -11,7 +11,7 @@ syn clear
 setlocal iskeyword+=-
 syn keyword soarCommand pushd popd source multi-attributes learn watch indifferent-selection state
 
-syn region soarProd matchgroup=soarProdBraces start=/^\s*sp\s*{/ end=/}/ contains=soarProdStart,soarProdName fold
+syn region soarProd matchgroup=soarProdBraces start=/^\s*[gs]p\s*{/ end=/}/ contains=soarProdStart,soarProdName fold
 
 syn match  soarProdStart /^\s*sp\s*{/ nextgroup=soarProdName contained skipwhite
 
