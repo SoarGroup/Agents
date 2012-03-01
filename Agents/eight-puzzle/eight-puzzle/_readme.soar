@@ -3,7 +3,7 @@
 # May 23, 2004
 # 
 # eight-puzzle.soar
-#    Straight forward implementation of eight-puzzle
+#    Straightforward implementation of eight-puzzle
 #    Uses look-ahead search to solve puzzle with simple
 #    evaluation function - demonstrates chunking.
 #    Look-ahead search is implemented in ../default/selection.soar

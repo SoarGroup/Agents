@@ -1,9 +1,10 @@
 ###########################################################################
-
-# From Chapter 2 of Soar 8 Tutorial
-
-### This rule writes "Hello World" and halts.
-
+#
+# From Chapter 2 of the Soar Tutorial
+#
+# This rule writes "Hello World" and halts.
+#
+###########################################################################
 
 
 sp {hello-world

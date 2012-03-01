@@ -1,11 +1,9 @@
 ###########################################################################
-
-# From Chapter 3 of Soar 8 Tutorial
-
+# From Chapter 2 of the Soar Tutorial
 #
-
-### This operator writes "Hello World" and halts.
-
+# This operator writes "Hello World" and halts.
+#
+###########################################################################
 
 
 sp {propose*hello-world
