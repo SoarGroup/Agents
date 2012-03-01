@@ -1,5 +1,5 @@
 ############################ Move-north operator ############################
-# From Chapter 5 of Soar 8 Tutorial
+# From Chapter 2 of the Soar Tutorial
 # Corrected from move-north.soar so that operator applies more than once.
 #
 # Propose*move-north:

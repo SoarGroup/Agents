@@ -1,5 +1,5 @@
 ############################ Move-north operator ############################
-# From Chapter 4 of Soar 8 Tutorial
+# From Chapter 2 of Soar Tutorial
 #
 # Propose*move-north:
 # If I exist, then propose the move-north operator.
