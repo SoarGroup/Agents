@@ -86,7 +86,7 @@ sp {tower-of-hanoi*move-disk1*source-clear*target-not-clear
     (<h2> ^disk <t-disk>
           ^on <target-peg>)
     -->
-#   (write (crlf) |Move 1 from | <source-peg> | to | <target-peg>)
+   (write (crlf) |Move 1 from | <source-peg> | to | <target-peg>)
     (<h> ^on <target-peg> <source-peg> -
          ^above <t-disk> none -)
     (<s> ^clear <source-peg>
@@ -105,7 +105,7 @@ sp {tower-of-hanoi*move-disk1*source-not-clear*target-clear
          ^above <t-disk>
          ^on <source-peg>)
     -->
-#   (write (crlf) |Move 1 from | <source-peg> | to | <target-peg>)
+   (write (crlf) |Move 1 from | <source-peg> | to | <target-peg>)
     (<h> ^on <target-peg> <source-peg> -
          ^above <t-disk> - none)
     (<s> ^clear <target-peg> -
@@ -126,7 +126,7 @@ sp {tower-of-hanoi*move-disk1*source-not-clear*target-not-clear
     (<h2> ^disk <t-disk>
           ^on <target-peg>)
     -->
-#   (write (crlf) |Move 1 from | <source-peg> | to | <target-peg>)
+   (write (crlf) |Move 1 from | <source-peg> | to | <target-peg>)
     (<h> ^on <target-peg> <source-peg> -
          ^above <t-disk> <s-disk> -)
     (<s> ^upper-disk <s-disk>
@@ -145,7 +145,7 @@ sp {tower-of-hanoi*move-diskn*source-clear*target-clear
          ^above none
          ^on <source-peg>)
     -->
-#   (write (crlf) |Move | <mdisk> | from | <source-peg> | to | <target-peg>)
+   (write (crlf) |Move | <mdisk> | from | <source-peg> | to | <target-peg>)
     (<h> ^on <target-peg> <source-peg> -)
     (<s> ^clear <source-peg> <target-peg> -
          ^last-disk-moved <mdisk> 1 -)}
@@ -162,7 +162,7 @@ sp {tower-of-hanoi*move-diskn*source-clear*target-not-clear
     (<h2> ^disk { > <mdisk> <t-disk> }
           ^on <target-peg>)
     -->
-#   (write (crlf) |Move | <mdisk> | from | <source-peg> | to | <target-peg>)
+   (write (crlf) |Move | <mdisk> | from | <source-peg> | to | <target-peg>)
     (<h> ^on <target-peg> <source-peg> -
          ^above <t-disk> none -)
     (<s> ^clear <source-peg>
@@ -179,7 +179,7 @@ sp {tower-of-hanoi*move-diskn*source-not-clear*target-clear
          ^above { <> none <t-disk> }
          ^on <source-peg>)
     -->
-#   (write (crlf) |Move | <mdisk> | from | <source-peg> | to | <target-peg>)
+   (write (crlf) |Move | <mdisk> | from | <source-peg> | to | <target-peg>)
     (<h> ^on <target-peg> <source-peg> -
          ^above <t-disk> - none)
     (<s> ^clear <target-peg> -
@@ -198,7 +198,7 @@ sp {tower-of-hanoi*move-diskn*source-not-clear*target-not-clear
     (<h2> ^disk { > <mdisk> <t-disk> }
           ^on { <> <source-peg> <target-peg> })
     -->
-#   (write (crlf) |Move | <mdisk> | from | <source-peg> | to | <target-peg>)
+   (write (crlf) |Move | <mdisk> | from | <source-peg> | to | <target-peg>)
     (<h> ^on <target-peg> <source-peg> -
          ^above <t-disk> <s-disk> -)
     (<s> ^upper-disk <s-disk>
