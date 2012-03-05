@@ -1,0 +1,8 @@
+source _all.soar
+source halt.soar
+source mission-creation-smem.soar
+source monitor-waypoint.soar
+source smem.soar
+source top-state.soar
+source waypoint-creation-smem.soar
+source waypoints.soar

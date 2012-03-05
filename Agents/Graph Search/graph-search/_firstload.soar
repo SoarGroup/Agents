@@ -1,0 +1,21 @@
+multi-attributes waypoint 10
+multi-attributes operator 5
+multi-attributes next 3
+multi-attributes evaluation 10
+pushd ../../default
+source selection.soar
+source selection-astar.soar
+popd
+wma -s activation off 
+epmem -s learning off
+#learn --only
+#srand 20
+
+### Only learn selection rules from tie impasses
+###  Other chunks do not work right now.
+
+sp {Impasse__Operator_Tie*elaborate*learn*on
+   (state <s> ^impasse tie)
+-->
+   (force-learn <s>)
+}

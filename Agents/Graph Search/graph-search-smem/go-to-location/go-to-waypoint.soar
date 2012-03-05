@@ -1,0 +1,35 @@
+sp {go-to-location*propose*go-to-waypoint
+   (state <s> ^name go-to-location
+              ^top-state.current-location.next <next-wp>)
+   (<next-wp> ^id)
+-->
+   (<s> ^operator <op> + )
+   (<op> ^name go-to-waypoint
+         ^next-waypoint <next-wp>)
+}
+
+sp {apply*go-to-waypoint
+   (state <s> ^name go-to-location
+              ^operator <op>
+              ^top-state <ts>)
+   (<ts> ^current-location <c-wp>)
+   (<op> ^name go-to-waypoint
+         ^next-waypoint <next-wp>)
+-->
+   (<ts> ^current-location <c-wp> -
+                           <next-wp>)
+}
+
+
+## Should be handled by elaborations/smem
+#sp {apply*goto-waypoint*retrieve*from*smem*clean-up
+#:o-support
+#(state <s> ^smem <smem>)
+#   (<smem> ^command <cmd>
+#           ^result <res>)
+#   (<cmd> ^retrieve <cp>)
+#   (<res> ^retrieved <cp>
+#          ^status success)
+#-->
+#   (write (crlf) |Retrieved | <cp>)
+#   (<cmd> ^retrieve <cp> -)}

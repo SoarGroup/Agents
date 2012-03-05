@@ -1,0 +1,36 @@
+VERSION 4
+\count-test\count-test.dm
+0	ROOT count-test count-test 1
+1	0	FOPERATOR _firstload _firstload.soar 2
+2	0	FOLDER all all 3
+3	0	FOLDER elaborations elaborations 4
+4	3	FOPERATOR _all _all.soar 5
+5	3	FOPERATOR monitor monitor.soar 6
+6	3	FOPERATOR top-state top-state.soar 7
+7	0	FOPERATOR _readme _readme.soar 33
+8	0	OPERATOR count-test1 count-test1.soar 8
+9	0	OPERATOR count-test2 count-test2.soar 9
+10	0	OPERATOR count-test3 count-test3.soar 10
+11	0	HLOPERATOR count-test4 count-test4.soar count-test4 31 11
+12	11	FOPERATOR elaborations elaborations.soar 12
+13	11	OPERATOR substate-count substate-count.soar 13
+14	0	HLIOPERATOR Impasse__Operator_Tie Impasse__Operator_Tie.soar Impasse__Operator_Tie 49 14
+15	14	FOPERATOR elaborations elaborations.soar 15
+16	14	FOPERATOR select-super-operator-test8 select-super-operator-test8.soar 16
+17	14	OPERATOR select-super-operator-test7 select-super-operator-test7.soar 17
+18	0	HLIOPERATOR Impasse__State_No-Change Impasse__State_No-Change.soar Impasse__State_No-Change 36 18
+19	18	FOPERATOR elaborations elaborations.soar 19
+20	18	FOPERATOR propose-super-operator-test6 propose-super-operator-test6.soar 20
+21	18	OPERATOR propose-super-operator-test5 propose-super-operator-test5.soar 21
+22	0	OPERATOR count-test5 count-test5.soar 22
+23	0	OPERATOR count-test6 count-test6.soar 23
+24	0	OPERATOR count-test7 count-test7.soar 24
+25	0	OPERATOR count-test8 count-test8.soar 25
+26	0	HLOPERATOR count-test9 count-test9.soar count-test9 59 26
+27	26	FOPERATOR elaborations elaborations.soar 27
+28	26	OPERATOR count-test9 count-test9.soar 28
+29	0	OPERATOR initialize-count-test initialize-count-test.soar 29
+30	0	OPERATOR next-test next-test.soar 30
+31	0	OPERATOR set-up-current-test set-up-current-test.soar 31
+32	0	OPERATOR test-complete test-complete.soar 32
+END
