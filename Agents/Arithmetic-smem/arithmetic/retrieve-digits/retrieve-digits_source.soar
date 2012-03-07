@@ -1,4 +1,0 @@
-source elaborations.soar
-source detect-completion.soar
-source init-retrieve-digits.soar
-source retrieve-next.soar

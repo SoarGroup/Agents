@@ -1,3 +1,0 @@
-pushd count-test
-source count-test_source.soar
-popd

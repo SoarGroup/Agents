@@ -1,7 +1,0 @@
-## Similar to graph-search.soar but uses semantic memory
-
-## Has two different uses of semantic memory
-##  1. Can hold its mission in wm or smem, which is a list of waypoints to visit. This works fine.
-##             ^parameters.mission-storage [ wm smem ]
-##  2. Can hold all of its waypoints in semantic memory or working memory. 
-##     ^waypoint-storage [ smem wm ]

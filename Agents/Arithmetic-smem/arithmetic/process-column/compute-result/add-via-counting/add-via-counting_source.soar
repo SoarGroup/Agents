@@ -1,6 +1,0 @@
-source elaborations.soar
-source readme.soar
-source count.soar
-source detect-completion.soar
-source initialize-counting.soar
-source store.soar
