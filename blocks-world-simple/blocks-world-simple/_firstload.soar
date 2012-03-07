@@ -1,0 +1,9 @@
+# Classic 5 block blocks-world
+# Uses rules from the Soar Book
+# John E. Laird
+# University of Michigan
+# 2/8/2012
+# Soar version 9.3.2
+# In this formulation, clear is computed as an elaboration
+# (in elaborations/clear). The table is always clear.
+

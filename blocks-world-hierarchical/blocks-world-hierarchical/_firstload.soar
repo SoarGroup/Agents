@@ -1,0 +1,21 @@
+# Classic 3 block blocks world 
+# Formulated for hierarchical task decomposition
+# John E. Laird
+# University of Michigan
+# 2/8/2012
+# Soar version 9.3.2
+
+# Give information to the rule reording algorithm to make the match more efficient.
+multi-attributes ontop 3
+multi-attributes clear 4
+multi-attributes in-place 3
+multi-attributes objects 4
+multi-attributes operator 9
+# 
+
+pushd ../../default
+## Loads in a few rules for hierarchical execution
+##   add top-state pointer to every state
+##   copy down the name of the superoperator to a substate
+source simple.soar
+popd

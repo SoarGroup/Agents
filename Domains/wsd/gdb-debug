@@ -1,7 +1,0 @@
-#!/bin/bash
-
-./environment "$1" &
-sleep 1
-echo ""
-ps | grep -i Python | grep -v grep
-gdb

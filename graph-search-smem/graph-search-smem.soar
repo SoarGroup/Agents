@@ -1,0 +1,3 @@
+pushd graph-search-smem
+source graph-search-smem_source.soar
+popd

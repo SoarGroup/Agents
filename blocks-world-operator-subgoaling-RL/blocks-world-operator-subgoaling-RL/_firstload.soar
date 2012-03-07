@@ -1,0 +1,16 @@
+### Blocks world that uses the selection problem space (from the default folder) to do 
+### do operator subgoaling with means-ends analysis
+### In this approach, operators are proposed if they reduce the different between the current state
+###  and the desired state, even if they do not apply to to the current state.
+### If they do apply, then forward progress occurs.
+### If they do not apply, an operator subgoal arises and in the subgoal, the agent
+###  tries to select operators that moves the agent to a state where the selected operator can apply.
+
+multi-attributes ontop 3
+multi-attributes clear 3
+multi-attributes objects 4
+
+# Operator subgoaling does not work correctly if learning is on.
+rl -s learning on
+
+

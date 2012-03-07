@@ -1,0 +1,13 @@
+sp {P11*halt*all-blocks-in-desired-position
+   (state <s> ^name blocks-world 
+              ^inplace-object <i*3> 
+              ^inplace-object <i*2>
+              ^inplace-object <i*1> 
+              ^desired <ds>)
+   (<i*3> ^name C)
+   (<i*2> ^name B)
+   (<i*1> ^name A)
+-->
+   (halt)
+   (write (crlf) |TASK: Finished Stacking the Blocks.|)
+}

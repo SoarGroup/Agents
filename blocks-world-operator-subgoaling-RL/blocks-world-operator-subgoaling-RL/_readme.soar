@@ -1,0 +1,6 @@
+## Incorporates both operator subgoaling/means ends analysis with reinforcement learning
+## All search control knowledge (operator evaluation rules) are removed from 
+## blocks-world-operator-subgoaling and instead there are RL rules supplemented with 
+## rules to compute reward, both in the top state and the substate.
+##
+## Implemented for four blocks.

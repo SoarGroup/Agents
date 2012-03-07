@@ -1,0 +1,30 @@
+##P3*elaborate*table*inplace
+##If there is the table 
+##then 
+##   the table is inplace
+
+sp {P3*elaborate*object-on-table
+   (state <s> ^name blocks-world
+              ^object <table>)
+   (<table> ^name table)
+-->
+   (<s> ^inplace-object <table>)}
+
+##P4*elaborate*block*in-place
+##If there is a object that is inplace and 
+##   there is a block on that object and 
+##   the block is on the object in the desired state
+##then
+##   the block is in-place
+
+sp {P4*elaborate*object-on-inplace
+   (state <s> ^name blocks-world
+              ^desired.ontop <ontop-d>
+              ^inplace-object <blockB>
+              ^ontop <ontop-s>)
+   (<ontop-d> ^top-block <blockA>
+              ^bottom-block <blockB>)
+   (<ontop-s> ^top-block <blockA>
+              ^bottom-block <blockB>)
+-->
+   (<s> ^inplace-object <blockA>)}

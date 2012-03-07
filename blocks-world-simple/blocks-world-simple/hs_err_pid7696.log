@@ -1,0 +1,389 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fefa06ba3d, pid=7696, tid=1772
+#
+# JRE version: 7.0_02-b13
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (22.0-b10 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [Java_sml_ClientInterface.dll+0xba3d]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000001f7b000):  JavaThread "main" [_thread_in_native, id=1772, stack(0x00000000020d0000,0x00000000021d0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x000007feea308ea8
+
+Registers:
+RAX=0x000007feea308ea8, RBX=0x000000077c4cd0e0, RCX=0x0000000000000006, RDX=0x00000000021cba40
+RSP=0x00000000021cb9c0, RBP=0x00000000021cba50, RSI=0x000007feea308ea8, RDI=0x000007fefa0972e4
+R8 =0x000000000af37b30, R9 =0x00000000021cba18, R10=0x000007fefa06b9f0, R11=0x0000000000000005
+R12=0x0000000000000000, R13=0x00000000021cbb30, R14=0x00000000021cba40, R15=0x0000000001f7b000
+RIP=0x000007fefa06ba3d, EFLAGS=0x0000000000010283
+
+Top of Stack: (sp=0x00000000021cb9c0)
+0x00000000021cb9c0:   00000007d5e25478 0000000002309661
+0x00000000021cb9d0:   000000077c4cd0e0 00000000021cba50
+0x00000000021cb9e0:   00000007d5e25478 000000000233a67b
+0x00000000021cb9f0:   0000000000000000 00000000021cba20
+0x00000000021cba00:   0000000000000000 0000000000000000
+0x00000000021cba10:   00000007817d78e0 00000007d5e25478
+0x00000000021cba20:   00000007d5e25478 0000000002232040
+0x00000000021cba30:   000000077c4cd0e0 0000000781701d20
+0x00000000021cba40:   0000000781701d20 fffffffffde323af
+0x00000000021cba50:   000000000af37b30 000000000233cd18
+0x00000000021cba60:   0000000077039bef 00000000672e584c
+0x00000000021cba70:   0000000000007487 00000000672e584c
+0x00000000021cba80:   0000000781663a20 00000007817d78e0
+0x00000000021cba90:   0000000000000006 00000007d5e25430
+0x00000000021cbaa0:   00000007d5e25478 0000000781669d60
+0x00000000021cbab0:   000000000af37b30 00000000021cbbb0 
+
+Instructions: (pc=0x000007fefa06ba3d)
+0x000007fefa06ba1d:   02 00 48 3b c7 75 0c b0 01 48 8b 7c 24 20 48 83
+0x000007fefa06ba2d:   c4 28 c3 48 89 74 24 30 48 8b f0 b9 06 00 00 00
+0x000007fefa06ba3d:   f3 a6 48 8b 74 24 30 48 8b 7c 24 20 0f 94 c0 48
+0x000007fefa06ba4d:   83 c4 28 c3 cc cc cc cc cc cc cc cc cc cc cc cc 
+
+
+Register to memory mapping:
+
+RAX=0x000007feea308ea8 is an unknown value
+RBX=0x000000077c4cd0e0 is an oop
+{method} 
+ - klass: {other class}
+RCX=0x0000000000000006 is an unknown value
+RDX=0x00000000021cba40 is pointing into the stack for thread: 0x0000000001f7b000
+RSP=0x00000000021cb9c0 is pointing into the stack for thread: 0x0000000001f7b000
+RBP=0x00000000021cba50 is pointing into the stack for thread: 0x0000000001f7b000
+RSI=0x000007feea308ea8 is an unknown value
+RDI=0x000007fefa0972e4 is an unknown value
+R8 =0x000000000af37b30 is an unknown value
+R9 =0x00000000021cba18 is pointing into the stack for thread: 0x0000000001f7b000
+R10=0x000007fefa06b9f0 is an unknown value
+R11=0x0000000000000005 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x00000000021cbb30 is pointing into the stack for thread: 0x0000000001f7b000
+R14=0x00000000021cba40 is pointing into the stack for thread: 0x0000000001f7b000
+R15=0x0000000001f7b000 is a thread
+
+
+Stack: [0x00000000020d0000,0x00000000021d0000],  sp=0x00000000021cb9c0,  free space=1006k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [Java_sml_ClientInterface.dll+0xba3d]  Java_sml_smlJNI_ClientTraceXML_1IsTagState+0x4d
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  sml.smlJNI.ClientTraceXML_IsTagState(JLsml/ClientTraceXML;)Z
+J  edu.umich.soar.debugger.modules.FoldingTextView.displayXmlTraceEvent(Lsml/Agent;Lsml/ClientXML;)V
+j  edu.umich.soar.debugger.modules.FoldingTextView$RunWrapper.run()V+12
+J  org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Z)Z
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.MainFrame.executeCommandPrimeView(Ljava/lang/String;Z)Ljava/lang/String;+15
+j  edu.umich.soar.debugger.modules.ButtonView.buttonPressed(Lorg/eclipse/swt/events/SelectionEvent;I)V+101
+j  edu.umich.soar.debugger.modules.ButtonView$8.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+9
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1003
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.MainFrame.executeCommandPrimeView(Ljava/lang/String;Z)Ljava/lang/String;+15
+j  edu.umich.soar.debugger.modules.ButtonView.buttonPressed(Lorg/eclipse/swt/events/SelectionEvent;I)V+101
+j  edu.umich.soar.debugger.modules.ButtonView$8.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+9
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1003
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.MainFrame.executeCommandPrimeView(Ljava/lang/String;Z)Ljava/lang/String;+15
+j  edu.umich.soar.debugger.modules.ButtonView.buttonPressed(Lorg/eclipse/swt/events/SelectionEvent;I)V+101
+j  edu.umich.soar.debugger.modules.ButtonView$8.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+9
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1003
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.MainFrame.executeCommandPrimeView(Ljava/lang/String;Z)Ljava/lang/String;+15
+j  edu.umich.soar.debugger.modules.ButtonView.buttonPressed(Lorg/eclipse/swt/events/SelectionEvent;I)V+101
+j  edu.umich.soar.debugger.modules.ButtonView$8.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+9
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1003
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.modules.AbstractComboView.commandEntered(Ljava/lang/String;Z)V+92
+j  edu.umich.soar.debugger.modules.AbstractComboView.comboKeyPressed(Lorg/eclipse/swt/events/KeyEvent;)V+25
+j  edu.umich.soar.debugger.modules.AbstractComboView.access$000(Ledu/umich/soar/debugger/modules/AbstractComboView;Lorg/eclipse/swt/events/KeyEvent;)V+2
+j  edu.umich.soar.debugger.modules.AbstractComboView$1.keyPressed(Lorg/eclipse/swt/events/KeyEvent;)V+5
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+606
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;Z)V
+J  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;)V
+j  org.eclipse.swt.widgets.Widget.sendKeyEvent(IIJJLorg/eclipse/swt/widgets/Event;)Z+4
+j  org.eclipse.swt.widgets.Combo.sendKeyEvent(IIJJLorg/eclipse/swt/widgets/Event;)Z+8
+j  org.eclipse.swt.widgets.Widget.sendKeyEvent(IIJJ)Z+32
+j  org.eclipse.swt.widgets.Widget.wmChar(JJJ)Lorg/eclipse/swt/internal/win32/LRESULT;+66
+j  org.eclipse.swt.widgets.Combo.wmChar(JJJ)Lorg/eclipse/swt/internal/win32/LRESULT;+14
+j  org.eclipse.swt.widgets.Combo.windowProc(JIJJ)J+342
+J  org.eclipse.swt.widgets.Display.windowProc(JJJJ)J
+v  ~StubRoutines::call_stub
+J  org.eclipse.swt.internal.win32.OS.DispatchMessageW(Lorg/eclipse/swt/internal/win32/MSG;)J
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.MainFrame.executeCommandPrimeView(Ljava/lang/String;Z)Ljava/lang/String;+15
+j  edu.umich.soar.debugger.modules.ButtonView.buttonPressed(Lorg/eclipse/swt/events/SelectionEvent;I)V+101
+j  edu.umich.soar.debugger.modules.ButtonView$8.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+9
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1003
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+j  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V+19
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.MainFrame.executeCommandPrimeView(Ljava/lang/String;Z)Ljava/lang/String;+15
+j  edu.umich.soar.debugger.modules.ButtonView.buttonPressed(Lorg/eclipse/swt/events/SelectionEvent;I)V+101
+j  edu.umich.soar.debugger.modules.ButtonView$8.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+9
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1003
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+j  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V+19
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.MainFrame.executeCommandPrimeView(Ljava/lang/String;Z)Ljava/lang/String;+15
+j  edu.umich.soar.debugger.modules.ButtonView.buttonPressed(Lorg/eclipse/swt/events/SelectionEvent;I)V+101
+j  edu.umich.soar.debugger.modules.ButtonView$8.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+9
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1003
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+j  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V+19
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.MainFrame.executeCommandPrimeView(Ljava/lang/String;Z)Ljava/lang/String;+15
+j  edu.umich.soar.debugger.modules.ButtonView.buttonPressed(Lorg/eclipse/swt/events/SelectionEvent;I)V+101
+j  edu.umich.soar.debugger.modules.ButtonView$8.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+9
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1003
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+j  edu.umich.soar.debugger.doc.Document.pumpMessagesOneStep()V+19
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommandGeneral(Ledu/umich/soar/debugger/doc/DocumentThread2$Command;)Ljava/lang/Object;+50
+j  edu.umich.soar.debugger.doc.Document.sendAgentCommand(Lsml/Agent;Ljava/lang/String;)Ljava/lang/String;+12
+j  edu.umich.soar.debugger.modules.AbstractComboView.executeAgentCommand(Ljava/lang/String;Z)Ljava/lang/String;+93
+j  edu.umich.soar.debugger.MainFrame.executeCommandPrimeView(Ljava/lang/String;Z)Ljava/lang/String;+15
+j  edu.umich.soar.debugger.modules.ButtonView.buttonPressed(Lorg/eclipse/swt/events/SelectionEvent;I)V+101
+j  edu.umich.soar.debugger.modules.ButtonView$8.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+9
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1003
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  edu.umich.soar.debugger.doc.Document.pumpMessagesTillClosed(Lorg/eclipse/swt/widgets/Display;)V
+j  edu.umich.soar.debugger.SWTApplication.startApp([Ljava/lang/String;Lorg/eclipse/swt/widgets/Display;)V+620
+j  edu.umich.soar.debugger.Application.<init>([Ljava/lang/String;ZLorg/eclipse/swt/widgets/Display;)V+17
+j  edu.umich.soar.debugger.Application.main([Ljava/lang/String;)V+7
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000000650c800 JavaThread "Service Thread" daemon [_thread_blocked, id=4184, stack(0x0000000007920000,0x0000000007a20000)]
+  0x00000000064ff800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=6488, stack(0x0000000007810000,0x0000000007910000)]
+  0x00000000064fc000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=3624, stack(0x00000000076e0000,0x00000000077e0000)]
+  0x00000000064f8000 JavaThread "Attach Listener" daemon [_thread_blocked, id=5360, stack(0x0000000007500000,0x0000000007600000)]
+  0x00000000064f7000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7340, stack(0x00000000073e0000,0x00000000074e0000)]
+  0x0000000006472000 JavaThread "Finalizer" daemon [_thread_blocked, id=8144, stack(0x0000000006e90000,0x0000000006f90000)]
+  0x0000000006469800 JavaThread "Reference Handler" daemon [_thread_blocked, id=4412, stack(0x00000000070f0000,0x00000000071f0000)]
+=>0x0000000001f7b000 JavaThread "main" [_thread_in_native, id=1772, stack(0x00000000020d0000,0x00000000021d0000)]
+
+Other Threads:
+  0x0000000006460800 VMThread [stack: 0x0000000006f90000,0x0000000007090000] [id=6388]
+  0x0000000006515000 WatcherThread [stack: 0x0000000007250000,0x0000000007350000] [id=2668]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 37120K, used 14179K [0x00000007d5b60000, 0x00000007d90d0000, 0x0000000800000000)
+  eden space 26176K, 12% used [0x00000007d5b60000,0x00000007d5e8a620,0x00000007d74f0000)
+  from space 10944K, 99% used [0x00000007d8200000,0x00000007d8cae620,0x00000007d8cb0000)
+  to   space 13376K, 0% used [0x00000007d74f0000,0x00000007d74f0000,0x00000007d8200000)
+ PSOldGen        total 86656K, used 7986K [0x0000000781200000, 0x00000007866a0000, 0x00000007d5b60000)
+  object space 86656K, 9% used [0x0000000781200000,0x00000007819cc860,0x00000007866a0000)
+ PSPermGen       total 21248K, used 10960K [0x000000077c000000, 0x000000077d4c0000, 0x0000000781200000)
+  object space 21248K, 51% used [0x000000077c000000,0x000000077cab41b0,0x000000077d4c0000)
+
+Code Cache  [0x00000000021d0000, 0x0000000002440000, 0x00000000051d0000)
+ total_blobs=874 nmethods=370 adapters=455 free_code_cache=47666Kb largest_free_block=48777920
+
+Dynamic libraries:
+0x000000013f0f0000 - 0x000000013f123000 	C:\Windows\system32\javaw.exe
+0x0000000077120000 - 0x00000000772c9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076f00000 - 0x000000007701f000 	C:\Windows\system32\kernel32.dll
+0x000007fefd160000 - 0x000007fefd1cc000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feff100000 - 0x000007feff1db000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefed30000 - 0x000007fefedcf000 	C:\Windows\system32\msvcrt.dll
+0x000007feff210000 - 0x000007feff22f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefdd70000 - 0x000007fefde9d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077020000 - 0x000000007711a000 	C:\Windows\system32\USER32.dll
+0x000007feff2a0000 - 0x000007feff307000 	C:\Windows\system32\GDI32.dll
+0x000007fefed20000 - 0x000007fefed2e000 	C:\Windows\system32\LPK.dll
+0x000007feff030000 - 0x000007feff0f9000 	C:\Windows\system32\USP10.dll
+0x000007fefbaf0000 - 0x000007fefbce4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefd750000 - 0x000007fefd7c1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007feff1e0000 - 0x000007feff20e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefd640000 - 0x000007fefd749000 	C:\Windows\system32\MSCTF.dll
+0x000000006dc90000 - 0x000000006dd61000 	C:\Program Files\Java\jre7\bin\msvcr100.dll
+0x00000000671f0000 - 0x00000000678ca000 	C:\Program Files\Java\jre7\bin\server\jvm.dll
+0x000007fefaa70000 - 0x000007fefaa79000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefec30000 - 0x000007fefec7d000 	C:\Windows\system32\WS2_32.dll
+0x000007feff290000 - 0x000007feff298000 	C:\Windows\system32\NSI.dll
+0x000007fefaf30000 - 0x000007fefaf6b000 	C:\Windows\system32\WINMM.dll
+0x00000000772f0000 - 0x00000000772f7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000070690000 - 0x000000007069f000 	C:\Program Files\Java\jre7\bin\verify.dll
+0x000000006e790000 - 0x000000006e7b8000 	C:\Program Files\Java\jre7\bin\java.dll
+0x000000006e830000 - 0x000000006e845000 	C:\Program Files\Java\jre7\bin\zip.dll
+0x000007fefa060000 - 0x000007fefa0c1000 	C:\Soar\SoarSuite-9.3.1-win-x86_64\bin\Java_sml_ClientInterface.dll
+0x000007fefa3f0000 - 0x000007fefa401000 	C:\Soar\SoarSuite-9.3.1-win-x86_64\bin\ElementXML.dll
+0x0000000072d20000 - 0x0000000072df3000 	C:\Windows\WinSxS\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_08e61857a83bc251\MSVCP90.dll
+0x0000000072e00000 - 0x0000000072ea3000 	C:\Windows\WinSxS\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_08e61857a83bc251\MSVCR90.dll
+0x0000000010000000 - 0x0000000010098000 	C:\Users\Mazin\AppData\Local\Temp\swtlib-64\swt-win32-3557.dll
+0x000007fefd7d0000 - 0x000007fefd9d3000 	C:\Windows\system32\ole32.dll
+0x000007fefdc90000 - 0x000007fefdd67000 	C:\Windows\system32\OLEAUT32.dll
+0x000007fefec80000 - 0x000007fefed17000 	C:\Windows\system32\comdlg32.dll
+0x000007fefdea0000 - 0x000007fefec28000 	C:\Windows\system32\SHELL32.dll
+0x000007fefdb60000 - 0x000007fefdc8a000 	C:\Windows\system32\WININET.dll
+0x000007fefd9e0000 - 0x000007fefdb59000 	C:\Windows\system32\urlmon.dll
+0x000007fefd290000 - 0x000007fefd3f7000 	C:\Windows\system32\CRYPT32.dll
+0x000007fefd110000 - 0x000007fefd11f000 	C:\Windows\system32\MSASN1.dll
+0x000007fefedd0000 - 0x000007feff02b000 	C:\Windows\system32\iertutil.dll
+0x000007fefb740000 - 0x000007fefb796000 	C:\Windows\system32\uxtheme.dll
+0x000007fefb580000 - 0x000007fefb598000 	C:\Windows\system32\dwmapi.dll
+0x000007fefcfa0000 - 0x000007fefcfaf000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007feff310000 - 0x000007feff3a9000 	C:\Windows\system32\CLBCatQ.DLL
+0x000007fef7410000 - 0x000007fef744b000 	C:\Windows\system32\mlang.dll
+0x000007fef3050000 - 0x000007fef30a4000 	C:\Windows\system32\oleacc.dll
+0x000007fefc8e0000 - 0x000007fefc935000 	C:\Windows\system32\mswsock.dll
+0x000007fefc2a0000 - 0x000007fefc2a7000 	C:\Windows\System32\wshtcpip.dll
+0x000007fefcf10000 - 0x000007fefcf35000 	C:\Windows\system32\SspiCli.dll
+0x000000006e9b0000 - 0x000000006e9bb000 	C:\Program Files\Java\jre7\bin\management.dll
+0x000000006e640000 - 0x000000006e659000 	C:\Program Files\Java\jre7\bin\net.dll
+0x000007fefc8d0000 - 0x000007fefc8d7000 	C:\Windows\System32\wship6.dll
+0x000000006e6a0000 - 0x000000006e6b1000 	C:\Program Files\Java\jre7\bin\nio.dll
+0x000007fef6da0000 - 0x000007fef6da7000 	C:\Windows\system32\msimg32.dll
+0x000007fefd460000 - 0x000007fefd637000 	C:\Windows\system32\SETUPAPI.dll
+0x000007fefd120000 - 0x000007fefd156000 	C:\Windows\system32\CFGMGR32.dll
+0x000007fefd270000 - 0x000007fefd28a000 	C:\Windows\system32\DEVOBJ.dll
+0x000007fefb890000 - 0x000007fefb9bc000 	C:\Windows\system32\propsys.dll
+0x000007fefb9c0000 - 0x000007fefb9ed000 	C:\Windows\system32\ntmarta.dll
+0x000007feff230000 - 0x000007feff282000 	C:\Windows\system32\WLDAP32.dll
+0x000007fefd070000 - 0x000007fefd07f000 	C:\Windows\system32\profapi.dll
+0x000007fefb5f0000 - 0x000007fefb633000 	C:\Windows\system32\DUser.dll
+0x000007fefb640000 - 0x000007fefb732000 	C:\Windows\system32\DUI70.dll
+0x000007fefab70000 - 0x000007fefac9a000 	C:\Windows\system32\WindowsCodecs.dll
+0x000007fefcf40000 - 0x000007fefcf97000 	C:\Windows\system32\apphelp.dll
+0x000000006e5d0000 - 0x000000006e5e6000 	C:\Program Files\Common Files\TortoiseOverlays\TortoiseOverlays.dll
+0x0000000060060000 - 0x0000000060070000 	C:\Program Files\TortoiseSVN\bin\TortoiseStub.dll
+0x000000006e550000 - 0x000000006e5cb000 	C:\Program Files\TortoiseSVN\bin\TortoiseSVN.dll
+0x000007fefc1d0000 - 0x000007fefc1dc000 	C:\Windows\system32\VERSION.dll
+0x000007fee7e60000 - 0x000007fee822b000 	C:\Program Files\TortoiseSVN\bin\libsvn_tsvn.dll
+0x000000005d750000 - 0x000000005d77b000 	C:\Program Files\TortoiseSVN\bin\libapr_tsvn.dll
+0x000000005d620000 - 0x000000005d661000 	C:\Program Files\TortoiseSVN\bin\libaprutil_tsvn.dll
+0x000007fefa690000 - 0x000007fefa6a0000 	C:\Program Files\TortoiseSVN\bin\intl3_tsvn.dll
+0x000007fefa470000 - 0x000007fefa48a000 	C:\Program Files\TortoiseSVN\bin\libsasl.dll
+0x000007fefcd40000 - 0x000007fefcd4b000 	C:\Windows\system32\Secur32.dll
+0x000000005d3a0000 - 0x000000005d438000 	C:\Windows\system32\MSVCP100.dll
+0x000000006c9d0000 - 0x000000006ca84000 	C:\Program Files\TortoiseGit\bin\TortoiseGit.dll
+0x000007feea880000 - 0x000007feeaa18000 	C:\Program Files\TortoiseGit\bin\gitdll.dll
+0x000007fefa500000 - 0x000007fefa517000 	C:\Program Files\TortoiseGit\bin\zlib1.dll
+0x000007fef9ca0000 - 0x000007fef9cde000 	C:\Program Files\TortoiseGit\bin\libgit2.dll
+0x00000000073b0000 - 0x00000000073cc000 	C:\Users\Mazin\AppData\Roaming\Dropbox\bin\DropboxExt64.14.dll
+0x000007fef6e60000 - 0x000007fef6f85000 	C:\Windows\system32\dbghelp.dll
+0x000007fef71d0000 - 0x000007fef7266000 	C:\Windows\system32\msvcp60.dll
+0x000007fef7180000 - 0x000007fef71b5000 	C:\Windows\system32\EhStorShell.dll
+0x000007fef6700000 - 0x000007fef6d72000 	C:\PROGRA~1\MICROS~4\Office14\GROOVEEX.DLL
+0x0000000072cf0000 - 0x0000000072d1f000 	C:\Windows\WinSxS\amd64_microsoft.vc90.atl_1fc8b3b9a1e18e3b_9.0.30729.6161_none_0a1fd3a3a768b895\ATL90.DLL
+0x000007fef62e0000 - 0x000007fef66fa000 	C:\PROGRA~1\COMMON~1\MICROS~1\OFFICE14\Cultures\office.odf
+0x000007fef5a70000 - 0x000007fef62d5000 	C:\PROGRA~1\MICROS~4\Office14\1033\GrooveIntlResource.dll
+0x000007fef7a60000 - 0x000007fef7a9b000 	C:\Windows\system32\msls31.dll
+0x000007fefaf70000 - 0x000007fefafa5000 	C:\Windows\system32\xmllite.dll
+0x000007fefcb30000 - 0x000007fefcb47000 	C:\Windows\system32\CRYPTSP.dll
+0x000007fefc600000 - 0x000007fefc647000 	C:\Windows\system32\rsaenh.dll
+0x000007fefd050000 - 0x000007fefd064000 	C:\Windows\system32\RpcRtRemote.dll
+0x000007fef01e0000 - 0x000007fef025b000 	C:\Windows\System32\StructuredQuery.dll
+0x000007fef54a0000 - 0x000007fef558e000 	C:\Windows\system32\actxprxy.dll
+0x000007fef2e50000 - 0x000007fef2ec3000 	C:\Program Files\Internet Explorer\ieproxy.dll
+0x000007fef5740000 - 0x000007fef5817000 	C:\Windows\system32\SearchFolder.dll
+0x000007fef7a40000 - 0x000007fef7a5f000 	C:\Windows\system32\thumbcache.dll
+0x000007fef3d90000 - 0x000007fef3e10000 	C:\Windows\system32\ntshrui.dll
+0x000007fefcbe0000 - 0x000007fefcc03000 	C:\Windows\system32\srvcli.dll
+0x000007fef7aa0000 - 0x000007fef7ad4000 	C:\Windows\system32\SHDOCVW.dll
+0x000007fef30b0000 - 0x000007fef3c67000 	C:\Windows\system32\ieframe.DLL
+0x000007fef71c0000 - 0x000007fef71cf000 	C:\Windows\system32\cscapi.dll
+0x000007fefb360000 - 0x000007fefb36b000 	C:\Windows\system32\slc.dll
+0x000007fef7b00000 - 0x000007fef7b18000 	C:\Windows\system32\MPR.dll
+0x000007fefaa80000 - 0x000007fefaa8a000 	C:\Windows\System32\drprov.dll
+0x000007fefc690000 - 0x000007fefc6cd000 	C:\Windows\System32\WINSTA.dll
+0x000007fefa350000 - 0x000007fefa372000 	C:\Windows\System32\ntlanman.dll
+0x000007fefa0f0000 - 0x000007fefa10c000 	C:\Windows\System32\davclnt.dll
+0x000007fefaa00000 - 0x000007fefaa0a000 	C:\Windows\System32\DAVHLPR.dll
+0x000007fefa830000 - 0x000007fefa845000 	C:\Windows\system32\wkscli.dll
+0x000007fefa850000 - 0x000007fefa85c000 	C:\Windows\system32\netutils.dll
+0x000007fef4ec0000 - 0x000007fef505c000 	C:\Windows\system32\NetworkExplorer.dll
+0x000007fef81d0000 - 0x000007fef828d000 	C:\Windows\system32\PortableDeviceApi.dll
+0x000007fefd400000 - 0x000007fefd43a000 	C:\Windows\system32\WINTRUST.dll
+0x000007fefa020000 - 0x000007fefa047000 	C:\Windows\system32\EhStorAPI.dll
+0x000007fef7b50000 - 0x000007fef7b5c000 	C:\Windows\system32\LINKINFO.dll
+0x000007fefb3e0000 - 0x000007fefb3f5000 	C:\Windows\system32\NLAapi.dll
+0x000007fef8120000 - 0x000007fef8135000 	C:\Windows\system32\napinsp.dll
+0x000007fef8100000 - 0x000007fef8119000 	C:\Windows\system32\pnrpnsp.dll
+0x000007fefc760000 - 0x000007fefc7bb000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef80f0000 - 0x000007fef80fb000 	C:\Windows\System32\winrnr.dll
+
+VM Arguments:
+java_command: share\java\soar-debugger-9.3.1.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_02
+PATH=C:\Soar\SoarSuite-9.3.1-win-x86_64\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Soar\apache-ant-1.8.2;C:\Soar\apache-ant-1.8.2\bin;C:\Program Files\TortoiseSVN\bin;C:\Soar\Tcl\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Soar\apache-ant-1.8.2;C:\Soar\apache-ant-1.8.2\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit\
+USERNAME=Mazin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 30 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 30 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 8313228k(6100352k free), swap 16624608k(12531136k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (22.0-b10) for windows-amd64 JRE (1.7.0_02-b13), built on Nov 17 2011 13:51:15 by "java_re" with unknown MS VC++:1600
+
+time: Thu Feb 16 11:42:31 2012
+elapsed time: 74234 seconds
+

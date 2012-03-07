@@ -1,0 +1,36 @@
+sp {blocks-world*select*three-blocks
+   :template
+   (state <s> ^name blocks-world
+              ^desired <d>
+              ^ontop <ontop1>
+                     { <> <ontop1> <ontop2> }
+                     {<> <ontop2> <> <ontop1> <ontop3> }
+                     {<> <ontop2> <> <ontop1> <> <ontop3> <ontop4> }
+              ^operator <o> +)
+   (<d> ^ontop <dontop1>
+               { <> <dontop1> <dontop2> }
+               {<> <dontop2> <> <dontop1> <dontop3> }
+               {<> <dontop2> <> <dontop1> <> <dontop3> <dontop4> })
+   (<ontop1> ^top-block.name A
+             ^bottom-block.name <A>)
+   (<ontop2> ^top-block.name B
+             ^bottom-block.name <B>)
+   (<ontop3> ^top-block.name C
+             ^bottom-block.name <C>)
+   (<ontop4> ^top-block.name D
+             ^bottom-block.name <D>)
+   (<dontop1> ^top-block.name A
+              ^bottom-block.name <AB>)
+   (<dontop2> ^top-block.name B
+              ^bottom-block.name <BB>)
+   (<dontop3> ^top-block.name C
+              ^bottom-block.name <CB>)
+   (<dontop3> ^top-block.name D
+              ^bottom-block.name <DB>)
+   (<o> ^name move-block
+        ^moving-block.name <F>
+        ^destination.name <G>)
+-->
+   (<s> ^operator <o> = 0)}
+
+

@@ -1,0 +1,40 @@
+##P11*halt*all-blocks-in-desired-position
+##If block A is in-place and 
+##   block B is in-place and 
+##   block C is in-place 
+##then 
+##   write “Goal Achieved” and 
+##   halt
+#
+#sp {P11*halt*all-blocks-in-desired-position
+#   (state <s> ^name blocks-world
+#              ^inplace-object.name A
+#              ^inplace-object.name B
+#              ^inplace-object.name C)
+#-->
+#   (write (crlf) |Goal Achieved (three blocks).|)
+#   (halt)}
+#
+
+#sp {P11*halt*all-blocks-in-desired-position*four-blocks
+#   (state <s>  ^name blocks-world
+#               ^inplace-object.name A
+#               ^inplace-object.name B
+#               ^inplace-object.name C
+#               ^inplace-object.name D)
+#-->
+#   (write (crlf) |Goal Achieved (four blocks).|)
+#   (halt)}
+#
+
+#sp {P11*halt*all-blocks-in-desired-position*five-blocks
+#   (state <s>  ^name blocks-world
+#               ^inplace-object.name A
+#               ^inplace-object.name B
+#               ^inplace-object.name C
+#               ^inplace-object.name D
+#               ^inplace-object.name E)
+#-->
+#   (write (crlf) |Goal Achieved (five blocks).|)
+#   (halt)}
+

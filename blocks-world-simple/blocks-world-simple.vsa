@@ -1,0 +1,15 @@
+VERSION 4
+\blocks-world-simple\blocks-world-simple.dm
+0	ROOT blocks-world-simple blocks-world-simple 1
+1	0	FOPERATOR _firstload _firstload.soar 2
+2	0	FOLDER all all 3
+3	2	FOPERATOR print-blocks print-blocks.soar 4
+4	0	FOLDER elaborations elaborations 5
+5	4	FOPERATOR clear clear.soar 6
+6	4	FOPERATOR detect-success detect-success.soar 7
+7	4	FOPERATOR inplace inplace.soar 8
+8	4	FOPERATOR monitor monitor.soar 9
+9	0	FOPERATOR _readme _readme.soar 10
+10	0	OPERATOR initialize-blocks-world initialize-blocks-world.soar 11
+11	0	OPERATOR move-block move-block.soar 12
+END

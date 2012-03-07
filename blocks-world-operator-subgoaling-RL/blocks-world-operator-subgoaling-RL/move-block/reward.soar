@@ -1,0 +1,15 @@
+
+### Detect Goal Achievement
+###  Add in reward calculations of 1 for goal achievement
+#
+sp {blocks-world*clear*subgoal
+   (state <s> ^name blocks-world
+              ^superstate.operator <sop>
+              ^reward-link <r>
+              ^clear <mblock> <dobject>)
+   (<sop> ^name move-block
+          ^moving-block <mblock>
+          ^destination <dobject>)
+-->
+   (<r> ^reward.value 1)}
+#

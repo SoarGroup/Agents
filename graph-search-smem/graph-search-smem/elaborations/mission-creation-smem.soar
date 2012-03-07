@@ -1,0 +1,117 @@
+
+smem --add {
+           (<s2> ^step 1
+                 ^name go-to-location
+                 ^id 10
+                 ^type mission-step
+                 ^next <s3>)
+           (<s3> ^step 2
+                 ^name go-to-location
+                 ^id 14
+                 ^type mission-step
+                 ^next <s4>)
+           (<s4> ^step 3
+                 ^name go-to-location
+                 ^id 11
+                 ^type mission-step
+                 ^next <s5>)
+           (<s5> ^step 4
+                 ^name go-to-location
+                 ^id 5
+                 ^type mission-step
+                 ^next <s6>)
+           (<s6> ^step 5
+                 ^name go-to-location
+                 ^id 6
+                 ^type mission-step
+                 ^next <s7>)
+           (<s7> ^step 6
+                 ^name go-to-location
+                 ^id 7
+                 ^type mission-step
+                 ^next <s8>)
+           (<s8> ^step 7
+                 ^name go-to-location
+                 ^id 8
+                 ^type mission-step
+                 ^next <s9>)
+           (<s9> ^step 8
+                 ^name go-to-location
+                 ^id 9
+                 ^type mission-step
+                 ^next <s10>)
+           (<s10> ^step 9
+                  ^name go-to-location
+                  ^id 10
+                  ^type mission-step
+                  ^next <s11>)
+           (<s11> ^step 10
+                  ^name go-to-location
+                  ^id 11
+                  ^type mission-step
+                  ^next <s12>)
+           (<s12> ^step 11
+                  ^name go-to-location
+                  ^id 12
+                  ^type mission-step
+                  ^next <s13>)
+           (<s13> ^step 12
+                  ^name go-to-location
+                  ^id 13
+                  ^type mission-step
+                  ^next <s14>)
+           (<s14> ^step 13
+                  ^name go-to-location
+                  ^id 8
+                  ^type mission-step
+                  ^next <s15>)
+           (<s15> ^step 14
+                  ^name go-to-location
+                  ^id 14
+                  ^type mission-step
+                  ^next <s16>)
+           (<s16> ^step 15
+                  ^name go-to-location
+                  ^id 15
+                  ^type mission-step
+                  ^next <s17>)
+           (<s17> ^step 16
+                  ^name go-to-location
+                  ^id 16
+                  ^type mission-step
+                  ^next <s18>)
+           (<s18> ^step 17
+                  ^name go-to-location
+                  ^id 17
+                  ^type mission-step
+                  ^next <s19>)
+           (<s19> ^step 19
+                  ^name go-to-location
+                  ^id 18
+                  ^type mission-step
+                  ^next <s20>)
+           (<s20> ^step 20
+                  ^name go-to-location
+                  ^id 19
+                  ^type mission-step
+                  ^next <s21>)
+           (<s21> ^step 21
+                  ^name go-to-location
+                  ^id 20
+                  ^type mission-step
+                  ^next <s22>)
+           (<s22> ^step 22
+                  ^name go-to-location
+                  ^id 21
+                  ^type mission-step
+                  ^next <s23>)
+           (<s23> ^step 23
+                  ^name go-to-location
+                  ^id 14
+                  ^type mission-step
+                  ^next <s24>)
+           (<s24> ^step 24
+                  ^name go-to-location
+                  ^id 1
+                  ^type mission-step
+                  ^next nil)}

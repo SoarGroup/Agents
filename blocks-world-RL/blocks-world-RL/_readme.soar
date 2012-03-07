@@ -1,0 +1,12 @@
+# This project contains a version of blocks world that uses reinforcement learning for 
+# move-block, which moves a block (moving-block) to a destination.
+# The destination can be the top of another block or the table.
+# 
+#Changes to original blocks world code:
+# 1. Remove P6, P7 in search-control
+# 2. Add in RL-search-control rules - examples of both gp and template approach
+# 3. Include initialization and RL-search-control rules for up to 4 blocks
+# 4. Use ^name blocks-world on state for simplicity instead of problem space
+# 5. Add in reward rules.
+
+

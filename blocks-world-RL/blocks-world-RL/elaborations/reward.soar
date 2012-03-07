@@ -1,0 +1,56 @@
+
+
+### Detect Goal Achievement
+###  Add in reward calculations of 1 for goal achievement
+#
+#sp {P11*all-blocks-in-desired-position
+#   (state <s> ^name blocks-world
+#              ^reward-link <r>
+#              ^inplace-object.name A
+#              ^inplace-object.name B
+#              ^inplace-object.name C)
+#-->
+#   (<r> ^reward.value 1)}
+##
+
+sp {P11*halt*all-blocks-in-desired-position*four-blocks
+   (state <s>  ^name blocks-world
+               ^reward-link <r>
+               ^inplace-object.name A
+               ^inplace-object.name B
+               ^inplace-object.name C
+               ^inplace-object.name D)
+-->
+   (<r> ^reward.value 1)}
+
+
+#sp {P11*halt*all-blocks-in-desired-position*five-blocks
+#   (state <s>  ^name blocks-world
+#               ^reward-link <r>
+#               ^inplace-object.name A
+#               ^inplace-object.name B
+#               ^inplace-object.name C
+#               ^inplace-object.name D
+#               ^inplace-object.name E)
+#-->
+#   (<r> ^reward.value 1)}
+
+### Need to have at least one elaboration cycle
+### between when reward is given and when Soar halts.
+
+sp {halt
+   (state <s> ^name blocks-world
+              ^reward-link.reward.value 1)
+-->
+   (write (crlf) |TASK: Finished Stacking the Blocks.|)
+   (halt)}
+
+## Provide partial reward for in-place-object
+##  In for experimentation.
+##  This does not necessarily help
+#sp {P11*one-block-in-desired-position
+#   (state <s> ^name blocks-world
+#              ^reward-link <r>
+#              ^inplace-object)
+#-->
+#   (<r> ^reward.value .02)}

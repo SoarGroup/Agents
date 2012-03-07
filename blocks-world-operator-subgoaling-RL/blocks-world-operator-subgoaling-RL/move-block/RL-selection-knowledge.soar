@@ -1,0 +1,25 @@
+sp {blocks-world*select*three-blocks*clear*subgoal
+   :template
+   (state <s> ^name blocks-world
+              ^superstate.operator <sop>
+              ^ontop <ontop1>
+                     { <> <ontop1> <ontop2> }
+                     {<> <ontop2> <> <ontop1> <ontop3> }
+                     {<> <ontop2> <> <ontop1> <> <ontop3> <ontop4> }
+              ^operator <o> +)
+   (<sop> ^name move-block
+          ^moving-block.name <mbname>
+          ^destination.name <dname>)
+   (<ontop1> ^top-block.name A
+             ^bottom-block.name <A>)
+   (<ontop2> ^top-block.name B
+             ^bottom-block.name <B>)
+   (<ontop3> ^top-block.name C
+             ^bottom-block.name <C>)
+   (<ontop4> ^top-block.name D
+             ^bottom-block.name <D>)
+   (<o> ^name move-block
+        ^moving-block.name <F>
+        ^destination.name <G>)
+-->
+   (<s> ^operator <o> = 0)}

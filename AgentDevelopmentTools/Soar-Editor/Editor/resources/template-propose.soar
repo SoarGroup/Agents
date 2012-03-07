@@ -1,6 +1,0 @@
-sp {${problemspace}*propose*${operator}
-   (state <s> ^name ${problemspace})
--->
-   (<s> ^operator <op> + =)
-   (<op> ^name ${operator})
-}

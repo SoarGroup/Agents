@@ -1,0 +1,89 @@
+## Use GP to generate RL rules for all of the different states.
+## Initialized to 0
+## Generates 324 rules
+#
+#gp {blocks-world*RL*select*operator*three-blocks
+#   (state <s> ^name blocks-world
+#              ^ontop <ontop1> { <> <ontop1> <ontop2> } { <> <ontop2> <> <ontop1> <ontop3> }
+#              ^operator <o> +)
+#   (<ontop1> ^top-block.name A
+#             ^bottom-block.name [ B C table ])
+#   (<ontop2> ^top-block.name B
+#             ^bottom-block.name [ A C table ])
+#   (<ontop3> ^top-block.name C
+#             ^bottom-block.name [ A B table ])
+#   (<o> ^name move-block
+#        ^moving-block.name [ A B C]
+#        ^destination.name [ A B C table ])
+#-->
+#   (<s> ^operator <o> = 0.0)}
+
+### Use Templates, which generate the rules dynamically as needed
+#
+#sp {blocks-world*select*three-blocks
+#   :template
+#   (state <s> ^name blocks-world
+#              ^ontop <ontop1>
+#                     { <> <ontop1> <ontop2> }
+#                      {<> <ontop2> <> <ontop1> <ontop3> }
+#              ^operator <o> +)
+#   (<ontop1> ^top-block.name A
+#             ^bottom-block.name <A>)
+#   (<ontop2> ^top-block.name B
+#             ^bottom-block.name <B>)
+#   (<ontop3> ^top-block.name C
+#             ^bottom-block.name <C>)
+#   (<o> ^name move-block
+#        ^moving-block.name <F>
+#        ^destination.name <G>)
+#-->
+#   (<s> ^operator <o> = 0)}
+#
+
+
+### For four blocks
+## Generates around 5120 rules
+gp {blocks-world*RL*select*operator*four-blocks
+   (state <s> ^name blocks-world
+              ^ontop <ontop1>
+                     { <> <ontop1> <ontop2> }
+                     { <> <ontop2> <> <ontop1> <ontop3> }
+                     { <> <ontop2> <> <ontop1> <> <ontop3> <ontop4> }
+              ^operator <o> +)
+   (<ontop1> ^top-block.name A
+             ^bottom-block.name [ B C D table ])
+   (<ontop2> ^top-block.name B
+             ^bottom-block.name [ A C D table ])
+   (<ontop3> ^top-block.name C
+             ^bottom-block.name [ A B D table ])
+   (<ontop4> ^top-block.name D
+             ^bottom-block.name [ A B C table ])
+   (<o> ^name move-block
+        ^moving-block.name [ A B C D ]
+        ^destination.name [ A B C D table ])
+-->
+   (<s> ^operator <o> = 0.0)}
+
+#
+# Generates ~800 rules
+#sp {blocks-world*select*four-blocks*move-block
+#   :template
+#   (state <s> ^name blocks-world
+#              ^ontop <ontop1>
+#                     { <> <ontop1> <ontop2> }
+#                     { <> <ontop2> <> <ontop1> <ontop3> }
+#                     { <> <ontop2> <> <ontop1> <> <ontop3> <ontop4> }
+#              ^operator <o> +)
+#   (<ontop1> ^top-block.name A
+#             ^bottom-block.name <A>)
+#   (<ontop2> ^top-block.name B
+#             ^bottom-block.name <B>)
+#   (<ontop3> ^top-block.name C
+#             ^bottom-block.name <C>)
+#   (<ontop4> ^top-block.name D
+#             ^bottom-block.name <D>)
+#   (<o> ^name move-block
+#        ^moving-block.name <F>
+#        ^destination.name <G>)
+#-->
+#   (<s> ^operator <o> = 0)}

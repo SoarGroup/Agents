@@ -1,0 +1,14 @@
+##P12*monitor*move-block
+##If move-block is selected
+##then
+##   print out the id of the operator, 
+##     the moving block and the destination
+
+sp {P12*monitor*move-block
+   (state <s> ^operator <o>)
+   (<o> ^name move-block
+        ^moving-block.name <m>
+        ^destination.name <d>)
+-->
+   (write (crlf)| Apply | <o> |: move-block(| <m> |,|<d> |)|)}
+

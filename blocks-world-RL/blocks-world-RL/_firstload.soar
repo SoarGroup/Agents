@@ -1,0 +1,9 @@
+# Classic 3 block blocks world
+# Formulated for reinforcement learning
+# John E. Laird
+# University of Michigan
+# 2/8/2012
+# Soar version 9.3.2
+
+## Using the default RL settings
+rl --set learning on

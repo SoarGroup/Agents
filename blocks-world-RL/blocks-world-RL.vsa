@@ -1,0 +1,15 @@
+VERSION 4
+\blocks-world-RL\blocks-world-RL.dm
+0	ROOT blocks-world-RL blocks-world-RL 1
+1	0	FOPERATOR _firstload _firstload.soar 2
+2	0	FOLDER all all 3
+3	0	FOLDER elaborations elaborations 4
+4	3	FOPERATOR clear clear.soar 5
+5	3	FOPERATOR in-place in-place.soar 6
+6	3	FOPERATOR monitor monitor.soar 7
+7	3	FOPERATOR reward reward.soar 8
+8	3	FOPERATOR RL-selection-knowledge RL-selection-knowledge.soar 9
+9	0	FOPERATOR _readme _readme.soar 10
+10	0	OPERATOR initialize-blocks-world initialize-blocks-world.soar 11
+11	0	OPERATOR move-block move-block.soar 12
+END

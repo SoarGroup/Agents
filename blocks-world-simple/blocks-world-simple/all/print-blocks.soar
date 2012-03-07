@@ -1,0 +1,128 @@
+
+sp {P10*apply*move-block*internal*done
+   (state <s> ^operator <o>
+              ^ontop <ontop>)
+   (<o> ^moving-block <mblock>
+        ^destination <tblock>)
+-->
+   (<s> ^print-move true)
+}
+
+sp {P13*monitor*move-block*print-5stack
+:o-support
+   (state <s> ^print-move {true <p1>})
+   (<s> ^ontop <on1>
+        ^ontop {<> <on1> <> <on3> <> <on4> <> <on5> <on2>}
+        ^ontop {<> <on1> <> <on2> <> <on4> <> <on5> <on3>}
+        ^ontop {<> <on1> <> <on2> <> <on3> <> <on5> <on4>}
+        ^ontop {<> <on1> <> <on2> <> <on3> <> <on4> <on5>})
+   (<on1> ^top-block.name <b1> ^bottom-block.name <b2>)
+   (<on2> ^top-block.name <b2> ^bottom-block.name <b3>)
+   (<on3> ^top-block.name <b3> ^bottom-block.name <b4>)
+   (<on4> ^top-block.name <b4> ^bottom-block.name <b5>)
+   (<on5> ^top-block.name <b5> ^bottom-block.name table)
+   (<s> ^clear.name <b1>)
+-->
+   (<s> ^print-move <p1> -)
+   (write (crlf) <b5> <b4> <b3> <b2> <b1>)}
+   
+sp {P13*monitor*move-block*print-4stack
+:o-support
+   (state <s> ^print-move {true <p1>})
+   (<s> ^ontop <on1>
+        ^ontop {<> <on1> <> <on3> <> <on4> <on2>}
+        ^ontop {<> <on1> <> <on2> <> <on4> <on3>}
+        ^ontop {<> <on1> <> <on2> <> <on3> <on4>})
+   (<on1> ^top-block.name <b1> ^bottom-block.name <b2>)
+   (<on2> ^top-block.name <b2> ^bottom-block.name <b3>)
+   (<on3> ^top-block.name <b3> ^bottom-block.name <b4>)
+   (<on4> ^top-block.name <b4> ^bottom-block.name table)
+   (<s> ^clear.name <b1>)
+-->
+   (<s> ^print-move <p1> -)
+   (write (crlf) <b4> <b3> <b2> <b1>)}
+   
+sp {P13*monitor*move-block*print-3stack
+:o-support
+   (state <s> ^print-move {true <p1>})
+   (<s> ^ontop <on1>
+        ^ontop {<> <on1> <> <on3> <on2>}
+        ^ontop {<> <on1> <> <on2> <on3>})
+   (<on1> ^top-block.name <b1> ^bottom-block.name <b2>)
+   (<on2> ^top-block.name <b2> ^bottom-block.name <b3>)
+   (<on3> ^top-block.name <b3> ^bottom-block.name table)
+   (<s> ^clear.name <b1>)
+-->
+   (<s> ^print-move <p1> -)
+   (write (crlf) <b3> <b2> <b1>)}
+   
+sp {P13*monitor*move-block*print-2stack
+:o-support
+   (state <s> ^print-move {true <p1>})
+   (<s> ^ontop <on1>
+        ^ontop {<> <on1> <on2>})
+   (<on1> ^top-block.name <b1> ^bottom-block.name <b2>)
+   (<on2> ^top-block.name <b2> ^bottom-block.name table)
+   (<s> ^clear.name <b1>)
+-->
+   (<s> ^print-move <p1> -)
+   (write (crlf) <b2> <b1>)}
+
+sp {P13*monitor*move-block*print-1stack
+:o-support
+   (state <s> ^print-move {true <p1>})
+   (<s> ^ontop <on1>)
+   (<on1> ^top-block.name <b1> ^bottom-block.name table)
+   (<s> ^clear.name <b1>)
+-->
+   (<s> ^print-move <p1> -)
+   (write (crlf) <b1>)}
+
+sp {blocks-world*apply*initialize
+   (state <s> ^operator.name initialize-blocks-world)
+-->
+   (<s> ^name blocks-world
+        ^ontop <ontop1> <ontop2> <ontop3> <ontop4> <ontop5>
+        ^object <blockA> <blockB> <blockC> <blockD> <blockE> <table>
+        ^desired <ds>  ^print-move true)
+   (<ontop1> ^top-block <blockC>
+             ^bottom-block <blockA>)
+   (<ontop2> ^top-block <blockA>
+             ^bottom-block <table>)
+   (<ontop3> ^top-block <blockB>
+             ^bottom-block <blockE>)
+   (<ontop4> ^top-block <blockD>
+             ^bottom-block <table>)
+   (<ontop5> ^top-block <blockE>
+             ^bottom-block <blockD>)
+   (<blockA> ^name A ^type block)
+   (<blockB> ^name B ^type block)
+   (<blockC> ^name C ^type block)
+   (<blockD> ^name D ^type block)
+   (<blockE> ^name E ^type block)
+   (<table> ^name table ^type table)
+   (write (crlf) |Five Blocks World - just move blocks.|)
+   (<ds> ^ontop <dontop1> <dontop2> <dontop3> <dontop4> <dontop5>)
+   (<dontop1> ^top-block <blockA>
+              ^bottom-block <blockB>)
+   (<dontop2> ^top-block <blockB>
+              ^bottom-block <blockC>)
+   (<dontop3> ^top-block <blockC>
+              ^bottom-block <blockD>)
+   (<dontop4> ^top-block <blockD>
+              ^bottom-block <blockE>)
+   (<dontop5> ^top-block <blockE>
+              ^bottom-block <table>)
+   (write (crlf) |The goal is to get EDBCA.|)}
+
+sp {P11*halt*all-blocks-in-desired-position*five-blocks
+   (state <s>  ^name blocks-world
+               ^inplace-object.name A
+               ^inplace-object.name B
+               ^inplace-object.name C
+               ^inplace-object.name D
+               ^inplace-object.name E)
+-->
+   (write (crlf) |EDCBA|)
+   (write (crlf) |Goal Achieved (five blocks).|)
+   (halt)}

@@ -1,7 +1,0 @@
-sp {${problemspace}*elaborate-state*substate
-   (state <s> ^name ${problemspace}
-              ^superstate.operator <so>)
-   (<so> ^name ${superstateoperator})
--->
-   (<s>)
-}

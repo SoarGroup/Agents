@@ -1,0 +1,36 @@
+sp {elaborate*object-out-of-place2
+    (state <s> ^name blocks-world ^inplace-object <blockB> ^desired <d*1>
+          ^ontop <ontop-s>)
+    (<d*1> ^ontop <ontop-d>)
+    (<ontop-d> ^bottom-block <blockB> ^top-block <blockA>)
+   -{ (<ontop-s> ^top-block <blockA> ^bottom-block <blockB>)}
+    -->
+    (<s> ^outplace-object <blockA> +)
+}
+
+sp {elaborate*object-out-of-place1
+    (state <s> ^name blocks-world ^outplace-object <blockB> ^desired <d*1>
+          ^ontop <ontop-s>)
+    (<ontop-s> ^bottom-block <blockB> ^top-block <blockA>)
+    (<d*1> ^ontop <ontop-d>)
+    (<ontop-d> ^top-block <blockA> ^bottom-block <blockB>)
+    -->
+    (<s> ^outplace-object <blockA> +)
+}
+
+sp {P4*elaborate*object-on-inplace
+    (state <s> ^name blocks-world ^inplace-object <blockB> ^desired <d*1>
+          ^ontop <ontop-s>)
+    (<ontop-s> ^bottom-block <blockB> ^top-block <blockA>)
+    (<d*1> ^ontop <ontop-d>)
+    (<ontop-d> ^top-block <blockA> ^bottom-block <blockB>)
+    -->
+    (<s> ^inplace-object <blockA> +)
+}
+
+sp {P3*elaborate*object-on-table
+    (state <s> ^name blocks-world ^object <table>)
+    (<table> ^name table)
+    -->
+    (<s> ^inplace-object <table> +)
+}

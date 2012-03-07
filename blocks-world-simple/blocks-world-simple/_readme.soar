@@ -1,0 +1,13 @@
+# This project contains a version of blocks world.
+# All actions are "internal" using P10 to change the state when an operator is selected.
+# 
+# Uses two operator evaluation rules (P6 & P7)
+#  These are sufficient to eliminate all search
+# 
+#Changes to original blocks world code as described in the Soar book:
+# 1. Use ^name blocks-world on state for simplicity instead of problem space
+# 2. Add initialization rules and goal detection rules that can be uncommented for
+#    using 4 or 5 blocks.
+
+
+

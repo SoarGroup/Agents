@@ -1,0 +1,28 @@
+sp {blocks-world*opsub*propose*operator
+   (state <s> ^name blocks-world 
+              ^desired <d*1> 
+              ^ontop <ontop-s>)
+   (<ontop-s> ^top-block <mblock>
+              ^bottom-block <b*1>)
+   (<d*1> ^ontop <ontop-d>)
+   (<ontop-d> ^top-block <mblock> 
+              ^bottom-block { <> <b*1> <dobject> })
+-->
+   (<s> ^operator <o> + =)
+   (<o> ^name move-block 
+        ^moving-block <mblock>  
+        ^destination <dobject>)
+}
+sp {blocks-world*apply*operator*move-block*change-ontop
+   (state <s> ^clear <dobject> 
+              ^operator <o> 
+              ^clear <mblock> 
+              ^ontop <ontop>)
+   (<o> ^destination <dobject>
+        ^moving-block <mblock>)
+   (<ontop> ^top-block <mblock> 
+            ^bottom-block { <> <dobject> <object> })
+-->
+   (<ontop> ^bottom-block <dobject> +
+            ^bottom-block <object> -)
+}

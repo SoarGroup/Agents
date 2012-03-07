@@ -1,0 +1,64 @@
+VERSION 4
+\algebra\algebra.dm
+0	ROOT algebra algebra 1
+1	0	FOPERATOR _firstload _firstload.soar 2
+2	0	FOLDER all all 3
+3	2	FOPERATOR output output.soar 4
+4	0	FOLDER elaborations elaborations 5
+5	4	FOPERATOR _all _all.soar 6
+6	4	FOPERATOR clauses clauses.soar 7
+7	4	FOPERATOR top-state top-state.soar 9
+8	0	FOPERATOR _chunking-issues _chunking-issues.soar 10
+9	0	FOPERATOR _readme _readme.soar 11
+10	0	HLOPERATOR accept-input accept-input.soar accept-input 91 12
+11	10	FOPERATOR elaborations elaborations.soar 13
+12	10	HLOPERATOR convert-input-to-clause-form convert-input-to-clause-form.soar convert-input-to-clause-form 106 14
+13	12	HLFOPERATOR elaborations elaborations.soar elaborations 106 15
+14	13	HLIOPERATOR Impasse__State_No-Change Impasse__State_No-Change.soar Impasse__State_No-Change 121 16
+15	14	FOPERATOR elaborations elaborations.soar 17
+16	14	OPERATOR fail-parse fail-parse.soar 18
+17	12	OPERATOR process-close-bracket process-close-bracket.soar 19
+18	12	OPERATOR process-end process-end.soar 20
+19	12	OPERATOR process-open-bracket process-open-bracket.soar 21
+20	12	OPERATOR process-operation process-operation.soar 22
+21	12	OPERATOR process-value process-value.soar 23
+22	10	OPERATOR detect-failure detect-failure.soar 24
+23	10	OPERATOR print-request print-request.soar 25
+24	10	OPERATOR use-default-equation use-default-equation.soar 26
+25	10	OPERATOR wait wait.soar 27
+26	0	OPERATOR clean-up-problem clean-up-problem.soar 28
+27	0	OPERATOR initialize-algebra initialize-algebra.soar 29
+28	0	OPERATOR print-list print-list.soar 30
+29	0	HLOPERATOR print-out-equation print-out-equation.soar print-out-equation 28 31
+30	29	FOPERATOR elaborations elaborations.soar 32
+31	29	OPERATOR print-left-paren print-left-paren.soar 33
+32	29	OPERATOR print-left-side print-left-side.soar 34
+33	29	OPERATOR print-operation print-operation.soar 35
+34	29	OPERATOR print-right-paren print-right-paren.soar 36
+35	29	OPERATOR print-right-side print-right-side.soar 37
+36	29	OPERATOR print-value print-value.soar 38
+37	0	HLOPERATOR solve-problem solve-problem.soar solve-problem 152 39
+38	37	FOPERATOR elaborations elaborations.soar 40
+39	37	OPERATOR across-level-swap across-level-swap.soar 41
+40	37	OPERATOR add add.soar 42
+41	37	OPERATOR add-both-sides add-both-sides.soar 43
+42	37	OPERATOR add-local add-local.soar 44
+43	37	OPERATOR add-variable add-variable.soar 60
+44	37	OPERATOR associate associate.soar 45
+45	37	OPERATOR convert-subtract-to-add convert-subtract-to-add.soar 46
+46	37	OPERATOR convert-x-1times-x convert-x-1times-x.soar 47
+47	37	OPERATOR distribute distribute.soar 48
+48	37	OPERATOR fail fail.soar 49
+49	37	HLIOPERATOR Impasse__State_No-Change Impasse__State_No-Change.soar Impasse__State_No-Change 142 50
+50	49	FOPERATOR elaborations elaborations.soar 51
+51	37	OPERATOR finish finish.soar 52
+52	37	OPERATOR multiply-both-sides multiply-both-sides.soar 53
+53	37	HLOPERATOR process-clause process-clause.soar process-clause 11 54
+54	53	FOPERATOR elaborations elaborations.soar 55
+55	37	OPERATOR retry retry.soar 56
+56	37	OPERATOR subtract-variable subtract-variable.soar 62
+57	37	OPERATOR swap-sides swap-sides.soar 57
+58	37	OPERATOR swap-variable-constant swap-variable-constant.soar 61
+59	37	OPERATOR undistribute undistribute.soar 58
+60	0	OPERATOR z-last-load z-last-load.soar 59
+END

@@ -1,1 +1,0 @@
-See Soar wiki (http://code.google.com/p/soar/wiki/Domains_WordNetNate) for details on these scripts.

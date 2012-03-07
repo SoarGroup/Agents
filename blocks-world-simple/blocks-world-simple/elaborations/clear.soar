@@ -1,0 +1,27 @@
+##P1*elaborate*block*clear
+##If there is a block and
+##   there is nothing on top of that block
+##then 
+##   that block is clear
+
+sp {P1*elaborate*block*clear
+   (state <s> ^name blocks-world
+              ^object <block>
+             -^ontop.bottom-block <block>)
+-->
+   (<s> ^clear <block>)
+}
+
+##P2*elaborate*table*clear
+##If there is the table 
+##then 
+##  the table is clear
+
+sp {P2*elaborate*table*clear
+   (state <s> ^name blocks-world
+              ^object <object>)
+   (<object> ^type table)
+-->
+   (<s> ^clear <object>)
+}
+
