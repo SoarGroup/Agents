@@ -21,7 +21,7 @@
 # each side of the river. Each of these has augmentations for
 # missionaries, cannibals, and the boat; with their values being the
 # number of the entity type on that side of the river. This is the
-# version covered in Soar 8 Tutorial.
+# version covered in the Soar Tutorial.
 #
 # mac1-planning.soar: 
 # Same state representation but with additional rules to support
