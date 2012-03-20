@@ -7,3 +7,4 @@
 
 ## Using the default RL settings
 rl --set learning on
+indifferent-selection --epsilon-greedy

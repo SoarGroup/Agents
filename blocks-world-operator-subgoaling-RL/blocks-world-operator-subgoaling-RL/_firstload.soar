@@ -12,5 +12,6 @@ multi-attributes objects 4
 
 # Operator subgoaling does not work correctly if learning is on.
 rl -s learning on
+indifferent-selection --epsilon-greedy
 
 

@@ -1,4 +1,5 @@
 rl --set learning on
+indifferent-selection --epsilon-greedy
 
 rl --set learning-rate 0.1
 rl --set discount-rate 0.5

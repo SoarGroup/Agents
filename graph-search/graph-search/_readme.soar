@@ -55,3 +55,4 @@
 #   (<e> ^expected-value <ec>)
 #}
 #rl -s learning on
+#indifferent-selection --epsilon-greedy

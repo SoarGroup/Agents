@@ -6,3 +6,4 @@ multi-attributes jug 3
 
 # turn on Soar-RL
 rl --set learning on
+indifferent-selection --epsilon-greedy

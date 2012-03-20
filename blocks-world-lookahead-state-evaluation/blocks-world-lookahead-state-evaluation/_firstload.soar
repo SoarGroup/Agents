@@ -21,6 +21,7 @@ popd
 learn --off
 learn --only
 rl --set learning on
+indifferent-selection --epsilon-greedy
 
 sp {Impasse__Operator_Tie*elaborate*learn*on
    (state <s> ^impasse tie)
