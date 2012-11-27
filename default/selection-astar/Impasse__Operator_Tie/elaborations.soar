@@ -63,8 +63,8 @@ sp {selection*elaborate*evaluation*total-estimated-cost
    :default
    (state <s> ^name selection
               ^evaluation <e>)
-   (<e> ^estimated-cost <ec>
-        ^path-cost { <> 0 <pc> })
+   (<e> ^estimated-cost { <> 0 <ec> }
+        ^path-cost <pc>)
 -->
  ##(write (crlf) |Total Estmated Cost: | (+  <ec> <pc>) | : | <e>)
    (<e> ^total-estimated-cost (+  <ec> <pc>))
