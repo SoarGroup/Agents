@@ -1,0 +1,37 @@
+sp {apply*initialize-color-blocks 
+    (state <s> ^operator <o>)
+    (<o> ^name initialize-color-blocks)
+    -->
+    (<s> ^color red green blue
+         ^block <b1> <b2> <b3>)
+    (<b1> ^type block
+          ^color white
+          ^name A
+          ^count 0)
+    (<b2> ^type block
+          ^color white
+          ^name B
+          ^count 0)
+    (<b3> ^type block
+          ^color white
+          ^name C
+          ^count 0)}
+
+sp {apply*color-block*count
+    (state <s> ^operator <o>)
+    (<o> ^name color-block
+         ^block <block>)
+    (<block> ^count <count>)
+    -->
+    (<block> ^count <count> -
+             ^count (+ 1 <count>))}
+
+ sp {detect*color-red   
+    (state <s> ^block <a> <b> <c>)
+    (<a> ^name A ^color red ^count <ca>)
+    (<b> ^name B ^color red ^count <cb>)
+    (<c> ^name C ^color red ^count <cc>)
+    -->
+    (write (crlf) |A: | <ca> |, B: | <cb> |, C: | <cc>)
+    (halt)}
+

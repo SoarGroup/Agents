@@ -1,0 +1,57 @@
+sp {propose*initialize-color-blocks
+    (state <s> ^superstate nil
+              -^name color-blocks)
+    -->
+    (<s> ^operator <o> +)
+    (<o> ^name initialize-color-blocks)}
+
+sp {apply*initialize-color-blocks
+    (state <s> ^operator <o>)
+    (<o> ^name initialize-color-blocks)
+    -->
+    (<s> ^name color-blocks
+         ^color red green blue
+         ^block <b1> <b2> <b3>)
+    (<b1> ^type block
+          ^color white
+          ^name A)
+    (<b2> ^type block
+          ^color white
+          ^name B)
+    (<b3> ^type block
+          ^color white
+          ^name C)}
+
+sp {propose*color-block
+    (state <s> ^color <color>
+               ^block <block>)
+    (<block> ^color <> <color>)
+    -->
+    (<s> ^operator <o> + =)
+    (<o> ^name color-block
+         ^color <color>
+         ^block <block>)}
+
+sp {apply*color-block
+    (state <s> ^operator <o>)
+    (<o> ^name color-block
+         ^color <color>
+         ^block <block>)
+    (<block> ^name <name>
+             ^color <old-color>)
+ -->
+    (write (crlf) |Paint block | <name> | | <color>)
+    (<block> ^color <old-color> -
+                    <color>)}
+
+sp {detect*color-red   
+    (state <s> ^block <a> <b> <c>)
+    (<a> ^name A ^color red)
+    (<b> ^name B ^color red)
+    (<c> ^name C ^color red)
+    -->
+    (halt)}
+
+
+
+

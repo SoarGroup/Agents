@@ -1,0 +1,35 @@
+ sp {propose*initialize-count-fibonacci
+    (state <s> ^superstate nil
+              -^count0)
+    -->
+    (<s> ^operator <o> +)
+    (<o> ^name initialize-count-fibonacci)}
+
+
+sp {apply*initialize-count-fibonacci
+    (state <s> ^operator <o>)
+    (<o> ^name initialize-count-fibonacci)
+    -->
+    (<s> ^count0 0 ^count1 1)}
+
+sp {propose*count-fibonacci
+    (state <s> ^count0 ^count1)
+    -->
+    (<s> ^operator <o> +)
+    (<o> ^name count-fibonacci)}
+
+sp {apply*count
+    (state <s> ^operator.name count-fibonacci
+               ^count0 <count0>
+               ^count1 <count1>)
+ -->
+    (write (crlf) <count1>)
+    (<s> ^count0 <count0> -
+                 <count1>
+         ^count1 <count1> -
+                 (+ <count0> <count1>))}
+
+
+
+
+

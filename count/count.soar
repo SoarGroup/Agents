@@ -1,0 +1,38 @@
+ sp {propose*initialize-count
+    (state <s> ^superstate nil
+              -^count)
+    -->
+    (<s> ^operator <o> +)
+    (<o> ^name initialize-count)}
+
+#if initialize-count is selected, then create a count of 0.
+ sp {apply*initialize-count
+    (state <s> ^operator <o>)
+    (<o> ^name initialize-count)
+    -->
+    (<s> ^count 0)}
+
+
+#if there is a count, then proposal count. 
+ sp {propose*count
+    (state <s> ^count)
+    -->
+    (<s> ^operator <o> +)
+    (<o> ^name count)}
+
+
+#if count is selected, then replace the current-count with (+ 1 current-count).
+ sp {apply*count
+    (state <s> ^operator <o>
+               ^count <count>)
+    (<o> ^name count)
+    -->
+    (<s> ^count <count> -
+         ^count (+ 1 <count>))}
+
+#if the count is 10, then halt. 
+sp {detect*count10
+    (state <s> ^count 10)
+    -->
+    (halt)}
+
