@@ -4,17 +4,15 @@ warnings --off
 sp {mac*evaluate*state*failure*duplicate
    (state <s1> ^desired <d>
                ^right-bank <rb>
-               ^left-bank <lb>
-               ^boat <bank>)
-   (<rb> ^missionaries <rbm> ^cannibals <rbc>)
-   (<lb> ^missionaries <lbm> ^cannibals <lbc>)
+               ^left-bank <lb>)
+   (<rb> ^missionaries <rbm> ^cannibals <rbc> ^boat <rbb>)
+   (<lb> ^missionaries <lbm> ^cannibals <lbc> ^boat <lbb>)
    ( { <> <s1> <s2> } 
           ^right-bank <rb2>
           ^left-bank <lb2>
-          ^boat <bank>
           ^tried-tied-operator)
-   (<rb2> ^missionaries <rbm> ^cannibals <rbc>)
-   (<lb2> ^missionaries <lbm> ^cannibals <lbc>)
+   (<rb2> ^missionaries <rbm> ^cannibals <rbc> ^boat <rbb>)
+   (<lb2> ^missionaries <lbm> ^cannibals <lbc> ^boat <lbb>)
   -(state <s3> ^superstate <s2>)
    -->
    (write (crlf) |Duplicate State Detected.|)

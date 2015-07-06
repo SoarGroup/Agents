@@ -12,26 +12,28 @@ sp {monitor*move-boat
 
 sp {monitor*state*left
    (state <s> ^name mac
-              ^boat left-bank
               ^left-bank <l>
               ^right-bank <r>)
    (<l> ^missionaries <ml>
-        ^cannibals <cl>)
+        ^cannibals <cl>
+        ^boat 1)
    (<r> ^missionaries <mr>
-        ^cannibals <cr>)
+        ^cannibals <cr>
+        ^boat 0)
    -->
    (write (crlf) | M: | <ml> |, C: | <cl> | B ~~~   | 
                  | M: | <mr> |, C: | <cr> |  |)}
 
 sp {monitor*state*right
    (state <s> ^name mac
-              ^boat right-bank
               ^left-bank <l>
               ^right-bank <r>)
    (<l> ^missionaries <ml>
-        ^cannibals <cl>)
+        ^cannibals <cl>
+        ^boat 0)
    (<r> ^missionaries <mr>
-        ^cannibals <cr>)
+        ^cannibals <cr>
+        ^boat 1)
    -->
    (write (crlf) | M: | <ml> |, C: | <cl> |   ~~~ B | 
                  | M: | <mr> |, C: | <cr> |  |)}

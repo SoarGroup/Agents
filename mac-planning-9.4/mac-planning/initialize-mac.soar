@@ -12,17 +12,17 @@ sp {mac*apply*initialize
    (<s> ^name mac
         ^left-bank <l>
         ^right-bank <r>
-        ^desired <d>
-        ^boat left-bank
-        ^o-bank right-bank)
+        ^desired <d>)
    (<l> ^missionaries 3
         ^cannibals 3
+        ^boat 1
         ^other-bank <r>)
    (<r> ^missionaries 0
         ^cannibals 0
+        ^boat 0
         ^other-bank <l>)
-   (<d> ^right-bank <dl>
-        ^boat right-bank)
+   (<d> ^right-bank <dl>)
    (<dl> ^missionaries 3
-         ^cannibals 3)
+         ^cannibals 3
+         ^boat 1)
 }
