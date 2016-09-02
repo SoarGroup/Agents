@@ -32,7 +32,7 @@ sp {selection*elaborate*evaluation*desired
 ###     7.3.3.1 Converting expected-values to numeric preferences
 ###
 
-### If two operators have equal evaluations they are indifferent.
+### If an operators has an expected value, set numeric preference to it
 
 sp {selection*evaluation*expected-values
    :default
