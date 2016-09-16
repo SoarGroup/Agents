@@ -1,6 +1,7 @@
 
 sp {water-jug*evaluate*state*failure*duplicate
    (state <s2> ^name water-jug
+               ^quiescence t
                ^superstate-set <s1>
                ^jug <i1>
                ^jug <i2>

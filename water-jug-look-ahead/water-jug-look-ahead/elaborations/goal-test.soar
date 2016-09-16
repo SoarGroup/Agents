@@ -8,3 +8,4 @@ sp {water-jug*evaluate*state*success
    (<j> ^volume <v> ^contents <c>)
 -->
    (<s> ^success <d>)}
+
