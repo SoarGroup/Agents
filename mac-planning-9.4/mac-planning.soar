@@ -1,3 +1,3 @@
 pushd mac-planning
-source mac-planning_source.soar
+source mac-planning-9.4_source.soar
 popd
