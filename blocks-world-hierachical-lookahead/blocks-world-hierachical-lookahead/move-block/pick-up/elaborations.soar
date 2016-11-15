@@ -17,7 +17,7 @@ sp {put-down*elaborate*desired
    (state <s> ^name put-down
               ^superstate <ss>)
    (<ss>  ^operator <so>)
-   (<so> ^name  put-down
+   (<so> ^name put-down
          ^moving-block <block>
          ^destination <dest>)
 -->
@@ -33,5 +33,4 @@ sp {gripper-operators*elaborate*problem-space
    (<p> ^name gripper
         ^default-state-copy yes
         ^dont-copy top-state clear inplace-object moveable
-    #    ^two-level-attributes desired
         ^one-level-attributes object)}

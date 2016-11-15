@@ -13,7 +13,8 @@ sp {mac*detect*state*success
           ^cannibals <c>)
    -->
    (<s> ^success <d>)
-   (write (crlf) |Success!|)}
+   (write (crlf) |Success!|)
+   (halt)}
 
 ###
 ### STATE FAILURE DETECTION

@@ -4,7 +4,7 @@
 sp {pick-up*propose*close-gripper
    (state <s> ^state-type gripper-operators
               ^top-state <ts>)
-   (<ts> ^top-state.gripper <g>)
+   (<ts> ^gripper <g>) ### JEL remove extra top-state
    (<g> ^open yes
         ^position down
         ^above.name << A B C >> )

@@ -3,8 +3,9 @@
 sp {apply*put-down*evaluate-operator
    (state <s> ^operator <op>
               ^name evaluate-operator
-              ^top-state.ontop <ontop>
-              ^top-state.gripper <g>)
+              ^top-state <ts>)
+   (<ts> ^ontop <ontop>
+         ^gripper <g>)
    (<ontop> ^top-block <mblock>
             ^bottom-block <bblock>)
    (<op> ^name put-down
@@ -20,8 +21,9 @@ sp {apply*put-down*evaluate-operator
 sp {apply*put-down*evaluate-operator*up
    (state <s> ^operator <op>
               ^name evaluate-operator
-              ^top-state.ontop <ontop>
-              ^top-state.gripper <g>)
+              ^top-state <ts>)
+   (<ts> ^ontop <ontop>
+         ^gripper <g>)
    (<ontop> ^top-block <mblock>
            -^bottom-block <bblock>)
     (<op> ^name put-down

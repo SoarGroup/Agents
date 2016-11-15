@@ -1,7 +1,17 @@
+sp {move-block*elaborate*problem-space*ss-top-state
+   (state <s> ^name move-block
+              ^superstate <ss>)
+   (<ss> ^operator.name evaluate-operator
+         ^superstate.top-state <ssts>)
+-->
+   (<s> ^ss-top-state <ssts>)
+}
+
 sp {move-block*elaborate*problem-space*top-state
-   (state <s> ^superstate.operator.name evaluate-operator
-              ^name move-block
-              ^superstate.superstate.top-state <ts>)
+   (state <s> ^name move-block
+              ^ss-top-state <ts>
+              ^superstate <ss>)
+   (<ss> ^operator.name evaluate-operator)
    (<ts> ^object <tblock1> <tblock2> <tblock3> <table>
          ^gripper <gripper>)
    (<tblock1> ^name A)
@@ -10,15 +20,17 @@ sp {move-block*elaborate*problem-space*top-state
    (<table> ^name table)
 -->
    (<s> ^top-state <tsn>)
-   (<tsn> ^gripper <ngripper>
+   (<tsn> ^flag move-block-lookahead
+          ^gripper <ngripper>
           ^object <tblock1> <tblock2> <tblock3> <table>)
 }
 
 sp {move-block*elaborate*problem-space*top-state*both
-   (state <s> ^superstate.operator.name evaluate-operator
-              ^name  move-block
+   (state <s> ^name move-block
+              ^ss-top-state <ts>
               ^top-state <nts>
-              ^superstate.superstate.top-state <ts>)
+              ^superstate <ss>)
+   (<ss> ^operator.name evaluate-operator)
    (<ts> ^ontop <ontop1>)
    (<ontop1> ^top-block <tblock1>
              ^bottom-block <bblock1>)
@@ -29,10 +41,11 @@ sp {move-block*elaborate*problem-space*top-state*both
 }
 
 sp {move-block*elaborate*problem-space*top-state*one
-   (state <s> ^superstate.operator.name evaluate-operator
-              ^name move-block
+   (state <s> ^name move-block
+              ^ss-top-state <ts>
               ^top-state <nts>
-              ^superstate.superstate.top-state <ts>)
+              ^superstate <ss>)
+   (<ss> ^operator.name evaluate-operator)
    (<ts> ^ontop <ontop1>)
    (<ontop1> ^top-block <tblock1>
             -^bottom-block <bblock1>)
@@ -42,19 +55,24 @@ sp {move-block*elaborate*problem-space*top-state*one
 }
 
 sp {move-block*elaborate*problem-space*top-state*gripper*holding
-   (state <s> ^superstate.operator.name evaluate-operator
-              ^name move-block
-              ^superstate.superstate.top-state.gripper <gripper>
-              ^top-state.gripper { <> <gripper> <ngripper> })
+   (state <s> ^name move-block
+              ^ss-top-state <ts>
+              ^top-state <nts>
+              ^superstate <ss>)
+   (<nts> ^gripper { <> <gripper> <ngripper> })
+   (<ss> ^operator.name evaluate-operator)
+   (<ts> ^gripper <gripper>)
    (<gripper> ^holding <holding>)
 -->
    (<ngripper> ^holding <holding>)}
 
 sp {move-block*elaborate*problem-space*top-state*gripper
-   (state <s> ^superstate.operator.name evaluate-operator
+   (state <s> ^superstate <ss>
+              ^ss-top-state <ts>
               ^name move-block
-              ^superstate.superstate.top-state.gripper <gripper>
               ^top-state.gripper { <> <gripper> <ngripper> })
+   (<ss> ^operator.name evaluate-operator)
+   (<ts> ^gripper <gripper>)
    (<gripper> ^above <above>
               ^open <open>
               ^position <position>)

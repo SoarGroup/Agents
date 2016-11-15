@@ -1,9 +1,10 @@
 sp {pick-up*propose*move-gripper-above
    (state <s> ^state-type gripper-operators
               ^top-state <ts>)
-   (<ts> ^gripper.above <x>
-         ^gripper.position up
+   (<ts> ^gripper <g>
          ^clear { <> <x> <y> })
+   (<g> ^above <x>
+        ^position up)
 -->
    (<s> ^operator <op> + =)
    (<op> ^name move-gripper-above

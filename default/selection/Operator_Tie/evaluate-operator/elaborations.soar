@@ -14,8 +14,8 @@ sp {evaluate-operator*elaborate*state*desired
              -^problem-space.no-local-negations <nln>
               ^superstate.operator <so>)
    (<so>  -^default-desired-copy yes
-          ^name evaluate-operator
-          ^evaluation.desired <d>)
+           ^name evaluate-operator
+           ^evaluation.desired <d>)
 -->
    (<s> ^desired <d>)}
 
@@ -26,7 +26,7 @@ sp {evaluate-operator*elaborate*state*desired*nln
               ^problem-space.no-local-negations <nln>
               ^superstate.operator <so>)
    (<so>   ^name evaluate-operator # ddc is assumed no with nln
-          ^evaluation.desired <d>)
+           ^evaluation.desired <d>)
 -->
    (<s> ^desired <d>)}
 
@@ -233,9 +233,9 @@ sp {evaluate-operator*elaborate*state*add-one-level-attributes
 sp {evaluate-operator*elaborate*state*add-all-attributes-at-level-one
    :default
    (state <s> ^problem-space <p>
-                             ^default-state-copy yes
-                             ^all-attributes-at-level one
-                             ^duplicate-of <ss>)
+              ^default-state-copy yes
+              ^all-attributes-at-level one
+              ^duplicate-of <ss>)
    (<p> -^dont-copy-anything
         -^dont-copy <att>)
    (<ss> ^{ <> duplicate-of <> tried-tied-operator <> problem-space
@@ -264,10 +264,10 @@ sp {evaluate-operator*elaborate*state*change-one-level-attribute-to-duplicate
 sp {evaluate-operator*elaborate*state*change-all-attributes-at-level-one-to-duplicate
    :default
    (state <s> -^problem-space.dont-copy <att>
-        ^default-state-copy yes
-        ^all-attributes-at-level one
-        ^duplicates.<id> <new-id>
-        ^duplicate-of.{ <> tried-tied-operator <att> } <id>)
+               ^default-state-copy yes
+               ^all-attributes-at-level one
+               ^duplicates.<id> <new-id>
+               ^duplicate-of.{ <> tried-tied-operator <att> } <id>)
 -->
    (<s> ^<att> <id> -
         ^<att> <new-id>)}
@@ -281,7 +281,8 @@ sp {evaluate-operator*elaborate*state*duplicate-id-for-attribute
               ^default-state-copy yes
               ^duplicate-of.<att> <id>)
 -->
-   (<d> ^<id> <new-id>)}
+   (<d> ^<id> <new-id>
+        ^<new-id> <att>)}   #JEL 11/11/2016
 
 ### Create new ids for all attributes, when ^all-attributes-at-level two.
 
@@ -293,20 +294,21 @@ sp {evaluate-operator*elaborate*state*duplicate-id-for-all-attributes
               ^duplicate-of <ss>)
    (<p> -^dont-copy-anything
         -^dont-copy <att>
-              ^all-attributes-at-level two
-             -^one-level-attributes <att>)
+         ^all-attributes-at-level two
+        -^one-level-attributes <att>)
    (<ss> ^{ <> duplicate-of <> tried-tied-operator <> problem-space
             <> impasse <> attribute <> choices <> quiescence
             <> operator <> superstate
             <att> } <id>)
 -->
-   (<d> ^<id> <new-id>)}
+   (<d> ^<id> <new-id>
+        ^<new-id> <att>)}   #JEL 11/11/2016
 
 ### Create a copy of the old object on the new link.  First copy
 ### augmentations that don't point to objects that have been
 ### duplicated.
 
-              output warnings off
+output warnings off
 sp {evaluate-operator*elaborate*add-attribute-to-duplicate
    :default
    (state <s> ^duplicates <d>
@@ -314,25 +316,21 @@ sp {evaluate-operator*elaborate*add-attribute-to-duplicate
              -^problem-space.dont-copy <sub-att>
               ^default-state-copy yes)
    (<d> ^<id> <new-id>
-             - ^<sub-val>)
+       - ^<sub-val>)
    (<id> ^ { <> tried-tied-operator <sub-att> } <sub-val>)
 -->
    (<new-id> ^<sub-att> <sub-val>)}
-                        output warnings on
 
-              output warnings off
 sp {evaluate-operator*elaborate*add-attribute-to-duplicate*nln
    :default
    (state <s> ^duplicates <d>
               ^problem-space.no-local-negations <nln>
               ^default-state-copy yes)
-   (<d> ^<id> <new-id>)
+   (<d> ^<id> <new-id>)    
    (<id> ^ { <> tried-tied-operator <sub-att> } <sub-val>)
 -->
    (<new-id> ^<sub-att> <sub-val>)}
                         output warnings on
-
-
 ### Next copy augmentations that point to duplicated objects:
                         output warnings off
 sp {evaluate-operator*elaborate*add-duplicated-attribute-to-duplicate
@@ -344,16 +342,19 @@ sp {evaluate-operator*elaborate*add-duplicated-attribute-to-duplicate
    (<id> ^ { <> tried-tied-operator <sub-att> } <sub-val>)
 -->
    (<new-id> ^<sub-att> <new-val>)}
-                        output warnings on
+                        
+output warnings on
 ### Added ^two-level-attributes <att>.  Previously, it
 ### would copy any attribute that happened to point to the same value as
 ### one of the two-level-attributes.
 sp {evaluate-operator*elaborate*state*add-duplicate-to-state
    :default
    (state <s> ^problem-space.two-level-attributes <att>
-              ^duplicates.<id> <new-id>
+              ^duplicates <d>
               ^default-state-copy yes
               ^duplicate-of.<att> <id>)
+   (<d> ^<id> <new-id>
+        ^<new-id> <att>)
 -->
    (<s> ^<att> <new-id>)}
 
@@ -363,9 +364,11 @@ sp {evaluate-operator*elaborate*state*add-duplicate-to-state
 sp {evaluate-operator*elaborate*state*add-duplicates-for-all-attributes
    :default
    (state <s> ^problem-space <p>
-              ^duplicates.<id> <new-id>
+              ^duplicates <d>
               ^default-state-copy yes
               ^duplicate-of.{ <> tried-tied-operator <att> } <id>)
+   (<d> ^<id> <new-id>
+        ^<new-id> <att>)  # New JEL 11/11/2016
    (<p> ^all-attributes-at-level two
      - ^dont-copy-anything
      - ^dont-copy <att>

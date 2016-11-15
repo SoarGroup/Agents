@@ -10,18 +10,18 @@ sp {move-block*propose*pick-up
          ^moving-block <block>)
 }
 #
-sp {move-block*propose*pick-up*only-correct
-   (state <s> ^name move-block
-              ^top-state <ts>
-              ^desired.moving-block <block>)
-   (<ts> ^gripper.holding nothing
-         ^clear <block>)
-   (<block> ^type block)
--->
-   (<s> ^operator <op> +)
-   (<op> ^name pick-up
-         ^moving-block <block>)
-}
+#sp {move-block*propose*pick-up*only-correct
+#   (state <s> ^name move-block
+#              ^top-state <ts>
+#              ^desired.moving-block <block>)
+#   (<ts> ^gripper.holding nothing
+#         ^clear <block>)
+#   (<block> ^type block)
+#-->
+#   (<s> ^operator <op> +)
+#   (<op> ^name pick-up
+#         ^moving-block <block>)
+#}
 #
 sp {move-block*monitor*pickup
    (state <s> ^name move-block
