@@ -315,7 +315,7 @@ sp {evaluate-operator*elaborate*add-attribute-to-duplicate
              -^problem-space.no-local-negations <nln>
              -^problem-space.dont-copy <sub-att>
               ^default-state-copy yes)
-   (<d> ^<id> <new-id>
+   (<d> ^<id> { <=> <d> <new-id> }
        - ^<sub-val>)
    (<id> ^ { <> tried-tied-operator <sub-att> } <sub-val>)
 -->
@@ -326,7 +326,7 @@ sp {evaluate-operator*elaborate*add-attribute-to-duplicate*nln
    (state <s> ^duplicates <d>
               ^problem-space.no-local-negations <nln>
               ^default-state-copy yes)
-   (<d> ^<id> <new-id>)    
+   (<d> ^<id> { <=> <d> <new-id> })    
    (<id> ^ { <> tried-tied-operator <sub-att> } <sub-val>)
 -->
    (<new-id> ^<sub-att> <sub-val>)}
@@ -337,7 +337,7 @@ sp {evaluate-operator*elaborate*add-duplicated-attribute-to-duplicate
    :default
    (state <s> ^duplicates <d>
               ^default-state-copy yes)
-   (<d> ^<id> <new-id>
+   (<d> ^<id> { <=> <d> <new-id> }
         ^<sub-val> <new-val>)
    (<id> ^ { <> tried-tied-operator <sub-att> } <sub-val>)
 -->
