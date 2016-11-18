@@ -45,8 +45,8 @@ sp {arithmetic*monitor*state*3column
          ^digit2 <n6>
          ^next-column nil)
 -->
-   (write (crlf) | |  <n5> <n3> <n1> )
-   (write (crlf) <as> <n6> <n4> <n2> )
-   (write (crlf) |----|)
+#   (write (crlf) | |  <n5> <n3> <n1> )
+#   (write (crlf) <as> <n6> <n4> <n2> )
+#   (write (crlf) |----|)
 }
 #

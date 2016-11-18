@@ -1,0 +1,6 @@
+srand 1 # Just to get some consistency for testing
+chunk on
+multi-attributes substraction-facts 100
+multi-attributes facts 50
+multi-attributes add10-facts 10
+multi-attributes arithmetic 3

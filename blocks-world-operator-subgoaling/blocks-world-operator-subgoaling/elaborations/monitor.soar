@@ -6,5 +6,5 @@ sp {blocks-world*monitor*prefer*ontop
    (<d*1> ^ontop <ot>)
    (<ot> ^top-block <mb> ^bottom-block <db>)
 -->
-   (write (crlf) |Propose move | <mb-name> | to | <db-name>)
+   (write (crlf) |    Propose move | <mb-name> | to | <db-name>)
 }

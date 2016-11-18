@@ -1,4 +1,4 @@
-97
+99
 SOAR_ID 0
 SOAR_ID 1
 SOAR_ID 2
@@ -26,9 +26,9 @@ INTEGER_RANGE 23 0 1
 SOAR_ID 24
 ENUMERATION 25 1 state
 ENUMERATION 26 2 get-digit1 process-column
-ENUMERATION 27 1 compute-result
+ENUMERATION 27 1 compute-subtraction-result
 SOAR_ID 28
-ENUMERATION 29 1 carry-borrow
+ENUMERATION 29 1 carry
 SOAR_ID 30
 ENUMERATION 31 1 get-digit1
 SOAR_ID 32
@@ -96,7 +96,9 @@ SOAR_ID 93
 SOAR_ID 94
 INTEGER_RANGE 95 -2147483648 2147483647
 INTEGER_RANGE 96 -2147483648 2147483647
-136
+ENUMERATION 97 1 compute-addition-result
+SOAR_ID 98
+138
 0 arithmetic 39
 0 arithmetic-problem 13
 0 count 78
@@ -153,6 +155,7 @@ INTEGER_RANGE 96 -2147483648 2147483647
 24 operator 32
 24 operator 34
 24 operator 38
+24 operator 98
 24 query 20
 24 result 35
 24 superstate 0
@@ -233,3 +236,4 @@ INTEGER_RANGE 96 -2147483648 2147483647
 93 name 92
 94 digit-10 96
 94 digit1 95
+98 name 97

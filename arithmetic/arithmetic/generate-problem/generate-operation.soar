@@ -6,7 +6,8 @@ sp {generate-problem*propose*generate-operation-add
    (<s> ^operator <op> + =)
    (<op> ^name generate-operation
          ^operation addition
-         ^operation-symbol |+|)
+         ^operation-symbol |+|
+         ^carry-borrow carry)
 }
 
 sp {generate-problem*propose*generate-operation-sub
@@ -17,14 +18,16 @@ sp {generate-problem*propose*generate-operation-sub
    (<s> ^operator <op> + =)
    (<op> ^name generate-operation
          ^operation subtraction
-         ^operation-symbol |-|)
+         ^operation-symbol |-|
+         ^carry-borrow borrow)
 }
 
 sp {generate-problem*apply*generate-operation
    (state <s> ^operator <op>)
    (<op> ^name generate-operation
          ^operation <oper>
-         ^operation-symbol <os>)
+         ^operation-symbol <os>
+         ^carry-borrow <cb>)
 -->
    (write (crlf) <oper>)
    (<s> ^digits 0 1 2 3 4 5 6 7 8 9
@@ -35,8 +38,11 @@ sp {generate-problem*apply*generate-operation
         ^current-column <c1>
         ^one-column <c1>)
    (<c1> ^next-column <c2>
+         ^<cb> unknown
          ^column t)
    (<c2> ^next-column <c3>
+         ^<cb> unknown
          ^column t)
    (<c3> ^next-column nil
+         ^<cb> unknown
          ^column t)}

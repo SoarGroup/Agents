@@ -25,7 +25,7 @@ sp {process-column*elaborate*arithmetic-facts
 }
 
 sp {process-column*elaborate*current-column
-   (state <s> ^name <> compute-result 
+   (state <s> ^name <> compute-subtraction-result <> compute-subtraction-borrow-result
               ^superstate.arithmetic-problem <ap>)
    (<ap> ^current-column <cc>)
 -->

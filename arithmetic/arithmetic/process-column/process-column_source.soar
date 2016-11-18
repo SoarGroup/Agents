@@ -1,11 +1,12 @@
 source elaborations.soar
-source carry-borrow.soar
-pushd carry-borrow
-source carry-borrow_source.soar
+source carry.soar
+pushd carry
+source carry_source.soar
 popd
-source compute-result.soar
-pushd compute-result
-source compute-result_source.soar
+source compute-addition-result.soar
+source compute-subtraction-result.soar
+pushd compute-subtraction-result
+source compute-subtraction-result_source.soar
 popd
 source get-digit1.soar
 pushd get-digit1

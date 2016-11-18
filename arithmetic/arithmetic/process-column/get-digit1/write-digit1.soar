@@ -9,18 +9,18 @@ sp {process-column*propose*write-digit1
 sp {process-column*apply*write-digit1-carry1
    (state <s> ^operator.name write-digit1
               ^result <a>
-              ^carry-borrow 1
+              ^carry 1
               ^superstate <ss>)
 -->
    (<ss> ^digit1 <a>
-         ^carry-borrow 1)
+         ^carry 1)
 }
 
 
 sp {process-column*apply*write-digit1*carry0
    (state <s> ^operator.name write-digit1
               ^result <a>
-              ^carry-borrow 0
+              ^carry 0 
               ^superstate <ss>)
 -->
    (<ss> ^digit1 <a>)
