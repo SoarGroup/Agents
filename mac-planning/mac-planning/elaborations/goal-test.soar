@@ -14,8 +14,7 @@ sp {mac*detect*state*success
    -->
    (<s> ^success <d>)
    (write (crlf) |Success!|)
-   (halt)}
-
+}
 ###
 ### STATE FAILURE DETECTION
 ###

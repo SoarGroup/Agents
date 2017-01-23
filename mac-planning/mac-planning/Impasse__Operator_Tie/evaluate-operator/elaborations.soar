@@ -2,39 +2,37 @@
 #set warnings off
 output warnings off
 sp {mac*evaluate*state*failure*duplicate
-   (state <s1> ^desired <d>
-               ^right-bank <rb>
-               ^left-bank <lb>
-               ^boat <bank>)
-   (<rb> ^missionaries <rbm> ^cannibals <rbc>)
-   (<lb> ^missionaries <lbm> ^cannibals <lbc>)
-   (<s2> ^superstate.superstate <s1> 
-          ^right-bank <rb2>
-          ^left-bank <lb2>
-          ^boat <bank>
-          ^tried-tied-operator)
+   (state <s2>  ^super-copy-structure.duplicate-state <s1> # ^superstate.superstate <s1>
+                ^right-bank <rb2>
+                ^left-bank <lb2>
+                ^boat <bank>
+                ^tried-tied-operator
+                ^desired <d>)
    (<rb2> ^missionaries <rbm> ^cannibals <rbc>)
    (<lb2> ^missionaries <lbm> ^cannibals <lbc>)
-  -(state <s3> ^superstate <s2>)
-   -->
+   (<s1> ^right-bank <rb>
+         ^left-bank <lb>
+         ^boat <bank>)
+   (<rb> ^missionaries <rbm> ^cannibals <rbc>)
+   (<lb> ^missionaries <lbm> ^cannibals <lbc>)
+    -->
    (write (crlf) |Duplicate State Detected.|)
    (<s2> ^failure <d>)}
 
 sp {mac*evaluate*state*failure*duplicate2
-   (state <s1> ^desired <d>
-               ^right-bank <rb>
-               ^left-bank <lb>
-               ^boat <bank>)
-   (<rb> ^missionaries <rbm> ^cannibals <rbc>)
-   (<lb> ^missionaries <lbm> ^cannibals <lbc>)
-   (<s2> ^superstate.superstate.superstate.superstate <s1> 
-          ^right-bank <rb2>
-          ^left-bank <lb2>
-          ^boat <bank>
-          ^tried-tied-operator)
+   (state <s2>  ^super-copy-structure.superstate.super-copy-structure.duplicate-state <s1> # ^superstate.superstate.superstate.superstate <s1>
+                ^right-bank <rb2>
+                ^left-bank <lb2>
+                ^boat <bank>
+                ^tried-tied-operator
+                ^desired <d>)
    (<rb2> ^missionaries <rbm> ^cannibals <rbc>)
    (<lb2> ^missionaries <lbm> ^cannibals <lbc>)
-  -(state <s3> ^superstate <s2>)
+   (<s1> ^right-bank <rb>
+         ^left-bank <lb>
+         ^boat <bank>)
+   (<rb> ^missionaries <rbm> ^cannibals <rbc>)
+   (<lb> ^missionaries <lbm> ^cannibals <lbc>)
    -->
    (write (crlf) |Duplicate State Detected – 2 deep.|)
    (<s2> ^failure <d>)}

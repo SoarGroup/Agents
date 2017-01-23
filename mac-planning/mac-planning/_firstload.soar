@@ -1,4 +1,5 @@
 learn --on
-pushd ../../default
+pushd ../../../maybe-chunking/default
+#pushd ../../default
 source selection.soar
 popd

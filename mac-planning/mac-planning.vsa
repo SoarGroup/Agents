@@ -12,6 +12,6 @@ VERSION 4
 9	8	FOPERATOR elaborations elaborations.soar 10
 10	8	HLOPERATOR evaluate-operator evaluate-operator.soar evaluate-operator 26 11
 11	10	FOPERATOR elaborations elaborations.soar 12
-12	0	OPERATOR initialize-mac initialize-mac.soar 14
-13	0	OPERATOR move-boat move-boat.soar 15
+12	0	OPERATOR initialize-mac initialize-mac.soar 13
+13	0	OPERATOR move-boat move-boat.soar 14
 END
