@@ -24,23 +24,23 @@ sp {apply*testing*copy-symbolic
 sp {apply*testing*copy-result*cue
    (state <s> ^operator <op>
               ^convert-result.<digit-name> <digit>
-              ^epmem.command.query.symbolic.converted <c>
-             -^lti t)
+              ^epmem.command.query.symbolic.converted <c>)
+#             -^lti t)
    (<op> ^name testing)
    (<digit> ^cue <digit-cue>)
 -->
    (<c> ^<digit-name> <digit-cue>)
 }
 
-sp {apply*testing*copy-result*lti
-   (state <s> ^operator <op>
-              ^convert-result.<digit-name> <digit>
-              ^epmem.command.query.symbolic.converted <c>
-              ^lti t)
-   (<op> ^name testing)
--->
-   (<c> ^<digit-name> <digit>)
-}
+#sp {apply*testing*copy-result*lti
+#   (state <s> ^operator <op>
+#              ^convert-result.<digit-name> <digit>
+#              ^epmem.command.query.symbolic.converted <c>
+#              ^lti t)
+#   (<op> ^name testing)
+#-->
+#   (<c> ^<digit-name> <digit>)
+#}
 
 sp {apply*testing*next
    (state <s> ^operator <op>
