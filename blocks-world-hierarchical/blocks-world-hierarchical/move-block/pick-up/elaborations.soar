@@ -12,7 +12,7 @@ sp {put-down*elaborate*desired
    (state <s> ^name put-down
               ^superstate <ss>)
    (<ss>  ^operator <so>)
-   (<so> ^name  put-down
+   (<so> ^name put-down
          ^moving-block <block>
          ^destination <dest>)
 -->

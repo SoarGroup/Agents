@@ -3,6 +3,7 @@
 ## and must recursively borrow/add-10
 
 sp {compute-result*elaborate*substate
+#   :interrupt
    (state <s> ^name compute-subtraction-borrow-result
               ^top-state.one-fact <one>
               ^superstate.current-column <cc>)

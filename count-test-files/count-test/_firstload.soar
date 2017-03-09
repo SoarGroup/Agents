@@ -1,1 +1,10 @@
+# John E. Laird
+# University of Michigan
+# latest version 1/27/2017
+# Soar version 9.6.0
+
 max-elaborations 1000000
+
+srand 1 # For consistency for testing
+chunk always
+chunk add-osk on

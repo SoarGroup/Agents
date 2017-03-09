@@ -55,12 +55,12 @@ sp {selection*select*failure-evaluation-becomes-reject-preference
    :default
    (state <s> ^name selection
               ^quiescence t
-              ^superstate <ss>
+              ^copy-structure <cs>
               ^evaluation <e1>)
-   (<ss> ^desired <e>)
+   (<cs> ^superstate-desired <d>
+         ^superstate <ss>)
    (<e1> ^symbolic-value << lose failure >>
-         ^desired <e>
+         ^desired <d>
          ^superoperator <o1>)
 -->
    (<ss> ^operator <o1> -)}
-

@@ -1,7 +1,8 @@
 sp {selection*propose*compute-best-total-estimate
    :default
    (state <s> ^name selection
-              ^superstate.superstate.operator.evaluation
+             # ^superstate.superstate.operator.evaluation
+              ^superstate.copy-structure.superstate-evaluation
              -^not-all-operators-total-estimated-cost true)
   -(<s> ^best-total-estimate <bte>)
 -->
@@ -16,7 +17,8 @@ sp {selection*propose*compute-best-total-estimate2
    :default
  #interrupt
    (state <s> ^name selection
-              ^superstate.superstate.operator.evaluation
+             # ^superstate.superstate.operator.evaluation
+              ^superstate.copy-structure.superstate-evaluation
              -^not-all-operators-total-estimated-cost true
               ^best-total-estimate <bte>
              -^evaluation.total-estimated-cost <= <bte>)  # < <bte>
@@ -54,7 +56,8 @@ sp {apply*compute-best-total-estimate*remove-old
 sp {apply*compute-best-total-estimate*pass-back-super
    :default
    (state <s> ^operator <op>
-              ^superstate.superstate.operator.evaluation <se>
+            # ^superstate.superstate.operator.evaluation <se>
+              ^superstate.copy-structure.superstate-evaluation <se>
               ^evaluation <e>)
    (<op> ^name compute-best-total-estimate)
    (<e> ^total-estimated-cost <tes>

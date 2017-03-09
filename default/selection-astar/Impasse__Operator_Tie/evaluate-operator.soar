@@ -14,7 +14,7 @@ sp {selection*apply*state*evaluation*path-current
    :default
    (state <s> ^name selection
               ^operator <o>
-              ^superstate.top-state.current-location <loc>)
+              ^top-state.current-location <loc>)
    (<o> ^name evaluate-operator
         ^evaluation <e>)
   -(<e> ^path-cost
@@ -37,7 +37,7 @@ sp {selection*apply*state*evaluation*path-current
 #   :interrupt
 #   (state <s> ^name selection
 #              ^operator <o>
-#              ^superstate.top-state.current-location <loc>)
+#              ^top-state.current-location <loc>)
 #   (<o> ^name evaluate-operator
 #        ^evaluation <e>)
 #   (<e> ^path-cost { <pcost> <> 0 }

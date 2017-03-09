@@ -84,12 +84,12 @@ sp {apply*move-boat*not-1missionary-1-cannibal
                 <bank>)
 }
 
-sp {apply*move-boat*1-missionary-1-cannibal
+sp {apply*move-boat*1-missionary-1-cannibal*right
    (state <s> ^operator <o>                        
-              ^boat <bank>
-              ^o-bank <o-bank>
-              ^<bank> <b> 
-              ^<o-bank> <ob>)
+              ^boat right-bank
+              ^o-bank left-bank
+              ^right-bank <b> 
+              ^left-bank <ob>)
    (<b> ^missionaries <m-num>
         ^cannibals <c-num>)
    (<ob> ^missionaries <o-m-num>
@@ -106,8 +106,36 @@ sp {apply*move-boat*1-missionary-1-cannibal
                       (+ <o-m-num> 1)
          ^cannibals <o-c-num> -
                       (+ <o-c-num> 1))
-   (<s> ^boat <bank> -
-              <o-bank>
-        ^o-bank <o-bank> -
-                <bank>)
+   (<s> ^boat right-bank -
+              left-bank
+        ^o-bank left-bank -
+                right-bank)
+}
+
+sp {apply*move-boat*1-missionary-1-cannibal*left
+   (state <s> ^operator <o>                        
+              ^boat  left-bank
+              ^o-bank right-bank
+              ^left-bank <b> 
+              ^right-bank <ob>)
+   (<b> ^missionaries <m-num>
+        ^cannibals <c-num>)
+   (<ob> ^missionaries <o-m-num>
+         ^cannibals <o-c-num>)
+   (<o> ^name move-boat
+        ^missionaries 1
+        ^cannibals 1)
+-->
+   (<b> ^missionaries <m-num> -
+                      (- <m-num> 1)
+        ^cannibals <c-num> -
+                      (- <c-num> 1))
+   (<ob> ^missionaries <o-m-num> -
+                      (+ <o-m-num> 1)
+         ^cannibals <o-c-num> -
+                      (+ <o-c-num> 1))
+   (<s> ^boat left-bank -
+               right-bank 
+        ^o-bank right-bank -
+                left-bank)
 }

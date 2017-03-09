@@ -8,7 +8,7 @@ popd
 source _readme.soar
 source empty.soar
 source fill.soar
-# source Impasse__Operator_Tie.soar
+source Impasse__Operator_Tie.soar
 pushd Impasse__Operator_Tie
 source Impasse__Operator_Tie_source.soar
 popd

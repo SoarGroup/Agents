@@ -245,3 +245,234 @@ sp {apply*initialize-simple-robot*create-mission
    (<s29> ^name go-to-location
           ^id w6
           ^next nil)}
+
+# Another test
+sp {apply*initialize-simple-robot*create-mission
+   (state <s> ^operator <op>)
+   (<op> ^name initialize-graph-search)
+-->
+   (<s> ^mission <m>)
+   (<m> ^current <s2>)  
+  (<s2> ^name go-to-location   
+         ^id w14
+         ^next <s3>)
+   (<s3> ^name go-to-location #
+         ^id w16
+         ^next <s4>)
+   (<s4> ^name go-to-location #
+         ^id w20
+         ^next <s5>)
+   (<s5> ^name go-to-location #
+         ^id w8
+         ^next <s6>)
+   (<s6> ^name go-to-location #
+         ^id w15
+         ^next <s7>)
+   (<s7> ^name go-to-location #
+         ^id w19
+         ^next <s8>)
+   (<s8> ^name go-to-location #
+         ^id w1
+         ^next nil)
+}
+
+sp {apply*initialize-simple-robot*create-mission
+   (state <s> ^operator <op>)
+   (<op> ^name initialize-graph-search)
+-->
+   (<s> ^mission <m>)
+   (<m> ^current <s2>)
+   (<s2> ^name go-to-location
+         ^id w10
+         ^next <s3>)
+   (<s3> ^name go-to-location
+         ^id w14
+         ^next <s4>)
+   (<s4> ^name go-to-location
+         ^id w11
+         ^next <s5>)
+   (<s5> ^name go-to-location
+         ^id w5
+         ^next <s6>)
+   (<s6> ^name go-to-location
+         ^id w14 
+         ^next <s7>)
+   (<s7> ^name go-to-location
+         ^id w7
+         ^next <s8>)
+   (<s8> ^name go-to-location
+         ^id w14
+         ^next <s9>)
+   (<s9> ^name go-to-location
+         ^id w9
+         ^next <s10>)
+   (<s10> ^name go-to-location
+          ^id w2 
+          ^next <s11>)
+   (<s11> ^name go-to-location
+          ^id w11
+          ^next <s12>)
+   (<s12> ^name go-to-location
+          ^id w1
+          ^next <s13>)
+   (<s13> ^name go-to-location
+          ^id w13
+          ^next <s14>)
+   (<s14> ^name go-to-location
+          ^id w8
+          ^next <s15>)
+   (<s15> ^name go-to-location
+          ^id w14
+          ^next <s16>)
+   (<s16> ^name go-to-location
+          ^id w10 
+          ^next <s17>)
+   (<s17> ^name go-to-location
+          ^id w16
+          ^next <s18>)
+   (<s18> ^name go-to-location
+          ^id w14
+          ^next <s19>)
+   (<s19> ^name go-to-location
+          ^id w18
+          ^next <s20>)
+   (<s20> ^name go-to-location
+          ^id w12 
+          ^next <s21>)
+   (<s21> ^name go-to-location
+          ^id w2
+          ^next <s22>)
+   (<s22> ^name go-to-location
+          ^id w21
+          ^next <s23>)
+   (<s23> ^name go-to-location
+          ^id w1
+          ^next <s24>)
+   (<s24> ^name go-to-location
+          ^id w15
+          ^next <s25>)
+   (<s25> ^name go-to-location
+          ^id w3 
+          ^next <s26>)
+   (<s26> ^name go-to-location
+          ^id w14
+          ^next <s27>)
+   (<s27> ^name go-to-location
+          ^id w5
+          ^next <s28>)
+   (<s28> ^name go-to-location
+          ^id w20
+          ^next <s29>)
+   (<s29> ^name go-to-location
+          ^id w6
+          ^next nil)}
+
+# Another test
+sp {apply*initialize-simple-robot*create-mission
+   (state <s> ^operator <op>)
+   (<op> ^name initialize-graph-search)
+-->
+   (<s> ^mission <m>)
+   (<m> ^current <s2>)  
+  (<s2> ^name go-to-location   
+         ^id w14
+         ^next <s3>)
+   (<s3> ^name go-to-location #
+         ^id w16
+         ^next <s4>)
+   (<s4> ^name go-to-location #
+         ^id w20
+         ^next <s5>)
+   (<s5> ^name go-to-location #
+         ^id w8
+         ^next <s6>)
+   (<s6> ^name go-to-location #
+         ^id w15
+         ^next <s7>)
+   (<s7> ^name go-to-location #
+         ^id w19
+         ^next <s8>)
+   (<s8> ^name go-to-location #
+         ^id w1
+         ^next nil)
+}
+
+# Regular long test ~6000 decisions without chunking
+#                   ~3000 with chunking first time (learns 234 chunks)
+#                   ~135 with chunking second time
+sp {apply*initialize-simple-robot*create-mission
+   (state <s> ^operator <op>)
+   (<op> ^name initialize-graph-search)
+-->
+   (<s> ^mission <m>)
+   (<m> ^current <s2>)
+   (<s2> ^name go-to-location
+         ^id w10
+         ^next <s3>)
+   (<s3> ^name go-to-location
+         ^id w14
+         ^next <s4>)
+   (<s4> ^name go-to-location
+         ^id w11
+         ^next <s5>)
+   (<s5> ^name go-to-location
+         ^id w5
+         ^next <s6>)
+   (<s6> ^name go-to-location
+         ^id w14 
+         ^next <s7>)
+   (<s7> ^name go-to-location
+         ^id w7
+         ^next <s8>)
+   (<s8> ^name go-to-location
+         ^id w8
+         ^next <s9>)
+   (<s9> ^name go-to-location
+         ^id w9
+         ^next <s10>)
+   (<s10> ^name go-to-location
+          ^id w2 
+          ^next <s11>)
+   (<s11> ^name go-to-location
+          ^id w11
+          ^next <s12>)
+   (<s12> ^name go-to-location
+          ^id w12
+          ^next <s13>)
+   (<s13> ^name go-to-location
+          ^id w13
+          ^next <s14>)
+   (<s14> ^name go-to-location
+          ^id w8
+          ^next <s15>)
+   (<s15> ^name go-to-location
+          ^id w14
+          ^next <s16>)
+   (<s16> ^name go-to-location
+          ^id w10 
+          ^next <s17>)
+   (<s17> ^name go-to-location
+          ^id w16
+          ^next <s18>)
+   (<s18> ^name go-to-location
+          ^id w17
+          ^next <s19>)
+   (<s19> ^name go-to-location
+          ^id w18
+          ^next <s20>)
+   (<s20> ^name go-to-location
+          ^id w12 
+          ^next <s21>)
+   (<s21> ^name go-to-location
+          ^id w20
+          ^next <s22>)
+   (<s22> ^name go-to-location
+          ^id w21
+          ^next <s23>)
+   (<s23> ^name go-to-location
+          ^id w14
+          ^next <s24>)
+   (<s24> ^name go-to-location
+          ^id w1
+          ^next nil)}
+

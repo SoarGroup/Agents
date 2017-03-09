@@ -1,6 +1,7 @@
 sp {get-digit1*elaborate*state
+#   :interrupt
    (state <s> ^name get-digit1
-              ^superstate.current-column <c>)
+              ^current-column <c>)
    (<c> ^digit1 <a>
         ^carry <cb>) 
 -->

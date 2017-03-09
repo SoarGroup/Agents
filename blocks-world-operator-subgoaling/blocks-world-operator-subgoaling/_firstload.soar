@@ -6,12 +6,17 @@
 ### If they cannot be applied, an operator subgoal arises and in the subgoal, the agent
 ###  tries to select operators that moves the agent to a state where the selected operator can apply.
 
+# John E. Laird
+# University of Michigan
+# latest version 1/27/2017
+# Soar version 9.6.0
+
 multi-attributes ontop 3
 multi-attributes clear 3
 multi-attributes objects 4
 
 # Operator subgoaling does not work correctly if learning is on.
-chunk on
+chunk always
 chunk add-osk on
 
 

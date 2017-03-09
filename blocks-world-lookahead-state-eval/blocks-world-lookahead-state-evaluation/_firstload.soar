@@ -2,8 +2,8 @@
 # Formulated for look ahead search
 # John E. Laird
 # University of Michigan
-# 3/1/2012
-# Soar version 9.3.2
+# 1/24/2017
+# Soar version 9.6.0
 
 # Give information to the rule reording algorithm to make the match more efficient.
 multi-attributes ontop 3
@@ -12,14 +12,17 @@ multi-attributes in-place 3
 multi-attributes objects 4
 multi-attributes operator 9
 
-pushd ../../default
+chunk singleton any gripper any
+chunk singleton any type any
+chunk singleton any holding any
+
+#pushd "../../default" 
+pushd ../../../../default-1-24-17/ 
 source simple.soar
 source selection.soar
 popd
 
 # 
-learn --off
-learn --only
 rl --set learning on
 indifferent-selection --epsilon-greedy
 
@@ -28,3 +31,7 @@ sp {Impasse__Operator_Tie*elaborate*learn*on
 -->
    (force-learn <s>)
 }
+
+srand 1 # For consistency for testing
+chunk always
+chunk add-osk on

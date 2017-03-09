@@ -23,12 +23,13 @@ sp {process-column*elaborate*arithmetic-facts
 -->
    (<s> ^arithmetic <a>)
 }
-
+#
 sp {process-column*elaborate*current-column
    (state <s> ^name <> compute-subtraction-result <> compute-subtraction-borrow-result
-              ^superstate.arithmetic-problem <ap>)
+              ^arithmetic-problem <ap>)
    (<ap> ^current-column <cc>)
 -->
    (<s> ^current-column <cc>)
 }
+
 

@@ -1,3 +1,8 @@
+# John E. Laird
+# University of Michigan
+# latest version 1/27/2017
+# Soar version 9.6.0
+
 rl --set learning on
 indifferent-selection --epsilon-greedy
 
@@ -5,3 +10,7 @@ rl --set learning-rate 0.1
 rl --set discount-rate 0.5
 
 watch --rl
+
+srand 1 # For consistency for testing
+chunk always
+chunk add-osk on

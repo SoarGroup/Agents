@@ -1,5 +1,6 @@
 
 sp {water-jug*evaluate*state*success
+#:interrupt
    (state <s> ^desired <d>
               ^name water-jug
               ^jug <j>)

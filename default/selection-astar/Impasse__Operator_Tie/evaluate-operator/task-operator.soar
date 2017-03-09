@@ -4,15 +4,15 @@ sp {evaluate-apply*task-operator2
  #interrupt
    :default
    (state <s> ^name evaluate-operator
-              ^superstate.operator.evaluation <e>
+              ^copy-structure.superstate-evaluation <e>
               ^operator <op>
               ^top-state <ts>)
    (<e> ^path-cost <pc>
         ^current-location <cloc>)
    (<ts> ^current-location <cloc>)
    (<op> ^next-waypoint <nloc>)
-   (<cloc> ^id <cid> ^x <cx> ^y <cy>)
-   (<nloc> ^id <nid> ^x <nx> ^y <ny>)
+   (<cloc> ^x <cx> ^y <cy>) # ^id <cid>
+   (<nloc> ^x <nx> ^y <ny>) #^id <nid> 
 -->
  ##(write (crlf) |##############################|)
  ##(write (crlf) |Current waypoint: | <cid> | | <cx> | | <cy>)
@@ -28,9 +28,9 @@ sp {evaluate-apply*task-operator3
    :default
    #interrupt
    (state <s> ^name evaluate-operator
-              ^superstate.operator.evaluation <e>
-              ^operator <op>
-              ^top-state <ts>)
+              ^quiescence t
+              ^copy-structure.superstate-evaluation <e>
+              ^operator <op>)
    (<e> ^path-cost { <> 0 <pc> }
         ^estimated-cost <ec>
         ^current-location <> <nloc>

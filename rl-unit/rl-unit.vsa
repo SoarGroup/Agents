@@ -1,5 +1,5 @@
 VERSION 4
-/rl-unit/rl-unit.dm
+\rl-unit\rl-unit.dm
 0	ROOT rl-unit rl-unit 1
 1	0	FOPERATOR _firstload _firstload.soar 2
 2	0	FOLDER all all 3

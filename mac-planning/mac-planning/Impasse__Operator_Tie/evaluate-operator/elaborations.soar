@@ -2,7 +2,7 @@
 #set warnings off
 output warnings off
 sp {mac*evaluate*state*failure*duplicate
-   (state <s2>  ^super-copy-structure.duplicate-state <s1> # ^superstate.superstate <s1>
+   (state <s2>  ^superstate.superstate <s1>
                 ^right-bank <rb2>
                 ^left-bank <lb2>
                 ^boat <bank>
@@ -20,7 +20,7 @@ sp {mac*evaluate*state*failure*duplicate
    (<s2> ^failure <d>)}
 
 sp {mac*evaluate*state*failure*duplicate2
-   (state <s2>  ^super-copy-structure.superstate.super-copy-structure.duplicate-state <s1> # ^superstate.superstate.superstate.superstate <s1>
+   (state <s2>  ^superstate.superstate.superstate.superstate <s1>
                 ^right-bank <rb2>
                 ^left-bank <lb2>
                 ^boat <bank>

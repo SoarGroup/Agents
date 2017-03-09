@@ -2,8 +2,8 @@
 # Formulated for hierarchical look ahead
 # John E. Laird
 # University of Michigan
-# 3/1/2012
-# Soar version 9.3.2
+# 1/24/2017
+# Soar version 9.6
 
 # Give information to the rule reording algorithm to make the match more efficient.
 multi-attributes ontop 3
@@ -11,11 +11,20 @@ multi-attributes clear 4
 multi-attributes in-place 3
 multi-attributes objects 4
 multi-attributes operator 9
-# 
-learn --off
-learn --only
 
-pushd ../../default
+
+chunk singleton any gripper any
+chunk singleton any type any
+chunk singleton any holding any 
+chunk singleton any bottom-block any 
+chunk singleton any top-block any
+chunk singleton any last-bottom any
+
+# 
+chunk only 
+pushd ../../../../default-1-24-17/ 
+#pushd ../../default
 source simple.soar
 source selection.soar
 popd
+

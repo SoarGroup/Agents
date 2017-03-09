@@ -8,6 +8,7 @@
 ## this is the conservative version
 sp {selection*pass-back-success    
    :default
+:interrupt
    (state <s> ^superstate.superstate.operator <sso>
               ^evaluation.symbolic-value << required-success >>) # partial-success success >>)
    (<sso> ^name evaluate-operator 
@@ -20,6 +21,7 @@ sp {selection*pass-back-success
 
 sp {selection*pass-back-expected-value-discounted  
    :default
+:interrupt
    (state <s> ^superstate.superstate.operator <sso>
               ^evaluation.expected-value <ev>) 
    (<sso> ^name evaluate-operator 

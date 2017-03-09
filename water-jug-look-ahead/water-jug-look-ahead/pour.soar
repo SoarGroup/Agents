@@ -19,10 +19,10 @@ sp {water-jug*apply*pour*not-empty-source
    (<o> ^name pour
         ^jug <i>
         ^into <j>)
-   (<j> ^volume <jvol>
+   (<j> #^volume <jvol>
         ^contents <jcon>
         ^empty <jempty>)
-   (<i> ^volume <ivol>
+   (<i># ^volume <ivol>
         ^contents { <icon> <= <jempty> })
 -->
    (<i> ^contents 0 <icon> -)
@@ -37,7 +37,7 @@ sp {water-jug*apply*pour*empty-source
    (<o> ^name pour
         ^jug <i>
         ^into <j>)
-   (<i> ^volume <ivol>
+   (<i>#^volume <ivol>
         ^contents { <icon> > <jempty> })
    (<j> ^volume <jvol>
         ^contents <jcon>

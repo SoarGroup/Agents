@@ -5,16 +5,23 @@ sp {selection*learn
 -->
    (force-learn <s>)}
 
+sp {selection*elaborate*location
+   :default
+   (state <s> ^name selection
+              ^copy-structure <cp>)
+   (<cp> ^superstate-desired.location <dloc>)
+-->
+   (<cp> ^superstate-desired-location <dloc>)}
+   
+
 sp {evaluate-operator*elaborate*forward*visited
    :default
    (state <s> ^name selection
               ^superstate.superstate.operator.evaluation.visited <ewp>
               ^operator <op>)
-   (<ewp> ^id <id>)
    (<op> ^name evaluate-operator
          ^evaluation <e>)
 -->
- ##(write (crlf) |Visited from superstate evaluation: | <ewp> |: | <id>)
    (<e> ^visited <ewp>)
 }
 
@@ -23,7 +30,7 @@ sp {evaluate-operator*elaborate*visited*current-location
   #interrupt
    (state <s> ^name selection
               ^operator <op>
-              ^superstate.top-state.current-location <wp>)
+              ^top-state.current-location <wp>)
    (<op> ^name evaluate-operator
          ^evaluation <e>)
 -->
@@ -47,11 +54,11 @@ sp {selection*elaborate*evaluation*estimated-cost
    (state <s> ^name selection
               ^evaluation <e>
              -^top-state.current-location <cloc>
-              ^superstate.desired.location <dloc>)
+              ^copy-structure.superstate-desired-location <dloc>)
    (<e> ^current-location <cloc>
        -^updated-estimate true)
-   (<cloc> ^x <cx> ^y <cy> ^id <cid>)
-   (<dloc> ^x <dx> ^y <dy> ^id <did>)
+   (<cloc> ^x <cx> ^y <cy>)# ^id <cid>)
+   (<dloc> ^x <dx> ^y <dy>)# ^id <did>)
 -->
  ##(write (crlf) |current x | <cx> | y | <cy>)
  ##(write (crlf) |desired x | <dx> | y | <dy>)

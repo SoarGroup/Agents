@@ -25,17 +25,17 @@ VERSION 4
 22	20	HLOPERATOR carry carry.soar carry 45 23
 23	22	FOPERATOR elaborations elaborations.soar 24
 24	22	OPERATOR new-column new-column.soar 25
-25	20	OPERATOR compute-addition-result compute-addition-result.soar 38
-26	20	HLOPERATOR compute-subtraction-result compute-subtraction-result.soar compute-subtraction-result 85 26
-27	26	FOPERATOR elaborations elaborations.soar 27
-28	26	OPERATOR add-ten add-ten.soar 28
-29	26	OPERATOR borrow borrow.soar 29
-30	26	OPERATOR compute-result compute-result.soar 30
-31	20	HLOPERATOR get-digit1 get-digit1.soar get-digit1 40 31
-32	31	FOPERATOR elaborations elaborations.soar 32
-33	31	OPERATOR compute-result compute-result.soar 33
-34	31	OPERATOR write-digit1 write-digit1.soar 34
-35	20	OPERATOR get-digit2 get-digit2.soar 35
-36	20	OPERATOR write-result write-result.soar 36
-37	0	OPERATOR stop-arithmetic stop-arithmetic.soar 37
+25	20	OPERATOR compute-addition-result compute-addition-result.soar 26
+26	20	HLOPERATOR compute-subtraction-result compute-subtraction-result.soar compute-subtraction-result 85 27
+27	26	FOPERATOR elaborations elaborations.soar 28
+28	26	OPERATOR add-ten add-ten.soar 29
+29	26	OPERATOR borrow borrow.soar 30
+30	26	OPERATOR compute-result compute-result.soar 31
+31	20	HLOPERATOR get-digit1 get-digit1.soar get-digit1 40 32
+32	31	FOPERATOR elaborations elaborations.soar 33
+33	31	OPERATOR compute-result compute-result.soar 34
+34	31	OPERATOR write-digit1 write-digit1.soar 35
+35	20	OPERATOR get-digit2 get-digit2.soar 36
+36	20	OPERATOR write-result write-result.soar 37
+37	0	OPERATOR stop-arithmetic stop-arithmetic.soar 38
 END

@@ -10,7 +10,8 @@ sp {generate-problem*propose*next-column
 }
 
 sp {generate-problem*apply*next-column
-   (state <s> ^operator <op>
+   (state <s> ^name generate-problem
+              ^operator <op>
               ^current-column <cc>)
    (<op> ^name next-column)
    (<cc> ^next-column <nc>)

@@ -32,3 +32,4 @@
 ##
 ## Modify 3/1/2011: Add compare evaluations to selection space to avoid some race conditions with computing final-cost and total-estimated-cost
 
+chunk add-osk

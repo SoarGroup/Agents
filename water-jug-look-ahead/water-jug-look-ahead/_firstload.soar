@@ -1,11 +1,22 @@
+# John E. Laird
+# University of Michigan
+# latest version 1/27/2017
+# Soar version 9.6.0
+
 multi-attributes jug 3
 multi-attributes superstate-set 20
+chunk singleton any volume any
+chunk singleton any contents any
 
-echo "learning is on"
-learn --on
-pushd ../../default
+#pushd "../../default" 
+pushd ../../../../default-1-24-17/ 
+
 source selection.soar
 popd
 
 
 # to get graphics, load water-jug.tcl instead
+
+srand 1 # For consistency for testing
+chunk always
+chunk add-osk on
