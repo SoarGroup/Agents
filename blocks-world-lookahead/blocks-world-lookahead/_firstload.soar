@@ -16,7 +16,7 @@ chunk singleton any gripper any
 chunk singleton any type any
 chunk singleton any holding any
 
-pushd ../../../../default-1-24-17/ 
+pushd ../../default
 source simple.soar
 source selection.soar
 popd

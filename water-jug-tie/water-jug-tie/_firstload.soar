@@ -9,9 +9,6 @@ multi-attributes jug 3
 chunk singleton any volume any
 chunk singleton any contents any
 
-#pushd "../../default" 
-#pushd ../../../../default-1-24-17/ 
-
 srand 1 # For consistency for testing
 chunk always
 chunk add-osk on

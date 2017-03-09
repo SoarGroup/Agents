@@ -20,10 +20,8 @@ chunk singleton any bottom-block any
 chunk singleton any top-block any
 chunk singleton any last-bottom any
 
-# 
 chunk only 
-pushd ../../../../default-1-24-17/ 
-#pushd ../../default
+pushd ../../default
 source simple.soar
 source selection.soar
 popd

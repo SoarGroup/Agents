@@ -4,8 +4,7 @@
 # Soar version 9.6.0
 
 
-#pushd "../../default" 
-pushd ../../../../default-1-24-17/ 
+pushd "../../default" 
 
 source selection.soar
 popd
