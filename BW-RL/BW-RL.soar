@@ -1,0 +1,3 @@
+pushd BW-RL
+source BW-RL_source.soar
+popd

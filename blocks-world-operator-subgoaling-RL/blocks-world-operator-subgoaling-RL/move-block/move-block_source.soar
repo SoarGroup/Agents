@@ -1,4 +1,0 @@
-source elaborations.soar
-source reward.soar
-source RL-selection-knowledge.soar
-source move-block.soar

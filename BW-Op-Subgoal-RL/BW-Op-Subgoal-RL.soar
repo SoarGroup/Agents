@@ -1,0 +1,3 @@
+pushd BW-Op-Subgoal-RL
+source BW-Op-Subgoal-RL_source.soar
+popd

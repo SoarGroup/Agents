@@ -1,0 +1,4 @@
+source clear.soar
+source detect-success.soar
+source inplace.soar
+source monitor.soar

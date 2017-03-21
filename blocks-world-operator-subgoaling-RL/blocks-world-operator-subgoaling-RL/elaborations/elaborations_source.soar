@@ -1,6 +1,0 @@
-source clear.soar
-source detect-success.soar
-source in-place.soar
-source monitor.soar
-source reward.soar
-source RL-selection-knowledge.soar
