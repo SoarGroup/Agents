@@ -3,7 +3,7 @@
 ##   block B is in-place and 
 ##   block C is in-place 
 ##then 
-##   write “Goal Achieved” and 
+##   write Goal Achieved and 
 ##   halt
 #
 #sp {P11*halt*all-blocks-in-desired-position
