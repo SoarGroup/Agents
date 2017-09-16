@@ -10,7 +10,7 @@ sp {arithmetic*apply*initialize-arithmetic
    (state <s> ^operator.name initialize-arithmetic)
 -->
    (<s> ^name arithmetic
-        ^count 10000)}
+        ^count 1000)}
 
 # Use this rule to create a specific problem, which will
 # be solved repeatedly - useful in debugging

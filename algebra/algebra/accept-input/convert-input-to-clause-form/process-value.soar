@@ -86,8 +86,7 @@ sp {convert-input-to-clause-form*propose*process-value
 #   (<cw> ^value <value>
 #         ^next.value nil)
 #-->
-#   (<p> ^current-input-value <cw> -
-#                             nil)
+#   (<p> ^current-input-value <cw> - nil)
 #   (<pc> ^right-side <rs>)
 #   (<rs> ^type number
 #         ^value (int <value>))
@@ -102,11 +101,11 @@ sp {convert-input-to-clause-form*apply*process-value*clause-beginning*number
    (<cw> ^value { <> x <> |x| <value> }
          ^next <nvalue>)
 -->
-   (<p> ^current-input-value <cw> -
-                             <nvalue>)
+   (<p> ^current-input-value <cw> - <nvalue>)
    (<pc> ^left-side <ls>)
    (<ls> ^type number
          ^value (int <value>))
+   (write (crlf) |Processing input: | <value>)
 }
 
 sp {convert-input-to-clause-form*apply*process-value*clause-beginning*variable
@@ -118,12 +117,11 @@ sp {convert-input-to-clause-form*apply*process-value*clause-beginning*variable
    (<cw> ^value { << x |x| >> <value> }
          ^next <nvalue>)
 -->
-   (<p> ^current-input-value <cw> -
-                             <nvalue>)
-
+   (<p> ^current-input-value <cw> - <nvalue>)
    (<pc> ^left-side <ls>)
    (<ls> ^type variable
          ^value <value>)
+   (write (crlf) |Processing input: | <value>)
 }
 
 
@@ -136,11 +134,11 @@ sp {convert-input-to-clause-form*apply*process-value*post-operation
    (<cw> ^value { <> x <> |x| <> nil <value> }
          ^next <nvalue>)
 -->
-   (<p> ^current-input-value <cw> -
-                             <nvalue>)
+   (<p> ^current-input-value <cw> - <nvalue>)
    (<pc> ^right-side <rs>)
    (<rs> ^type number
          ^value (int <value>))
+   (write (crlf) |Processing input: | <value>)
 }
 
 sp {convert-input-to-clause-form*apply*process-variable*post-operation
@@ -152,11 +150,11 @@ sp {convert-input-to-clause-form*apply*process-variable*post-operation
    (<cw> ^value { << x |x| >> <value> }
          ^next <nvalue>)
 -->
-   (<p> ^current-input-value <cw> -
-                             <nvalue>)
+   (<p> ^current-input-value <cw> - <nvalue>)
    (<pc> ^right-side <rs>)
    (<rs> ^type variable
          ^value <value>)
+   (write (crlf) |Processing input: | <value>)
 }
 
 sp {convert-input-to-clause-form*apply*process-value*error
@@ -168,17 +166,18 @@ sp {convert-input-to-clause-form*apply*process-value*error
    (<cw> ^value <value>
          ^next <nvalue>)
 -->
-   (<p> ^current-input-value <cw> -
-                             <nvalue>)
+   (<p> ^current-input-value <cw> - <nvalue>)
    (<pc> ^right-side <rs>)
    (<rs> ^type number
          ^value (int <value>))
+   (write (crlf) |Error in input: | <value>)
 }
+
 sp {convert-input-to-clause-form*apply*process-value*failure
    (state <s> ^operator.name process-value
               ^top-state.problem <p>)
-   (<p> ^parse-clause.parse-status { <> post-operation <> clause-beginning } )
+   (<p> ^parse-clause.parse-status { <> post-operation <> clause-beginning <status>} )
 -->
-   (write (crlf) |Unexpected value.|)
+   (write (crlf) |Unexpected value. (| <status> |)|)
    (<p> ^failed true)
 }

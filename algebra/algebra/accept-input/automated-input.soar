@@ -1,0 +1,98 @@
+# Overwrites original
+sp {accept-input*propose*wait
+    (state <s> ^name accept-input
+               ^top-state.io <io>
+              -^top-state.auto-text.current-problem
+              -^operator.name wait)
+   -(<io> ^input-link.text)
+-->
+    (<s> ^operator <op> + =, <)
+    (<op> ^name wait)
+}
+
+sp {accept-input*propose*wait*processed-auto
+    (state <s> ^name accept-input
+               ^top-state.auto-text.current-problem <current>
+              -^operator.name wait
+               ^top-state.processed <current>)
+-->
+    (<s> ^operator <op> + =, <)
+    (<op> ^name wait)
+}
+
+sp {accept-input*propose*convert-input-to-clause-form-auto
+    (state <s> ^name accept-input
+               ^top-state <ts>)
+    (<ts> ^auto-text.current-problem <current>
+         -^processed <current>)
+-->
+    (<s> ^operator <op> + =)
+    (<op> ^name convert-input-to-clause-form
+          ^text <current>)
+}
+
+sp {accept-input*apply*convert-input-to-clause-form-auto
+    (state <s> ^operator <o>
+               ^top-state <ts>)
+    (<o> ^name convert-input-to-clause-form
+         ^text <current>)
+    (<ts> ^problem <p>
+          ^auto-text.current-problem <current>)
+    (<current> ^next <ntext>)
+    (<ntext> ^value <nval>)
+    (<p> ^top-clause <tp>
+        -^current-input-value)
+-->
+    (<p> ^current-input-value <ntext>)
+}
+
+sp {accept-input*apply*detect-failure-auto
+    (state <s> ^operator <op>
+               ^top-state <ts>)
+    (<ts> ^problem <p>
+          ^print-id <pi>
+          ^auto-text.current-problem <current>)
+    (<p> ^current-input-value <civ>)
+    (<op> ^name detect-failure)
+-->
+    (<ts> ^problem <np> <p> -
+          ^print-id <pi> -
+          ^processed <current>)
+   (write (crlf) |Problem detected in | <civ>)
+}
+
+sp {algebra*apply*accept-input*clean-up
+   (state <s> ^operator.name accept-input
+             -^io.input-link.text <current>
+             -^auto-text.current-problem <current>
+              ^processed <current>)
+-->
+   (<s> ^processed <current> -)
+}
+
+sp {algebra*apply*clean-up-problem1-auto
+    (state <s> ^operator.name clean-up-problem
+               ^problem <p>
+               ^current-clause <cc>
+               ^auto-text.current-problem <current>)
+-->
+    (<s> ^current-clause <cc> -
+         ^processed <current>
+         ^problem <np> <p> -)
+    (<np> ^status initialized)
+}
+
+sp {algebra*apply*clean-up-auto-increment
+    (state <s> ^operator.name clean-up-problem
+               ^auto-text <auto>
+               ^auto-num-problems <num>)
+    (<auto> ^current-problem <current> 
+            ^next-count { <= <num> <next-count> }
+            ^<next-count> <next-problem>)
+-->
+    (<auto> ^next-count <next-count> -
+            ^next-count (+ <next-count> 1)
+            ^current-problem <current> -
+            ^current-problem <next-problem>)
+    (write (crlf) |Finished problem #| (- <next-count> 1) |!|)
+}

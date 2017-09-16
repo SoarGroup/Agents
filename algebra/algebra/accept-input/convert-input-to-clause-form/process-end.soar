@@ -17,7 +17,8 @@ sp {convert-input-to-clause-form*apply*process-end
    (<p> ^status defined
                 initialized -)
    (<ts> ^current-clause <tc>)
-}
+   (write (crlf) |Processing end input.|)
+   }
 
 
 sp {convert-input-to-clause-form*apply*process-end*parent

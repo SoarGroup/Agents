@@ -1,0 +1,40 @@
+
+sp {algebra*apply*clean-up-auto-interrupt
+    (state <s> ^operator.name clean-up-problem
+               ^auto-text <auto>
+               ^auto-num-problems <num>)
+    (<auto> ^current-problem <current> 
+            ^next-count { > <num> <count> })
+-->
+    (write (crlf) | Finished automated run of algebra problems! |)
+    (interrupt)
+}
+
+sp {algebra*input-text*init
+    (state <s> ^superstate nil)
+-->
+    (<s> ^auto-text <it> ^auto-num-problems 3)
+    (<it> ^current-problem <p1> ^next-count 2 
+          ^1 <p1> ^2 <p2>)
+
+    (<p1> ^length 5 ^next <n1>)
+    (<n1> ^next <n2> ^value x)
+    (<n2> ^next <n3> ^value |+|)
+    (<n3> ^next <n4> ^value 2)
+    (<n4> ^next <n5> ^value |=|)
+    (<n5> ^next nil ^value 5)
+    
+    (<p2> ^length 9 ^next <n6>)
+    (<n6> ^next <n7> ^value 2)
+    (<n7> ^next <n8> ^value |*|)
+    (<n8> ^next <n9> ^value |[|)
+    (<n9> ^next <n10> ^value 3)
+    (<n10> ^next <n11> ^value |+|)
+    (<n11> ^next <n12> ^value x)
+    (<n12> ^next <n13> ^value |]|)
+    (<n13> ^next <n14> ^value |=|)
+    (<n14> ^next nil ^value 5)
+#    (<n15> ^next <n16> ^value |-|)
+#    (<n16> ^next nil ^value x)
+}
+            

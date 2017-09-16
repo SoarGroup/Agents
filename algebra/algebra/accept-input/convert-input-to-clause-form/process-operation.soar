@@ -22,7 +22,8 @@ sp {convert-input-to-clause-form*apply*process-operation*post-left
    (<p> ^current-input-value <cw> -
                              <nvalue>)
    (<pc> ^operation <name>)
-}
+   (write (crlf) |Processing operation: | <value>)
+   }
 
 
 ## Just processed right clause - push down current clause and start over above.
@@ -51,6 +52,7 @@ sp {convert-input-to-clause-form*apply*process-operation*post-right*diff-op
    (<nc> ^left-side <ls>
          ^right-side <rs>
          ^operation <op>)
+   (write (crlf) |Processing operation: | <value>)
 }
 
 sp {convert-input-to-clause-form*apply*process-operation*post-right*same-op
@@ -75,6 +77,7 @@ sp {convert-input-to-clause-form*apply*process-operation*post-right*same-op
    (<nc> ^left-side <ls>
          ^right-side <rs>
          ^operation <name>)
+   (write (crlf) |Processing operation: | <value>)
 }
 
 ## Just processed right clause after an =. Move down on the right side.
@@ -101,6 +104,7 @@ sp {convert-input-to-clause-form*apply*process-operation*post-right*post-equal
                      <nc>)
    (<nc> ^left-side <rs>
          ^operation <name>)
+   (write (crlf) |Processing operation: | <value>)
 }
 
 sp {convert-input-to-clause-form*apply*process-operation*failure

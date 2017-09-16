@@ -7,3 +7,5 @@ source detect-failure.soar
 source print-request.soar
 source use-default-equation.soar
 source wait.soar
+source automated-data.soar
+source automated-input.soar
