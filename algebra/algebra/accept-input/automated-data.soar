@@ -13,7 +13,7 @@ sp {algebra*apply*clean-up-auto-interrupt
 sp {algebra*input-text*init
     (state <s> ^superstate nil)
 -->
-    (<s> ^auto-text <it> ^auto-num-problems 3)
+    (<s> ^auto-text <it> ^auto-num-problems 2)
     (<it> ^current-problem <p1> ^next-count 2 
           ^1 <p1> ^2 <p2>)
 
