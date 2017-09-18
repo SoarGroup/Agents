@@ -25,7 +25,8 @@ sp {print-out-equation*elaborate*substate
 sp {print-out-equation*apply*remove-old-print
    (state <s> ^operator.name
               ^print-id <pn>
-              ^current-clause <cc>)
+              ^current-clause <cc> 
+              ^quiescence t)
    (<cc> ^print <p>)
    (<p> ^print-id { <> <pn> <ppn> })
 -->

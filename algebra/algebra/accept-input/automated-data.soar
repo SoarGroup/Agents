@@ -1,40 +1,60 @@
 
 sp {algebra*apply*clean-up-auto-interrupt
     (state <s> ^operator.name clean-up-problem
-               ^auto-text <auto>
-               ^auto-num-problems <num>)
-    (<auto> ^current-problem <current> 
-            ^next-count { > <num> <count> })
+               ^auto-text <auto>)
+    (<auto> ^max-next-count <max>
+            ^current-problem <current> 
+            ^next-count { > <max> <count> })
 -->
-    (write (crlf) | Finished automated run of algebra problems! |)
+    (write (crlf) | Finished solving auto list of algebra problems! |)
     (interrupt)
 }
 
 sp {algebra*input-text*init
     (state <s> ^superstate nil)
 -->
-    (<s> ^auto-text <it> ^auto-num-problems 2)
-    (<it> ^current-problem <p1> ^next-count 2 
-          ^1 <p1> ^2 <p2>)
-
-    (<p1> ^length 5 ^next <n1>)
+    (<s> ^auto-text <it>)
+    (<it> ^next-count 2 
+          ^max-next-count 4
+          ^current-problem <p1> 
+          ^1 <p1> ^2 <p2> ^3 <p3>)
+    # Problem 1
+    (<p1> ^next <n1> ^length 5)
     (<n1> ^next <n2> ^value x)
     (<n2> ^next <n3> ^value |+|)
     (<n3> ^next <n4> ^value 2)
     (<n4> ^next <n5> ^value |=|)
     (<n5> ^next nil ^value 5)
-    
-    (<p2> ^length 9 ^next <n6>)
-    (<n6> ^next <n7> ^value 2)
-    (<n7> ^next <n8> ^value |*|)
-    (<n8> ^next <n9> ^value |[|)
-    (<n9> ^next <n10> ^value 3)
-    (<n10> ^next <n11> ^value |+|)
-    (<n11> ^next <n12> ^value x)
-    (<n12> ^next <n13> ^value |]|)
-    (<n13> ^next <n14> ^value |=|)
-    (<n14> ^next nil ^value 5)
-#    (<n15> ^next <n16> ^value |-|)
-#    (<n16> ^next nil ^value x)
+#    (<n6> ^next <n7> ^value nil)
+        # Problem 2
+    (<p2> ^next <a1> ^length 9 )
+    (<a1> ^next <a2> ^value 2)
+    (<a2> ^next <a3> ^value |*|)
+    (<a3> ^next <a4> ^value |[|)
+    (<a4> ^next <a5> ^value 3)
+    (<a5> ^next <a6> ^value |+|)
+    (<a6> ^next <a7> ^value x)
+    (<a7> ^next <a8> ^value |]|)
+    (<a8> ^next <a9> ^value |=|)
+    (<a9> ^next nil ^value 5)
+    # Problem 3
+    (<p3> ^next <b1> ^length 9 )
+    (<b1> ^next <b2> ^value 2)
+    (<b2> ^next <b3> ^value |*|)
+    (<b3> ^next <b4> ^value |[|)
+    (<b4> ^next <b5> ^value 3)
+    (<b5> ^next <b6> ^value |+|)
+    (<b6> ^next <b7> ^value x)
+    (<b7> ^next <b8> ^value |]|)
+    (<b8> ^next <b9> ^value |=|)
+    (<b9> ^next <b10> ^value 5)
+    (<b10> ^next <b11> ^value |-|)
+    (<b11> ^next nil ^value x)
 }
             
+trace 0
+output agent-log 1 on
+output agent-log 2 on
+#chunk always
+#chunk add-osk on
+#chunk heur on

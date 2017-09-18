@@ -21,7 +21,7 @@ sp {convert-input-to-clause-form*apply*process-close-bracket*clause-beginning
                              <nvalue>)
    (<p> ^parse-clause <pc> -
                       <parent>)
-   (write (crlf) |Processing input: ]|)
+   (log 2 (crlf) |...parsing ']'|)
 }
 
 sp {convert-input-to-clause-form*apply*process-close-bracket*failure

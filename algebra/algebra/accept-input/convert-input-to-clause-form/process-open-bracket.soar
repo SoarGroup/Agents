@@ -20,7 +20,7 @@ sp {convert-input-to-clause-form*apply*process-open-bracket*clause-beginning
         ^parse-clause <pc> -
                       <nc>)
    (<pc> ^left-side <nc>)
-   (write (crlf) |Processing input: [|)
+   (log 2 (crlf) |...parsing '['|)
    }
 sp {convert-input-to-clause-form*apply*process-open-bracket*post-operation
    (state <s> ^operator.name process-open-bracket
@@ -36,7 +36,7 @@ sp {convert-input-to-clause-form*apply*process-open-bracket*post-operation
         ^parse-clause <pc> -
                       <nc>)
    (<pc> ^right-side <nc>)
-   (write (crlf) |Processing input: [|)
+   (log 2 (crlf) |...parsing '['|)
    }
 
 sp {convert-input-to-clause-form*apply*process-open*failure

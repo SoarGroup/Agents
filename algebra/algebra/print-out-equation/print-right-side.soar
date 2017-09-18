@@ -17,7 +17,8 @@ sp {print-out-equation*propose*print-right-side
 sp {print-out-equation*apply*print-right-side
    (state <s> ^operator.name print-right-side
               ^print-id <pn>
-              ^current-clause <cc>)
+              ^current-clause <cc> 
+              ^quiescence t)
    (<cc> ^right-side <rs>
          ^print <pr>)
    (<rs> ^print <pp>)

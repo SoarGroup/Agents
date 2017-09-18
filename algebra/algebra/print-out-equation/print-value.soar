@@ -13,7 +13,8 @@ sp {print-out-equation*apply*print-value
    (state <s> ^operator.name print-value
               ^top-state.problem.problem-list <pl>
               ^print-id <pn>
-              ^current-clause <cc>)
+              ^current-clause <cc> 
+              ^quiescence t)
    (<cc> ^value <v>)
    (<pl> ^count <c>
          ^pointer <pp>)
@@ -33,7 +34,8 @@ sp {print-out-equation*apply*print-value
 #sp {print-out-equation*apply*print-value
 #   (state <s> ^operator.name print-value
 #              ^top-state.problem.problem-list <pl>
-#              ^current-clause <cc>)
+#              ^current-clause <cc> 
+#              ^quiescence t))
 #   (<cc> ^value <v>)
 #   (<pl> ^count <c>
 #         ^pointer <pp>)
@@ -50,7 +52,8 @@ sp {print-out-equation*apply*print-value
 #   (state <s> ^operator.name print-value
 #              ^top-state.problem.problem-list <pl>
 #              ^print-id <pn>
-#              ^current-clause <cc>)
+#              ^current-clause <cc> 
+#              ^quiescence t))
 #   (<pl> ^count <c>
 #         ^pointer <pr>)
 #-->

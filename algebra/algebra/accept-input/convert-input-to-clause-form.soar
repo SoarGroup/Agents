@@ -21,6 +21,6 @@ sp {accept-input*apply*convert-input-to-clause-form
        -^current-input-value)
 -->
    (<p> ^current-input-value <ntext>)
-   (write (crlf) |Processing input | <ntext>)
+   (log 2 (crlf) |Parsing problem input | <ntext>)
 }
 

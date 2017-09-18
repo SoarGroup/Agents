@@ -10,6 +10,16 @@ sp {accept-input*propose*wait
     (<op> ^name wait)
 }
 
+# Rest are new
+
+sp {detect-SNC-failure
+    (state <s> ^superstate <ss> ^attribute state ^impasse no-change)
+    (<ss> ^attribute state ^impasse no-change)
+-->
+    (write (crlf) |Agent failure detected.  Interrupting.|)
+    (interrupt)
+}
+
 sp {accept-input*propose*wait*processed-auto
     (state <s> ^name accept-input
                ^top-state.auto-text.current-problem <current>
@@ -44,6 +54,7 @@ sp {accept-input*apply*convert-input-to-clause-form-auto
         -^current-input-value)
 -->
     (<p> ^current-input-value <ntext>)
+    (log 2 (crlf) |Parsing problem input | <ntext>)
 }
 
 sp {accept-input*apply*detect-failure-auto
@@ -84,15 +95,15 @@ sp {algebra*apply*clean-up-problem1-auto
 
 sp {algebra*apply*clean-up-auto-increment
     (state <s> ^operator.name clean-up-problem
-               ^auto-text <auto>
-               ^auto-num-problems <num>)
+               ^auto-text <auto>)
     (<auto> ^current-problem <current> 
-            ^next-count { <= <num> <next-count> }
+            ^max-next-count <max>
+            ^next-count { <= <max> <next-count> }
             ^<next-count> <next-problem>)
 -->
     (<auto> ^next-count <next-count> -
             ^next-count (+ <next-count> 1)
             ^current-problem <current> -
             ^current-problem <next-problem>)
-    (write (crlf) |Finished problem #| (- <next-count> 1) |!|)
+    (log 1  (crlf) |Finished problem #| (- <next-count> 1) |!|)
 }

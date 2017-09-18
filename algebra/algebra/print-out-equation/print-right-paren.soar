@@ -14,7 +14,8 @@ sp {print-out-equation*propose*print-right-paren
 sp {print-out-equation*apply*print-right-paren*add
    (state <s> ^operator.name print-right-paren
               ^top-state.problem.problem-list <pl>
-              ^current-clause <cc>)
+              ^current-clause <cc> 
+              ^quiescence t)
    (<cc> ^operation <> equal)
    (<pl> ^count <c>
          ^pointer <pp>)
@@ -31,7 +32,8 @@ sp {print-out-equation*apply*print-right-paren*multiply
    (state <s> ^operator.name print-right-paren
               ^top-state.problem.problem-list <pl>
               ^print-id <pn>
-              ^current-clause <cc>)
+              ^current-clause <cc> 
+              ^quiescence t)
    (<cc> ^operation
          ^print <pp>)
    (<pp> ^print-id <pn>)
