@@ -52,9 +52,3 @@ sp {algebra*input-text*init
     (<b11> ^next nil ^value x)
 }
             
-trace 0
-output agent-log 1 on
-output agent-log 2 on
-#chunk always
-#chunk add-osk on
-#chunk heur on
