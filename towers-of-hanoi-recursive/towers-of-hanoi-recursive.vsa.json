@@ -1,0 +1,454 @@
+{
+  "datamap": {
+    "rootId": "77e5b75ef1b142beaaeaf8a71e7506c5",
+    "vertices": [
+      {
+        "id": "005861d6713d4ff8949d8498268d2cd4",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "3ecf338822ca4b9da5291920cdc90b48"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "1196ec4b85fc4252a2c1efc0f2c9301a",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "move-disk"
+        ],
+        "id": "19aa6ff2109e45c090248824f6918eb6",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "279a82d300884c87aebd62bdad376c49",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "19aa6ff2109e45c090248824f6918eb6"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "1",
+          "10",
+          "11",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "id": "3b2ce4a0e1584e75a55313f8648d5a8a",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "3bd664d8a20f4d48b0b9548dbddf14e5",
+        "outEdges": [ ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "3ecf338822ca4b9da5291920cdc90b48",
+        "outEdges": [ ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "4db903516f9d4542b7154299adfd6678",
+        "outEdges": [
+          {
+            "name": "desired",
+            "toId": "cfb7baa6eafb46d8a48abb6f2257cfe6"
+          },
+          {
+            "name": "name",
+            "toId": "a9f3ac54859141298d4c5edb216c2b50"
+          },
+          {
+            "name": "operator",
+            "toId": "279a82d300884c87aebd62bdad376c49"
+          },
+          {
+            "name": "superstate",
+            "toId": "77e5b75ef1b142beaaeaf8a71e7506c5"
+          },
+          {
+            "name": "top-state",
+            "toId": "77e5b75ef1b142beaaeaf8a71e7506c5"
+          },
+          {
+            "name": "type",
+            "toId": "b5660178616a4d41ab01a8f7df4b5a81"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "522e3a09f705453a9f34000ba199148d",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "1196ec4b85fc4252a2c1efc0f2c9301a"
+          },
+          {
+            "name": "size",
+            "toId": "3bd664d8a20f4d48b0b9548dbddf14e5"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "600f63fc8db346d9869c2b4b8086d4f6",
+        "outEdges": [
+          {
+            "name": "holds",
+            "toId": "8e5ba10ec3f14427a32d057973271594"
+          },
+          {
+            "name": "larger",
+            "toId": "600f63fc8db346d9869c2b4b8086d4f6"
+          },
+          {
+            "name": "name",
+            "toId": "3b2ce4a0e1584e75a55313f8648d5a8a"
+          },
+          {
+            "name": "size",
+            "toId": "3b2ce4a0e1584e75a55313f8648d5a8a"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "6405742599654e3195b5242618cc9437",
+        "outEdges": [
+          {
+            "name": "disk",
+            "toId": "522e3a09f705453a9f34000ba199148d"
+          },
+          {
+            "name": "name",
+            "toId": "7e5ff8b575164fb48261b9a5ce9895ea"
+          },
+          {
+            "name": "to",
+            "toId": "005861d6713d4ff8949d8498268d2cd4"
+          },
+          {
+            "name": "type",
+            "toId": "e934f5bc90d94e2c88b66cd2a91ffd88"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "6a2f23daae41427d84d655309fb5d7f9",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "77e5b75ef1b142beaaeaf8a71e7506c5",
+        "outEdges": [
+          {
+            "name": "clear",
+            "toId": "97a32bffa8804c2fab21db67e021bb0a"
+          },
+          {
+            "name": "desired",
+            "toId": "cfb7baa6eafb46d8a48abb6f2257cfe6"
+          },
+          {
+            "name": "disk",
+            "toId": "600f63fc8db346d9869c2b4b8086d4f6"
+          },
+          {
+            "name": "holds",
+            "toId": "8e5ba10ec3f14427a32d057973271594"
+          },
+          {
+            "name": "larger",
+            "toId": "600f63fc8db346d9869c2b4b8086d4f6"
+          },
+          {
+            "name": "name",
+            "toId": "caff826890e949e485ce86d01fd06ad7"
+          },
+          {
+            "name": "operator",
+            "toId": "6405742599654e3195b5242618cc9437"
+          },
+          {
+            "name": "operator",
+            "toId": "ce93758e1c6b430cbcb5ab4a77a3044d"
+          },
+          {
+            "name": "peg",
+            "toId": "97a32bffa8804c2fab21db67e021bb0a"
+          },
+          {
+            "name": "superstate",
+            "toId": "927d603f4d0f4fc7a6171d3785ea7a77"
+          },
+          {
+            "name": "top-state",
+            "toId": "77e5b75ef1b142beaaeaf8a71e7506c5"
+          },
+          {
+            "name": "type",
+            "toId": "6a2f23daae41427d84d655309fb5d7f9"
+          },
+          {
+            "name": "upper-disk",
+            "toId": "600f63fc8db346d9869c2b4b8086d4f6"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "move-disk"
+        ],
+        "id": "7e5ff8b575164fb48261b9a5ce9895ea",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "8e5ba10ec3f14427a32d057973271594",
+        "outEdges": [
+          {
+            "name": "above",
+            "toId": "600f63fc8db346d9869c2b4b8086d4f6"
+          },
+          {
+            "name": "above",
+            "toId": "eacc7f9560ea4039a0949b1a332ac340"
+          },
+          {
+            "name": "disk",
+            "toId": "600f63fc8db346d9869c2b4b8086d4f6"
+          },
+          {
+            "name": "on",
+            "toId": "97a32bffa8804c2fab21db67e021bb0a"
+          },
+          {
+            "name": "satisfied",
+            "toId": "f05dc677c6d84808911d1c30c8193ab7"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "927d603f4d0f4fc7a6171d3785ea7a77",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "97a32bffa8804c2fab21db67e021bb0a",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "f54068a8bfda48e5ac9edfbd1fabe612"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "move-disk"
+        ],
+        "id": "a9f3ac54859141298d4c5edb216c2b50",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "initialize-toh-recursive"
+        ],
+        "id": "ae564a76910740d09e3ecbf32f44a06f",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "b5660178616a4d41ab01a8f7df4b5a81",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "b834c54816694451b66bbb4a0bc885dc",
+        "outEdges": [
+          {
+            "name": "disk",
+            "toId": "600f63fc8db346d9869c2b4b8086d4f6"
+          },
+          {
+            "name": "peg",
+            "toId": "97a32bffa8804c2fab21db67e021bb0a"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "towers-of-hanoi"
+        ],
+        "id": "caff826890e949e485ce86d01fd06ad7",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "ce93758e1c6b430cbcb5ab4a77a3044d",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "ae564a76910740d09e3ecbf32f44a06f"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "cfb7baa6eafb46d8a48abb6f2257cfe6",
+        "outEdges": [
+          {
+            "name": "holds",
+            "toId": "8e5ba10ec3f14427a32d057973271594"
+          },
+          {
+            "name": "move-disk",
+            "toId": "b834c54816694451b66bbb4a0bc885dc"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "clear-disk",
+          "clear-smaller",
+          "put-on-peg"
+        ],
+        "id": "e934f5bc90d94e2c88b66cd2a91ffd88",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "none"
+        ],
+        "id": "eacc7f9560ea4039a0949b1a332ac340",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "*no*",
+          "*yes*"
+        ],
+        "id": "f05dc677c6d84808911d1c30c8193ab7",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "|A|",
+          "|B|",
+          "|C|"
+        ],
+        "id": "f54068a8bfda48e5ac9edfbd1fabe612",
+        "type": "ENUMERATION"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "towers-of-hanoi-recursive",
+    "id": "3b5830cd4aab4ae6b52c40eecb789fbd",
+    "name": "towers-of-hanoi-recursive",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "1c3ef4c82d2143ee87d21e06b5a3c4ae",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "be851bfee9664fe086cccce0ae2b9720",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "5e74598797704e628b23949b6563eb51",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "disk-relations.soar",
+            "id": "75f8d1d711bb462d901aad4b568c593d",
+            "name": "disk-relations",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "goal-test.soar",
+            "id": "137bcc373f584f6cb7c5ee202f2704d5",
+            "name": "goal-test",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "monitor.soar",
+            "id": "03ded12da90b45cdbf1bae4711f5b930",
+            "name": "monitor",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "top-state.soar",
+            "id": "16bfabb8e26a4c13bcdd7686fe93fdef",
+            "name": "top-state",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "_readme.soar",
+        "id": "8717425c5a0744dfb89a031702f89bd5",
+        "name": "_readme",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "file": "initialize-toh-recursive.soar",
+        "id": "e4b2346e57a34d0ebed46d29bc065cf3",
+        "name": "initialize-toh-recursive",
+        "type": "OPERATOR"
+      },
+      {
+        "dmId": "4db903516f9d4542b7154299adfd6678",
+        "file": "move-disk.soar",
+        "folder": "move-disk",
+        "id": "c70538d2a72a4fbc8b66ee77f6bbe87d",
+        "name": "move-disk",
+        "type": "HIGH_LEVEL_OPERATOR",
+        "children": [
+          {
+            "file": "elaborations.soar",
+            "id": "c468823eaf224104ae7c1219885f2d47",
+            "name": "elaborations",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "move-disk.soar",
+            "id": "e66cebcfdb5846f081e41849e7ba975c",
+            "name": "move-disk",
+            "type": "OPERATOR"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "6"
+}

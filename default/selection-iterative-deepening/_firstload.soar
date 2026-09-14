@@ -20,3 +20,11 @@
 ###    5. Terminate search when current-evaluation-depth = 0
 ###    6. Modify evaluation structure on state so associates depth with evaluation
 ###
+
+## This folder extends the base selection space (^evaluation on the state and,
+## via `selection*elaborate*evaluate-operator*evaluation`, on the evaluate-operator
+## operator are both populated there) with iterative-deepening-specific rules, so
+## it must be sourced first.
+pushd ..
+source selection.soar
+popd

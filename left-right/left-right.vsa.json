@@ -1,0 +1,312 @@
+{
+  "datamap": {
+    "rootId": "dad6318a6d074353a6919e074964761c",
+    "vertices": [
+      {
+        "id": "0e9f26e0553b42c18d950256e2d7365b",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "cf671cc893634faa9947f8dbdc5180ec"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "1500c5bf9bed42f88a6aef40d42016fe",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "fa1b589cd0a04014bdcd83a67d8b0512"
+          },
+          {
+            "name": "dir",
+            "toId": "ac85bed5ec0fae56f929f2cdadf0d5f8"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "2a912a74ebe847eaa5fc567dd8b7f2bd",
+        "outEdges": [
+          {
+            "name": "input-link",
+            "toId": "2af9186d81ab41b490ddd7b971beb895"
+          },
+          {
+            "name": "output-link",
+            "toId": "f9c8f6d7fe934538a691c236f51d11eb"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "2af9186d81ab41b490ddd7b971beb895",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "5e1646ee9b724c42984f10297ab6fad0",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "end"
+        ],
+        "id": "608b239e888843ee85041f1f06b37442",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "7f01900555954e24a9dcefa0a3d2d047",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "bf12519657434fe0a43e840ef0898157"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "805971e5ba1a4cf2ba3d0ffff5c20ba0",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "left-right"
+        ],
+        "id": "9d7048808bc94031abd56cf25a12fa92",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "b1698c0b507440de9e86e3facb049fa9",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "608b239e888843ee85041f1f06b37442"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "done"
+        ],
+        "id": "bf12519657434fe0a43e840ef0898157",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "initialize-left-right"
+        ],
+        "id": "cf671cc893634faa9947f8dbdc5180ec",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "dad6318a6d074353a6919e074964761c",
+        "outEdges": [
+          {
+            "name": "io",
+            "toId": "2a912a74ebe847eaa5fc567dd8b7f2bd"
+          },
+          {
+            "name": "name",
+            "toId": "9d7048808bc94031abd56cf25a12fa92"
+          },
+          {
+            "name": "operator",
+            "toId": "0e9f26e0553b42c18d950256e2d7365b"
+          },
+          {
+            "name": "operator",
+            "toId": "1500c5bf9bed42f88a6aef40d42016fe"
+          },
+          {
+            "name": "operator",
+            "toId": "7f01900555954e24a9dcefa0a3d2d047"
+          },
+          {
+            "name": "operator",
+            "toId": "b1698c0b507440de9e86e3facb049fa9"
+          },
+          {
+            "name": "superstate",
+            "toId": "805971e5ba1a4cf2ba3d0ffff5c20ba0"
+          },
+          {
+            "name": "top-state",
+            "toId": "dad6318a6d074353a6919e074964761c"
+          },
+          {
+            "name": "type",
+            "toId": "5e1646ee9b724c42984f10297ab6fad0"
+          },
+          {
+            "name": "direction",
+            "toId": "e43d98375c576e6c8874da51f10e576d",
+            "comment": "Available movement directions with associated rewards"
+          },
+          {
+            "name": "location",
+            "toId": "342344deb80839b79aa73c931a83c222"
+          },
+          {
+            "name": "reward-link",
+            "toId": "be0e1faa16bba046319cb5c094a7526c",
+            "comment": "Kernel-provided Soar-RL reward link"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "f9c8f6d7fe934538a691c236f51d11eb",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "move"
+        ],
+        "id": "fa1b589cd0a04014bdcd83a67d8b0512",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "e43d98375c576e6c8874da51f10e576d",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "e702dae9ac7b1c5acc653f76d9c9f268"
+          },
+          {
+            "name": "reward",
+            "toId": "069fe26898806d8c8f2846af648cd899"
+          }
+        ]
+      },
+      {
+        "id": "342344deb80839b79aa73c931a83c222",
+        "type": "ENUMERATION",
+        "choices": [
+          "start",
+          "left",
+          "right"
+        ]
+      },
+      {
+        "id": "be0e1faa16bba046319cb5c094a7526c",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "reward",
+            "toId": "628a1bc3a9adc1e315cdcc849ad596ce"
+          }
+        ]
+      },
+      {
+        "id": "ac85bed5ec0fae56f929f2cdadf0d5f8",
+        "type": "ENUMERATION",
+        "choices": [
+          "left",
+          "right"
+        ]
+      },
+      {
+        "id": "e702dae9ac7b1c5acc653f76d9c9f268",
+        "type": "ENUMERATION",
+        "choices": [
+          "left",
+          "right"
+        ]
+      },
+      {
+        "id": "069fe26898806d8c8f2846af648cd899",
+        "type": "INTEGER"
+      },
+      {
+        "id": "628a1bc3a9adc1e315cdcc849ad596ce",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "value",
+            "toId": "fffa03300581a3ec34e37bb3538c3cd7"
+          }
+        ]
+      },
+      {
+        "id": "fffa03300581a3ec34e37bb3538c3cd7",
+        "type": "INTEGER"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "left-right",
+    "id": "8ff763c9cfa644a19a10103dbb35f9ce",
+    "name": "left-right",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "383ffb18e73d40ae9980d7e6229fda94",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "4f551fc32e8e428a9e324a8e4f1a9c9f",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "493786ff282240e584db69fa93dc376b",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "_all.soar",
+            "id": "7095f09455364e9fa837fd58911f8b84",
+            "name": "_all",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "done.soar",
+            "id": "1abb6a83c7d7468eb9dff6b645b87b6c",
+            "name": "done",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "reward.soar",
+            "id": "df14074e34744b3fb78350f51a849388",
+            "name": "reward",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "top-state.soar",
+            "id": "3ea03fbf3abc4e3eae10eb768970534c",
+            "name": "top-state",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "initialize-left-right.soar",
+        "id": "061aad92afe84d6984501d5849b6810c",
+        "name": "initialize-left-right",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "move.soar",
+        "id": "2a583b7a49c1416ca4c5fd153651daa8",
+        "name": "move",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}

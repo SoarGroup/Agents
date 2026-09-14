@@ -1,5 +1,14 @@
 #### Selection A*
 
+## This folder overrides specific productions from the base selection space
+## (e.g. `selection*apply*state*evaluation` in Impasse__Operator_Tie/evaluate-operator.soar,
+## which replaces the same-named rule below) but relies on the base space for
+## ^name evaluate-operator being proposed on the operator and evaluation ^superoperator/
+## ^superstate/^superproblem-space being populated, so it must be sourced first.
+pushd ..
+source selection.soar
+popd
+
 ## Supports a variant of A* search using the selection space and associated default rules.
 ## Requires task-specific rules that compute g(x) + h(x) where 
 ##  g(x) is the path cost function (cost of search up to a point) and

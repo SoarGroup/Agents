@@ -1,0 +1,2768 @@
+{
+  "datamap": {
+    "rootId": "dcd28c6179244863b93a76631c92eeb2",
+    "vertices": [
+      {
+        "id": "016f2ea85d78463ca8830e9c1c216732",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "68afc00af8914e9492279c27621f73a1"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "id": "025136cf5fac41ee91aeaa5fbe171dcd",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "generate-facts"
+        ],
+        "id": "0266ea1791ce489d9d692a0a4a35b576",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "03214780c0d24b5eb27ae485a60798d5",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "97f0c28ff31d45e6afd68a7e693c055e"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "generate-problem"
+        ],
+        "id": "0457d371cd2647309b2ccff19a6c48f0",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "093a85a0654f4ed38d454f118ac1f1d9",
+        "outEdges": [
+          {
+            "name": "digit",
+            "toId": "27342c954dd54a14841aabbae94799ad"
+          },
+          {
+            "name": "name",
+            "toId": "79059ad2817b4cecb308801a93ee9acf"
+          },
+          {
+            "name": "next",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "next-carry",
+            "toId": "3ccb7dc02768443182d9edf869795ba5"
+          },
+          {
+            "name": "next-generate",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "next-generate",
+            "toId": "7789219b445e4cc0b580c8bd8ab8af56"
+          },
+          {
+            "name": "plus-ten",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "previous",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "previous-borrow",
+            "toId": "f33990c2e58f4f74b9bacf327cfd521c"
+          },
+          {
+            "name": "single-digit",
+            "toId": "d2dfd518a78e4817beeb3ed6065ff855"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "09c49bd83cff48a5b58e524ad646410e",
+        "outEdges": [
+          {
+            "name": "digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "digit2",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "57a39a6b3f544a8d8a90c4d660c62b70"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "smem",
+          "wm"
+        ],
+        "id": "0af5221445fc403c85973f88756ea961",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "0e47dd4d03d7425182d25a9e1baf1f93",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "compute-result"
+        ],
+        "id": "0fb926b0bf7644aa8980ce5413291074",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "1034ef2fafcb4f7285ae43c8045cd1b5",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "0fb926b0bf7644aa8980ce5413291074"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "existing",
+          "new"
+        ],
+        "id": "1073afd1a0fb44c39b2a6cc799561b8d",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "116aa79b4d7d41ae972f4255e02ac229",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "128d2a371737409182d8eed352f1714c",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "1363cdb64a594d65b239a5fddf809aa2",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "initialize-arithmetic"
+        ],
+        "id": "1539073ff5ca4510bcf105e5839ed5a8",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "155e7872616842038b63c86b86c19642",
+        "type": "INTEGER"
+      },
+      {
+        "id": "156a5ea7875045299f72eecb888549b4",
+        "outEdges": [ ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "compute-result"
+        ],
+        "id": "1597435e7be64466b1269d818ae33c03",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "15e3c85426004f65b7367abeea91d50c",
+        "outEdges": [
+          {
+            "name": "count",
+            "toId": "29141d8702bb429d894c1ac1a610af74"
+          },
+          {
+            "name": "name",
+            "toId": "8d788ba01f2446d6bfd0589d5fc0743c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "186df6fd5a4e400daf4544d18296034a",
+        "outEdges": [
+          {
+            "name": "fact-source",
+            "toId": "0af5221445fc403c85973f88756ea961"
+          },
+          {
+            "name": "output",
+            "toId": "9f62d10b61584a9d9e086f31acb81181"
+          },
+          {
+            "name": "problems-source",
+            "toId": "9e97196f199545fba050599128621f7a"
+          },
+          {
+            "name": "retrieve",
+            "toId": "1b3b61c70e094490bf09b7b5500ab33e"
+          },
+          {
+            "name": "store",
+            "toId": "025136cf5fac41ee91aeaa5fbe171dcd"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "1880b9f9196c447385aa7827c5962e7c",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "3a3b6bb610a443a2a28bff66a87ba3f3"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "id": "1b3b61c70e094490bf09b7b5500ab33e",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "init"
+        ],
+        "id": "1b9514dea9fe4a2fbe721a51ad15a356",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "1bc33f45ec004474a6640da1ee0dcbe1",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "0266ea1791ce489d9d692a0a4a35b576"
+          },
+          {
+            "name": "operator",
+            "toId": "2134140de1eb45e49bd5bef8332f24dd"
+          },
+          {
+            "name": "operator",
+            "toId": "55c145ef52be463fbcb53124ff6fd2d7"
+          },
+          {
+            "name": "operator",
+            "toId": "58fd898aec844df6889fe13b2f34cf50"
+          },
+          {
+            "name": "operator",
+            "toId": "6bc5d5764847442b9341ac611c024685"
+          },
+          {
+            "name": "phase",
+            "toId": "bb7bc62871d544419ec3a1d65c5a4007"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "superstate",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "116aa79b4d7d41ae972f4255e02ac229"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "1be5b50ee1df461e9d7da572350b899d",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "true"
+        ],
+        "id": "1d461ab2ed6b4c0db0285a7cc34986a1",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "initialize-counting"
+        ],
+        "id": "1ebb2408bbf84012929e7c894ea5b147",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "carry-borrow"
+        ],
+        "id": "1f8de2853ec84499b131af1e664270b9",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "20afc38c148940d9bce61b8b3b674ed2",
+        "outEdges": [
+          {
+            "name": "base-number",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "borrow",
+            "toId": "53348e0fc45e426f834720ad6b7021d6"
+          },
+          {
+            "name": "counter",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "751cfeeba9454115b7e29bac81fe7eae"
+          },
+          {
+            "name": "operator",
+            "toId": "03214780c0d24b5eb27ae485a60798d5"
+          },
+          {
+            "name": "operator",
+            "toId": "3b23a41a54ad46899dc91b5281fa905e"
+          },
+          {
+            "name": "operator",
+            "toId": "c2f070b1033c494c892ff84578b877c4"
+          },
+          {
+            "name": "operator",
+            "toId": "f2088519cb22487e8db88e58322f7b2c"
+          },
+          {
+            "name": "quiescence",
+            "toId": "70b58cb82a674448a1242830c5ce39cb"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "stored",
+            "toId": "4cae66e3169140c3842ae2dc6522d5a9"
+          },
+          {
+            "name": "subtrahend",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "superstate",
+            "toId": "3d5c59f47cb9443199c56053ea8e7890"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "b20af3f2fb5348e1ae7640cc8b54e479"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "2134140de1eb45e49bd5bef8332f24dd",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "1b9514dea9fe4a2fbe721a51ad15a356"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "store"
+        ],
+        "id": "22ef57ed4b6f46669fb632ab3421c869",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "t"
+        ],
+        "id": "23bf52f266604f938a8b4d3eb22f63bf",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "250e88c0b42b4ca1aeff34fbd15ddf4b",
+        "outEdges": [
+          {
+            "name": "add10-facts",
+            "toId": "db4496e0d6de429594eac8454f6a338b"
+          },
+          {
+            "name": "facts",
+            "toId": "1073afd1a0fb44c39b2a6cc799561b8d"
+          },
+          {
+            "name": "facts",
+            "toId": "4da9c81d5dfe4015800d6806c568e693"
+          },
+          {
+            "name": "facts",
+            "toId": "b0ccdef5b66249ac8bf637a0bcaf9b4d"
+          },
+          {
+            "name": "subtraction-facts",
+            "toId": "4da9c81d5dfe4015800d6806c568e693"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "258437aabe0c4b9da33febbf7a6e2f92",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "e53a6f53119a43efa2bb446095f47839"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "27342c954dd54a14841aabbae94799ad",
+        "max": 9,
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "id": "285b00b5c0af42deae3665a39033d359",
+        "outEdges": [
+          {
+            "name": "bad-cmd",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "failure",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "retrieved",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "retrieved",
+            "toId": "e02af47e73f14600b6d4f6c515892b69"
+          },
+          {
+            "name": "success",
+            "toId": "e02af47e73f14600b6d4f6c515892b69"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "29141d8702bb429d894c1ac1a610af74",
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "id": "2920525b52144b0daee7b9a664d22b2b",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "2946d82f14da4bc3a54e13018141a27d",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "3013d166191140a8badd691df493ef59",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "cd8ee40834bd45d1b36d798d641ec2b5"
+          },
+          {
+            "name": "zero",
+            "toId": "3fb5bc5209cf4bc094adee41e0f0c524"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "generate-facts"
+        ],
+        "id": "320a38097c4f41cc8184a4770933e1a3",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "33ca44bb3d6b4451b8540a78b9f2e593",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "feeeb6b6266c422397b3631aa650ba2a"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "3560345c2a9b48f9a63097abb9a97f1f",
+        "outEdges": [ ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "3573504f2a0b4cb798bf473fd051d60f",
+        "outEdges": [
+          {
+            "name": "addend",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "carry",
+            "toId": "53348e0fc45e426f834720ad6b7021d6"
+          },
+          {
+            "name": "counter",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "c5a070fad8604d1b9c63dff8765d5544"
+          },
+          {
+            "name": "operator",
+            "toId": "016f2ea85d78463ca8830e9c1c216732"
+          },
+          {
+            "name": "operator",
+            "toId": "644469bcca3341b68b5272422159406f"
+          },
+          {
+            "name": "operator",
+            "toId": "e4abcbcec5914de2b1456e89e99f8a85"
+          },
+          {
+            "name": "operator",
+            "toId": "e7baf0377d91453aad4638280048228c"
+          },
+          {
+            "name": "quiescence",
+            "toId": "70b58cb82a674448a1242830c5ce39cb"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "stored",
+            "toId": "4cae66e3169140c3842ae2dc6522d5a9"
+          },
+          {
+            "name": "sum",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "superstate",
+            "toId": "3d5c59f47cb9443199c56053ea8e7890"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "1363cdb64a594d65b239a5fddf809aa2"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "3763419c4ce744dfb5af61d8751cc726",
+        "outEdges": [
+          {
+            "name": "current-column",
+            "toId": "cd4f113f206c4c20966f4cac27186ed9"
+          },
+          {
+            "name": "name",
+            "toId": "1f8de2853ec84499b131af1e664270b9"
+          },
+          {
+            "name": "operator",
+            "toId": "3013d166191140a8badd691df493ef59"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "superstate",
+            "toId": "75ce1b5f0cdf49d28fb47f0ab00200dd"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "0e47dd4d03d7425182d25a9e1baf1f93"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "process-column"
+        ],
+        "id": "37da349dd30f4fc9a67ffcb82d5a402b",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "38116296841f4b4e838aade4e29dd5bf",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "38bb950051284fa49cc3d6b7f455657c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "write-result"
+        ],
+        "id": "38bb950051284fa49cc3d6b7f455657c",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "next-column"
+        ],
+        "id": "3a3b6bb610a443a2a28bff66a87ba3f3",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "3b23a41a54ad46899dc91b5281fa905e",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "22ef57ed4b6f46669fb632ab3421c869"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "3b56dc613ce0421fa170fbfce0dde8cf",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "d6897b2d1da1446aaa3c16b6b8c3c37a"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "false",
+          "true"
+        ],
+        "id": "3ccb7dc02768443182d9edf869795ba5",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "3d5c59f47cb9443199c56053ea8e7890",
+        "outEdges": [
+          {
+            "name": "arithmetic",
+            "toId": "250e88c0b42b4ca1aeff34fbd15ddf4b"
+          },
+          {
+            "name": "arithmetic-problem",
+            "toId": "44c58d6beeb748e4b69cf4165cd81e23"
+          },
+          {
+            "name": "current-column",
+            "toId": "cd4f113f206c4c20966f4cac27186ed9"
+          },
+          {
+            "name": "digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "digit2",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "896ae9b1439f4e8394e96f0323528d97"
+          },
+          {
+            "name": "operator",
+            "toId": "09c49bd83cff48a5b58e524ad646410e"
+          },
+          {
+            "name": "operator",
+            "toId": "6def8fd26d934901a29d181bf742e790"
+          },
+          {
+            "name": "operator",
+            "toId": "7dcc3ee674614cee8d9d68f56f442dca"
+          },
+          {
+            "name": "operator",
+            "toId": "8a50915a143c4ed3818611b01145daa9"
+          },
+          {
+            "name": "operator",
+            "toId": "c169c680ab434f62b8b0dd133c5f9af0"
+          },
+          {
+            "name": "prior-column",
+            "toId": "cd4f113f206c4c20966f4cac27186ed9"
+          },
+          {
+            "name": "result",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "superstate",
+            "toId": "75ce1b5f0cdf49d28fb47f0ab00200dd"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "ebff663d3b284a06bc93a871ad8c9031"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "3e3a9fb3eed3433ebd2cf2aa08bfee5a",
+        "outEdges": [
+          {
+            "name": "digit2",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "8b4ba142b3eb4c7e80aae7ad8ee7aeaa"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "3fb5bc5209cf4bc094adee41e0f0c524",
+        "outEdges": [ ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "retrieve-digits"
+        ],
+        "id": "402673c6bdcc4d0cb02d02c4b86e0f51",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "41278db1aa72488487010b3cb785383c",
+        "outEdges": [
+          {
+            "name": "current",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "c7ed5b74d85c4089940634f8cf0ea68c"
+          },
+          {
+            "name": "operator",
+            "toId": "33ca44bb3d6b4451b8540a78b9f2e593"
+          },
+          {
+            "name": "operator",
+            "toId": "89459af15d0c41fba7be2ca0a5fd0cc8"
+          },
+          {
+            "name": "operator",
+            "toId": "fb706d23457f407cb8323b2e46215db5"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "superstate",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "78091f2e851541a5ada4d682a932bb00"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "compute-result"
+        ],
+        "id": "43f7cbdfebb14acba0106d21c707ca93",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "447eb29cd3f54c5489ee8f3325d31845",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "d5e098ea13b3467788768285aa3e890a"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "44c58d6beeb748e4b69cf4165cd81e23",
+        "outEdges": [
+          {
+            "name": "bottom-number",
+            "toId": "f558942c68524dd6a5fee7973b6bde03"
+          },
+          {
+            "name": "computed-result",
+            "toId": "2920525b52144b0daee7b9a664d22b2b"
+          },
+          {
+            "name": "current-column",
+            "toId": "cd4f113f206c4c20966f4cac27186ed9"
+          },
+          {
+            "name": "one-column",
+            "toId": "cd4f113f206c4c20966f4cac27186ed9"
+          },
+          {
+            "name": "operation",
+            "toId": "fc998594186741d5a6a662b530c90b21"
+          },
+          {
+            "name": "operation-symbol",
+            "toId": "8473add5546a417e9e1dea77538a61b8"
+          },
+          {
+            "name": "result-number",
+            "toId": "6b2914e5afa741f1bd6d65cf69ee884f"
+          },
+          {
+            "name": "top-number",
+            "toId": "d1cd5432be2e49c4806d7260fa189ebe"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "450a92d7c3a343aea5816b1c2c64b8ab",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "9fad4e92abe0442d8a7c5aeca9b72b17"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "detect-completion"
+        ],
+        "id": "4564239fb70a4efbb99ed9f991f0b73b",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "48b5cf2545674af2bce5bb1490e9d271",
+        "outEdges": [
+          {
+            "name": "command",
+            "toId": "ac1684d732454e43a53038ef0dd2541e"
+          },
+          {
+            "name": "result",
+            "toId": "285b00b5c0af42deae3665a39033d359"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "4bcdf42ff0594ce4a3816ad67d7be97e",
+        "max": 9,
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "id": "4cae66e3169140c3842ae2dc6522d5a9",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "4cdac55474494a4f840798c7fb939248",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "4da9c81d5dfe4015800d6806c568e693",
+        "outEdges": [
+          {
+            "name": "carry-borrow",
+            "toId": "5bc76294a2ce4233a9e61436deda0232"
+          },
+          {
+            "name": "digit1",
+            "toId": "747a5403e0a1415b88950a42be87ed58"
+          },
+          {
+            "name": "digit2",
+            "toId": "747a5403e0a1415b88950a42be87ed58"
+          },
+          {
+            "name": "operation",
+            "toId": "fc998594186741d5a6a662b530c90b21"
+          },
+          {
+            "name": "result",
+            "toId": "73206bdda8774cde9c83a862488dbad8"
+          },
+          {
+            "name": "sum",
+            "toId": "747a5403e0a1415b88950a42be87ed58"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "clean"
+        ],
+        "id": "4e3e3d5aad5e44e384eeffcf920bdf38",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "get-digit2"
+        ],
+        "id": "501c0c1ba85a481ba482ee24ac69dc37",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "generate-digit1"
+        ],
+        "id": "5205a9db443d43beb2722bbb35cb475f",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "false",
+          "true"
+        ],
+        "id": "53348e0fc45e426f834720ad6b7021d6",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "55c145ef52be463fbcb53124ff6fd2d7",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "4e3e3d5aad5e44e384eeffcf920bdf38"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "subtract-via-counting"
+        ],
+        "id": "57a39a6b3f544a8d8a90c4d660c62b70",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "58fd898aec844df6889fe13b2f34cf50",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "65ce03408c514f829d06a70d5a35c1b5"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "59b8fd4cb855428da95ad40a2aa009b2",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "402673c6bdcc4d0cb02d02c4b86e0f51"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "5b70e3bb384d43719f3ed8761fb4d21f",
+        "type": "INTEGER"
+      },
+      {
+        "id": "5bc76294a2ce4233a9e61436deda0232",
+        "max": 1,
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "id": "5f66982e2d064b93af4713d8fa296a4f",
+        "type": "INTEGER"
+      },
+      {
+        "id": "60efc7df93b141689ac53c7a813fb39e",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "43f7cbdfebb14acba0106d21c707ca93"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "63f681eba3354e00a237b1bf0326b5e3",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "644469bcca3341b68b5272422159406f",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "973ed4baebab437b9d6edd80e477f8e2"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "64874445ac354af5aed23be79c7090eb",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "check"
+        ],
+        "id": "65ce03408c514f829d06a70d5a35c1b5",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "borrow"
+        ],
+        "id": "65f0fa39638e4fd5aa9dea32c55bd16a",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "67c1d9f629c84ae39aa46e37f538a962",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "store"
+        ],
+        "id": "68afc00af8914e9492279c27621f73a1",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "add-ten"
+        ],
+        "id": "6999572d1bd3491fb26ceb0bf3b72a21",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "6b2914e5afa741f1bd6d65cf69ee884f",
+        "type": "INTEGER"
+      },
+      {
+        "id": "6bc5d5764847442b9341ac611c024685",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "7c99b93993d94a24ae8e847301faad3d"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "6d34f2b745274b06baddcfbd8da7ea25",
+        "outEdges": [
+          {
+            "name": "bottom-number",
+            "toId": "5f66982e2d064b93af4713d8fa296a4f"
+          },
+          {
+            "name": "bottom-number-1",
+            "toId": "fce1cc369c9e4881937ec1ae643d5e6f"
+          },
+          {
+            "name": "bottom-number-10",
+            "toId": "a78d74d9d6584d61b49abc06c81e7363"
+          },
+          {
+            "name": "bottom-number-100",
+            "toId": "936981d31c28497da2fcbbd1b1a19af3"
+          },
+          {
+            "name": "next",
+            "toId": "6d34f2b745274b06baddcfbd8da7ea25"
+          },
+          {
+            "name": "operation",
+            "toId": "c4b9e658dd7c4f9ea8027b5ed0a9cc3d"
+          },
+          {
+            "name": "problem",
+            "toId": "716de1b0d4cb42d6a05aa103dcfc46a2"
+          },
+          {
+            "name": "result",
+            "toId": "c822da27fad04311ba70333a91cfdf22"
+          },
+          {
+            "name": "top-number",
+            "toId": "f1fc4712cc434b66b170791f3899856a"
+          },
+          {
+            "name": "top-number-1",
+            "toId": "8bf0dd29837f400cb4638dcd018ad3eb"
+          },
+          {
+            "name": "top-number-10",
+            "toId": "9a4b7893b47842eb8c8cb6c43b8e1433"
+          },
+          {
+            "name": "top-number-100",
+            "toId": "d223efc3df014419b283769df2f13155"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "6def8fd26d934901a29d181bf742e790",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "6999572d1bd3491fb26ceb0bf3b72a21"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "count"
+        ],
+        "id": "6ec471f3dd93401aa620f3520f804a54",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "t"
+        ],
+        "id": "70b58cb82a674448a1242830c5ce39cb",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "t"
+        ],
+        "id": "70fe66f708a847d98ec0279b1fa5e103",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "716de1b0d4cb42d6a05aa103dcfc46a2",
+        "type": "INTEGER"
+      },
+      {
+        "id": "727fc74c43564960a0372e579174302b",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "1539073ff5ca4510bcf105e5839ed5a8"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "73206bdda8774cde9c83a862488dbad8",
+        "max": 9,
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "id": "747a5403e0a1415b88950a42be87ed58",
+        "max": 18,
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "subtract-via-counting"
+        ],
+        "id": "751cfeeba9454115b7e29bac81fe7eae",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "75ce1b5f0cdf49d28fb47f0ab00200dd",
+        "outEdges": [
+          {
+            "name": "arithmetic",
+            "toId": "250e88c0b42b4ca1aeff34fbd15ddf4b"
+          },
+          {
+            "name": "arithmetic-problem",
+            "toId": "44c58d6beeb748e4b69cf4165cd81e23"
+          },
+          {
+            "name": "carry-borrow",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "current-column",
+            "toId": "cd4f113f206c4c20966f4cac27186ed9"
+          },
+          {
+            "name": "digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "digit2",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "d4adfa749d8149e7b950652cc5cdd6a0"
+          },
+          {
+            "name": "operator",
+            "toId": "38116296841f4b4e838aade4e29dd5bf"
+          },
+          {
+            "name": "operator",
+            "toId": "447eb29cd3f54c5489ee8f3325d31845"
+          },
+          {
+            "name": "operator",
+            "toId": "60efc7df93b141689ac53c7a813fb39e"
+          },
+          {
+            "name": "operator",
+            "toId": "a62450fbc5e544189c8f8271051d4c0e"
+          },
+          {
+            "name": "operator",
+            "toId": "cc52fa0fa247410e94dad2de77559a7a"
+          },
+          {
+            "name": "query",
+            "toId": "4da9c81d5dfe4015800d6806c568e693"
+          },
+          {
+            "name": "result",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "superstate",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "63f681eba3354e00a237b1bf0326b5e3"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "76c5c9f7d84e4219b9006d64754528b9",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "b2c3232b57734a269035bfa496bfb0c0"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "7789219b445e4cc0b580c8bd8ab8af56",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "78091f2e851541a5ada4d682a932bb00",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "detect-completion"
+        ],
+        "id": "788e1eaf665745b08695d7c4c0b5ae4c",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "eight",
+          "five",
+          "four",
+          "nine",
+          "one",
+          "seven",
+          "six",
+          "three",
+          "two",
+          "zero"
+        ],
+        "id": "79059ad2817b4cecb308801a93ee9acf",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "7c4cd631434f44e1b5af3d9ae0281c0e",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "store"
+        ],
+        "id": "7c99b93993d94a24ae8e847301faad3d",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "7dcc3ee674614cee8d9d68f56f442dca",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "1597435e7be64466b1269d818ae33c03"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "|+|",
+          "|-|"
+        ],
+        "id": "8473add5546a417e9e1dea77538a61b8",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "86942dc639774219be6172380d6390a9",
+        "type": "INTEGER"
+      },
+      {
+        "id": "89459af15d0c41fba7be2ca0a5fd0cc8",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "cf0863b7574e4f9f851bf18e72539b1c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "compute-result"
+        ],
+        "id": "896ae9b1439f4e8394e96f0323528d97",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "896ef17bb5ae4543b640969e8693fffe",
+        "type": "INTEGER"
+      },
+      {
+        "id": "8a50915a143c4ed3818611b01145daa9",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "65f0fa39638e4fd5aa9dea32c55bd16a"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "generate-digit2"
+        ],
+        "id": "8b4ba142b3eb4c7e80aae7ad8ee7aeaa",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "8bf0dd29837f400cb4638dcd018ad3eb",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "finish-problem"
+        ],
+        "id": "8d788ba01f2446d6bfd0589d5fc0743c",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "8ff33f67ebf64e0cb20a288aa27ec87c",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "92c96622e2fe4e2aaa4a4e864de46a0c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "get-digit1"
+        ],
+        "id": "9130c9fb4c574d2a876af1dd4420e9a3",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "semantic"
+        ],
+        "id": "92c96622e2fe4e2aaa4a4e864de46a0c",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "carry-borrow"
+        ],
+        "id": "9312c4cee93e4f71912c5b0fdff634e0",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "936981d31c28497da2fcbbd1b1a19af3",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "detect-completion"
+        ],
+        "id": "945c525cd0c549239905e2fad1eb3a00",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "initialize-counting"
+        ],
+        "id": "973ed4baebab437b9d6edd80e477f8e2",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "count"
+        ],
+        "id": "97f0c28ff31d45e6afd68a7e693c055e",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "add-via-counting"
+        ],
+        "id": "98d0104ca08c4fedad95f73272607844",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "9a4b7893b47842eb8c8cb6c43b8e1433",
+        "type": "INTEGER"
+      },
+      {
+        "id": "9a7b3ea3abe8423fb3074a08268839a1",
+        "outEdges": [
+          {
+            "name": "input-link",
+            "toId": "c386e65437ec4cec91f797815bd850de"
+          },
+          {
+            "name": "output-link",
+            "toId": "3560345c2a9b48f9a63097abb9a97f1f"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "9c7ce82e5bbe47fb89c66776c997ff01",
+        "outEdges": [
+          {
+            "name": "complete",
+            "toId": "1d461ab2ed6b4c0db0285a7cc34986a1"
+          },
+          {
+            "name": "digit",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "9cc1fe7d0a2e41bcba388346a2bdfc7b",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "320a38097c4f41cc8184a4770933e1a3"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "smem",
+          "wm"
+        ],
+        "id": "9e97196f199545fba050599128621f7a",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "id": "9f62d10b61584a9d9e086f31acb81181",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "generate-problem"
+        ],
+        "id": "9fad4e92abe0442d8a7c5aeca9b72b17",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "a62450fbc5e544189c8f8271051d4c0e",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "9312c4cee93e4f71912c5b0fdff634e0"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "a78d74d9d6584d61b49abc06c81e7363",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "0",
+          "1"
+        ],
+        "id": "aaf75819a11d4853956f988a62c8b270",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "ac1684d732454e43a53038ef0dd2541e",
+        "outEdges": [
+          {
+            "name": "query",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "query",
+            "toId": "e02af47e73f14600b6d4f6c515892b69"
+          },
+          {
+            "name": "query",
+            "toId": "f27b263caf4348a2b67b421d2f932f26"
+          },
+          {
+            "name": "retrieve",
+            "toId": "e02af47e73f14600b6d4f6c515892b69"
+          },
+          {
+            "name": "store",
+            "toId": "e02af47e73f14600b6d4f6c515892b69"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "af07657ca4cd40c9962e691195f2ac2a",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "af611dc666b049188c7914f4a0fdc998",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "preloaded"
+        ],
+        "id": "b0ccdef5b66249ac8bf637a0bcaf9b4d",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "b20af3f2fb5348e1ae7640cc8b54e479",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "arithmetic"
+        ],
+        "id": "b23f8565f25844c1aefde875a54aa643",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "stop-arithmetic"
+        ],
+        "id": "b2c3232b57734a269035bfa496bfb0c0",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "b8d2078647ef4fcca846050051ed8a17",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "37da349dd30f4fc9a67ffcb82d5a402b"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "check",
+          "clean",
+          "store"
+        ],
+        "id": "bb7bc62871d544419ec3a1d65c5a4007",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "c169c680ab434f62b8b0dd133c5f9af0",
+        "outEdges": [
+          {
+            "name": "digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "98d0104ca08c4fedad95f73272607844"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "c2f070b1033c494c892ff84578b877c4",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "945c525cd0c549239905e2fad1eb3a00"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "c386e65437ec4cec91f797815bd850de",
+        "outEdges": [ ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "addition",
+          "subtraction"
+        ],
+        "id": "c4b9e658dd7c4f9ea8027b5ed0a9cc3d",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "c53c1ffe099c428a89f713d2e0f12433",
+        "outEdges": [
+          {
+            "name": "arithmetic",
+            "toId": "250e88c0b42b4ca1aeff34fbd15ddf4b"
+          },
+          {
+            "name": "arithmetic-problem",
+            "toId": "44c58d6beeb748e4b69cf4165cd81e23"
+          },
+          {
+            "name": "carry-borrow",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "current-column",
+            "toId": "cd4f113f206c4c20966f4cac27186ed9"
+          },
+          {
+            "name": "digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "digit2",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "9130c9fb4c574d2a876af1dd4420e9a3"
+          },
+          {
+            "name": "operator",
+            "toId": "1034ef2fafcb4f7285ae43c8045cd1b5"
+          },
+          {
+            "name": "operator",
+            "toId": "fef835ac8ce944ae8c52cacd125e22ec"
+          },
+          {
+            "name": "result",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "superstate",
+            "toId": "75ce1b5f0cdf49d28fb47f0ab00200dd"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "af07657ca4cd40c9962e691195f2ac2a"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "add-via-counting"
+        ],
+        "id": "c5a070fad8604d1b9c63dff8765d5544",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "retrieve-digits"
+        ],
+        "id": "c7ed5b74d85c4089940634f8cf0ea68c",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "c822da27fad04311ba70333a91cfdf22",
+        "type": "INTEGER"
+      },
+      {
+        "id": "cc52fa0fa247410e94dad2de77559a7a",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "501c0c1ba85a481ba482ee24ac69dc37"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "cd4f113f206c4c20966f4cac27186ed9",
+        "outEdges": [
+          {
+            "name": "carry-borrow",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "column",
+            "toId": "23bf52f266604f938a8b4d3eb22f63bf"
+          },
+          {
+            "name": "digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "digit2",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "new-digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "next-column",
+            "toId": "7c4cd631434f44e1b5af3d9ae0281c0e"
+          },
+          {
+            "name": "next-column",
+            "toId": "cd4f113f206c4c20966f4cac27186ed9"
+          },
+          {
+            "name": "result",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "new-column"
+        ],
+        "id": "cd8ee40834bd45d1b36d798d641ec2b5",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "retrieve-next"
+        ],
+        "id": "cf0863b7574e4f9f851bf18e72539b1c",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "d1cd5432be2e49c4806d7260fa189ebe",
+        "type": "INTEGER"
+      },
+      {
+        "id": "d219715e68fd4567ae68cab3bbb94405",
+        "outEdges": [
+          {
+            "name": "carry-borrow",
+            "toId": "155e7872616842038b63c86b86c19642"
+          },
+          {
+            "name": "digit-10",
+            "toId": "64874445ac354af5aed23be79c7090eb"
+          },
+          {
+            "name": "digit1",
+            "toId": "67c1d9f629c84ae39aa46e37f538a962"
+          },
+          {
+            "name": "digit2",
+            "toId": "5b70e3bb384d43719f3ed8761fb4d21f"
+          },
+          {
+            "name": "result",
+            "toId": "896ef17bb5ae4543b640969e8693fffe"
+          },
+          {
+            "name": "sum",
+            "toId": "f7fe7b80b83b47faa5ebd2f6a63f7fd9"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "d223efc3df014419b283769df2f13155",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "true"
+        ],
+        "id": "d2dfd518a78e4817beeb3ed6065ff855",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "d362fcbad065482a8990dedaefbe3289",
+        "outEdges": [
+          {
+            "name": "current-column",
+            "toId": "1be5b50ee1df461e9d7da572350b899d"
+          },
+          {
+            "name": "current-column",
+            "toId": "cd4f113f206c4c20966f4cac27186ed9"
+          },
+          {
+            "name": "name",
+            "toId": "0457d371cd2647309b2ccff19a6c48f0"
+          },
+          {
+            "name": "number",
+            "toId": "4bcdf42ff0594ce4a3816ad67d7be97e"
+          },
+          {
+            "name": "operator",
+            "toId": "258437aabe0c4b9da33febbf7a6e2f92"
+          },
+          {
+            "name": "operator",
+            "toId": "3b56dc613ce0421fa170fbfce0dde8cf"
+          },
+          {
+            "name": "operator",
+            "toId": "3e3a9fb3eed3433ebd2cf2aa08bfee5a"
+          },
+          {
+            "name": "operator",
+            "toId": "dbee2b827ce2479480259554cf9efec7"
+          },
+          {
+            "name": "operator",
+            "toId": "ea6f64b653344298b0c429083c4d5970"
+          },
+          {
+            "name": "problem",
+            "toId": "44c58d6beeb748e4b69cf4165cd81e23"
+          },
+          {
+            "name": "quiescence",
+            "toId": "70fe66f708a847d98ec0279b1fa5e103"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "superstate",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "2946d82f14da4bc3a54e13018141a27d"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "get-digit1",
+          "process-column"
+        ],
+        "id": "d4adfa749d8149e7b950652cc5cdd6a0",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "get-digit1"
+        ],
+        "id": "d5e098ea13b3467788768285aa3e890a",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "next-column"
+        ],
+        "id": "d6897b2d1da1446aaa3c16b6b8c3c37a",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "db4496e0d6de429594eac8454f6a338b",
+        "outEdges": [
+          {
+            "name": "digit-10",
+            "toId": "86942dc639774219be6172380d6390a9"
+          },
+          {
+            "name": "digit1",
+            "toId": "af611dc666b049188c7914f4a0fdc998"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "dbee2b827ce2479480259554cf9efec7",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "ede64458ed8a4c6b869063d950d40f07"
+          },
+          {
+            "name": "operation",
+            "toId": "fc998594186741d5a6a662b530c90b21"
+          },
+          {
+            "name": "operation-symbol",
+            "toId": "8473add5546a417e9e1dea77538a61b8"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "dcd28c6179244863b93a76631c92eeb2",
+        "outEdges": [
+          {
+            "name": "arithmetic",
+            "toId": "250e88c0b42b4ca1aeff34fbd15ddf4b"
+          },
+          {
+            "name": "arithmetic-problem",
+            "toId": "44c58d6beeb748e4b69cf4165cd81e23"
+          },
+          {
+            "name": "count",
+            "toId": "29141d8702bb429d894c1ac1a610af74"
+          },
+          {
+            "name": "current-problem",
+            "toId": "6d34f2b745274b06baddcfbd8da7ea25"
+          },
+          {
+            "name": "digits",
+            "toId": "9c7ce82e5bbe47fb89c66776c997ff01"
+          },
+          {
+            "name": "io",
+            "toId": "9a7b3ea3abe8423fb3074a08268839a1"
+          },
+          {
+            "name": "name",
+            "toId": "b23f8565f25844c1aefde875a54aa643"
+          },
+          {
+            "name": "one",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "operator",
+            "toId": "15e3c85426004f65b7367abeea91d50c"
+          },
+          {
+            "name": "operator",
+            "toId": "1880b9f9196c447385aa7827c5962e7c"
+          },
+          {
+            "name": "operator",
+            "toId": "450a92d7c3a343aea5816b1c2c64b8ab"
+          },
+          {
+            "name": "operator",
+            "toId": "59b8fd4cb855428da95ad40a2aa009b2"
+          },
+          {
+            "name": "operator",
+            "toId": "727fc74c43564960a0372e579174302b"
+          },
+          {
+            "name": "operator",
+            "toId": "76c5c9f7d84e4219b9006d64754528b9"
+          },
+          {
+            "name": "operator",
+            "toId": "8ff33f67ebf64e0cb20a288aa27ec87c"
+          },
+          {
+            "name": "operator",
+            "toId": "9cc1fe7d0a2e41bcba388346a2bdfc7b"
+          },
+          {
+            "name": "operator",
+            "toId": "b8d2078647ef4fcca846050051ed8a17"
+          },
+          {
+            "name": "parameters",
+            "toId": "186df6fd5a4e400daf4544d18296034a"
+          },
+          {
+            "name": "smem",
+            "toId": "48b5cf2545674af2bce5bb1490e9d271"
+          },
+          {
+            "name": "superstate",
+            "toId": "4cdac55474494a4f840798c7fb939248"
+          },
+          {
+            "name": "top-state",
+            "toId": "dcd28c6179244863b93a76631c92eeb2"
+          },
+          {
+            "name": "type",
+            "toId": "e9a953d0e9e442699210fd24b35a0cdd"
+          },
+          {
+            "name": "zero",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "e02af47e73f14600b6d4f6c515892b69",
+        "outEdges": [
+          {
+            "name": "add10-facts",
+            "toId": "d219715e68fd4567ae68cab3bbb94405"
+          },
+          {
+            "name": "carry-borrow",
+            "toId": "aaf75819a11d4853956f988a62c8b270"
+          },
+          {
+            "name": "digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "digit2",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "facts",
+            "toId": "d219715e68fd4567ae68cab3bbb94405"
+          },
+          {
+            "name": "subtraction-facts",
+            "toId": "d219715e68fd4567ae68cab3bbb94405"
+          },
+          {
+            "name": "sum",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "write-digit1"
+        ],
+        "id": "e33b6300d31c450891cef5c8af51bcbc",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "e4abcbcec5914de2b1456e89e99f8a85",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "788e1eaf665745b08695d7c4c0b5ae4c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "finish-problem-generation"
+        ],
+        "id": "e53a6f53119a43efa2bb446095f47839",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "e7baf0377d91453aad4638280048228c",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "6ec471f3dd93401aa620f3520f804a54"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "e9a953d0e9e442699210fd24b35a0cdd",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "ea6f64b653344298b0c429083c4d5970",
+        "outEdges": [
+          {
+            "name": "digit1",
+            "toId": "093a85a0654f4ed38d454f118ac1f1d9"
+          },
+          {
+            "name": "name",
+            "toId": "5205a9db443d43beb2722bbb35cb475f"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "ebff663d3b284a06bc93a871ad8c9031",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "generate-operation"
+        ],
+        "id": "ede64458ed8a4c6b869063d950d40f07",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "f1fc4712cc434b66b170791f3899856a",
+        "type": "INTEGER"
+      },
+      {
+        "id": "f2088519cb22487e8db88e58322f7b2c",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "1ebb2408bbf84012929e7c894ea5b147"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "f27b263caf4348a2b67b421d2f932f26",
+        "outEdges": [
+          {
+            "name": "facts",
+            "toId": "156a5ea7875045299f72eecb888549b4"
+          },
+          {
+            "name": "problem",
+            "toId": "128d2a371737409182d8eed352f1714c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "true"
+        ],
+        "id": "f33990c2e58f4f74b9bacf327cfd521c",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "f558942c68524dd6a5fee7973b6bde03",
+        "type": "INTEGER"
+      },
+      {
+        "id": "f7fe7b80b83b47faa5ebd2f6a63f7fd9",
+        "type": "INTEGER"
+      },
+      {
+        "id": "fb706d23457f407cb8323b2e46215db5",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "4564239fb70a4efbb99ed9f991f0b73b"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "addition",
+          "subtraction"
+        ],
+        "id": "fc998594186741d5a6a662b530c90b21",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "fce1cc369c9e4881937ec1ae643d5e6f",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "init-retrieve-digits"
+        ],
+        "id": "feeeb6b6266c422397b3631aa650ba2a",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "fef835ac8ce944ae8c52cacd125e22ec",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "e33b6300d31c450891cef5c8af51bcbc"
+          }
+        ],
+        "type": "SOAR_ID"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "arithmetic",
+    "id": "36a3f90959504c6e9149b7ac395e9d1a",
+    "name": "arithmetic",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "94ad33625d604fdfb6e23cfd9d9b5640",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "ebf4c5d36c684295b7ad7c3bedd22f7f",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "e893bee4c9aa48d98fa5e4e4a3140b5f",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "_all.soar",
+            "id": "e68713b97ee34be0b528e9d1ea9e7c77",
+            "name": "_all",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "monitor.soar",
+            "id": "7ece2f43804f4b50bc7bc7335ff6e334",
+            "name": "monitor",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "pre-computed-problems.soar",
+            "id": "264e4d9e65564501abc039491460f5d5",
+            "name": "pre-computed-problems",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "print-problems.soar",
+            "id": "f257246d6315432bbd9428d69f8aab3a",
+            "name": "print-problems",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "smem.soar",
+            "id": "3e77d22438a748d79d4ebfb51f3d0a66",
+            "name": "smem",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "special-digits.soar",
+            "id": "6759462e36974712863569d2a97b8b78",
+            "name": "special-digits",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "top-state.soar",
+            "id": "8ea45fb4dce7468b992711d45a1a5398",
+            "name": "top-state",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "Verify.soar",
+            "id": "14a086dac060457aa2997bc8e2c18122",
+            "name": "Verify",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "_readme.soar",
+        "id": "70b378aac8574973900a716f04c4c0e4",
+        "name": "_readme",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "file": "_smem-init.soar",
+        "id": "6afc5bc24d674fb5925ca97a0ef87fed",
+        "name": "_smem-init",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "file": "finish-problem.soar",
+        "id": "99d112523ba04a63b7fe8faac4e7d2f6",
+        "name": "finish-problem",
+        "type": "OPERATOR"
+      },
+      {
+        "dmId": "1bc33f45ec004474a6640da1ee0dcbe1",
+        "file": "generate-facts.soar",
+        "folder": "generate-facts",
+        "id": "bccf807289d94baea674b48a9d59ce87",
+        "name": "generate-facts",
+        "type": "HIGH_LEVEL_OPERATOR",
+        "children": [
+          {
+            "file": "elaborations.soar",
+            "id": "a1bf014fe5034a4aadadf13013471119",
+            "name": "elaborations",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "check.soar",
+            "id": "70e6329462d0455d9f6f8f4a383163cc",
+            "name": "check",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "clean.soar",
+            "id": "95b73ad065ad46c0ae1d5eb2117842df",
+            "name": "clean",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "init.soar",
+            "id": "a3d9a3a549774380a96223c51f626c50",
+            "name": "init",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "store.soar",
+            "id": "d178f589e71f435ea9c2d1c134d0b8fb",
+            "name": "store",
+            "type": "OPERATOR"
+          }
+        ]
+      },
+      {
+        "dmId": "d362fcbad065482a8990dedaefbe3289",
+        "file": "generate-problem.soar",
+        "folder": "generate-problem",
+        "id": "84ceb72aa0f14d8ba2f17f28d31557e3",
+        "name": "generate-problem",
+        "type": "HIGH_LEVEL_OPERATOR",
+        "children": [
+          {
+            "file": "elaborations.soar",
+            "id": "0da411e6bdf241cb907bd24b19c86423",
+            "name": "elaborations",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "readme.soar",
+            "id": "14fe0511e53545768b0fb1ce36ed265c",
+            "name": "readme",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "finish-problem-generation.soar",
+            "id": "3816e668c119448aa4944757ced38fec",
+            "name": "finish-problem-generation",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "generate-digit1.soar",
+            "id": "ec635511ab1b489ba0b3eca91e47491e",
+            "name": "generate-digit1",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "generate-digit2.soar",
+            "id": "0b1aaa13e7d4466b980959f8d7e9f818",
+            "name": "generate-digit2",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "generate-operation.soar",
+            "id": "201a65576eb241ada3ce3a5fca2db611",
+            "name": "generate-operation",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "next-column.soar",
+            "id": "ba57c3ff1e214b97ab54d0fa3a229738",
+            "name": "next-column",
+            "type": "OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "initialize-arithmetic.soar",
+        "id": "05b73ba7077c456799bce3bdfa01ccf0",
+        "name": "initialize-arithmetic",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "next-column.soar",
+        "id": "beef16131a19488ab754c0913f4f241f",
+        "name": "next-column",
+        "type": "OPERATOR"
+      },
+      {
+        "dmId": "75ce1b5f0cdf49d28fb47f0ab00200dd",
+        "file": "process-column.soar",
+        "folder": "process-column",
+        "id": "28cf262b23454eff8778b6102121d127",
+        "name": "process-column",
+        "type": "HIGH_LEVEL_OPERATOR",
+        "children": [
+          {
+            "file": "elaborations.soar",
+            "id": "9d32a1fb37674b0d812e403f79870656",
+            "name": "elaborations",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "dmId": "3763419c4ce744dfb5af61d8751cc726",
+            "file": "carry-borrow.soar",
+            "folder": "carry-borrow",
+            "id": "a313608f08cd40d6b74459ca10eea8cb",
+            "name": "carry-borrow",
+            "type": "HIGH_LEVEL_OPERATOR",
+            "children": [
+              {
+                "file": "elaborations.soar",
+                "id": "abf00b7ad15c46a28dd2395115acbb27",
+                "name": "elaborations",
+                "type": "FILE_OPERATOR"
+              },
+              {
+                "file": "new-column.soar",
+                "id": "04c2277abe684edf9dc00945256c4a0b",
+                "name": "new-column",
+                "type": "OPERATOR"
+              }
+            ]
+          },
+          {
+            "dmId": "3d5c59f47cb9443199c56053ea8e7890",
+            "file": "compute-result.soar",
+            "folder": "compute-result",
+            "id": "e049fbc62462410f98caac9c607f7ce3",
+            "name": "compute-result",
+            "type": "HIGH_LEVEL_OPERATOR",
+            "children": [
+              {
+                "file": "elaborations.soar",
+                "id": "0e13cffb6b76451a8073314d9dcaeadb",
+                "name": "elaborations",
+                "type": "FILE_OPERATOR"
+              },
+              {
+                "file": "add-ten.soar",
+                "id": "0875d19071ac45d2802596881ff1afc0",
+                "name": "add-ten",
+                "type": "OPERATOR"
+              },
+              {
+                "dmId": "3573504f2a0b4cb798bf473fd051d60f",
+                "file": "add-via-counting.soar",
+                "folder": "add-via-counting",
+                "id": "c40c20c60c1249d298f93c31ab9999bd",
+                "name": "add-via-counting",
+                "type": "HIGH_LEVEL_OPERATOR",
+                "children": [
+                  {
+                    "file": "elaborations.soar",
+                    "id": "d9d3b7c8bf7241eb80c6615e038709dc",
+                    "name": "elaborations",
+                    "type": "FILE_OPERATOR"
+                  },
+                  {
+                    "file": "readme.soar",
+                    "id": "1f471e3dfab44361ab605a21bec3fddd",
+                    "name": "readme",
+                    "type": "FILE_OPERATOR"
+                  },
+                  {
+                    "file": "count.soar",
+                    "id": "67a6da167aa44891899551a072edef65",
+                    "name": "count",
+                    "type": "OPERATOR"
+                  },
+                  {
+                    "file": "detect-completion.soar",
+                    "id": "0b332f5fccd64a119d34f0e6dc0d1d2e",
+                    "name": "detect-completion",
+                    "type": "OPERATOR"
+                  },
+                  {
+                    "file": "initialize-counting.soar",
+                    "id": "0f52e96f720941e2aca1a98e4a054400",
+                    "name": "initialize-counting",
+                    "type": "OPERATOR"
+                  },
+                  {
+                    "file": "store.soar",
+                    "id": "ad4c611564574438808fc2463531e88a",
+                    "name": "store",
+                    "type": "OPERATOR"
+                  }
+                ]
+              },
+              {
+                "file": "borrow.soar",
+                "id": "81c2fc64fa3e4522be46df4ee762b1ae",
+                "name": "borrow",
+                "type": "OPERATOR"
+              },
+              {
+                "file": "compute-result.soar",
+                "id": "13e9bfd955cb485c9339281453b5bc2b",
+                "name": "compute-result",
+                "type": "OPERATOR"
+              },
+              {
+                "dmId": "20afc38c148940d9bce61b8b3b674ed2",
+                "file": "subtract-via-counting.soar",
+                "folder": "subtract-via-counting",
+                "id": "61f9ca221f1749e7a4b02a4a8ce485ec",
+                "name": "subtract-via-counting",
+                "type": "HIGH_LEVEL_OPERATOR",
+                "children": [
+                  {
+                    "file": "elaborations.soar",
+                    "id": "629f6fb39cad49ea9cac2f855a97dff4",
+                    "name": "elaborations",
+                    "type": "FILE_OPERATOR"
+                  },
+                  {
+                    "file": "count.soar",
+                    "id": "e95034c696df4c5b9beb9948436d2cd3",
+                    "name": "count",
+                    "type": "OPERATOR"
+                  },
+                  {
+                    "file": "detect-completion.soar",
+                    "id": "6568835c713941ae9ae8a99db4faaff7",
+                    "name": "detect-completion",
+                    "type": "OPERATOR"
+                  },
+                  {
+                    "file": "initialize-counting.soar",
+                    "id": "c13934e6db434033809b829f1edd07d2",
+                    "name": "initialize-counting",
+                    "type": "OPERATOR"
+                  },
+                  {
+                    "file": "store.soar",
+                    "id": "dfcdd61c0e3845fc967c93da940fdb96",
+                    "name": "store",
+                    "type": "OPERATOR"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "dmId": "c53c1ffe099c428a89f713d2e0f12433",
+            "file": "get-digit1.soar",
+            "folder": "get-digit1",
+            "id": "03e4f21345764a759331177f67ee78cb",
+            "name": "get-digit1",
+            "type": "HIGH_LEVEL_OPERATOR",
+            "children": [
+              {
+                "file": "elaborations.soar",
+                "id": "fb9f78b4d70245d785c2b58a35e91287",
+                "name": "elaborations",
+                "type": "FILE_OPERATOR"
+              },
+              {
+                "file": "compute-result.soar",
+                "id": "f8e92e128b304f2a99661460a0e6e4ff",
+                "name": "compute-result",
+                "type": "OPERATOR"
+              },
+              {
+                "file": "write-digit1.soar",
+                "id": "7a867df09510493b95d6428a3cb54e15",
+                "name": "write-digit1",
+                "type": "OPERATOR"
+              }
+            ]
+          },
+          {
+            "file": "get-digit2.soar",
+            "id": "53aebda1135a49af88c7754cb5023ab6",
+            "name": "get-digit2",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "write-result.soar",
+            "id": "183a0d62c64543a88fd65698b8f77cf0",
+            "name": "write-result",
+            "type": "OPERATOR"
+          }
+        ]
+      },
+      {
+        "dmId": "41278db1aa72488487010b3cb785383c",
+        "file": "retrieve-digits.soar",
+        "folder": "retrieve-digits",
+        "id": "6bba28232e2c49b684a1839677f36b82",
+        "name": "retrieve-digits",
+        "type": "HIGH_LEVEL_OPERATOR",
+        "children": [
+          {
+            "file": "elaborations.soar",
+            "id": "78a75751eca249ae890bf15c531d653d",
+            "name": "elaborations",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "detect-completion.soar",
+            "id": "f49ba67ebe5747ec96e41ddcbe475ea7",
+            "name": "detect-completion",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "init-retrieve-digits.soar",
+            "id": "167d86b660c04267bae5f30d3dff59d7",
+            "name": "init-retrieve-digits",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "retrieve-next.soar",
+            "id": "e86f0aa882c546d29882a2362b680031",
+            "name": "retrieve-next",
+            "type": "OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "stop-arithmetic.soar",
+        "id": "99050bf47fe4475f82963c5e1d3ecf65",
+        "name": "stop-arithmetic",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}

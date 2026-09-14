@@ -1,0 +1,618 @@
+{
+  "datamap": {
+    "rootId": "534cdd2f275343328ab30ae24ce92846",
+    "vertices": [
+      {
+        "choices": [
+          "evaluate-operator"
+        ],
+        "id": "039a3e808186475ba3bd4f031c60892d",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "04c4f75753ff4683a6c3215864e94a27",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "f22f14ace882422f89e80f721c156125"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "blocks-world",
+          "evaluate-operator"
+        ],
+        "id": "07062ea0caee4606b1948f9f05fd186b",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "107e9864e1cf4e37b963a2df2f8d8eca",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "db59f3dfcbbc40869392e790393a39f1"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "object"
+        ],
+        "id": "1d68647ebd8d4a96aa1db085dc07cc4e",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "move-block"
+        ],
+        "id": "2425d198aac74432a9f955aeb5901486",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "284c063240b8418096d96b201516b8c6",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "039a3e808186475ba3bd4f031c60892d"
+          },
+          {
+            "name": "operator",
+            "toId": "04c4f75753ff4683a6c3215864e94a27"
+          },
+          {
+            "name": "superstate",
+            "toId": "c4798d5894fb4ba0945257a07b3e067a"
+          },
+          {
+            "name": "top-state",
+            "toId": "534cdd2f275343328ab30ae24ce92846"
+          },
+          {
+            "name": "type",
+            "toId": "f10b9cc3702a4c659cd35785a893c144"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "desired",
+          "gripper",
+          "ontop",
+          "superstate",
+          "top-state"
+        ],
+        "id": "2b2ee8e46f124a43af002c4f2fed1106",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "nothing"
+        ],
+        "id": "43a5d4eadb2040cc90686ba71b9e5b20",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "4d988e7b06f746fd82d7e2e2ed97ec23",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "534cdd2f275343328ab30ae24ce92846",
+        "outEdges": [
+          {
+            "name": "clear",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "desired",
+            "toId": "89e9d39ed36447b0aa77997fd23f0529"
+          },
+          {
+            "name": "gripper",
+            "toId": "6754ec1d7fb84940ab5809d09ef6ece9"
+          },
+          {
+            "name": "inplace-object",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "moveable",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "name",
+            "toId": "07062ea0caee4606b1948f9f05fd186b"
+          },
+          {
+            "name": "object",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "ontop",
+            "toId": "c23efd07a58f400197471cdbbdbbf7a7"
+          },
+          {
+            "name": "operator",
+            "toId": "645c3053f16642f192da1f8e7f56a276"
+          },
+          {
+            "name": "operator",
+            "toId": "9b14e6506bff4cfda308b5ba253be973"
+          },
+          {
+            "name": "outplace-object",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "problem-space",
+            "toId": "6eb4f36bfe4a4d179079eaea0bba5715"
+          },
+          {
+            "name": "success",
+            "toId": "89e9d39ed36447b0aa77997fd23f0529"
+          },
+          {
+            "name": "superstate",
+            "toId": "534cdd2f275343328ab30ae24ce92846"
+          },
+          {
+            "name": "superstate",
+            "toId": "d4995de3805c43318cc78455df5fc026"
+          },
+          {
+            "name": "top-state",
+            "toId": "534cdd2f275343328ab30ae24ce92846"
+          },
+          {
+            "name": "type",
+            "toId": "4d988e7b06f746fd82d7e2e2ed97ec23"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "move-blocks"
+        ],
+        "id": "55616c54bfef4f82ac02dad864182917",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "591a855a22454e058a470e1f5850c612",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "f29021f9cfd64c2da68e8f763bab4cac"
+          },
+          {
+            "name": "type",
+            "toId": "77631064bcea4a6e87eebfb3f71f9988"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "block",
+          "table"
+        ],
+        "id": "63f7595d0fac4d7cbcb8e703b18dd873",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "645c3053f16642f192da1f8e7f56a276",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "ac8f4cf6cad04f878f63609e6e7aa581"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "6754ec1d7fb84940ab5809d09ef6ece9",
+        "outEdges": [
+          {
+            "name": "above",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "holding",
+            "toId": "43a5d4eadb2040cc90686ba71b9e5b20"
+          },
+          {
+            "name": "holding",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "open",
+            "toId": "f611c7197d6b43958139b1ee46ce4c04"
+          },
+          {
+            "name": "position",
+            "toId": "72e198d59d5347b4b61f5bf5d892ea24"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "yes"
+        ],
+        "id": "68d76299963049519166e75d6672c89a",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "6eb4f36bfe4a4d179079eaea0bba5715",
+        "outEdges": [
+          {
+            "name": "default-state-copy",
+            "toId": "68d76299963049519166e75d6672c89a"
+          },
+          {
+            "name": "dont-copy",
+            "toId": "92c3afeef7034d0fb7b16245a5c78ede"
+          },
+          {
+            "name": "name",
+            "toId": "55616c54bfef4f82ac02dad864182917"
+          },
+          {
+            "name": "one-level-attributes",
+            "toId": "1d68647ebd8d4a96aa1db085dc07cc4e"
+          },
+          {
+            "name": "two-level-attributes",
+            "toId": "2b2ee8e46f124a43af002c4f2fed1106"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "726dfad727c2477b858382fab36c2e1b",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "87a5dce98c5d46c682112950c42d4428"
+          },
+          {
+            "name": "type",
+            "toId": "63f7595d0fac4d7cbcb8e703b18dd873"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "down",
+          "up"
+        ],
+        "id": "72e198d59d5347b4b61f5bf5d892ea24",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "block",
+          "table"
+        ],
+        "id": "77631064bcea4a6e87eebfb3f71f9988",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "A",
+          "B",
+          "C",
+          "gripper",
+          "table"
+        ],
+        "id": "87a5dce98c5d46c682112950c42d4428",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "89e9d39ed36447b0aa77997fd23f0529",
+        "outEdges": [
+          {
+            "name": "ontop",
+            "toId": "db383446c82b45f2a2217359ad5f0273"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "clear",
+          "inplace-object",
+          "moveable",
+          "top-state"
+        ],
+        "id": "92c3afeef7034d0fb7b16245a5c78ede",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "evaluate-operator"
+        ],
+        "id": "942f038ee29e4fd88497e1150e67ae0c",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "9b14e6506bff4cfda308b5ba253be973",
+        "outEdges": [
+          {
+            "name": "destination",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "moving-block",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "name",
+            "toId": "2425d198aac74432a9f955aeb5901486"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "initialize-blocks-world"
+        ],
+        "id": "ac8f4cf6cad04f878f63609e6e7aa581",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "c23efd07a58f400197471cdbbdbbf7a7",
+        "outEdges": [
+          {
+            "name": "bottom-block",
+            "toId": "591a855a22454e058a470e1f5850c612"
+          },
+          {
+            "name": "last-bottom",
+            "toId": "591a855a22454e058a470e1f5850c612"
+          },
+          {
+            "name": "top-block",
+            "toId": "107e9864e1cf4e37b963a2df2f8d8eca"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "c4798d5894fb4ba0945257a07b3e067a",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "f4a8b1269d084ef5bca89f84a8942871"
+          },
+          {
+            "name": "operator",
+            "toId": "df4ae188f08949e783be390625971e50"
+          },
+          {
+            "name": "superstate",
+            "toId": "534cdd2f275343328ab30ae24ce92846"
+          },
+          {
+            "name": "top-state",
+            "toId": "534cdd2f275343328ab30ae24ce92846"
+          },
+          {
+            "name": "type",
+            "toId": "dfcfd6808a5e4d51b2bfbc1bdbfa84a1"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "d4995de3805c43318cc78455df5fc026",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "db383446c82b45f2a2217359ad5f0273",
+        "outEdges": [
+          {
+            "name": "bottom-block",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          },
+          {
+            "name": "top-block",
+            "toId": "726dfad727c2477b858382fab36c2e1b"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "A",
+          "B",
+          "C"
+        ],
+        "id": "db59f3dfcbbc40869392e790393a39f1",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "df4ae188f08949e783be390625971e50",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "942f038ee29e4fd88497e1150e67ae0c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "dfcfd6808a5e4d51b2bfbc1bdbfa84a1",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "f10b9cc3702a4c659cd35785a893c144",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "evaluate-state"
+        ],
+        "id": "f22f14ace882422f89e80f721c156125",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "A",
+          "B",
+          "C",
+          "gripper",
+          "table"
+        ],
+        "id": "f29021f9cfd64c2da68e8f763bab4cac",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "Impasse__Operator_Tie"
+        ],
+        "id": "f4a8b1269d084ef5bca89f84a8942871",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "id": "f611c7197d6b43958139b1ee46ce4c04",
+        "type": "ENUMERATION"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "BW-LA-state-eval",
+    "id": "b27f694c361e447686d7591fdd1098ff",
+    "name": "BW-LA-state-eval",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "c655bdf21d0344b0b58a4171ccad9ce3",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "1b804422a2cf45da8d8df465b85fb73e",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "c1b775d3043343658f57866efc4fcc2c",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "clear.soar",
+            "id": "53243c8e6d8d4c1db851a95f3c4e5960",
+            "name": "clear",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "in-place.soar",
+            "id": "aa17563ecfa549039f53749787a12aee",
+            "name": "in-place",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "monitor.soar",
+            "id": "85caa3e1ff4f4443822d84939ff04416",
+            "name": "monitor",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "moveable.soar",
+            "id": "9a365d16f606462f91edab684828730d",
+            "name": "moveable",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "problem-space.soar",
+            "id": "d77626646aa6468db4c22143a419c039",
+            "name": "problem-space",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "reward.soar",
+            "id": "a8e65dd5e7b442a4ab8de30c405ff708",
+            "name": "reward",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "_readme.soar",
+        "id": "53117e40a49a46a397bddac956f81ae6",
+        "name": "_readme",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "dmId": "c4798d5894fb4ba0945257a07b3e067a",
+        "file": "Impasse__Operator_Tie.soar",
+        "folder": "Impasse__Operator_Tie",
+        "id": "f6caace3522c4927be64bc07ffd7780c",
+        "name": "Impasse__Operator_Tie",
+        "type": "HIGH_LEVEL_IMPASSE_OPERATOR",
+        "children": [
+          {
+            "dmId": "284c063240b8418096d96b201516b8c6",
+            "file": "evaluate-operator.soar",
+            "folder": "evaluate-operator",
+            "id": "9f008cdb19cf491a83d0642614e121d8",
+            "name": "evaluate-operator",
+            "type": "HIGH_LEVEL_OPERATOR",
+            "children": [
+              {
+                "file": "elaborations.soar",
+                "id": "829fe15a0b964d9581bf8273440e8209",
+                "name": "elaborations",
+                "type": "FILE_OPERATOR"
+              },
+              {
+                "file": "evaluate-state.soar",
+                "id": "056513514da04e828ace12f4a17d01ef",
+                "name": "evaluate-state",
+                "type": "OPERATOR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file": "initialize-blocks-world.soar",
+        "id": "ecaa955d3dd4406b878796cad9f719d6",
+        "name": "initialize-blocks-world",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "move-block.soar",
+        "id": "2098d43e75454ea0bfb7f6c1f6266e13",
+        "name": "move-block",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}

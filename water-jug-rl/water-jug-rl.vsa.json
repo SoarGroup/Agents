@@ -1,0 +1,342 @@
+{
+  "datamap": {
+    "rootId": "6062a00ac18748fdbeebd6b976d86e52",
+    "vertices": [
+      {
+        "choices": [
+          "pour"
+        ],
+        "id": "29ad2839393845cead7d084757911624",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "water-jug"
+        ],
+        "id": "3401ddb28497404ea466ec37d47afbbd",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "3968ef3f91244b16be85eacceb0a62ed",
+        "outEdges": [
+          {
+            "name": "empty-jug",
+            "toId": "5a61c26a324b489e8bd062b287d9a49c"
+          },
+          {
+            "name": "fill-jug",
+            "toId": "5a61c26a324b489e8bd062b287d9a49c"
+          },
+          {
+            "name": "fill-jug",
+            "toId": "5a61c26a324b489e8bd062b287d9a49c"
+          },
+          {
+            "name": "name",
+            "toId": "29ad2839393845cead7d084757911624"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "46e97fb9af8a449a982a6b5be707b1e6",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "initialize-water-jug"
+        ],
+        "id": "5450e382ac3a4fcc83621a14505864de",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "fill"
+        ],
+        "id": "56a084d3448649169c26e0137c7109b6",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "5a61c26a324b489e8bd062b287d9a49c",
+        "outEdges": [
+          {
+            "name": "contents",
+            "toId": "ce2d1bc7dd474467b3e86db80cfc324f"
+          },
+          {
+            "name": "empty",
+            "toId": "d08862b3f5894a0f80df9ced54be6595"
+          },
+          {
+            "name": "volume",
+            "toId": "8830132741b043399f686357b9bde991"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "6031fe15efe7463ca13610cb9db153ef",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "c5aa70e895f343ee832d882668324c81"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "6062a00ac18748fdbeebd6b976d86e52",
+        "outEdges": [
+          {
+            "name": "jug",
+            "toId": "5a61c26a324b489e8bd062b287d9a49c"
+          },
+          {
+            "name": "last-operator",
+            "toId": "f8759eebc3bf409493e89a486aa44e6a"
+          },
+          {
+            "name": "name",
+            "toId": "3401ddb28497404ea466ec37d47afbbd"
+          },
+          {
+            "name": "operator",
+            "toId": "3968ef3f91244b16be85eacceb0a62ed"
+          },
+          {
+            "name": "operator",
+            "toId": "6031fe15efe7463ca13610cb9db153ef"
+          },
+          {
+            "name": "operator",
+            "toId": "6ba082fb16b347d3b9117f707a0e32fb"
+          },
+          {
+            "name": "operator",
+            "toId": "89043053d0a84a7a95e5fefdcc416936"
+          },
+          {
+            "name": "operator",
+            "toId": "a2b94e36489142cea12d2b918259b21d"
+          },
+          {
+            "name": "superstate",
+            "toId": "e2f650d4062a424fbbb5914e9a2a86a0"
+          },
+          {
+            "name": "type",
+            "toId": "46e97fb9af8a449a982a6b5be707b1e6"
+          },
+          {
+            "name": "reward-link",
+            "toId": "6210b7c73560bc8e6275911305434a0c",
+            "comment": "Kernel-provided RL reward link (auto-created per state)"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "6ba082fb16b347d3b9117f707a0e32fb",
+        "outEdges": [
+          {
+            "name": "empty-jug",
+            "toId": "5a61c26a324b489e8bd062b287d9a49c"
+          },
+          {
+            "name": "name",
+            "toId": "72f16a1974d646b095c6bc7801076c9a"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "empty"
+        ],
+        "id": "72f16a1974d646b095c6bc7801076c9a",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "8830132741b043399f686357b9bde991",
+        "type": "INTEGER"
+      },
+      {
+        "id": "89043053d0a84a7a95e5fefdcc416936",
+        "outEdges": [
+          {
+            "name": "fill-jug",
+            "toId": "5a61c26a324b489e8bd062b287d9a49c"
+          },
+          {
+            "name": "name",
+            "toId": "56a084d3448649169c26e0137c7109b6"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "a2b94e36489142cea12d2b918259b21d",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "5450e382ac3a4fcc83621a14505864de"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "record"
+        ],
+        "id": "c5aa70e895f343ee832d882668324c81",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "ce2d1bc7dd474467b3e86db80cfc324f",
+        "type": "INTEGER"
+      },
+      {
+        "id": "d08862b3f5894a0f80df9ced54be6595",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "e2f650d4062a424fbbb5914e9a2a86a0",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "empty",
+          "fill",
+          "none",
+          "pour"
+        ],
+        "id": "f8759eebc3bf409493e89a486aa44e6a",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "6210b7c73560bc8e6275911305434a0c",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "reward",
+            "toId": "f65164a7d6204197c9d32236478362bc"
+          },
+          {
+            "name": "final-update",
+            "toId": "8d308c5061289fa11d92e099682ddbf3"
+          }
+        ]
+      },
+      {
+        "id": "f65164a7d6204197c9d32236478362bc",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "value",
+            "toId": "678ecd86a5ba210c8727fbe2f660cdc6"
+          }
+        ]
+      },
+      {
+        "id": "8d308c5061289fa11d92e099682ddbf3",
+        "type": "ENUMERATION",
+        "choices": [
+          "true"
+        ]
+      },
+      {
+        "id": "678ecd86a5ba210c8727fbe2f660cdc6",
+        "type": "INTEGER"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "water-jug-rl",
+    "id": "837bfd004d3540e0910e15bbebc8ccb4",
+    "name": "water-jug-rl",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "1cd6a90116124e9d959f52aecbd0f1a1",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "13f9886b82484adfb1099b53c35c4cf9",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "bde87eabd7b94808aaf58359d47d3488",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "empty.soar",
+            "id": "890241bfec644ea59cb6069d355a3d8e",
+            "name": "empty",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "goal-test.soar",
+            "id": "9a7fde9b6b7e42b8a5e63c133548a9e2",
+            "name": "goal-test",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "monitor.soar",
+            "id": "cf5e7b4ad9aa442498965ee54a209858",
+            "name": "monitor",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "_readme.soar",
+        "id": "1ebf039ac6324514964a066f83322825",
+        "name": "_readme",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "file": "empty.soar",
+        "id": "1bf9b27903084e8c8a0c4166aa5f8fe3",
+        "name": "empty",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "fill.soar",
+        "id": "4f0c33ef8d5c48cead2b7913705115fa",
+        "name": "fill",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "initialize-water-jug.soar",
+        "id": "3b14f0498c17499fb89cde85539b3408",
+        "name": "initialize-water-jug",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "pour.soar",
+        "id": "f315bd4a1e72448d9317c1d2ff72b1c5",
+        "name": "pour",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "record.soar",
+        "id": "985c5cbf5db74f6aba5cb6e301c8a712",
+        "name": "record",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}

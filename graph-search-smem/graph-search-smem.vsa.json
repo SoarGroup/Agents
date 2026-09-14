@@ -1,0 +1,778 @@
+{
+  "datamap": {
+    "rootId": "691fe98fe7d541f2a3dbb2a308fa72e2",
+    "vertices": [
+      {
+        "choices": [
+          "yes"
+        ],
+        "id": "00cfffb3c09e4b48bfa8088ce7535c11",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "go-to-location"
+        ],
+        "id": "03eef8d9be6a4a5cba620dc4f06a4a5a",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "0a5bebddf45a4d7d98a17f469eddef8f",
+        "type": "STRING"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "1173c8133c154c38b2345134cf4a1516",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "13707688372d4666b8a0554f931221c3",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "bc50070511084e8aa2918bc91439ce4f"
+          },
+          {
+            "name": "next-location",
+            "toId": "2c2cab885cef4793b2012931e7bf2659"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "initialize-mission"
+        ],
+        "id": "19ac46bb8ec04eb1a35878644630948d",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "smem",
+          "wm"
+        ],
+        "id": "1afd8c820ee84bf898b66797b8efa460",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "1f5df487f6cf47fe851e3f9702c7fafa",
+        "type": "FLOAT"
+      },
+      {
+        "id": "28491781d13940e0983ff5e2f27ff46c",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "2c2cab885cef4793b2012931e7bf2659",
+        "outEdges": [
+          {
+            "name": "id",
+            "toId": "fe213eb5177145b9a2ff78cb8c914752"
+          },
+          {
+            "name": "name",
+            "toId": "0a5bebddf45a4d7d98a17f469eddef8f"
+          },
+          {
+            "name": "next",
+            "toId": "2c2cab885cef4793b2012931e7bf2659"
+          },
+          {
+            "name": "next",
+            "toId": "87faa0dac0604640b684c036e6493edb"
+          },
+          {
+            "name": "step",
+            "toId": "96b4a1e153c343cdb3216e4fa915d37a"
+          },
+          {
+            "name": "type",
+            "toId": "61a29a775b7b4efc842faf0df91ee8c4"
+          },
+          {
+            "name": "x",
+            "toId": "7de97ea1039a4c16afd3356bd6bcbc73"
+          },
+          {
+            "name": "y",
+            "toId": "c73951d1632c4683976b5a9e3800614c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "2fa3740255004293a0f89df353e32e67",
+        "type": "STRING"
+      },
+      {
+        "id": "33b24a1b689248beae53f37f88c25491",
+        "outEdges": [
+          {
+            "name": "location",
+            "toId": "2c2cab885cef4793b2012931e7bf2659"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "38e500f1e9434f9c9705e8690b4aa33b",
+        "outEdges": [
+          {
+            "name": "input-link",
+            "toId": "28491781d13940e0983ff5e2f27ff46c"
+          },
+          {
+            "name": "output-link",
+            "toId": "ae3629c5218e4558b0141989c6548e40"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "39a114a6c65f494d8d45770812556a12",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "7210ffabedfd4937a4166fd0c3f59dba"
+          },
+          {
+            "name": "next-waypoint",
+            "toId": "2c2cab885cef4793b2012931e7bf2659"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "4d742220405a4cb8a81766e1971f9a21",
+        "outEdges": [
+          {
+            "name": "desired",
+            "toId": "33b24a1b689248beae53f37f88c25491"
+          },
+          {
+            "name": "name",
+            "toId": "03eef8d9be6a4a5cba620dc4f06a4a5a"
+          },
+          {
+            "name": "operator",
+            "toId": "39a114a6c65f494d8d45770812556a12"
+          },
+          {
+            "name": "operator",
+            "toId": "75c574cc41f54ed68a160f1eeee2df84"
+          },
+          {
+            "name": "problem-space",
+            "toId": "af182b6f5dea4df49b0106912472bed7"
+          },
+          {
+            "name": "smem",
+            "toId": "f069c2de75214592950f28f83a52e2ff"
+          },
+          {
+            "name": "superstate",
+            "toId": "691fe98fe7d541f2a3dbb2a308fa72e2"
+          },
+          {
+            "name": "top-state",
+            "toId": "691fe98fe7d541f2a3dbb2a308fa72e2"
+          },
+          {
+            "name": "type",
+            "toId": "9b2d63687b9246e1bdde949152cd5d9f"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "id": "4e415862745e4aa3af5c12473d0c7eaf",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "53a43f17ba5248809cb003fffb97dec9",
+        "outEdges": [
+          {
+            "name": "id",
+            "toId": "2fa3740255004293a0f89df353e32e67"
+          },
+          {
+            "name": "next",
+            "toId": "53a43f17ba5248809cb003fffb97dec9"
+          },
+          {
+            "name": "x",
+            "toId": "1f5df487f6cf47fe851e3f9702c7fafa"
+          },
+          {
+            "name": "y",
+            "toId": "fc96506f4a674659a0569c4531ccaff2"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "smem",
+          "wm"
+        ],
+        "id": "5c2cea1222124604b0c9a172f8c6d185",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "mission-step",
+          "waypoint"
+        ],
+        "id": "61a29a775b7b4efc842faf0df91ee8c4",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "691fe98fe7d541f2a3dbb2a308fa72e2",
+        "outEdges": [
+          {
+            "name": "current-location",
+            "toId": "2c2cab885cef4793b2012931e7bf2659"
+          },
+          {
+            "name": "current-location",
+            "toId": "9ef7a9424c8448e7badeaac779858ea0"
+          },
+          {
+            "name": "io",
+            "toId": "38e500f1e9434f9c9705e8690b4aa33b"
+          },
+          {
+            "name": "mission",
+            "toId": "6e564c0ebf3849f995dd29ada100705e"
+          },
+          {
+            "name": "name",
+            "toId": "9580ff48a6a7419a9e4d1245f5103f12"
+          },
+          {
+            "name": "operator",
+            "toId": "13707688372d4666b8a0554f931221c3"
+          },
+          {
+            "name": "operator",
+            "toId": "bc66552123c6484fad3ded78d7b2d5e5"
+          },
+          {
+            "name": "operator",
+            "toId": "e6f204f11de845e4ae64cb6abf26ac71"
+          },
+          {
+            "name": "operator",
+            "toId": "fe07a92c247e44baba73db0c0856ad08"
+          },
+          {
+            "name": "parameters",
+            "toId": "ba58072d7ccc4393b8d9154a263b5c5f"
+          },
+          {
+            "name": "path-cost",
+            "toId": "ec30de7609544a9788fe8a326883822d"
+          },
+          {
+            "name": "smem",
+            "toId": "f069c2de75214592950f28f83a52e2ff"
+          },
+          {
+            "name": "superstate",
+            "toId": "b99f5ad741c6425398236f838728009e"
+          },
+          {
+            "name": "top-state",
+            "toId": "691fe98fe7d541f2a3dbb2a308fa72e2"
+          },
+          {
+            "name": "type",
+            "toId": "b30a207e47b144dcaf57a33bf76f0980"
+          },
+          {
+            "name": "waypoints",
+            "toId": "a4857e4cb99a44879849a40bd68a0b3e"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "top-state"
+        ],
+        "id": "693414e86a1940239ea151bd562f9a38",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "6e564c0ebf3849f995dd29ada100705e",
+        "outEdges": [
+          {
+            "name": "current",
+            "toId": "1173c8133c154c38b2345134cf4a1516"
+          },
+          {
+            "name": "current",
+            "toId": "2c2cab885cef4793b2012931e7bf2659"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "go-to-waypoint"
+        ],
+        "id": "7210ffabedfd4937a4166fd0c3f59dba",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "75c574cc41f54ed68a160f1eeee2df84",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "cff946d907cf46dd80b553af08a4df29"
+          },
+          {
+            "name": "waypoint",
+            "toId": "2c2cab885cef4793b2012931e7bf2659"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "7de97ea1039a4c16afd3356bd6bcbc73",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "87faa0dac0604640b684c036e6493edb",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "waypoint"
+        ],
+        "id": "8b2ccd493fc64829afc58d02db2ec002",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "8e8784196cfe42159f492a740d3ea0c7",
+        "outEdges": [
+          {
+            "name": "id",
+            "toId": "b6303e4cf9294b8b835ac9a8e07ed2ea"
+          },
+          {
+            "name": "step",
+            "toId": "ce93b97920ce4962acbd481055ac00f2"
+          },
+          {
+            "name": "type",
+            "toId": "8b2ccd493fc64829afc58d02db2ec002"
+          },
+          {
+            "name": "x",
+            "toId": "9b9a54b068d341298c9874c78259a0f1"
+          },
+          {
+            "name": "y",
+            "toId": "a935fd7781bb4638842d33d799c6e190"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "graph-search"
+        ],
+        "id": "9580ff48a6a7419a9e4d1245f5103f12",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "96b4a1e153c343cdb3216e4fa915d37a",
+        "min": 1,
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "9b2d63687b9246e1bdde949152cd5d9f",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "9b9a54b068d341298c9874c78259a0f1",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "initialize-graph-search"
+        ],
+        "id": "9c10f49ec19c4acbade76df274f9414c",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "9ef7a9424c8448e7badeaac779858ea0",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "a4857e4cb99a44879849a40bd68a0b3e",
+        "outEdges": [
+          {
+            "name": "current-waypoint",
+            "toId": "53a43f17ba5248809cb003fffb97dec9"
+          },
+          {
+            "name": "waypoint",
+            "toId": "53a43f17ba5248809cb003fffb97dec9"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "graph-search"
+        ],
+        "id": "a6770d5462414b42b31d2f4f98ef21c5",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "a935fd7781bb4638842d33d799c6e190",
+        "type": "INTEGER"
+      },
+      {
+        "id": "ae3629c5218e4558b0141989c6548e40",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "af182b6f5dea4df49b0106912472bed7",
+        "outEdges": [
+          {
+            "name": "default-state-copy",
+            "toId": "00cfffb3c09e4b48bfa8088ce7535c11"
+          },
+          {
+            "name": "name",
+            "toId": "a6770d5462414b42b31d2f4f98ef21c5"
+          },
+          {
+            "name": "two-level-attributes",
+            "toId": "693414e86a1940239ea151bd562f9a38"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "b03d4fdfe724410b8597d119ca606f73",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "b0768f1682b54a2aaa84b100098ae4d9",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "b30a207e47b144dcaf57a33bf76f0980",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "1"
+        ],
+        "id": "b6303e4cf9294b8b835ac9a8e07ed2ea",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "b99f5ad741c6425398236f838728009e",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "ba58072d7ccc4393b8d9154a263b5c5f",
+        "outEdges": [
+          {
+            "name": "mission-storage",
+            "toId": "5c2cea1222124604b0c9a172f8c6d185"
+          },
+          {
+            "name": "output",
+            "toId": "4e415862745e4aa3af5c12473d0c7eaf"
+          },
+          {
+            "name": "waypoint-storage",
+            "toId": "1afd8c820ee84bf898b66797b8efa460"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "go-to-location"
+        ],
+        "id": "bc50070511084e8aa2918bc91439ce4f",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "bc66552123c6484fad3ded78d7b2d5e5",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "eb33f55b1243457dab2a83dadc61d828"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "c73951d1632c4683976b5a9e3800614c",
+        "type": "INTEGER"
+      },
+      {
+        "id": "ce93b97920ce4962acbd481055ac00f2",
+        "type": "INTEGER"
+      },
+      {
+        "id": "cfeeb0f2e3474663b93bf26ea0f2ba16",
+        "outEdges": [
+          {
+            "name": "failure",
+            "toId": "8e8784196cfe42159f492a740d3ea0c7"
+          },
+          {
+            "name": "retrieved",
+            "toId": "8e8784196cfe42159f492a740d3ea0c7"
+          },
+          {
+            "name": "success",
+            "toId": "8e8784196cfe42159f492a740d3ea0c7"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "expand-waypoints"
+        ],
+        "id": "cff946d907cf46dd80b553af08a4df29",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "e4b3cddd93ea473ca2f528b756aca006",
+        "outEdges": [
+          {
+            "name": "query",
+            "toId": "8e8784196cfe42159f492a740d3ea0c7"
+          },
+          {
+            "name": "retrieve",
+            "toId": "b0768f1682b54a2aaa84b100098ae4d9"
+          },
+          {
+            "name": "store",
+            "toId": "b03d4fdfe724410b8597d119ca606f73"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "e6f204f11de845e4ae64cb6abf26ac71",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "19ac46bb8ec04eb1a35878644630948d"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "initialize-waypoints"
+        ],
+        "id": "eb33f55b1243457dab2a83dadc61d828",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "ec30de7609544a9788fe8a326883822d",
+        "type": "FLOAT"
+      },
+      {
+        "id": "f069c2de75214592950f28f83a52e2ff",
+        "outEdges": [
+          {
+            "name": "command",
+            "toId": "e4b3cddd93ea473ca2f528b756aca006"
+          },
+          {
+            "name": "result",
+            "toId": "cfeeb0f2e3474663b93bf26ea0f2ba16"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "fc96506f4a674659a0569c4531ccaff2",
+        "type": "FLOAT"
+      },
+      {
+        "id": "fe07a92c247e44baba73db0c0856ad08",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "9c10f49ec19c4acbade76df274f9414c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "fe213eb5177145b9a2ff78cb8c914752",
+        "type": "STRING"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "graph-search-smem",
+    "id": "130b7e329b004bb485891bacb9437ba9",
+    "name": "graph-search-smem",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "6ecfc511da914301980e521b08c2f3d7",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "40a6f7a6a2ab4799bf80fdb2e96601f6",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "18eb8142b5ca4f67a861850d2d915fc4",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "_all.soar",
+            "id": "db4139685f0b4fb2965240928421d42e",
+            "name": "_all",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "halt.soar",
+            "id": "fe8374985dc34c03bf510a9c8121bab1",
+            "name": "halt",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "mission-creation-smem.soar",
+            "id": "15d7a37890d747e2a2f3f15e3d2f5ba3",
+            "name": "mission-creation-smem",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "monitor-waypoint.soar",
+            "id": "fb9f3846d8f7410890bb2835c8d47fa3",
+            "name": "monitor-waypoint",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "smem.soar",
+            "id": "737cdf02676c411fbe7ee8951dc1a565",
+            "name": "smem",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "top-state.soar",
+            "id": "417633cdf17e4599ad217d2b6823ccbd",
+            "name": "top-state",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "waypoint-creation-smem.soar",
+            "id": "aba8d50bb06c4ab88115dc950a589774",
+            "name": "waypoint-creation-smem",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "waypoints.soar",
+            "id": "97deddea2ea24c0492790c569b318ce2",
+            "name": "waypoints",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "_readme.soar",
+        "id": "19424f8a4b5446e5bf1c9fe170c0f982",
+        "name": "_readme",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "dmId": "4d742220405a4cb8a81766e1971f9a21",
+        "file": "go-to-location.soar",
+        "folder": "go-to-location",
+        "id": "436491acd60647759be1cf005fa9acc4",
+        "name": "go-to-location",
+        "type": "HIGH_LEVEL_OPERATOR",
+        "children": [
+          {
+            "file": "elaborations.soar",
+            "id": "51b4af6d0bf74052884b86960b5104cc",
+            "name": "elaborations",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "expand-waypoints.soar",
+            "id": "8888d7fed8cf4588b0cffac7ccd161bb",
+            "name": "expand-waypoints",
+            "type": "OPERATOR"
+          },
+          {
+            "file": "go-to-waypoint.soar",
+            "id": "6ed5cdba5fc44d43ab6c7dff9fd3a88a",
+            "name": "go-to-waypoint",
+            "type": "OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "initialize-graph-search.soar",
+        "id": "8082b297d50a4bca9d61794b8a19fbdd",
+        "name": "initialize-graph-search",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "initialize-mission.soar",
+        "id": "1fcf02a0a0b245439f803fc0910153b4",
+        "name": "initialize-mission",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "initialize-waypoints.soar",
+        "id": "17aa66f6bba04c0f881d4633a39f8325",
+        "name": "initialize-waypoints",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}

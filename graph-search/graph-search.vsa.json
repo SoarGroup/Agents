@@ -1,0 +1,509 @@
+{
+  "datamap": {
+    "rootId": "593b6c087100489ea952e059dc377492",
+    "vertices": [
+      {
+        "id": "106178e6d4db44d181115ecece975c67",
+        "outEdges": [
+          {
+            "name": "desired",
+            "toId": "bbf7ebed4ee34684a005d7bd4778d44f"
+          },
+          {
+            "name": "name",
+            "toId": "aef5d2ad66994c3cbc98b5bef6d58bdb"
+          },
+          {
+            "name": "operator",
+            "toId": "280a5739b8e941ddb58b1aaf2af9a366"
+          },
+          {
+            "name": "problem-space",
+            "toId": "fdac53ab548c4b7f95a757b853521f0c"
+          },
+          {
+            "name": "superstate",
+            "toId": "593b6c087100489ea952e059dc377492"
+          },
+          {
+            "name": "top-state",
+            "toId": "593b6c087100489ea952e059dc377492"
+          },
+          {
+            "name": "type",
+            "toId": "2902b63ba798449fa1596f1b93655d5e"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "12cefcc2711943fdaf5e51a4fb022614",
+        "type": "INTEGER"
+      },
+      {
+        "id": "16ec6f7ff0e94be0b780ee2b6121fdee",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "3c99feb3c84a4e7dbd95f8171646c488"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "24108d9a5ca44e48a7f20884edaa2737",
+        "outEdges": [
+          {
+            "name": "id",
+            "toId": "c3383c7541254b88a4f598eda7ff9b91"
+          },
+          {
+            "name": "next",
+            "toId": "24108d9a5ca44e48a7f20884edaa2737"
+          },
+          {
+            "name": "x",
+            "toId": "39eac7c2cad24c3cad4bc9de10ea2d71"
+          },
+          {
+            "name": "y",
+            "toId": "dd5a1bc08c59463fae92dce647da7f2d"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "280a5739b8e941ddb58b1aaf2af9a366",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "925b7d6f8018421c879f2a55bf2eae78"
+          },
+          {
+            "name": "next-waypoint",
+            "toId": "40eb3efe6af04a6289db405a3d17632c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "2902b63ba798449fa1596f1b93655d5e",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "341f1186850e49afb5a60b431922e1ac",
+        "type": "STRING"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "34a15285a6204747b3bc54fd391d1475",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "39eac7c2cad24c3cad4bc9de10ea2d71",
+        "type": "FLOAT"
+      },
+      {
+        "choices": [
+          "initialize-graph-search"
+        ],
+        "id": "3c99feb3c84a4e7dbd95f8171646c488",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "3d3e8875d65a4cfe80044c99a7c066d7",
+        "type": "INTEGER"
+      },
+      {
+        "id": "40eb3efe6af04a6289db405a3d17632c",
+        "outEdges": [
+          {
+            "name": "id",
+            "toId": "d89634a67eeb4023bbb253cc3051d53e"
+          },
+          {
+            "name": "name",
+            "toId": "341f1186850e49afb5a60b431922e1ac"
+          },
+          {
+            "name": "next",
+            "toId": "40eb3efe6af04a6289db405a3d17632c"
+          },
+          {
+            "name": "next",
+            "toId": "d5401ceeb27845ef88a3e6f211f68ef5"
+          },
+          {
+            "name": "x",
+            "toId": "12cefcc2711943fdaf5e51a4fb022614"
+          },
+          {
+            "name": "y",
+            "toId": "3d3e8875d65a4cfe80044c99a7c066d7"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "41eb276665f141a795370962787d0c03",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "482afc652c374d34a742ea9cc502ccab",
+        "type": "FLOAT"
+      },
+      {
+        "id": "4ff054d454744e25b6cd659c51b9adaf",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "5331be91141a4d848d842e2e5bee64e0",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "593b6c087100489ea952e059dc377492",
+        "outEdges": [
+          {
+            "name": "current-location",
+            "toId": "40eb3efe6af04a6289db405a3d17632c"
+          },
+          {
+            "name": "current-location",
+            "toId": "5331be91141a4d848d842e2e5bee64e0"
+          },
+          {
+            "name": "desired",
+            "toId": "bbf7ebed4ee34684a005d7bd4778d44f"
+          },
+          {
+            "name": "io",
+            "toId": "c3ce978cdff645f294a0085a5695ca3a"
+          },
+          {
+            "name": "mission",
+            "toId": "b6ee577e77f24e6caa210fdda860cbd6"
+          },
+          {
+            "name": "name",
+            "toId": "c0d29c6b29b6452ca4f82e32331832d4"
+          },
+          {
+            "name": "operator",
+            "toId": "16ec6f7ff0e94be0b780ee2b6121fdee"
+          },
+          {
+            "name": "operator",
+            "toId": "f15341520866481c899570181ba258b8"
+          },
+          {
+            "name": "path-cost",
+            "toId": "482afc652c374d34a742ea9cc502ccab"
+          },
+          {
+            "name": "superstate",
+            "toId": "41eb276665f141a795370962787d0c03"
+          },
+          {
+            "name": "top-state",
+            "toId": "593b6c087100489ea952e059dc377492"
+          },
+          {
+            "name": "type",
+            "toId": "b09d4bbaa2a54c6abe6214d30d61ac14"
+          },
+          {
+            "name": "waypoints",
+            "toId": "a3863654d5cb469391ce6951d6606cca"
+          },
+          {
+            "name": "impasse",
+            "toId": "7ff6ef756395d8bab65259d6d447e3a3"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "8319437704444edab6cf90509c31925a",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "go-to-waypoint"
+        ],
+        "id": "925b7d6f8018421c879f2a55bf2eae78",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "graph-search"
+        ],
+        "id": "9a65088d1ee24c5a90216f331ffea481",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "a3863654d5cb469391ce6951d6606cca",
+        "outEdges": [
+          {
+            "name": "current-waypoint",
+            "toId": "24108d9a5ca44e48a7f20884edaa2737"
+          },
+          {
+            "name": "waypoint",
+            "toId": "24108d9a5ca44e48a7f20884edaa2737"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "go-to-location"
+        ],
+        "id": "aef5d2ad66994c3cbc98b5bef6d58bdb",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "b09d4bbaa2a54c6abe6214d30d61ac14",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "b6ee577e77f24e6caa210fdda860cbd6",
+        "outEdges": [
+          {
+            "name": "current",
+            "toId": "34a15285a6204747b3bc54fd391d1475"
+          },
+          {
+            "name": "current",
+            "toId": "40eb3efe6af04a6289db405a3d17632c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "yes"
+        ],
+        "id": "bbc11d0a0bff4516bb2030c0fc062f9d",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "bbf7ebed4ee34684a005d7bd4778d44f",
+        "outEdges": [
+          {
+            "name": "location",
+            "toId": "40eb3efe6af04a6289db405a3d17632c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "graph-search"
+        ],
+        "id": "c0d29c6b29b6452ca4f82e32331832d4",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "c3383c7541254b88a4f598eda7ff9b91",
+        "type": "STRING"
+      },
+      {
+        "id": "c3ce978cdff645f294a0085a5695ca3a",
+        "outEdges": [
+          {
+            "name": "input-link",
+            "toId": "4ff054d454744e25b6cd659c51b9adaf"
+          },
+          {
+            "name": "output-link",
+            "toId": "8319437704444edab6cf90509c31925a"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "d5401ceeb27845ef88a3e6f211f68ef5",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "d89634a67eeb4023bbb253cc3051d53e",
+        "type": "STRING"
+      },
+      {
+        "id": "dd5a1bc08c59463fae92dce647da7f2d",
+        "type": "FLOAT"
+      },
+      {
+        "choices": [
+          "top-state"
+        ],
+        "id": "df933d85c2ff4c59b87e2dde06e2c0c5",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "go-to-location"
+        ],
+        "id": "df9a5dcfe4d8455e8815fb860adc31cb",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "f15341520866481c899570181ba258b8",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "df9a5dcfe4d8455e8815fb860adc31cb"
+          },
+          {
+            "name": "next-location",
+            "toId": "40eb3efe6af04a6289db405a3d17632c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "fdac53ab548c4b7f95a757b853521f0c",
+        "outEdges": [
+          {
+            "name": "default-state-copy",
+            "toId": "bbc11d0a0bff4516bb2030c0fc062f9d"
+          },
+          {
+            "name": "name",
+            "toId": "9a65088d1ee24c5a90216f331ffea481"
+          },
+          {
+            "name": "two-level-attributes",
+            "toId": "df933d85c2ff4c59b87e2dde06e2c0c5"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "7ff6ef756395d8bab65259d6d447e3a3",
+        "type": "ENUMERATION",
+        "choices": [
+          "tie"
+        ]
+      }
+    ]
+  },
+  "layout": {
+    "folder": "graph-search",
+    "id": "6b03e7d5fb144a8bbe9d0f0f6f88b16f",
+    "name": "graph-search",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "e02cc3e1c61646e9916f09977edb83ec",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "6d153c8801434faeb8a30158318ee98e",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "539173d1d8754900a9ed73a9a747db66",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "_all.soar",
+            "id": "997936cef38b4a0994ee1b76d0512aae",
+            "name": "_all",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "halt.soar",
+            "id": "639cdff28d51414a9c6e11bcac07e754",
+            "name": "halt",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "top-state.soar",
+            "id": "935bfa5c5af444e4827949b9034fa89c",
+            "name": "top-state",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "waypoints.soar",
+            "id": "cd38949f338649a9a988406c081bda4e",
+            "name": "waypoints",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "_readme.soar",
+        "id": "56f063461b404774bf23d80b69da6a95",
+        "name": "_readme",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "file": "monitor-waypoint.soar",
+        "id": "64e3fff6903143c98d07aac1fbc29f9b",
+        "name": "monitor-waypoint",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "dmId": "106178e6d4db44d181115ecece975c67",
+        "file": "go-to-location.soar",
+        "folder": "go-to-location",
+        "id": "65b3562a0e6c44268ce916ec4f5fca71",
+        "name": "go-to-location",
+        "type": "HIGH_LEVEL_OPERATOR",
+        "children": [
+          {
+            "file": "elaborations.soar",
+            "id": "35985c24cd56419896c33d538d0b8f3d",
+            "name": "elaborations",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "problem-space.soar",
+            "id": "0f463c6963ac4d6aa6ad58a29a99322c",
+            "name": "problem-space",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "go-to-waypoint.soar",
+            "id": "99f0dad302484fdba60636642ac89406",
+            "name": "go-to-waypoint",
+            "type": "OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "initialize-graph-search.soar",
+        "id": "191a7de18cc442eabf0ccffdedb5758f",
+        "name": "initialize-graph-search",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}

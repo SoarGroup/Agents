@@ -1,0 +1,559 @@
+{
+  "datamap": {
+    "rootId": "32cba94e14c646b6baa053fc6fd9b03e",
+    "vertices": [
+      {
+        "id": "078cd8f390b342029b7573c5a872e4f4",
+        "outEdges": [
+          {
+            "name": "cell",
+            "toId": "83f70cda66024c449b78f36c3fc4f0f7"
+          },
+          {
+            "name": "tile",
+            "toId": "42a6fbd27cc84057ab89882925e7af4c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "id": "1aa0aadc1e2446dba73283e02e6b4454",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "2493d62cfdb2449caf63ab86330b22e8",
+        "outEdges": [
+          {
+            "name": "desired",
+            "toId": "e1b233788bb14d24a96fadc0ae958009"
+          },
+          {
+            "name": "evaluation",
+            "toId": "8405236e4dd04741b369bc7e97c79fe9"
+          },
+          {
+            "name": "name",
+            "toId": "5454c28f760c466293a230b29c232255"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "2ad0cb997c564bba82c9464132fe1907",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "32cba94e14c646b6baa053fc6fd9b03e",
+        "outEdges": [
+          {
+            "name": "binding",
+            "toId": "078cd8f390b342029b7573c5a872e4f4"
+          },
+          {
+            "name": "blank-cell",
+            "toId": "83f70cda66024c449b78f36c3fc4f0f7"
+          },
+          {
+            "name": "desired",
+            "toId": "e1b233788bb14d24a96fadc0ae958009"
+          },
+          {
+            "name": "name",
+            "toId": "ed71293efef94cfeb50fd06bdc4b5743"
+          },
+          {
+            "name": "operator",
+            "toId": "700c631de15344fd9565f3106d5fa629"
+          },
+          {
+            "name": "operator",
+            "toId": "c7fce1e06250422ab42a2b3c032226f1"
+          },
+          {
+            "name": "problem-space",
+            "toId": "7749974a8a584aa48f4848a0d5446058"
+          },
+          {
+            "name": "success",
+            "toId": "e1b233788bb14d24a96fadc0ae958009"
+          },
+          {
+            "name": "superstate",
+            "toId": "c0e07b1cf6b74b56a18a27c5bb96d7a3"
+          },
+          {
+            "name": "tile-cell",
+            "toId": "83f70cda66024c449b78f36c3fc4f0f7"
+          },
+          {
+            "name": "tile-cell",
+            "toId": "9dc28fa45a564485b797c0eec896ca5e"
+          },
+          {
+            "name": "type",
+            "toId": "769c29d18a11434a89fb8ddb24b54bc5"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "move-tile"
+        ],
+        "id": "368e931e90d24fed983caac71ea6ecf5",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "eight-puzzle"
+        ],
+        "id": "3fec38c7c6044ece95a2ed2e47139508",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "42a6fbd27cc84057ab89882925e7af4c",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "1aa0aadc1e2446dba73283e02e6b4454"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "evaluate-operator"
+        ],
+        "id": "5454c28f760c466293a230b29c232255",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "5bcb1a32995341ed98a8b203d41c0c4b",
+        "type": "STRING"
+      },
+      {
+        "choices": [
+          "Impasse__Operator_Tie"
+        ],
+        "id": "65ab080c910f4981ba7cfa265e3f95d7",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "higher"
+        ],
+        "id": "6ba639d536534e1a9b4c2b6526edc851",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "700c631de15344fd9565f3106d5fa629",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "cec43bd28cdf43de8fea65e11ac0a47e"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "blank-cell"
+        ],
+        "id": "7234aa2bb4f44a31b2c0b422e0097de3",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "binding"
+        ],
+        "id": "75093f05975a4117a1a685a4b335f047",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "769c29d18a11434a89fb8ddb24b54bc5",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "7749974a8a584aa48f4848a0d5446058",
+        "outEdges": [
+          {
+            "name": "default-operator-copy",
+            "toId": "ccdce03f280545e881f832cf26308899"
+          },
+          {
+            "name": "default-state-copy",
+            "toId": "8fc8f88ca5c44fee8b61663338332260"
+          },
+          {
+            "name": "name",
+            "toId": "3fec38c7c6044ece95a2ed2e47139508"
+          },
+          {
+            "name": "one-level-attributes",
+            "toId": "7234aa2bb4f44a31b2c0b422e0097de3"
+          },
+          {
+            "name": "two-level-attributes",
+            "toId": "75093f05975a4117a1a685a4b335f047"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "7adf1a21dbd34c0294940ba156fd6ee3",
+        "outEdges": [
+          {
+            "name": "binding",
+            "toId": "078cd8f390b342029b7573c5a872e4f4"
+          },
+          {
+            "name": "blank-cell",
+            "toId": "83f70cda66024c449b78f36c3fc4f0f7"
+          },
+          {
+            "name": "desired",
+            "toId": "e1b233788bb14d24a96fadc0ae958009"
+          },
+          {
+            "name": "name",
+            "toId": "cdc2bce2b0f54660a5952b5f272d2a2a"
+          },
+          {
+            "name": "numeric-value",
+            "toId": "a62866d1609a419cbaa0a87ae50ad931"
+          },
+          {
+            "name": "operator",
+            "toId": "bde7b17739244b8bbfa79934ca0b46d0"
+          },
+          {
+            "name": "problem-space",
+            "toId": "7749974a8a584aa48f4848a0d5446058"
+          },
+          {
+            "name": "success",
+            "toId": "e1b233788bb14d24a96fadc0ae958009"
+          },
+          {
+            "name": "superstate",
+            "toId": "e73a3de62b1e4a1cb6358ccebac41f8b"
+          },
+          {
+            "name": "tile-cell",
+            "toId": "83f70cda66024c449b78f36c3fc4f0f7"
+          },
+          {
+            "name": "top-state",
+            "toId": "32cba94e14c646b6baa053fc6fd9b03e"
+          },
+          {
+            "name": "tried-tied-operator",
+            "toId": "5bcb1a32995341ed98a8b203d41c0c4b"
+          },
+          {
+            "name": "type",
+            "toId": "2ad0cb997c564bba82c9464132fe1907"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "83f70cda66024c449b78f36c3fc4f0f7",
+        "outEdges": [
+          {
+            "name": "cell",
+            "toId": "83f70cda66024c449b78f36c3fc4f0f7"
+          },
+          {
+            "name": "name",
+            "toId": "e116eb1d1bcc476f967c6fde84f1a4ce"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "8405236e4dd04741b369bc7e97c79fe9",
+        "outEdges": [
+          {
+            "name": "numeric-value",
+            "toId": "dac186995be540fe8e471a8073f971ae"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "yes"
+        ],
+        "id": "8fc8f88ca5c44fee8b61663338332260",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "9dc28fa45a564485b797c0eec896ca5e",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "a62866d1609a419cbaa0a87ae50ad931",
+        "max": 1,
+        "min": -1,
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "b38c99f2ce7e4d25844f7ad9cac80e19",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "bde7b17739244b8bbfa79934ca0b46d0",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "d3cc575f0b6c4adbbb16ec41605599c7"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "c0e07b1cf6b74b56a18a27c5bb96d7a3",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "c7fce1e06250422ab42a2b3c032226f1",
+        "outEdges": [
+          {
+            "name": "blank-cell",
+            "toId": "83f70cda66024c449b78f36c3fc4f0f7"
+          },
+          {
+            "name": "name",
+            "toId": "368e931e90d24fed983caac71ea6ecf5"
+          },
+          {
+            "name": "tile-cell",
+            "toId": "83f70cda66024c449b78f36c3fc4f0f7"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "no",
+          "yes"
+        ],
+        "id": "ccdce03f280545e881f832cf26308899",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "eight-puzzle",
+          "evaluate-object"
+        ],
+        "id": "cdc2bce2b0f54660a5952b5f272d2a2a",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "initialize-eight-puzzle"
+        ],
+        "id": "cec43bd28cdf43de8fea65e11ac0a47e",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "move-tile"
+        ],
+        "id": "d3cc575f0b6c4adbbb16ec41605599c7",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "dac186995be540fe8e471a8073f971ae",
+        "max": 1,
+        "min": -1,
+        "type": "INTEGER"
+      },
+      {
+        "id": "e116eb1d1bcc476f967c6fde84f1a4ce",
+        "type": "STRING"
+      },
+      {
+        "id": "e1b233788bb14d24a96fadc0ae958009",
+        "outEdges": [
+          {
+            "name": "better",
+            "toId": "6ba639d536534e1a9b4c2b6526edc851"
+          },
+          {
+            "name": "binding",
+            "toId": "078cd8f390b342029b7573c5a872e4f4"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "e73a3de62b1e4a1cb6358ccebac41f8b",
+        "outEdges": [
+          {
+            "name": "evaluation",
+            "toId": "8405236e4dd04741b369bc7e97c79fe9"
+          },
+          {
+            "name": "name",
+            "toId": "65ab080c910f4981ba7cfa265e3f95d7"
+          },
+          {
+            "name": "operator",
+            "toId": "2493d62cfdb2449caf63ab86330b22e8"
+          },
+          {
+            "name": "superstate",
+            "toId": "32cba94e14c646b6baa053fc6fd9b03e"
+          },
+          {
+            "name": "top-state",
+            "toId": "32cba94e14c646b6baa053fc6fd9b03e"
+          },
+          {
+            "name": "type",
+            "toId": "b38c99f2ce7e4d25844f7ad9cac80e19"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "eight-puzzle"
+        ],
+        "id": "ed71293efef94cfeb50fd06bdc4b5743",
+        "type": "ENUMERATION"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "eight-puzzle",
+    "id": "f19dc90f1aaa43d2a7b032c99436f668",
+    "name": "eight-puzzle",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "ad0ac950efca4e4689db7abdbbcd0c84",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "80659d6984974b7f89b65bf99ae9c0ca",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "c62d0984064b419e9f0aaa9645d51ddc",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "goal-test.soar",
+            "id": "ce68b06673d7456bb5e366233e713820",
+            "name": "goal-test",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "monitor.soar",
+            "id": "ea311a908fe54c57bb37571b8cc3dbd9",
+            "name": "monitor",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "search-control.soar",
+            "id": "80fe72868bbb414fb9abd9be5d6dbc24",
+            "name": "search-control",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "top-state.soar",
+            "id": "7ad4e12de87e4b90801e839ca2c5c36e",
+            "name": "top-state",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "_readme.soar",
+        "id": "b774e5a43948471f9af4ea76c5126767",
+        "name": "_readme",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "dmId": "e73a3de62b1e4a1cb6358ccebac41f8b",
+        "file": "Impasse__Operator_Tie.soar",
+        "folder": "Impasse__Operator_Tie",
+        "id": "374e9dd09d644b5982e26768045a8df4",
+        "name": "Impasse__Operator_Tie",
+        "type": "HIGH_LEVEL_IMPASSE_OPERATOR",
+        "children": [
+          {
+            "dmId": "7adf1a21dbd34c0294940ba156fd6ee3",
+            "file": "evaluate-operator.soar",
+            "folder": "evaluate-operator",
+            "id": "cfa3a6b05df84261ad48cec10da6baff",
+            "name": "evaluate-operator",
+            "type": "HIGH_LEVEL_OPERATOR",
+            "children": [
+              {
+                "file": "elaborations.soar",
+                "id": "7425b121650f4c77901f1a448dc9c41f",
+                "name": "elaborations",
+                "type": "FILE_OPERATOR"
+              },
+              {
+                "file": "move-tile.soar",
+                "id": "95357e75d6694fde8f2c1d532cdc4881",
+                "name": "move-tile",
+                "type": "OPERATOR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file": "initialize-eight-puzzle.soar",
+        "id": "d3bda65327f64968b2810d0b451f38b7",
+        "name": "initialize-eight-puzzle",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "move-tile.soar",
+        "id": "5f4fcd4530ee495f914f3930fed83ba0",
+        "name": "move-tile",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}

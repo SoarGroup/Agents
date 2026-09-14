@@ -1,0 +1,960 @@
+{
+  "datamap": {
+    "rootId": "9e4a703671484ec1bf41d31a24820321",
+    "vertices": [
+      {
+        "id": "098900b0aee44117978bf857e9bbeeda",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "abf3496341fb48f6aa1442df42c074ae"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "test-notify"
+        ],
+        "id": "125b23cbcdb34ab4a01c222526b0552b",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "initialize-kb"
+        ],
+        "id": "17f102b954bb4846a213a5ff60c652b3",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "load"
+        ],
+        "id": "1f994503262c4f3f8583cd45aa8db8c5",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "test-init"
+        ],
+        "id": "271bed36a05541d8b6a0a3555c58bbe0",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "done"
+        ],
+        "id": "2a63b14518fc436b9d9c060fc4dcd7ba",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "3dd3c7a305a64ff089a507e255d8cb9b",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "1f994503262c4f3f8583cd45aa8db8c5"
+          },
+          {
+            "name": "entry",
+            "toId": "5b3612552377627c3371f591a5cda428"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "49f12138042d4346bef557a33dee0822",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "271bed36a05541d8b6a0a3555c58bbe0"
+          },
+          {
+            "name": "test",
+            "toId": "d0d86d8075ec5ef592f07f2fe4cebc10"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "56b302cde9c74b5285839ca324396801",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "ff9da034a280495a844eccdf410f9cba"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "kb"
+        ],
+        "id": "589bef21702640828f5eedc090761b86",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "test-result"
+        ],
+        "id": "59961fe8d60f4a6bb47f7b121158d4f3",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "7b34374e40f04efcb80a720b17729fb5",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "ba30681e9b0945cb9dd8c7f0c38cbcb5"
+          },
+          {
+            "name": "test",
+            "toId": "64bbb39f9aeb28ece930050848259602"
+          },
+          {
+            "name": "step",
+            "toId": "3dd4a38db0499ad833242b10d89d3341"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "8809d96e33de44b49082a2beba57cc06",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "8f16006707a54ca2aa8781f96760dcad",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "17f102b954bb4846a213a5ff60c652b3"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "9e4a703671484ec1bf41d31a24820321",
+        "outEdges": [
+          {
+            "name": "io",
+            "toId": "e50c2a61edc24ed198f570905d1a0f16"
+          },
+          {
+            "name": "name",
+            "toId": "589bef21702640828f5eedc090761b86"
+          },
+          {
+            "name": "operator",
+            "toId": "098900b0aee44117978bf857e9bbeeda"
+          },
+          {
+            "name": "operator",
+            "toId": "3dd3c7a305a64ff089a507e255d8cb9b"
+          },
+          {
+            "name": "operator",
+            "toId": "49f12138042d4346bef557a33dee0822"
+          },
+          {
+            "name": "operator",
+            "toId": "56b302cde9c74b5285839ca324396801"
+          },
+          {
+            "name": "operator",
+            "toId": "7b34374e40f04efcb80a720b17729fb5"
+          },
+          {
+            "name": "operator",
+            "toId": "8f16006707a54ca2aa8781f96760dcad"
+          },
+          {
+            "name": "operator",
+            "toId": "bb75c6b6c20c4d20a0a24103cc70b007"
+          },
+          {
+            "name": "operator",
+            "toId": "d3e5c335427d4f0faa9b79db4dba7ad5"
+          },
+          {
+            "name": "operator",
+            "toId": "e4bef1911ddc40b4be8501f14e0c2774"
+          },
+          {
+            "name": "operator",
+            "toId": "fbe2842fdd84484ba80584170367c5d0"
+          },
+          {
+            "name": "superstate",
+            "toId": "f6986d4da1084e1881d2627425b95f27"
+          },
+          {
+            "name": "top-state",
+            "toId": "9e4a703671484ec1bf41d31a24820321"
+          },
+          {
+            "name": "type",
+            "toId": "c475afbdbb4844d5a6f43e042e1a44b4"
+          },
+          {
+            "name": "phase",
+            "toId": "25d3390717e171af3f0c79b077b02f2e"
+          },
+          {
+            "name": "sub-phase",
+            "toId": "39952b15626229161303cc1898e58937"
+          },
+          {
+            "name": "current-entry",
+            "toId": "1220f6c6607015430d9db94eeb7e31f6"
+          },
+          {
+            "name": "current-test",
+            "toId": "835deb78cd8046d5c1d5c827d9983fd4"
+          },
+          {
+            "name": "max-entries",
+            "toId": "69dc868a1efd2f8a63af68add1deaab0"
+          },
+          {
+            "name": "max-tests",
+            "toId": "a9a0cbdbeae127c9191aad5058a737c5"
+          },
+          {
+            "name": "step",
+            "toId": "3b32b5e781a25328da025d7b0db3ca86"
+          },
+          {
+            "name": "result",
+            "toId": "cea89d94cf29ac91ead790f825b06b89"
+          },
+          {
+            "name": "observing",
+            "toId": "e53ff00963c21b19cc3ec90d02b0f589"
+          },
+          {
+            "name": "entries",
+            "toId": "cfc648cea27539ede85fc5498dbe50d8"
+          },
+          {
+            "name": "tests",
+            "toId": "5200bfa8654267bbb7ce1564d8e088e7"
+          },
+          {
+            "name": "epmem",
+            "toId": "3cdb2252841a34f114650b755759ad19"
+          },
+          {
+            "name": "observing-entry",
+            "toId": "58d7141572dc57e97164a0204294ee76"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "test"
+        ],
+        "id": "abf3496341fb48f6aa1442df42c074ae",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "test-next"
+        ],
+        "id": "ba30681e9b0945cb9dd8c7f0c38cbcb5",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "bb6c95a4705843a1b45461128f983eba",
+        "outEdges": [],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "bb75c6b6c20c4d20a0a24103cc70b007",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "59961fe8d60f4a6bb47f7b121158d4f3"
+          },
+          {
+            "name": "test",
+            "toId": "ade799c6e9a31954431c41acebaab957"
+          },
+          {
+            "name": "step",
+            "toId": "cf44f03af2a49682b20ff2ca8b7fccc6"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "c475afbdbb4844d5a6f43e042e1a44b4",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "test-cue"
+        ],
+        "id": "cddbcac9eca6407ba32e713bd9381490",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "d3e5c335427d4f0faa9b79db4dba7ad5",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "2a63b14518fc436b9d9c060fc4dcd7ba"
+          },
+          {
+            "name": "test",
+            "toId": "e4fc7ae6b3230c4cf66277a42a83fa08"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "e4bef1911ddc40b4be8501f14e0c2774",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "125b23cbcdb34ab4a01c222526b0552b"
+          },
+          {
+            "name": "test",
+            "toId": "cb2239f9da70db3d9b4b3850b36e93c6"
+          },
+          {
+            "name": "step",
+            "toId": "6f0a42f18c5b94a2e1902b544909736e"
+          },
+          {
+            "name": "result",
+            "toId": "2129f700604886443c3100902ea5d67d"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "e50c2a61edc24ed198f570905d1a0f16",
+        "outEdges": [
+          {
+            "name": "input-link",
+            "toId": "bb6c95a4705843a1b45461128f983eba"
+          },
+          {
+            "name": "output-link",
+            "toId": "8809d96e33de44b49082a2beba57cc06"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "f6986d4da1084e1881d2627425b95f27",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "fbe2842fdd84484ba80584170367c5d0",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "cddbcac9eca6407ba32e713bd9381490"
+          },
+          {
+            "name": "test",
+            "toId": "8f3118c108fa553dd4af4cd50b0f4b0a"
+          },
+          {
+            "name": "step",
+            "toId": "b42e4530bf1a894ee578bdd6435a1005"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "transition"
+        ],
+        "id": "ff9da034a280495a844eccdf410f9cba",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "25d3390717e171af3f0c79b077b02f2e",
+        "type": "ENUMERATION",
+        "choices": [
+          "load",
+          "test"
+        ]
+      },
+      {
+        "id": "39952b15626229161303cc1898e58937",
+        "type": "ENUMERATION",
+        "choices": [
+          "init",
+          "cue",
+          "result",
+          "notify"
+        ]
+      },
+      {
+        "id": "1220f6c6607015430d9db94eeb7e31f6",
+        "type": "INTEGER"
+      },
+      {
+        "id": "835deb78cd8046d5c1d5c827d9983fd4",
+        "type": "INTEGER"
+      },
+      {
+        "id": "69dc868a1efd2f8a63af68add1deaab0",
+        "type": "INTEGER"
+      },
+      {
+        "id": "a9a0cbdbeae127c9191aad5058a737c5",
+        "type": "INTEGER"
+      },
+      {
+        "id": "3b32b5e781a25328da025d7b0db3ca86",
+        "type": "INTEGER"
+      },
+      {
+        "id": "cea89d94cf29ac91ead790f825b06b89",
+        "type": "ENUMERATION",
+        "choices": [
+          "success",
+          "failure"
+        ]
+      },
+      {
+        "id": "e53ff00963c21b19cc3ec90d02b0f589",
+        "type": "INTEGER"
+      },
+      {
+        "id": "cfc648cea27539ede85fc5498dbe50d8",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "entry",
+            "toId": "58d7141572dc57e97164a0204294ee76"
+          }
+        ]
+      },
+      {
+        "id": "5200bfa8654267bbb7ce1564d8e088e7",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "test",
+            "toId": "0592c56795b080fd71e9a7a621597277"
+          }
+        ]
+      },
+      {
+        "id": "3cdb2252841a34f114650b755759ad19",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "command",
+            "toId": "9a1537e0c2a746812c2971bad4a332fd"
+          },
+          {
+            "name": "result",
+            "toId": "edd197bbf34a64c45dcefcf6ceb0f742"
+          }
+        ]
+      },
+      {
+        "id": "58d7141572dc57e97164a0204294ee76",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "id",
+            "toId": "5389b3faa3eb3d7176ae87f0da0e6c2f"
+          },
+          {
+            "name": "name",
+            "toId": "11327a3c721d4c5064fb4f28838bcbc1"
+          },
+          {
+            "name": "scientific-name",
+            "toId": "9a4abf9a87c847271c1302c78244ab42"
+          },
+          {
+            "name": "attributes",
+            "toId": "a9ab0036b5f8142dc3513c7eb3cebae8"
+          }
+        ]
+      },
+      {
+        "id": "0592c56795b080fd71e9a7a621597277",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "id",
+            "toId": "e0ab403ac74fec4b2aa5775f774d96e2"
+          },
+          {
+            "name": "name",
+            "toId": "507e4de8b43e880d98e66c55eea84a75"
+          },
+          {
+            "name": "note",
+            "toId": "e4a8ed4b4bfbe4279a864607cbfc9ea7"
+          },
+          {
+            "name": "steps",
+            "toId": "9c841d4127292baef32a55f768493c71"
+          },
+          {
+            "name": "step",
+            "toId": "db573d9fe558aa61048d0d7c2cff4254"
+          }
+        ]
+      },
+      {
+        "id": "5389b3faa3eb3d7176ae87f0da0e6c2f",
+        "type": "INTEGER"
+      },
+      {
+        "id": "11327a3c721d4c5064fb4f28838bcbc1",
+        "type": "STRING"
+      },
+      {
+        "id": "9a4abf9a87c847271c1302c78244ab42",
+        "type": "STRING"
+      },
+      {
+        "id": "a9ab0036b5f8142dc3513c7eb3cebae8",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "kind-of",
+            "toId": "4e132f5ec1aa454b19bb2162c724ba11"
+          },
+          {
+            "name": "order",
+            "toId": "ce0ada43b0e242773607e3835469c78c"
+          },
+          {
+            "name": "is",
+            "toId": "2bf01605f0de4c2f64de33e8f1459df1"
+          },
+          {
+            "name": "may-catch",
+            "toId": "fb829a1c6830c4e99626c55f048e1f8d"
+          }
+        ]
+      },
+      {
+        "id": "e0ab403ac74fec4b2aa5775f774d96e2",
+        "type": "INTEGER"
+      },
+      {
+        "id": "507e4de8b43e880d98e66c55eea84a75",
+        "type": "STRING"
+      },
+      {
+        "id": "e4a8ed4b4bfbe4279a864607cbfc9ea7",
+        "type": "STRING"
+      },
+      {
+        "id": "9c841d4127292baef32a55f768493c71",
+        "type": "INTEGER"
+      },
+      {
+        "id": "db573d9fe558aa61048d0d7c2cff4254",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "id",
+            "toId": "5f386a3d286372b203d0da836a56cf5a"
+          },
+          {
+            "name": "type",
+            "toId": "b97873f6cc5d7abe894b5cdff5582349"
+          },
+          {
+            "name": "status",
+            "toId": "3e8873d111c45bd3e2334ed035f1b2ae"
+          },
+          {
+            "name": "command",
+            "toId": "9a1537e0c2a746812c2971bad4a332fd"
+          },
+          {
+            "name": "expected",
+            "toId": "eb1da503ebd2e8ac0ec578ebd9859430"
+          },
+          {
+            "name": "score",
+            "toId": "72ed69bf0b42381b0d49edc15eeabe18"
+          }
+        ]
+      },
+      {
+        "id": "4e132f5ec1aa454b19bb2162c724ba11",
+        "type": "STRING"
+      },
+      {
+        "id": "ce0ada43b0e242773607e3835469c78c",
+        "type": "STRING"
+      },
+      {
+        "id": "2bf01605f0de4c2f64de33e8f1459df1",
+        "type": "STRING"
+      },
+      {
+        "id": "fb829a1c6830c4e99626c55f048e1f8d",
+        "type": "STRING"
+      },
+      {
+        "id": "5f386a3d286372b203d0da836a56cf5a",
+        "type": "INTEGER"
+      },
+      {
+        "id": "b97873f6cc5d7abe894b5cdff5582349",
+        "type": "ENUMERATION",
+        "choices": [
+          "retrieve",
+          "query"
+        ]
+      },
+      {
+        "id": "3e8873d111c45bd3e2334ed035f1b2ae",
+        "type": "ENUMERATION",
+        "choices": [
+          "none",
+          "good",
+          "failure",
+          "success"
+        ]
+      },
+      {
+        "id": "9a1537e0c2a746812c2971bad4a332fd",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "retrieve",
+            "toId": "3157c134d0eb23aa0e361d8a349431f1"
+          },
+          {
+            "name": "next",
+            "toId": "ad341b0ad64ce3439529566791fbb8e5"
+          },
+          {
+            "name": "query",
+            "toId": "0c119eb26bb7f9cec7b26ac0dde2136e"
+          },
+          {
+            "name": "before",
+            "toId": "28e469a4ee7a3626562437b6e576bc05"
+          },
+          {
+            "name": "after",
+            "toId": "1518ae2bfcaa9c367d0ed9eb8330a4d3"
+          },
+          {
+            "name": "prohibit",
+            "toId": "a7f9b8057c9f5fa7f817b2ae077c36bd"
+          },
+          {
+            "name": "previous",
+            "toId": "ad341b0ad64ce3439529566791fbb8e5"
+          },
+          {
+            "name": "neg-query",
+            "toId": "0c119eb26bb7f9cec7b26ac0dde2136e"
+          }
+        ]
+      },
+      {
+        "id": "eb1da503ebd2e8ac0ec578ebd9859430",
+        "type": "INTEGER"
+      },
+      {
+        "id": "72ed69bf0b42381b0d49edc15eeabe18",
+        "type": "FLOAT"
+      },
+      {
+        "id": "3157c134d0eb23aa0e361d8a349431f1",
+        "type": "INTEGER"
+      },
+      {
+        "id": "ad341b0ad64ce3439529566791fbb8e5",
+        "type": "SOAR_ID",
+        "outEdges": []
+      },
+      {
+        "id": "0c119eb26bb7f9cec7b26ac0dde2136e",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "c8aae83bfc28d38e685d3df99abddbcf"
+          },
+          {
+            "name": "superstate",
+            "toId": "e99085503e668ac8e80c23f8685ed9a9"
+          },
+          {
+            "name": "io",
+            "toId": "4890bf2ec5495bb5df2455baea6846ba"
+          },
+          {
+            "name": "observing",
+            "toId": "63a981d13b22f3c04f635d3e56a0af55"
+          },
+          {
+            "name": "observing-entry",
+            "toId": "56621dada621f00317120bf241b4c334"
+          }
+        ]
+      },
+      {
+        "id": "28e469a4ee7a3626562437b6e576bc05",
+        "type": "INTEGER"
+      },
+      {
+        "id": "1518ae2bfcaa9c367d0ed9eb8330a4d3",
+        "type": "INTEGER"
+      },
+      {
+        "id": "a7f9b8057c9f5fa7f817b2ae077c36bd",
+        "type": "INTEGER"
+      },
+      {
+        "id": "c8aae83bfc28d38e685d3df99abddbcf",
+        "type": "ENUMERATION",
+        "choices": [
+          "kb",
+          "bad-state-name"
+        ]
+      },
+      {
+        "id": "e99085503e668ac8e80c23f8685ed9a9",
+        "type": "ENUMERATION",
+        "choices": [
+          "nil"
+        ]
+      },
+      {
+        "id": "4890bf2ec5495bb5df2455baea6846ba",
+        "type": "SOAR_ID",
+        "outEdges": []
+      },
+      {
+        "id": "63a981d13b22f3c04f635d3e56a0af55",
+        "type": "INTEGER"
+      },
+      {
+        "id": "56621dada621f00317120bf241b4c334",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "attributes",
+            "toId": "a9ab0036b5f8142dc3513c7eb3cebae8"
+          }
+        ]
+      },
+      {
+        "id": "edd197bbf34a64c45dcefcf6ceb0f742",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "failure",
+            "toId": "3c9f2854739a54f6de1c1d27acccb817"
+          },
+          {
+            "name": "success",
+            "toId": "af481664a280e8cc5f8525b80650de10"
+          },
+          {
+            "name": "match-score",
+            "toId": "30b2bbd6e6d06cb77af3c1b343fdd50c"
+          },
+          {
+            "name": "retrieved",
+            "toId": "c115b8fbe5194f2ef7004a811c6ccedf"
+          }
+        ]
+      },
+      {
+        "id": "3c9f2854739a54f6de1c1d27acccb817",
+        "type": "STRING"
+      },
+      {
+        "id": "af481664a280e8cc5f8525b80650de10",
+        "type": "STRING"
+      },
+      {
+        "id": "30b2bbd6e6d06cb77af3c1b343fdd50c",
+        "type": "FLOAT"
+      },
+      {
+        "id": "c115b8fbe5194f2ef7004a811c6ccedf",
+        "type": "SOAR_ID",
+        "outEdges": [
+          {
+            "name": "observing",
+            "toId": "04cef83f033283545a7273c9dd047de9"
+          }
+        ]
+      },
+      {
+        "id": "04cef83f033283545a7273c9dd047de9",
+        "type": "INTEGER"
+      },
+      {
+        "id": "5b3612552377627c3371f591a5cda428",
+        "type": "INTEGER"
+      },
+      {
+        "id": "d0d86d8075ec5ef592f07f2fe4cebc10",
+        "type": "INTEGER"
+      },
+      {
+        "id": "64bbb39f9aeb28ece930050848259602",
+        "type": "INTEGER"
+      },
+      {
+        "id": "3dd4a38db0499ad833242b10d89d3341",
+        "type": "INTEGER"
+      },
+      {
+        "id": "8f3118c108fa553dd4af4cd50b0f4b0a",
+        "type": "INTEGER"
+      },
+      {
+        "id": "b42e4530bf1a894ee578bdd6435a1005",
+        "type": "INTEGER"
+      },
+      {
+        "id": "cb2239f9da70db3d9b4b3850b36e93c6",
+        "type": "INTEGER"
+      },
+      {
+        "id": "6f0a42f18c5b94a2e1902b544909736e",
+        "type": "INTEGER"
+      },
+      {
+        "id": "2129f700604886443c3100902ea5d67d",
+        "type": "ENUMERATION",
+        "choices": [
+          "success",
+          "failure"
+        ]
+      },
+      {
+        "id": "ade799c6e9a31954431c41acebaab957",
+        "type": "INTEGER"
+      },
+      {
+        "id": "cf44f03af2a49682b20ff2ca8b7fccc6",
+        "type": "INTEGER"
+      },
+      {
+        "id": "e4fc7ae6b3230c4cf66277a42a83fa08",
+        "type": "INTEGER"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "kb",
+    "id": "5a8319cb61484421a2a99251fe39e67a",
+    "name": "kb",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "ca150b8e4b704a9aabfc23429c850ec4",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "ec9a21cf60054c47ab17371e7a87b4be",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "293875e4626a496fbbbfb7ae86342dc4",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "_all.soar",
+            "id": "97517e06ba9d4baf8800b1b8701392b6",
+            "name": "_all",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "top-state.soar",
+            "id": "072439357d4f43fd93ee4b5d3b2357ea",
+            "name": "top-state",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "done.soar",
+        "id": "066dc7612c5f46a895ea1ca0f51e6466",
+        "name": "done",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "initialize-kb.soar",
+        "id": "ef18e0a71b044ed0b09c5721e37b19a2",
+        "name": "initialize-kb",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "load.soar",
+        "id": "eb20e73ebd224e158ee2d077c310793d",
+        "name": "load",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "test-cue.soar",
+        "id": "e2db65d3461442e3bc8a0adf072b9ea3",
+        "name": "test-cue",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "test-init.soar",
+        "id": "77de8a61f79f4f50a92a548555aeac64",
+        "name": "test-init",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "test-next.soar",
+        "id": "7b547b83fce046b8973b6945331c3b47",
+        "name": "test-next",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "test-notify.soar",
+        "id": "14a154e693894de687fe812beb917da9",
+        "name": "test-notify",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "test-result.soar",
+        "id": "e82de35b4dcf4d3495ff857abf7aaa41",
+        "name": "test-result",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "transition.soar",
+        "id": "1f9ec9bfc9734ac683ee59f748b073bb",
+        "name": "transition",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}

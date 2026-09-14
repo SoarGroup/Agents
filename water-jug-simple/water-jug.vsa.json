@@ -1,0 +1,302 @@
+{
+  "datamap": {
+    "rootId": "d004caf50c614fdda04eb19e0d53382e",
+    "vertices": [
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "05528dea83ca4e11a0c10b01b18f2a34",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "empty",
+          "fill",
+          "none",
+          "pour"
+        ],
+        "id": "1546a49f41b945cea2786b0067cd98f5",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "2dbc0a5cae0744fdbbc55531dd877bbd",
+        "outEdges": [
+          {
+            "name": "fill-jug",
+            "toId": "806f155e2d154e6593ba8de9a38a6464"
+          },
+          {
+            "name": "name",
+            "toId": "7dadff8c3eb84b489624c72898cf466c"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "543bcd0cb6dd4e488b5f13cd09d57b12",
+        "outEdges": [
+          {
+            "name": "empty-jug",
+            "toId": "806f155e2d154e6593ba8de9a38a6464"
+          },
+          {
+            "name": "fill-jug",
+            "toId": "806f155e2d154e6593ba8de9a38a6464"
+          },
+          {
+            "name": "fill-jug",
+            "toId": "806f155e2d154e6593ba8de9a38a6464"
+          },
+          {
+            "name": "name",
+            "toId": "fd83a5aceb364cfeae1ce5ebe7ca1d74"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "59ba10f8dad3465b851a720b91a90dd1",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "9f8f8205743d4373b2b1a47d69af80d9"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "empty"
+        ],
+        "id": "5d7e87b0ca6441c481221a463d36090f",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "75d095c734ed440aaa9d286eedefb82b",
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "water-jug"
+        ],
+        "id": "78bb65b9592746ada4e67dd52c1a3dfa",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "fill"
+        ],
+        "id": "7dadff8c3eb84b489624c72898cf466c",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "806f155e2d154e6593ba8de9a38a6464",
+        "outEdges": [
+          {
+            "name": "contents",
+            "toId": "81ffb91f7d164549b5cd162a9a44380f"
+          },
+          {
+            "name": "empty",
+            "toId": "932c3b1ac9344629a55775327382603d"
+          },
+          {
+            "name": "volume",
+            "toId": "75d095c734ed440aaa9d286eedefb82b"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "81ffb91f7d164549b5cd162a9a44380f",
+        "type": "INTEGER"
+      },
+      {
+        "id": "86126664ab1b41dd9368ec6e762a5aeb",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "deefd5b5100d4db8ae6328b3e983464e"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "932c3b1ac9344629a55775327382603d",
+        "type": "INTEGER"
+      },
+      {
+        "id": "97de28737df046628fb9777ee0a334ac",
+        "outEdges": [
+          {
+            "name": "empty-jug",
+            "toId": "806f155e2d154e6593ba8de9a38a6464"
+          },
+          {
+            "name": "name",
+            "toId": "5d7e87b0ca6441c481221a463d36090f"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "initialize-water-jug"
+        ],
+        "id": "9f8f8205743d4373b2b1a47d69af80d9",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "ad062e99de5b42808ebc3618b6a65fec",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "d004caf50c614fdda04eb19e0d53382e",
+        "outEdges": [
+          {
+            "name": "jug",
+            "toId": "806f155e2d154e6593ba8de9a38a6464"
+          },
+          {
+            "name": "last-operator",
+            "toId": "1546a49f41b945cea2786b0067cd98f5"
+          },
+          {
+            "name": "name",
+            "toId": "78bb65b9592746ada4e67dd52c1a3dfa"
+          },
+          {
+            "name": "operator",
+            "toId": "2dbc0a5cae0744fdbbc55531dd877bbd"
+          },
+          {
+            "name": "operator",
+            "toId": "543bcd0cb6dd4e488b5f13cd09d57b12"
+          },
+          {
+            "name": "operator",
+            "toId": "59ba10f8dad3465b851a720b91a90dd1"
+          },
+          {
+            "name": "operator",
+            "toId": "86126664ab1b41dd9368ec6e762a5aeb"
+          },
+          {
+            "name": "operator",
+            "toId": "97de28737df046628fb9777ee0a334ac"
+          },
+          {
+            "name": "superstate",
+            "toId": "05528dea83ca4e11a0c10b01b18f2a34"
+          },
+          {
+            "name": "type",
+            "toId": "ad062e99de5b42808ebc3618b6a65fec"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "record"
+        ],
+        "id": "deefd5b5100d4db8ae6328b3e983464e",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "pour"
+        ],
+        "id": "fd83a5aceb364cfeae1ce5ebe7ca1d74",
+        "type": "ENUMERATION"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "water-jug",
+    "id": "551eaf1fd70343898268677fe1303b31",
+    "name": "water-jug",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "b66e90f8e18949b1afffc16e1ed5889a",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "d54bf946a5d5493ca5faa2b414903a0b",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "e022fba3a85f48b0bc9166877cdd576f",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "empty.soar",
+            "id": "ec9e3928fcbe41ff8c71480f59b84ce2",
+            "name": "empty",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "goal-test.soar",
+            "id": "1a151d76db5c4bdb85a34fd341e27539",
+            "name": "goal-test",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "monitor.soar",
+            "id": "15f89498cd5f4d3b8423716537925cd0",
+            "name": "monitor",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "_readme.soar",
+        "id": "7e058f15c82f4d7cb3e68f748d398141",
+        "name": "_readme",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "file": "empty.soar",
+        "id": "a644b76a2d5a4f4eb55339dd7ec04b80",
+        "name": "empty",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "fill.soar",
+        "id": "26b9c28d99ae436b81805f69a9f447df",
+        "name": "fill",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "initialize-water-jug.soar",
+        "id": "0daf967a74614279b0f870a8483ba611",
+        "name": "initialize-water-jug",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "pour.soar",
+        "id": "748a261bcbae40eb91a4e0fa9bf22f49",
+        "name": "pour",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "record.soar",
+        "id": "892b390c701b41eb9ab57c64883e9ab0",
+        "name": "record",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}

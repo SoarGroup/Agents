@@ -1,7 +1,7 @@
 sp {selection*propose*all-evaluations-failed2
    (state <s> ^name selection
               ^tied-operator-count 2
-              ^evaluate <e1> { <> <e1> <e2> }
+              ^evaluation <e1> { <> <e1> <e2> }
              # ^quiescence t
              -^top-selection true
               ^remaining-operators 0)

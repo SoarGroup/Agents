@@ -1,0 +1,289 @@
+{
+  "datamap": {
+    "rootId": "befbb66fb2154876b38271c345b62b5b",
+    "vertices": [
+      {
+        "id": "16b40414baae4ec49eef6d288b2ba1e1",
+        "type": "INTEGER"
+      },
+      {
+        "id": "1ec8461c0c484221904901bcc77a35ca",
+        "max": 2,
+        "min": 1,
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "cannibals",
+          "missionaries"
+        ],
+        "id": "20a6a6d78fdb4e8295a153f4829a2129",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "nil"
+        ],
+        "id": "215282786e2546b49d17889ac4c822fb",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "60b22f96f80642b19f97ce44762c9762",
+        "max": 3,
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "id": "66c0993470fa41729596d12bb88ea48d",
+        "max": 3,
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "move-boat"
+        ],
+        "id": "69ed9a831f884101a0609fab0806cfb7",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "98bed7632795472dab450d9c5417b4ac",
+        "outEdges": [
+          {
+            "name": "bank",
+            "toId": "d0f17866623546c281160fafe94f76a3"
+          },
+          {
+            "name": "boat",
+            "toId": "16b40414baae4ec49eef6d288b2ba1e1"
+          },
+          {
+            "name": "cannibals",
+            "toId": "60b22f96f80642b19f97ce44762c9762"
+          },
+          {
+            "name": "missionaries",
+            "toId": "9bad999b00ca4c83a5b2c44db6de1ef0"
+          },
+          {
+            "name": "name",
+            "toId": "69ed9a831f884101a0609fab0806cfb7"
+          },
+          {
+            "name": "number",
+            "toId": "66c0993470fa41729596d12bb88ea48d"
+          },
+          {
+            "name": "type",
+            "toId": "20a6a6d78fdb4e8295a153f4829a2129"
+          },
+          {
+            "name": "types",
+            "toId": "1ec8461c0c484221904901bcc77a35ca"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "9bad999b00ca4c83a5b2c44db6de1ef0",
+        "max": 3,
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "choices": [
+          "initialize-mac"
+        ],
+        "id": "a9e11549c5774a25acb1e29bad0f1bae",
+        "type": "ENUMERATION"
+      },
+      {
+        "id": "aacd54b159564c348623d2cf6026d548",
+        "outEdges": [
+          {
+            "name": "name",
+            "toId": "a9e11549c5774a25acb1e29bad0f1bae"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "b037535d1c464113ab091df3aeae717f",
+        "outEdges": [
+          {
+            "name": "left-bank",
+            "toId": "d0f17866623546c281160fafe94f76a3"
+          },
+          {
+            "name": "right-bank",
+            "toId": "d0f17866623546c281160fafe94f76a3"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "befbb66fb2154876b38271c345b62b5b",
+        "outEdges": [
+          {
+            "name": "desired",
+            "toId": "b037535d1c464113ab091df3aeae717f"
+          },
+          {
+            "name": "failure",
+            "toId": "b037535d1c464113ab091df3aeae717f"
+          },
+          {
+            "name": "last-operator",
+            "toId": "98bed7632795472dab450d9c5417b4ac"
+          },
+          {
+            "name": "left-bank",
+            "toId": "d0f17866623546c281160fafe94f76a3"
+          },
+          {
+            "name": "name",
+            "toId": "f57ccc0c05ac46bda69ab7a1b334e82e"
+          },
+          {
+            "name": "operator",
+            "toId": "98bed7632795472dab450d9c5417b4ac"
+          },
+          {
+            "name": "operator",
+            "toId": "aacd54b159564c348623d2cf6026d548"
+          },
+          {
+            "name": "right-bank",
+            "toId": "d0f17866623546c281160fafe94f76a3"
+          },
+          {
+            "name": "superstate",
+            "toId": "215282786e2546b49d17889ac4c822fb"
+          },
+          {
+            "name": "top-state",
+            "toId": "befbb66fb2154876b38271c345b62b5b"
+          },
+          {
+            "name": "type",
+            "toId": "e317dbafcf9d448b86a8433c90c4b676"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "id": "c4adbb8dc041451b82389f4925dae84a",
+        "max": 1,
+        "min": 0,
+        "type": "INTEGER"
+      },
+      {
+        "id": "d0f17866623546c281160fafe94f76a3",
+        "outEdges": [
+          {
+            "name": "boat",
+            "toId": "c4adbb8dc041451b82389f4925dae84a"
+          },
+          {
+            "name": "cannibals",
+            "toId": "9bad999b00ca4c83a5b2c44db6de1ef0"
+          },
+          {
+            "name": "missionaries",
+            "toId": "9bad999b00ca4c83a5b2c44db6de1ef0"
+          },
+          {
+            "name": "other-bank",
+            "toId": "d0f17866623546c281160fafe94f76a3"
+          }
+        ],
+        "type": "SOAR_ID"
+      },
+      {
+        "choices": [
+          "state"
+        ],
+        "id": "e317dbafcf9d448b86a8433c90c4b676",
+        "type": "ENUMERATION"
+      },
+      {
+        "choices": [
+          "mac"
+        ],
+        "id": "f57ccc0c05ac46bda69ab7a1b334e82e",
+        "type": "ENUMERATION"
+      }
+    ]
+  },
+  "layout": {
+    "folder": "mac",
+    "id": "6af05742e15844378bc61fd0672cbd11",
+    "name": "mac",
+    "type": "OPERATOR_ROOT",
+    "children": [
+      {
+        "file": "_firstload.soar",
+        "id": "4ce04aac569845e8b36d3b2b8a52a108",
+        "name": "_firstload",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "folder": "all",
+        "id": "d210a330cf354a5fab2e737711919fdc",
+        "name": "all",
+        "type": "FOLDER"
+      },
+      {
+        "folder": "elaborations",
+        "id": "a38fb1c666f747d1b0eb87a44982bfba",
+        "name": "elaborations",
+        "type": "FOLDER",
+        "children": [
+          {
+            "file": "goal-test.soar",
+            "id": "e20015b46a644d76a5dad2ff86823843",
+            "name": "goal-test",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "monitor.soar",
+            "id": "69ed11b15537452584e0fc11add3b239",
+            "name": "monitor",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "search-control.soar",
+            "id": "0a8a00811d3b43b9873143cef2b220e9",
+            "name": "search-control",
+            "type": "FILE_OPERATOR"
+          },
+          {
+            "file": "top-state.soar",
+            "id": "89eff0853ce748ae9e9e55eca52ef263",
+            "name": "top-state",
+            "type": "FILE_OPERATOR"
+          }
+        ]
+      },
+      {
+        "file": "_readme.soar",
+        "id": "7aa0975ba48a41b59562d323e8dc1202",
+        "name": "_readme",
+        "type": "FILE_OPERATOR"
+      },
+      {
+        "file": "initialize-mac.soar",
+        "id": "704201f2e54c4c66810b761176da42bb",
+        "name": "initialize-mac",
+        "type": "OPERATOR"
+      },
+      {
+        "file": "move-boat.soar",
+        "id": "ad93915f15e94dd9bd5dc0b519b19113",
+        "name": "move-boat",
+        "type": "OPERATOR"
+      }
+    ]
+  },
+  "version": "6"
+}
